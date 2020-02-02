@@ -5,3 +5,6 @@
 |1/27|2.5|catch up on week 1 readings/videos|Things to remember: maven intellij stuff, install jdoc, refactor extract method, generate, local history|
 |1/27|2|week 2 readings|commit messages ###if applied this commit will. Didn't have access to the student repo, willl have to work on those activities for next class|
 |1/29|2.5|week 2 activities and exercise setup|got access to the student repository, did activities, and setup indie project. Remember to git pull before pushing to any student repo. #todo figure out profDevPresentation topic and sign up for timeslot|
+|1/29|2|Started week 2 exercise|sql error, had to change table name from user to users. Vm crash, changed settings to 2 processors.https://stackoverflow.com/questions/29750861/convert-between-localdate-and-sql-date  https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#now--|
+|2/1|1|worked on week 2 exercise|setup search.jsp and changed teh servlet to forward to it|
+|2/2|2|Finished week 2 exercise|got the search query to be passed to call into the database, had trouble with the prepared statements formatting(you cannot put the column name in a prepared statement, which makes sense now), prettied up the form and table for output|
