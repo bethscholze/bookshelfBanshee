@@ -8,3 +8,4 @@
 |1/29|2|Started week 2 exercise|sql error, had to change table name from user to users. Vm crash, changed settings to 2 processors.https://stackoverflow.com/questions/29750861/convert-between-localdate-and-sql-date  https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#now--|
 |2/1|1|worked on week 2 exercise|setup search.jsp and changed teh servlet to forward to it|
 |2/2|2|Finished week 2 exercise|got the search query to be passed to call into the database, had trouble with the prepared statements formatting(you cannot put the column name in a prepared statement, which makes sense now), prettied up the form and table for output|
+|2/3|5|Started week 3|Read docs(notes on junit tests in documents), and watched videos for week 3(except Puzzle-solving), worked through activities. Started exercise. Forgot to take screenshots of weeks 2 work|
