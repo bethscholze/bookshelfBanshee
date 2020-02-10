@@ -9,3 +9,6 @@
 |2/1|1|worked on week 2 exercise|setup search.jsp and changed teh servlet to forward to it|
 |2/2|2|Finished week 2 exercise|got the search query to be passed to call into the database, had trouble with the prepared statements formatting(you cannot put the column name in a prepared statement, which makes sense now), prettied up the form and table for output|
 |2/3|5|Started week 3|Read docs(notes on junit tests in documents), and watched videos for week 3(except Puzzle-solving), worked through activities. Started exercise. Forgot to take screenshots of weeks 2 work|
+|2/5|5|Worked on week 3 exercise, wrote most user stories|Wrote tests, had trouble with exception test, doesnt return a caught exception, just check for null/zero value|
+|2/8|2.5|Presentation feedback, working on project|work on wireframe, database design, and revisit user stories|
+|2/9||Project design|Problem statement, project plan, update user stories, finish wireframes.|
