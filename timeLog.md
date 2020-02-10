@@ -12,4 +12,4 @@
 |2/5|5|Worked on week 3 exercise, wrote most user stories|Wrote tests, had trouble with exception test, doesnt return a caught exception, just check for null/zero value|
 |2/8|2.5|Presentation feedback, working on project|work on wireframe, database design, and revisit user stories|
 |2/9|2.5|Project design|Problem statement, project plan.|
-|2/10||Finalize exercise 3. Project design|All test passing for exercise 3, click on the run on the left side and it will provide test coverage. Update stuff more tonight since you for got the list you made. Work on wireframes.|
+|2/10|5|Finalize exercise 3. Project design|All test passing for exercise 3, click on the run on the left side and it will provide test coverage. Update stuff more tonight since you for got the list you made. Work on wireframes.|

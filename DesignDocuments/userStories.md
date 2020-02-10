@@ -15,4 +15,4 @@
 |13|Compare/view added book data|As a user I want to be able to view and compare extra data I have added to books|nonMVP|
 |14|View book data|As a user I want to be able to view data saved about each of my books|MVP|
 |15|Delete books|As a user I want to be able to delete books|MVP|
-|16|Sort Lists|as a user i want to be able to sort my book lists||
+|16|Sort Lists|as a user i want to be able to sort my book lists|MVP|
