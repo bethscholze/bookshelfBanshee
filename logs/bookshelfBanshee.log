@@ -1,0 +1,6 @@
+[ERROR] 2020-02-16 14:50:31.626 [main] Database - java.sql.SQLSyntaxErrorException: Unknown database 'BookshelfBansheeTest'
+[ERROR] 2020-02-16 14:59:45.630 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-02-16 14:59:48.545 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-02-16 14:59:48.612 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-02-16 14:59:48.694 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-02-16 14:59:48.925 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
