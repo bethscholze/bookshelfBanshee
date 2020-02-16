@@ -1,5 +1,5 @@
 <html>
-<%@include file="header.jsp"%>
+<%@include file="head.jsp"%>
     <header>
 
     </header>
