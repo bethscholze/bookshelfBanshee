@@ -1,4 +1,4 @@
-[DEBUG] 2020-02-17 11:07:11.233 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+q[DEBUG] 2020-02-17 11:07:11.233 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
 [DEBUG] 2020-02-17 11:07:11.234 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
 [DEBUG] 2020-02-17 11:07:11.243 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
 [INFO ] 2020-02-17 11:07:11.298 [main] Version - HHH000412: Hibernate Core {5.4.4.Final}
