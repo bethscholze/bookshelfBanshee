@@ -27,17 +27,32 @@ class UserDaoTest {
 
     @Test
     void saveOrUpdate() {
+        User retrievedUser = dao.getById(1);
+        retrievedUser.setUsername("resetUsername");
+        dao.saveOrUpdate(retrievedUser);
+        User updatedUser = dao.getById(1);
+        assertEquals("resetUsername", updatedUser.getUsername());
     }
 
     @Test
     void insert() {
+        User user = new User("newUser", "newPassword");
+        dao.insert(user);
+        int allUsersSize = dao.getAll().size();
+        assertEquals(6, allUsersSize);
     }
 
     @Test
     void delete() {
+        User user = dao.getById(1);
+        dao.delete(user);
+        int allUsersSize = dao.getAll().size();
+        assertEquals(4, allUsersSize);
     }
 
     @Test
     void getAll() {
+        int getAllSize = dao.getAll().size();
+        assertEquals(5, getAllSize);
     }
 }

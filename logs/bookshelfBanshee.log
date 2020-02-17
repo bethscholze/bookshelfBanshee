@@ -4,3 +4,28 @@
 [ERROR] 2020-02-16 14:59:48.612 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
 [ERROR] 2020-02-16 14:59:48.694 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
 [ERROR] 2020-02-16 14:59:48.925 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-02-17 09:56:59.257 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from user' at line 1
+[ERROR] 2020-02-17 09:57:01.295 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from user' at line 1
+[ERROR] 2020-02-17 09:57:01.491 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from user' at line 1
+[ERROR] 2020-02-17 09:57:01.584 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from user' at line 1
+[ERROR] 2020-02-17 09:57:01.616 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from user' at line 1
+[ERROR] 2020-02-17 09:59:24.980 [main] Database - java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+[ERROR] 2020-02-17 09:59:27.288 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 09:59:27.415 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 09:59:27.491 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 09:59:27.548 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 10:01:29.469 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 10:01:31.608 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 10:01:31.822 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 10:01:31.881 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 10:01:31.938 [main] Database - java.sql.SQLSyntaxErrorException: Unknown table 'BookshelfBansheeTest.user'
+[ERROR] 2020-02-17 10:04:27.946 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:04:29.799 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:04:30.041 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:04:30.137 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:04:30.198 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:05:48.413 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:05:50.466 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:05:50.620 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:05:50.665 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
+[ERROR] 2020-02-17 10:05:50.713 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
