@@ -35,7 +35,7 @@ public class Database {
         loadProperties();
 
     }
-
+//    TODO create a properties interface for use with loading all project properties
     private void loadProperties() {
         properties = new Properties();
         try {
@@ -90,6 +90,7 @@ public class Database {
      *
      * @param sqlFile the sql file to be read and executed line by line
      */
+//    TODO update this with the new class she has which can read multiline sql statements
     public void runSQL(String sqlFile) {
 
         Statement stmt = null;
