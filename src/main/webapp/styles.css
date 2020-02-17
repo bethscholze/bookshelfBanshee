@@ -1,3 +1,26 @@
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
 #landingPage {
     background-image: url("indexLibrary.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+#landingPage h2{
+    color: white;
+    font-family: 'Rye', cursive;
+    font-size: 5em;
+}
+
+.pageBackground {
+    background-image: url("indexLibrary.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }

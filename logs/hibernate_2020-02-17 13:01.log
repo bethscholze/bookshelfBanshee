@@ -1,0 +1,537 @@
+[DEBUG] 2020-02-17 13:01:26.384 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+[DEBUG] 2020-02-17 13:01:26.386 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+[DEBUG] 2020-02-17 13:01:26.390 [main] IntegratorServiceImpl - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+[INFO ] 2020-02-17 13:01:26.461 [main] Version - HHH000412: Hibernate Core {5.4.4.Final}
+[DEBUG] 2020-02-17 13:01:26.463 [main] Environment - HHH000206: hibernate.properties not found
+[DEBUG] 2020-02-17 13:01:26.660 [main] JaxbCfgProcessor - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+[DEBUG] 2020-02-17 13:01:27.199 [main] ServiceBinding - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+[DEBUG] 2020-02-17 13:01:27.219 [main] RegionFactoryInitiator - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+[DEBUG] 2020-02-17 13:01:27.222 [main] RegionFactoryInitiator - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+[INFO ] 2020-02-17 13:01:27.238 [main] Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[DEBUG] 2020-02-17 13:01:27.268 [main] BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@3f628ce9
+[DEBUG] 2020-02-17 13:01:27.269 [main] BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@3f628ce9
+[DEBUG] 2020-02-17 13:01:27.269 [main] BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@3f628ce9
+[DEBUG] 2020-02-17 13:01:27.269 [main] BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@1846579f
+[DEBUG] 2020-02-17 13:01:27.269 [main] BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.TrueFalseType@5fac521d
+[DEBUG] 2020-02-17 13:01:27.270 [main] BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.YesNoType@3abfe845
+[DEBUG] 2020-02-17 13:01:27.271 [main] BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@27a2a089
+[DEBUG] 2020-02-17 13:01:27.271 [main] BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@27a2a089
+[DEBUG] 2020-02-17 13:01:27.273 [main] BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@27a2a089
+[DEBUG] 2020-02-17 13:01:27.275 [main] BasicTypeRegistry - Adding type registration character -> org.hibernate.type.CharacterType@5ac6c4f2
+[DEBUG] 2020-02-17 13:01:27.276 [main] BasicTypeRegistry - Adding type registration char -> org.hibernate.type.CharacterType@5ac6c4f2
+[DEBUG] 2020-02-17 13:01:27.276 [main] BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@5ac6c4f2
+[DEBUG] 2020-02-17 13:01:27.277 [main] BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@78525ef9
+[DEBUG] 2020-02-17 13:01:27.277 [main] BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@78525ef9
+[DEBUG] 2020-02-17 13:01:27.277 [main] BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@78525ef9
+[DEBUG] 2020-02-17 13:01:27.279 [main] BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.IntegerType@350a94ce
+[DEBUG] 2020-02-17 13:01:27.279 [main] BasicTypeRegistry - Adding type registration int -> org.hibernate.type.IntegerType@350a94ce
+[DEBUG] 2020-02-17 13:01:27.279 [main] BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@350a94ce
+[DEBUG] 2020-02-17 13:01:27.279 [main] BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@5fbdc49b
+[DEBUG] 2020-02-17 13:01:27.280 [main] BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@5fbdc49b
+[DEBUG] 2020-02-17 13:01:27.280 [main] BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.LongType@5fbdc49b
+[DEBUG] 2020-02-17 13:01:27.281 [main] BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@285f38f6
+[DEBUG] 2020-02-17 13:01:27.281 [main] BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@285f38f6
+[DEBUG] 2020-02-17 13:01:27.281 [main] BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@285f38f6
+[DEBUG] 2020-02-17 13:01:27.282 [main] BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@36fc05ff
+[DEBUG] 2020-02-17 13:01:27.283 [main] BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@36fc05ff
+[DEBUG] 2020-02-17 13:01:27.283 [main] BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@36fc05ff
+[DEBUG] 2020-02-17 13:01:27.283 [main] BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@21ac5eb4
+[DEBUG] 2020-02-17 13:01:27.283 [main] BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@21ac5eb4
+[DEBUG] 2020-02-17 13:01:27.284 [main] BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@2a685eba
+[DEBUG] 2020-02-17 13:01:27.284 [main] BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@2a685eba
+[DEBUG] 2020-02-17 13:01:27.285 [main] BasicTypeRegistry - Adding type registration string -> org.hibernate.type.StringType@77d680e6
+[DEBUG] 2020-02-17 13:01:27.285 [main] BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.StringType@77d680e6
+[DEBUG] 2020-02-17 13:01:27.285 [main] BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@28c86134
+[DEBUG] 2020-02-17 13:01:27.286 [main] BasicTypeRegistry - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@5c1f6d57
+[DEBUG] 2020-02-17 13:01:27.286 [main] BasicTypeRegistry - Adding type registration url -> org.hibernate.type.UrlType@16872c4d
+[DEBUG] 2020-02-17 13:01:27.286 [main] BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.UrlType@16872c4d
+[DEBUG] 2020-02-17 13:01:27.287 [main] BasicTypeRegistry - Adding type registration Duration -> org.hibernate.type.DurationType@67fc2aad
+[DEBUG] 2020-02-17 13:01:27.287 [main] BasicTypeRegistry - Adding type registration java.time.Duration -> org.hibernate.type.DurationType@67fc2aad
+[DEBUG] 2020-02-17 13:01:27.291 [main] BasicTypeRegistry - Adding type registration Instant -> org.hibernate.type.InstantType@5fcfca62
+[DEBUG] 2020-02-17 13:01:27.291 [main] BasicTypeRegistry - Adding type registration java.time.Instant -> org.hibernate.type.InstantType@5fcfca62
+[DEBUG] 2020-02-17 13:01:27.293 [main] BasicTypeRegistry - Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@5b051a5c
+[DEBUG] 2020-02-17 13:01:27.294 [main] BasicTypeRegistry - Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@5b051a5c
+[DEBUG] 2020-02-17 13:01:27.294 [main] BasicTypeRegistry - Adding type registration LocalDate -> org.hibernate.type.LocalDateType@10641c09
+[DEBUG] 2020-02-17 13:01:27.295 [main] BasicTypeRegistry - Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@10641c09
+[DEBUG] 2020-02-17 13:01:27.295 [main] BasicTypeRegistry - Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@764cba
+[DEBUG] 2020-02-17 13:01:27.296 [main] BasicTypeRegistry - Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@764cba
+[DEBUG] 2020-02-17 13:01:27.297 [main] BasicTypeRegistry - Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@144ab54
+[DEBUG] 2020-02-17 13:01:27.297 [main] BasicTypeRegistry - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@144ab54
+[DEBUG] 2020-02-17 13:01:27.298 [main] BasicTypeRegistry - Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@3e3861d7
+[DEBUG] 2020-02-17 13:01:27.298 [main] BasicTypeRegistry - Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@3e3861d7
+[DEBUG] 2020-02-17 13:01:27.300 [main] BasicTypeRegistry - Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@47a7a101
+[DEBUG] 2020-02-17 13:01:27.300 [main] BasicTypeRegistry - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@47a7a101
+[DEBUG] 2020-02-17 13:01:27.301 [main] BasicTypeRegistry - Adding type registration date -> org.hibernate.type.DateType@618ad2aa
+[DEBUG] 2020-02-17 13:01:27.301 [main] BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.DateType@618ad2aa
+[DEBUG] 2020-02-17 13:01:27.302 [main] BasicTypeRegistry - Adding type registration time -> org.hibernate.type.TimeType@2caa5d7c
+[DEBUG] 2020-02-17 13:01:27.302 [main] BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@2caa5d7c
+[DEBUG] 2020-02-17 13:01:27.304 [main] BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.TimestampType@3e1a3801
+[DEBUG] 2020-02-17 13:01:27.304 [main] BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@3e1a3801
+[DEBUG] 2020-02-17 13:01:27.304 [main] BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@3e1a3801
+[DEBUG] 2020-02-17 13:01:27.305 [main] BasicTypeRegistry - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@222afc67
+[DEBUG] 2020-02-17 13:01:27.306 [main] BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.CalendarType@41522537
+[DEBUG] 2020-02-17 13:01:27.306 [main] BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@41522537
+[DEBUG] 2020-02-17 13:01:27.306 [main] BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@41522537
+[DEBUG] 2020-02-17 13:01:27.307 [main] BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@23eff5d1
+[DEBUG] 2020-02-17 13:01:27.308 [main] BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.LocaleType@316a598d
+[DEBUG] 2020-02-17 13:01:27.309 [main] BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@316a598d
+[DEBUG] 2020-02-17 13:01:27.310 [main] BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.CurrencyType@2903c6ff
+[DEBUG] 2020-02-17 13:01:27.310 [main] BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@2903c6ff
+[DEBUG] 2020-02-17 13:01:27.310 [main] BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.TimeZoneType@d8d9199
+[DEBUG] 2020-02-17 13:01:27.311 [main] BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@d8d9199
+[DEBUG] 2020-02-17 13:01:27.311 [main] BasicTypeRegistry - Adding type registration class -> org.hibernate.type.ClassType@b835727
+[DEBUG] 2020-02-17 13:01:27.311 [main] BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@b835727
+[DEBUG] 2020-02-17 13:01:27.313 [main] BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@319c3a25
+[DEBUG] 2020-02-17 13:01:27.313 [main] BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@319c3a25
+[DEBUG] 2020-02-17 13:01:27.314 [main] BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@81b5db0
+[DEBUG] 2020-02-17 13:01:27.314 [main] BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BinaryType@4d8286c4
+[DEBUG] 2020-02-17 13:01:27.314 [main] BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BinaryType@4d8286c4
+[DEBUG] 2020-02-17 13:01:27.315 [main] BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BinaryType@4d8286c4
+[DEBUG] 2020-02-17 13:01:27.318 [main] BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@7a7cc52c
+[DEBUG] 2020-02-17 13:01:27.319 [main] BasicTypeRegistry - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@7a7cc52c
+[DEBUG] 2020-02-17 13:01:27.319 [main] BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@7a7cc52c
+[DEBUG] 2020-02-17 13:01:27.320 [main] BasicTypeRegistry - Adding type registration row_version -> org.hibernate.type.RowVersionType@53a9fcfd
+[DEBUG] 2020-02-17 13:01:27.320 [main] BasicTypeRegistry - Adding type registration image -> org.hibernate.type.ImageType@84487f4
+[DEBUG] 2020-02-17 13:01:27.320 [main] BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.CharArrayType@a518813
+[DEBUG] 2020-02-17 13:01:27.321 [main] BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.CharArrayType@a518813
+[DEBUG] 2020-02-17 13:01:27.321 [main] BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.CharArrayType@a518813
+[DEBUG] 2020-02-17 13:01:27.321 [main] BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@1d75e7af
+[DEBUG] 2020-02-17 13:01:27.321 [main] BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@1d75e7af
+[DEBUG] 2020-02-17 13:01:27.321 [main] BasicTypeRegistry - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@1d75e7af
+[DEBUG] 2020-02-17 13:01:27.322 [main] BasicTypeRegistry - Adding type registration text -> org.hibernate.type.TextType@1b9776f5
+[DEBUG] 2020-02-17 13:01:27.322 [main] BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.NTextType@1dd7796b
+[DEBUG] 2020-02-17 13:01:27.323 [main] BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BlobType@2418ba04
+[DEBUG] 2020-02-17 13:01:27.323 [main] BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@2418ba04
+[DEBUG] 2020-02-17 13:01:27.324 [main] BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@10f19647
+[DEBUG] 2020-02-17 13:01:27.324 [main] BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.ClobType@2d82408
+[DEBUG] 2020-02-17 13:01:27.325 [main] BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@2d82408
+[DEBUG] 2020-02-17 13:01:27.326 [main] BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.NClobType@8f2098e
+[DEBUG] 2020-02-17 13:01:27.326 [main] BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@8f2098e
+[DEBUG] 2020-02-17 13:01:27.326 [main] BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@8a2a6a
+[DEBUG] 2020-02-17 13:01:27.326 [main] BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@481e91b6
+[DEBUG] 2020-02-17 13:01:27.327 [main] BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.SerializableType@41b1f51e
+[DEBUG] 2020-02-17 13:01:27.330 [main] BasicTypeRegistry - Adding type registration object -> org.hibernate.type.ObjectType@718dbd79
+[DEBUG] 2020-02-17 13:01:27.330 [main] BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@718dbd79
+[DEBUG] 2020-02-17 13:01:27.330 [main] BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@6c15e8c7
+[DEBUG] 2020-02-17 13:01:27.330 [main] BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@56380231
+[DEBUG] 2020-02-17 13:01:27.330 [main] BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@64f1fd08
+[DEBUG] 2020-02-17 13:01:27.330 [main] BasicTypeRegistry - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@6b3f6585
+[DEBUG] 2020-02-17 13:01:27.330 [main] BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@282ffbf5
+[DEBUG] 2020-02-17 13:01:27.330 [main] BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@3e104d4b
+[DEBUG] 2020-02-17 13:01:27.331 [main] BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@55e2fe3c
+[DEBUG] 2020-02-17 13:01:27.331 [main] BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@45e1aa48
+[DEBUG] 2020-02-17 13:01:27.354 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+[DEBUG] 2020-02-17 13:01:27.355 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+[DEBUG] 2020-02-17 13:01:27.355 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+[DEBUG] 2020-02-17 13:01:27.356 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+[DEBUG] 2020-02-17 13:01:27.356 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+[DEBUG] 2020-02-17 13:01:27.358 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+[DEBUG] 2020-02-17 13:01:27.359 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+[DEBUG] 2020-02-17 13:01:27.360 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[DEBUG] 2020-02-17 13:01:27.360 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+[DEBUG] 2020-02-17 13:01:27.361 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+[DEBUG] 2020-02-17 13:01:27.361 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+[DEBUG] 2020-02-17 13:01:27.362 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+[DEBUG] 2020-02-17 13:01:27.362 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+[DEBUG] 2020-02-17 13:01:27.362 [main] DefaultIdentifierGeneratorFactory - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+[INFO ] 2020-02-17 13:01:27.367 [main] C3P0ConnectionProvider - HHH010002: C3P0 using driver: com.mysql.cj.jdbc.Driver at URL: jdbc:mysql://localhost:3306/BookshelfBansheeTest
+[INFO ] 2020-02-17 13:01:27.368 [main] C3P0ConnectionProvider - HHH10001001: Connection properties: {password=****, user=root}
+[INFO ] 2020-02-17 13:01:27.368 [main] C3P0ConnectionProvider - HHH10001003: Autocommit mode: false
+[INFO ] 2020-02-17 13:01:27.644 [main] C3P0ConnectionProvider - HHH10001007: JDBC isolation level: <unknown>
+[DEBUG] 2020-02-17 13:01:27.849 [main] JdbcEnvironmentInitiator - Database ->
+       name : MySQL
+    version : 8.0.16
+      major : 8
+      minor : 0
+[DEBUG] 2020-02-17 13:01:27.865 [main] JdbcEnvironmentInitiator - Driver ->
+       name : MySQL Connector/J
+    version : mysql-connector-java-8.0.16 (Revision: 34cbc6bc61f72836e26327537a432d6db7c77de6)
+      major : 8
+      minor : 0
+[DEBUG] 2020-02-17 13:01:27.866 [main] JdbcEnvironmentInitiator - JDBC version : 4.2
+[INFO ] 2020-02-17 13:01:27.932 [main] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[DEBUG] 2020-02-17 13:01:27.947 [main] IdentifierHelperBuilder - JDBC driver metadata reported database stores quoted identifiers in more than one case
+[DEBUG] 2020-02-17 13:01:27.985 [main] IdentifierHelperBuilder - IdentifierCaseStrategy for both quoted and unquoted identifiers was set to the same strategy [MIXED]; that will likely lead to problems in schema update and validation if using quoted identifiers
+[DEBUG] 2020-02-17 13:01:28.017 [main] Namespace - Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+[DEBUG] 2020-02-17 13:01:28.021 [main] TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@58b91d57] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@61a91c9b]
+[DEBUG] 2020-02-17 13:01:28.055 [main] AnnotationMetadataSourceProcessorImpl - Encountered a non-categorized annotated class [com.bookshelfBanshee.entity.Role]; ignoring
+[DEBUG] 2020-02-17 13:01:28.071 [main] AnnotationBinder - Binding entity from annotated class: com.bookshelfBanshee.entity.User
+[DEBUG] 2020-02-17 13:01:28.094 [main] Ejb3Column - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+[DEBUG] 2020-02-17 13:01:28.099 [main] EntityBinder - Import with entity name User
+[DEBUG] 2020-02-17 13:01:28.102 [main] EntityBinder - Bind entity com.bookshelfBanshee.entity.User on table user
+[DEBUG] 2020-02-17 13:01:28.120 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=id, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-02-17 13:01:28.122 [main] PropertyBinder - MetadataSourceProcessor property id with lazy=false
+[DEBUG] 2020-02-17 13:01:28.123 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.bookshelfBanshee.entity.User:id]
+[DEBUG] 2020-02-17 13:01:28.125 [main] SimpleValueBinder - building SimpleValue for id
+[DEBUG] 2020-02-17 13:01:28.127 [main] PropertyBinder - Building property id
+[DEBUG] 2020-02-17 13:01:28.130 [main] BinderHelper - #makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, org.hibernate.id.enhanced.SequenceStyleGenerator, native, ...)
+[DEBUG] 2020-02-17 13:01:28.131 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=password, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-02-17 13:01:28.131 [main] PropertyBinder - MetadataSourceProcessor property password with lazy=false
+[DEBUG] 2020-02-17 13:01:28.131 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.bookshelfBanshee.entity.User:password]
+[DEBUG] 2020-02-17 13:01:28.132 [main] SimpleValueBinder - building SimpleValue for password
+[DEBUG] 2020-02-17 13:01:28.132 [main] PropertyBinder - Building property password
+[DEBUG] 2020-02-17 13:01:28.132 [main] Ejb3Column - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(user), mappingColumn=username, insertable=true, updatable=true, unique=false}
+[DEBUG] 2020-02-17 13:01:28.132 [main] PropertyBinder - MetadataSourceProcessor property username with lazy=false
+[DEBUG] 2020-02-17 13:01:28.132 [main] AbstractPropertyHolder - Attempting to locate auto-apply AttributeConverter for property [com.bookshelfBanshee.entity.User:username]
+[DEBUG] 2020-02-17 13:01:28.132 [main] SimpleValueBinder - building SimpleValue for username
+[DEBUG] 2020-02-17 13:01:28.132 [main] PropertyBinder - Building property username
+[DEBUG] 2020-02-17 13:01:28.134 [main] SimpleValueBinder - Starting fillSimpleValue for id
+[DEBUG] 2020-02-17 13:01:28.134 [main] SimpleValueBinder - Starting fillSimpleValue for password
+[DEBUG] 2020-02-17 13:01:28.134 [main] SimpleValueBinder - Starting fillSimpleValue for username
+[DEBUG] 2020-02-17 13:01:28.136 [main] PrimaryKey - Forcing column [id] to be non-null as it is part of the primary key for table [user]
+[DEBUG] 2020-02-17 13:01:28.164 [main] SessionFactoryImpl - Building session factory
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - SessionFactory name : null
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - Automatic flush during beforeCompletion(): enabled
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - Automatic session close at end of transaction: disabled
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - Statistics: disabled
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - Deleted entity synthetic identifier rollback: disabled
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - Default entity-mode: pojo
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - Allow initialization of lazy state outside session : disabled
+[DEBUG] 2020-02-17 13:01:28.165 [main] Settings - Using BatchFetchStyle : LEGACY
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - Default batch fetch size: -1
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - Maximum outer join fetch depth: 2
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - Default null ordering: NONE
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - Order SQL updates by primary key: disabled
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - Order SQL inserts for batching: disabled
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - multi-tenancy strategy : NONE
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - JTA Track by Thread: enabled
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - Query language substitutions: {}
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - Named query checking : enabled
+[DEBUG] 2020-02-17 13:01:28.166 [main] Settings - Second-level cache: disabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Second-level query cache: disabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Second-level query cache factory: null
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Second-level cache region prefix: null
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Optimize second-level cache for minimal puts: disabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Structured second-level cache entries: disabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Second-level cache direct-reference entries: disabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Automatic eviction of collection cache: disabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - JDBC batch size: 15
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - JDBC batch updates for versioned data: enabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Scrollable result sets: enabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Wrap result sets: disabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - JDBC3 getGeneratedKeys(): enabled
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - JDBC result set fetch size: null
+[DEBUG] 2020-02-17 13:01:28.167 [main] Settings - Connection release mode: AFTER_TRANSACTION
+[DEBUG] 2020-02-17 13:01:28.168 [main] Settings - Generate SQL with comments: disabled
+[DEBUG] 2020-02-17 13:01:28.168 [main] Settings - JPA compliance - query : 
+[DEBUG] 2020-02-17 13:01:28.168 [main] Settings - JPA compliance - closed-handling : 
+[DEBUG] 2020-02-17 13:01:28.168 [main] Settings - JPA compliance - lists : 
+[DEBUG] 2020-02-17 13:01:28.168 [main] Settings - JPA compliance - transactions : 
+[INFO ] 2020-02-17 13:01:28.208 [main] beans - HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+[DEBUG] 2020-02-17 13:01:28.221 [main] SessionFactoryImpl - Session factory constructed with filter configurations : {}
+[DEBUG] 2020-02-17 13:01:28.221 [main] SessionFactoryImpl - Instantiating session factory with properties: {sun.desktop=gnome, awt.toolkit=sun.awt.X11.XToolkit, java.specification.version=11, sun.cpu.isalist=, hibernate.c3p0.idle_test_period=3000, sun.jnu.encoding=UTF-8, hibernate.c3p0.min_size=5, java.class.path=/home/student/IdeaProjects/bookshelfBanshee/target/test-classes:/home/student/IdeaProjects/bookshelfBanshee/target/classes:/home/student/.m2/repository/org/junit/platform/junit-platform-runner/1.0.0/junit-platform-runner-1.0.0.jar:/home/student/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-launcher/1.0.0/junit-platform-launcher-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-suite-api/1.0.0/junit-platform-suite-api-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar:/home/student/.m2/repository/org/junit/vintage/junit-vintage-engine/4.12.0/junit-vintage-engine-4.12.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-engine/1.0.0/junit-platform-engine-1.0.0.jar:/home/student/.m2/repository/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar:/home/student/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.0.0/junit-jupiter-engine-5.0.0.jar:/home/student/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.0.0/junit-jupiter-api-5.0.0.jar:/home/student/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/student/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/student/.m2/repository/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar:/home/student/.m2/repository/mysql/mysql-connector-java/8.0.16/mysql-connector-java-8.0.16.jar:/home/student/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/home/student/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar:/home/student/.m2/repository/org/apache/logging/log4j/log4j-api/2.10.0/log4j-api-2.10.0.jar:/home/student/.m2/repository/org/apache/logging/log4j/log4j-core/2.10.0/log4j-core-2.10.0.jar:/home/student/.m2/repository/org/hibernate/hibernate-core/5.4.4.Final/hibernate-core-5.4.4.Final.jar:/home/student/.m2/repository/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar:/home/student/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/home/student/.m2/repository/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar:/home/student/.m2/repository/net/bytebuddy/byte-buddy/1.9.11/byte-buddy-1.9.11.jar:/home/student/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/student/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar:/home/student/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/home/student/.m2/repository/com/fasterxml/classmate/1.3.4/classmate-1.3.4.jar:/home/student/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/student/.m2/repository/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar:/home/student/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.1.0.Final/hibernate-commons-annotations-5.1.0.Final.jar:/home/student/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/student/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar:/home/student/.m2/repository/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar:/home/student/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar:/home/student/.m2/repository/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar:/home/student/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar:/home/student/.m2/repository/org/hibernate/hibernate-c3p0/5.4.4.Final/hibernate-c3p0-5.4.4.Final.jar:/home/student/.m2/repository/com/mchange/c3p0/0.9.5.3/c3p0-0.9.5.3.jar:/home/student/.m2/repository/com/mchange/mchange-commons-java/0.2.15/mchange-commons-java-0.2.15.jar:, java.vm.vendor=Ubuntu, sun.arch.data.model=64, java.vendor.url=https://ubuntu.com/, user.timezone=America/Chicago, os.name=Linux, java.vm.specification.version=11, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=/usr/lib/jvm/java-11-openjdk-amd64/lib, sun.java.command=/home/student/IdeaProjects/bookshelfBanshee/target/surefire/surefirebooter12687675954872304686.jar /home/student/IdeaProjects/bookshelfBanshee/target/surefire/surefire16687039455245805524tmp /home/student/IdeaProjects/bookshelfBanshee/target/surefire/surefire_06286182209620400032tmp, jdk.debug=release, surefire.test.class.path=/home/student/IdeaProjects/bookshelfBanshee/target/test-classes:/home/student/IdeaProjects/bookshelfBanshee/target/classes:/home/student/.m2/repository/org/junit/platform/junit-platform-runner/1.0.0/junit-platform-runner-1.0.0.jar:/home/student/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-launcher/1.0.0/junit-platform-launcher-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-suite-api/1.0.0/junit-platform-suite-api-1.0.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar:/home/student/.m2/repository/org/junit/vintage/junit-vintage-engine/4.12.0/junit-vintage-engine-4.12.0.jar:/home/student/.m2/repository/org/junit/platform/junit-platform-engine/1.0.0/junit-platform-engine-1.0.0.jar:/home/student/.m2/repository/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar:/home/student/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.0.0/junit-jupiter-engine-5.0.0.jar:/home/student/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.0.0/junit-jupiter-api-5.0.0.jar:/home/student/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/student/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/student/.m2/repository/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar:/home/student/.m2/repository/mysql/mysql-connector-java/8.0.16/mysql-connector-java-8.0.16.jar:/home/student/.m2/repository/com/google/protobuf/protobuf-java/3.6.1/protobuf-java-3.6.1.jar:/home/student/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar:/home/student/.m2/repository/org/apache/logging/log4j/log4j-api/2.10.0/log4j-api-2.10.0.jar:/home/student/.m2/repository/org/apache/logging/log4j/log4j-core/2.10.0/log4j-core-2.10.0.jar:/home/student/.m2/repository/org/hibernate/hibernate-core/5.4.4.Final/hibernate-core-5.4.4.Final.jar:/home/student/.m2/repository/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar:/home/student/.m2/repository/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar:/home/student/.m2/repository/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar:/home/student/.m2/repository/net/bytebuddy/byte-buddy/1.9.11/byte-buddy-1.9.11.jar:/home/student/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/student/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar:/home/student/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/home/student/.m2/repository/com/fasterxml/classmate/1.3.4/classmate-1.3.4.jar:/home/student/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/home/student/.m2/repository/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar:/home/student/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.1.0.Final/hibernate-commons-annotations-5.1.0.Final.jar:/home/student/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/student/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar:/home/student/.m2/repository/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar:/home/student/.m2/repository/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar:/home/student/.m2/repository/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar:/home/student/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar:/home/student/.m2/repository/org/hibernate/hibernate-c3p0/5.4.4.Final/hibernate-c3p0-5.4.4.Final.jar:/home/student/.m2/repository/com/mchange/c3p0/0.9.5.3/c3p0-0.9.5.3.jar:/home/student/.m2/repository/com/mchange/mchange-commons-java/0.2.15/mchange-commons-java-0.2.15.jar:, sun.cpu.endian=little, user.home=/home/student, hibernate.c3p0.max_statements=50, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2020-01-14, java.home=/usr/lib/jvm/java-11-openjdk-amd64, file.separator=/, basedir=/home/student/IdeaProjects/bookshelfBanshee, java.vm.compressedOopsMode=32-bit, line.separator=
+, hibernate.c3p0.timeout=300, java.specification.name=Java Platform API Specification, java.vm.specification.vendor=Oracle Corporation, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, surefire.real.class.path=/home/student/IdeaProjects/bookshelfBanshee/target/surefire/surefirebooter12687675954872304686.jar, connection.password=student, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, hibernate.c3p0.max_size=20, java.runtime.version=11.0.6+10-post-Ubuntu-1ubuntu118.04.1, user.name=student, path.separator=:, hibernate.connection.username=****, os.version=5.3.0-28-generic, java.runtime.name=OpenJDK Runtime Environment, hibernate.connection.url=jdbc:mysql://localhost:3306/BookshelfBansheeTest, file.encoding=UTF-8, java.vm.name=OpenJDK 64-Bit Server VM, localRepository=/home/student/.m2/repository, hibernate.connection.driver_class=com.mysql.cj.jdbc.Driver, java.vendor.url.bug=https://bugs.launchpad.net/ubuntu/+source/openjdk-lts, java.io.tmpdir=/tmp, java.version=11.0.6, user.dir=/home/student/IdeaProjects/bookshelfBanshee, os.arch=amd64, connection.username=root, java.vm.specification.name=Java Virtual Machine Specification, java.awt.printerjob=sun.print.PSPrinterJob, hibernate.connection.password=****, sun.os.patch.level=unknown, connection.driver_class=com.mysql.cj.jdbc.Driver, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@488f3dd1, java.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, idea.version2019.1.4=true, java.vendor=Ubuntu, java.vm.info=mixed mode, sharing, java.vm.version=11.0.6+10-post-Ubuntu-1ubuntu118.04.1, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, connection.url=jdbc:mysql://localhost:3306/BookshelfBansheeTest, java.class.version=55.0}
+[DEBUG] 2020-02-17 13:01:28.235 [main] TypeSafeActivator - Unable to acquire Bean Validation ValidatorFactory, skipping activation
+[DEBUG] 2020-02-17 13:01:28.235 [main] JaccIntegrator - Skipping JACC integration as it was not enabled
+[DEBUG] 2020-02-17 13:01:28.236 [main] SessionFactoryImpl - Instantiated session factory
+[DEBUG] 2020-02-17 13:01:28.236 [main] TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@58b91d57] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@236eccd1]
+[DEBUG] 2020-02-17 13:01:28.274 [main] ClassLoaderAccessImpl - Not known whether passed class name [com.bookshelfBanshee.entity.User] is safe
+[DEBUG] 2020-02-17 13:01:28.274 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.bookshelfBanshee.entity.User
+[DEBUG] 2020-02-17 13:01:28.289 [main] ClassLoaderAccessImpl - Not known whether passed class name [com.bookshelfBanshee.entity.User] is safe
+[DEBUG] 2020-02-17 13:01:28.289 [main] ClassLoaderAccessImpl - No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.bookshelfBanshee.entity.User
+[DEBUG] 2020-02-17 13:01:28.499 [main] AbstractEntityPersister - Static SQL for entity: com.bookshelfBanshee.entity.User
+[DEBUG] 2020-02-17 13:01:28.499 [main] AbstractEntityPersister -  Version select: select id from user where id =?
+[DEBUG] 2020-02-17 13:01:28.499 [main] AbstractEntityPersister -  Snapshot select: select user_.id, user_.password as password2_0_, user_.username as username3_0_ from user user_ where user_.id=?
+[DEBUG] 2020-02-17 13:01:28.499 [main] AbstractEntityPersister -  Insert 0: insert into user (password, username, id) values (?, ?, ?)
+[DEBUG] 2020-02-17 13:01:28.499 [main] AbstractEntityPersister -  Update 0: update user set password=?, username=? where id=?
+[DEBUG] 2020-02-17 13:01:28.499 [main] AbstractEntityPersister -  Delete 0: delete from user where id=?
+[DEBUG] 2020-02-17 13:01:28.500 [main] AbstractEntityPersister -  Identity insert: insert into user (password, username) values (?, ?)
+[DEBUG] 2020-02-17 13:01:28.514 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5b02a984]
+[DEBUG] 2020-02-17 13:01:28.515 [main] MetamodelGraphWalker - Visiting attribute path : password
+[DEBUG] 2020-02-17 13:01:28.515 [main] MetamodelGraphWalker - Visiting attribute path : username
+[DEBUG] 2020-02-17 13:01:28.515 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-02-17 13:01:28.523 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-02-17 13:01:28.526 [main] LoadPlanTreePrinter - LoadPlan(entity=com.bookshelfBanshee.entity.User)
+    - Returns
+       - EntityReturnImpl(entity=com.bookshelfBanshee.entity.User, querySpaceUid=<gen:0>, path=com.bookshelfBanshee.entity.User)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.bookshelfBanshee.entity.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[DEBUG] 2020-02-17 13:01:28.527 [main] EntityLoader - Static select for entity com.bookshelfBanshee.entity.User [NONE]: select user0_.id as id1_0_0_, user0_.password as password2_0_0_, user0_.username as username3_0_0_ from user user0_ where user0_.id=?
+[DEBUG] 2020-02-17 13:01:28.527 [main] QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2313db84]
+[DEBUG] 2020-02-17 13:01:28.527 [main] MetamodelGraphWalker - Visiting attribute path : password
+[DEBUG] 2020-02-17 13:01:28.527 [main] MetamodelGraphWalker - Visiting attribute path : username
+[DEBUG] 2020-02-17 13:01:28.527 [main] FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+[DEBUG] 2020-02-17 13:01:28.527 [main] LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+[DEBUG] 2020-02-17 13:01:28.528 [main] LoadPlanTreePrinter - LoadPlan(entity=com.bookshelfBanshee.entity.User)
+    - Returns
+       - EntityReturnImpl(entity=com.bookshelfBanshee.entity.User, querySpaceUid=<gen:0>, path=com.bookshelfBanshee.entity.User)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.bookshelfBanshee.entity.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+[DEBUG] 2020-02-17 13:01:28.528 [main] EntityLoader - Static select for entity com.bookshelfBanshee.entity.User [READ]: select user0_.id as id1_0_0_, user0_.password as password2_0_0_, user0_.username as username3_0_0_ from user user0_ where user0_.id=?
+[DEBUG] 2020-02-17 13:01:28.538 [main] Loader - Static select for action ACTION_MERGE on entity com.bookshelfBanshee.entity.User: select user0_.id as id1_0_0_, user0_.password as password2_0_0_, user0_.username as username3_0_0_ from user user0_ where user0_.id=?
+[DEBUG] 2020-02-17 13:01:28.538 [main] Loader - Static select for action ACTION_REFRESH on entity com.bookshelfBanshee.entity.User: select user0_.id as id1_0_0_, user0_.password as password2_0_0_, user0_.username as username3_0_0_ from user user0_ where user0_.id=?
+[DEBUG] 2020-02-17 13:01:28.556 [main] SchemaManagementToolCoordinator - No actions specified; doing nothing
+[DEBUG] 2020-02-17 13:01:28.556 [main] JtaPlatformInitiator - No JtaPlatform was specified, checking resolver
+[DEBUG] 2020-02-17 13:01:28.557 [main] JtaPlatformResolverInitiator - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+[DEBUG] 2020-02-17 13:01:28.560 [main] StandardJtaPlatformResolver - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2020-02-17 13:01:28.560 [main] JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[DEBUG] 2020-02-17 13:01:28.560 [main] NamedQueryRepository - Checking 0 named HQL queries
+[DEBUG] 2020-02-17 13:01:28.561 [main] NamedQueryRepository - Checking 0 named SQL queries
+[DEBUG] 2020-02-17 13:01:28.562 [main] SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@3ab595c8
+[DEBUG] 2020-02-17 13:01:28.563 [main] SessionFactoryRegistry - Registering SessionFactory: 197eca37-6933-41b0-96ca-c413b94ed4c3 (<unnamed>)
+[DEBUG] 2020-02-17 13:01:28.563 [main] SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
+[DEBUG] 2020-02-17 13:01:28.613 [main] StatisticsInitiator - Statistics initialized [enabled=false]
+[DEBUG] 2020-02-17 13:01:28.624 [main] SQL - select user0_.id as id1_0_0_, user0_.password as password2_0_0_, user0_.username as username3_0_0_ from user user0_ where user0_.id=?
+[DEBUG] 2020-02-17 13:01:28.642 [main] ResultSetProcessorImpl - Starting ResultSet row #0
+[DEBUG] 2020-02-17 13:01:28.642 [main] EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[DEBUG] 2020-02-17 13:01:28.649 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:28.650 [main] TwoPhaseLoad - Processing attribute `password` : value = notPassword
+[DEBUG] 2020-02-17 13:01:28.650 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.650 [main] TwoPhaseLoad - Processing attribute `username` : value = notAdmin
+[DEBUG] 2020-02-17 13:01:28.650 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.650 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:28.651 [main] ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+[DEBUG] 2020-02-17 13:01:28.651 [main] AbstractLoadPlanBasedEntityLoader - Done entity load : com.bookshelfBanshee.entity.User#1
+[DEBUG] 2020-02-17 13:01:28.651 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:28.659 [main] TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[DEBUG] 2020-02-17 13:01:28.659 [main] TransactionImpl - begin
+[DEBUG] 2020-02-17 13:01:28.666 [main] TransactionImpl - committing
+[DEBUG] 2020-02-17 13:01:28.667 [main] AbstractFlushingEventListener - Processing flush-time cascades
+[DEBUG] 2020-02-17 13:01:28.667 [main] AbstractFlushingEventListener - Dirty checking collections
+[DEBUG] 2020-02-17 13:01:28.667 [main] AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 1 deletions to 1 objects
+[DEBUG] 2020-02-17 13:01:28.668 [main] AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[DEBUG] 2020-02-17 13:01:28.668 [main] EntityPrinter - Listing entities:
+[DEBUG] 2020-02-17 13:01:28.668 [main] EntityPrinter - com.bookshelfBanshee.entity.User{password=notPassword, id=1, username=notAdmin}
+[DEBUG] 2020-02-17 13:01:28.672 [main] SQL - delete from user where id=?
+[DEBUG] 2020-02-17 13:01:28.680 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:28.681 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:28.683 [main] JdbcCoordinatorImpl - HHH000420: Closing un-released batch
+[DEBUG] 2020-02-17 13:01:28.700 [main] CriteriaQueryImpl - Rendered criteria query -> select generatedAlias0 from User as generatedAlias0
+[DEBUG] 2020-02-17 13:01:28.710 [main] QueryTranslatorFactoryInitiator - QueryTranslatorFactory: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@2bb31455
+[DEBUG] 2020-02-17 13:01:28.729 [main] QueryTranslatorImpl - parse() - HQL: select generatedAlias0 from com.bookshelfBanshee.entity.User as generatedAlias0
+[DEBUG] 2020-02-17 13:01:28.732 [main] ErrorTracker - throwQueryException() : no errors
+[DEBUG] 2020-02-17 13:01:28.737 [main] QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       +-[FROM] Node: 'from'
+       |  \-[RANGE] Node: 'RANGE'
+       |     +-[DOT] Node: '.'
+       |     |  +-[DOT] Node: '.'
+       |     |  |  +-[DOT] Node: '.'
+       |     |  |  |  +-[IDENT] Node: 'com'
+       |     |  |  |  \-[IDENT] Node: 'bookshelfBanshee'
+       |     |  |  \-[IDENT] Node: 'entity'
+       |     |  \-[IDENT] Node: 'User'
+       |     \-[ALIAS] Node: 'generatedAlias0'
+       \-[SELECT] Node: 'select'
+          \-[IDENT] Node: 'generatedAlias0'
+
+[DEBUG] 2020-02-17 13:01:28.752 [main] HqlSqlBaseWalker - select << begin [level=1, statement=select]
+[DEBUG] 2020-02-17 13:01:28.762 [main] FromElement - FromClause{level=1} : com.bookshelfBanshee.entity.User (generatedAlias0) -> user0_
+[DEBUG] 2020-02-17 13:01:28.764 [main] FromReferenceNode - Resolved : generatedAlias0 -> user0_.id
+[DEBUG] 2020-02-17 13:01:28.765 [main] HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+[DEBUG] 2020-02-17 13:01:28.766 [main] HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} user0_.id ) ( FromClause{level=1} user user0_ ) )
+[DEBUG] 2020-02-17 13:01:28.771 [main] JoinProcessor - Using FROM fragment [user user0_]
+[DEBUG] 2020-02-17 13:01:28.771 [main] HqlSqlBaseWalker - select >> end [level=1, statement=select]
+[DEBUG] 2020-02-17 13:01:28.771 [main] QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (user)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'user0_.id as id1_0_' {alias=generatedAlias0, className=com.bookshelfBanshee.entity.User, tableAlias=user0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'user0_.password as password2_0_, user0_.username as username3_0_'
+    \-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[generatedAlias0], fromElementByTableAlias=[user0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'user user0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=generatedAlias0,role=null,tableName=user,tableAlias=user0_,origin=null,columns={,className=com.bookshelfBanshee.entity.User}}
+
+[DEBUG] 2020-02-17 13:01:28.773 [main] ErrorTracker - throwQueryException() : no errors
+[DEBUG] 2020-02-17 13:01:28.776 [main] QueryTranslatorImpl - HQL: select generatedAlias0 from com.bookshelfBanshee.entity.User as generatedAlias0
+[DEBUG] 2020-02-17 13:01:28.777 [main] QueryTranslatorImpl - SQL: select user0_.id as id1_0_, user0_.password as password2_0_, user0_.username as username3_0_ from user user0_
+[DEBUG] 2020-02-17 13:01:28.777 [main] ErrorTracker - throwQueryException() : no errors
+[DEBUG] 2020-02-17 13:01:28.783 [main] SQL - select user0_.id as id1_0_, user0_.password as password2_0_, user0_.username as username3_0_ from user user0_
+[DEBUG] 2020-02-17 13:01:28.790 [main] Loader - Result set row: 0
+[DEBUG] 2020-02-17 13:01:28.790 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.791 [main] Loader - Result set row: 1
+[DEBUG] 2020-02-17 13:01:28.791 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.791 [main] Loader - Result set row: 2
+[DEBUG] 2020-02-17 13:01:28.791 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.791 [main] Loader - Result set row: 3
+[DEBUG] 2020-02-17 13:01:28.791 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.791 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.791 [main] TwoPhaseLoad - Processing attribute `password` : value = password
+[DEBUG] 2020-02-17 13:01:28.791 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.791 [main] TwoPhaseLoad - Processing attribute `username` : value = admin
+[DEBUG] 2020-02-17 13:01:28.791 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.791 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.791 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.791 [main] TwoPhaseLoad - Processing attribute `password` : value = secure
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Processing attribute `username` : value = user
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Processing attribute `password` : value = password2
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Processing attribute `username` : value = user2
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.792 [main] TwoPhaseLoad - Processing attribute `password` : value = me
+[DEBUG] 2020-02-17 13:01:28.793 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.793 [main] TwoPhaseLoad - Processing attribute `username` : value = encrypt
+[DEBUG] 2020-02-17 13:01:28.793 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.793 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.795 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:28.869 [main] CriteriaQueryImpl - Rendered criteria query -> select generatedAlias0 from User as generatedAlias0
+[DEBUG] 2020-02-17 13:01:28.870 [main] SQL - select user0_.id as id1_0_, user0_.password as password2_0_, user0_.username as username3_0_ from user user0_
+[DEBUG] 2020-02-17 13:01:28.875 [main] Loader - Result set row: 0
+[DEBUG] 2020-02-17 13:01:28.876 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:28.877 [main] Loader - Result set row: 1
+[DEBUG] 2020-02-17 13:01:28.877 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.877 [main] Loader - Result set row: 2
+[DEBUG] 2020-02-17 13:01:28.877 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.877 [main] Loader - Result set row: 3
+[DEBUG] 2020-02-17 13:01:28.877 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.877 [main] Loader - Result set row: 4
+[DEBUG] 2020-02-17 13:01:28.877 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.878 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:28.878 [main] TwoPhaseLoad - Processing attribute `password` : value = notPassword
+[DEBUG] 2020-02-17 13:01:28.878 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.878 [main] TwoPhaseLoad - Processing attribute `username` : value = notAdmin
+[DEBUG] 2020-02-17 13:01:28.878 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.878 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Processing attribute `password` : value = password
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Processing attribute `username` : value = admin
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Processing attribute `password` : value = secure
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Processing attribute `username` : value = user
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Processing attribute `password` : value = password2
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Processing attribute `username` : value = user2
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.879 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.880 [main] TwoPhaseLoad - Processing attribute `password` : value = me
+[DEBUG] 2020-02-17 13:01:28.880 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.880 [main] TwoPhaseLoad - Processing attribute `username` : value = encrypt
+[DEBUG] 2020-02-17 13:01:28.880 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.880 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.881 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:28.938 [main] TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[DEBUG] 2020-02-17 13:01:28.939 [main] TransactionImpl - begin
+[DEBUG] 2020-02-17 13:01:28.943 [main] ActionQueue - Executing identity-insert immediately
+[DEBUG] 2020-02-17 13:01:28.943 [main] SQL - insert into user (password, username) values (?, ?)
+[DEBUG] 2020-02-17 13:01:28.951 [main] IdentifierGeneratorHelper - Natively generated identity: 22
+[DEBUG] 2020-02-17 13:01:28.951 [main] ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+[DEBUG] 2020-02-17 13:01:28.952 [main] TransactionImpl - committing
+[DEBUG] 2020-02-17 13:01:28.952 [main] AbstractFlushingEventListener - Processing flush-time cascades
+[DEBUG] 2020-02-17 13:01:28.952 [main] AbstractFlushingEventListener - Dirty checking collections
+[DEBUG] 2020-02-17 13:01:28.953 [main] AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+[DEBUG] 2020-02-17 13:01:28.953 [main] AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[DEBUG] 2020-02-17 13:01:28.953 [main] EntityPrinter - Listing entities:
+[DEBUG] 2020-02-17 13:01:28.954 [main] EntityPrinter - com.bookshelfBanshee.entity.User{password=newPassword, id=22, username=newUser}
+[DEBUG] 2020-02-17 13:01:28.960 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:28.970 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:28.970 [main] CriteriaQueryImpl - Rendered criteria query -> select generatedAlias0 from User as generatedAlias0
+[DEBUG] 2020-02-17 13:01:28.974 [main] SQL - select user0_.id as id1_0_, user0_.password as password2_0_, user0_.username as username3_0_ from user user0_
+[DEBUG] 2020-02-17 13:01:28.978 [main] Loader - Result set row: 0
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result set row: 1
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result set row: 2
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result set row: 3
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result set row: 4
+[DEBUG] 2020-02-17 13:01:28.979 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.980 [main] Loader - Result set row: 5
+[DEBUG] 2020-02-17 13:01:28.980 [main] Loader - Result row: EntityKey[com.bookshelfBanshee.entity.User#22]
+[DEBUG] 2020-02-17 13:01:28.980 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:28.980 [main] TwoPhaseLoad - Processing attribute `password` : value = notPassword
+[DEBUG] 2020-02-17 13:01:28.980 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.980 [main] TwoPhaseLoad - Processing attribute `username` : value = notAdmin
+[DEBUG] 2020-02-17 13:01:28.980 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `password` : value = password
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `username` : value = admin
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#2]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `password` : value = secure
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `username` : value = user
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#3]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `password` : value = password2
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `username` : value = user2
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#4]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `password` : value = me
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `username` : value = encrypt
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#5]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#22]
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Processing attribute `password` : value = newPassword
+[DEBUG] 2020-02-17 13:01:28.981 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.982 [main] TwoPhaseLoad - Processing attribute `username` : value = newUser
+[DEBUG] 2020-02-17 13:01:28.982 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:28.982 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#22]
+[DEBUG] 2020-02-17 13:01:28.984 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:29.023 [main] SQL - select user0_.id as id1_0_0_, user0_.password as password2_0_0_, user0_.username as username3_0_0_ from user user0_ where user0_.id=?
+[DEBUG] 2020-02-17 13:01:29.029 [main] ResultSetProcessorImpl - Starting ResultSet row #0
+[DEBUG] 2020-02-17 13:01:29.029 [main] EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[DEBUG] 2020-02-17 13:01:29.029 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:29.029 [main] TwoPhaseLoad - Processing attribute `password` : value = notPassword
+[DEBUG] 2020-02-17 13:01:29.029 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:29.029 [main] TwoPhaseLoad - Processing attribute `username` : value = notAdmin
+[DEBUG] 2020-02-17 13:01:29.030 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:29.030 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:29.030 [main] ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+[DEBUG] 2020-02-17 13:01:29.032 [main] AbstractLoadPlanBasedEntityLoader - Done entity load : com.bookshelfBanshee.entity.User#1
+[DEBUG] 2020-02-17 13:01:29.032 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:29.094 [main] SQL - select user0_.id as id1_0_0_, user0_.password as password2_0_0_, user0_.username as username3_0_0_ from user user0_ where user0_.id=?
+[DEBUG] 2020-02-17 13:01:29.096 [main] ResultSetProcessorImpl - Starting ResultSet row #0
+[DEBUG] 2020-02-17 13:01:29.097 [main] EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[DEBUG] 2020-02-17 13:01:29.097 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:29.097 [main] TwoPhaseLoad - Processing attribute `password` : value = notPassword
+[DEBUG] 2020-02-17 13:01:29.097 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:29.097 [main] TwoPhaseLoad - Processing attribute `username` : value = notAdmin
+[DEBUG] 2020-02-17 13:01:29.098 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:29.098 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:29.098 [main] ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+[DEBUG] 2020-02-17 13:01:29.098 [main] AbstractLoadPlanBasedEntityLoader - Done entity load : com.bookshelfBanshee.entity.User#1
+[DEBUG] 2020-02-17 13:01:29.098 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:29.103 [main] TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+[DEBUG] 2020-02-17 13:01:29.103 [main] TransactionImpl - begin
+[DEBUG] 2020-02-17 13:01:29.105 [main] TransactionImpl - committing
+[DEBUG] 2020-02-17 13:01:29.105 [main] AbstractFlushingEventListener - Processing flush-time cascades
+[DEBUG] 2020-02-17 13:01:29.105 [main] AbstractFlushingEventListener - Dirty checking collections
+[DEBUG] 2020-02-17 13:01:29.106 [main] AbstractFlushingEventListener - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
+[DEBUG] 2020-02-17 13:01:29.106 [main] AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[DEBUG] 2020-02-17 13:01:29.106 [main] EntityPrinter - Listing entities:
+[DEBUG] 2020-02-17 13:01:29.106 [main] EntityPrinter - com.bookshelfBanshee.entity.User{password=notPassword, id=1, username=resetUsername}
+[DEBUG] 2020-02-17 13:01:29.106 [main] SQL - update user set password=?, username=? where id=?
+[DEBUG] 2020-02-17 13:01:29.113 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:29.120 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+[DEBUG] 2020-02-17 13:01:29.123 [main] SQL - select user0_.id as id1_0_0_, user0_.password as password2_0_0_, user0_.username as username3_0_0_ from user user0_ where user0_.id=?
+[DEBUG] 2020-02-17 13:01:29.126 [main] ResultSetProcessorImpl - Starting ResultSet row #0
+[DEBUG] 2020-02-17 13:01:29.126 [main] EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[DEBUG] 2020-02-17 13:01:29.127 [main] TwoPhaseLoad - Resolving attributes for [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:29.127 [main] TwoPhaseLoad - Processing attribute `password` : value = notPassword
+[DEBUG] 2020-02-17 13:01:29.127 [main] TwoPhaseLoad - Attribute (`password`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:29.127 [main] TwoPhaseLoad - Processing attribute `username` : value = resetUsername
+[DEBUG] 2020-02-17 13:01:29.127 [main] TwoPhaseLoad - Attribute (`username`)  - enhanced for lazy-loading? - false
+[DEBUG] 2020-02-17 13:01:29.127 [main] TwoPhaseLoad - Done materializing entity [com.bookshelfBanshee.entity.User#1]
+[DEBUG] 2020-02-17 13:01:29.128 [main] ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+[DEBUG] 2020-02-17 13:01:29.128 [main] AbstractLoadPlanBasedEntityLoader - Done entity load : com.bookshelfBanshee.entity.User#1
+[DEBUG] 2020-02-17 13:01:29.128 [main] LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
