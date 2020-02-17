@@ -29,13 +29,13 @@
 [ERROR] 2020-02-17 10:05:50.620 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
 [ERROR] 2020-02-17 10:05:50.665 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
 [ERROR] 2020-02-17 10:05:50.713 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user' doesn't exist
-[INFO ] 2020-02-17 10:54:44.235 [main] UserDao - User Retrieved: edu.matc.entity.User@615439f7
-[INFO ] 2020-02-17 10:54:44.257 [main] UserDao - Deleted user: edu.matc.entity.User@615439f7
+[INFO ] 2020-02-17 10:54:44.235 [main] UserDao - User Retrieved: User@615439f7
+[INFO ] 2020-02-17 10:54:44.257 [main] UserDao - Deleted user: User@615439f7
 [INFO ] 2020-02-17 10:54:44.357 [main] UserDao - Retrieved all users
 [INFO ] 2020-02-17 10:54:44.396 [main] UserDao - Retrieved all users
-[INFO ] 2020-02-17 10:54:44.460 [main] UserDao - Inserted user: edu.matc.entity.User@163e8949
+[INFO ] 2020-02-17 10:54:44.460 [main] UserDao - Inserted user: User@163e8949
 [INFO ] 2020-02-17 10:54:44.473 [main] UserDao - Retrieved all users
-[INFO ] 2020-02-17 10:54:44.529 [main] UserDao - User Retrieved: edu.matc.entity.User@1a717d79
-[INFO ] 2020-02-17 10:54:44.581 [main] UserDao - User Retrieved: edu.matc.entity.User@597a7afa
-[INFO ] 2020-02-17 10:54:44.594 [main] UserDao - Updated user: edu.matc.entity.User@597a7afa
-[INFO ] 2020-02-17 10:54:44.601 [main] UserDao - User Retrieved: edu.matc.entity.User@75ad30c1
+[INFO ] 2020-02-17 10:54:44.529 [main] UserDao - User Retrieved: User@1a717d79
+[INFO ] 2020-02-17 10:54:44.581 [main] UserDao - User Retrieved: User@597a7afa
+[INFO ] 2020-02-17 10:54:44.594 [main] UserDao - Updated user: User@597a7afa
+[INFO ] 2020-02-17 10:54:44.601 [main] UserDao - User Retrieved: User@75ad30c1

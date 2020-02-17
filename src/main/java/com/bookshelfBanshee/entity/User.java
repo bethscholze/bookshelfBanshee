@@ -1,4 +1,4 @@
-package edu.matc.entity;
+package com.bookshelfBanshee.entity;
 
 import com.sun.xml.bind.v2.TODO;
 import org.hibernate.annotations.GenericGenerator;

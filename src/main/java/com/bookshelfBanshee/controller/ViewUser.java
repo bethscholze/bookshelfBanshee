@@ -1,6 +1,6 @@
-package edu.matc.controller;
+package com.bookshelfBanshee.controller;
 
-import edu.matc.persistence.UserDao;
+import com.bookshelfBanshee.persistence.UserDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

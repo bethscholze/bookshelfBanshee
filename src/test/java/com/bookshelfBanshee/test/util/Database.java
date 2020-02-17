@@ -1,4 +1,4 @@
-package edu.matc.test.util;
+package com.bookshelfBanshee.test.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

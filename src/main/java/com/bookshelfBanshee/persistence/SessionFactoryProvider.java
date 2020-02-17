@@ -1,4 +1,4 @@
-package edu.matc.persistence;
+package com.bookshelfBanshee.persistence;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

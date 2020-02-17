@@ -1,4 +1,4 @@
-package edu.matc.entity;
+package com.bookshelfBanshee.entity;
 
 /**
  * The type Role.

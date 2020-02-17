@@ -1,6 +1,7 @@
-package edu.matc.persistence;
+package com.bookshelfBanshee.persistence;
 
-import edu.matc.entity.User;
+import com.bookshelfBanshee.entity.User;
+import com.bookshelfBanshee.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,7 @@ class UserDaoTest {
 
     @BeforeEach
     void setUp() {
-        edu.matc.test.util.Database database = edu.matc.test.util.Database.getInstance();
+        Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
         dao = new UserDao();
