@@ -17,3 +17,4 @@
 |2/16|3|Week 4 exercise|Got week 4 exercise almost done, need to get the rest of the tests working. MYSQL DATADUMP= mysqldump -u root -p BookshelfBansheeTest > BookshelfBansheeTest_backup.sql|
 |2/17|7|Week 4 exercise and project jsps|Finished the week 4 exercise and workied on jsps. Watched some week 5 videos.|
 |2/18|1|Week 5 videos|Finished week 5 videos.|
+
