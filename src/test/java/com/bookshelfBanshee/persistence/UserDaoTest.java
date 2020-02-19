@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserDaoTest {
 
-    UserDao dao;
+    //UserDao dao;
     GenericDao genericDao;
 
     @BeforeEach
@@ -17,7 +17,7 @@ class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new UserDao();
+        //dao = new UserDao();
         //you pass in the object.class as the type
         genericDao = new GenericDao(User.class);
 
@@ -44,22 +44,23 @@ class UserDaoTest {
     @Test
     void insert() {
         User user = new User("newUser", "newPassword");
-        dao.insert(user);
-        int allUsersSize = dao.getAll().size();
+        genericDao.insert(user);
+        int allUsersSize =genericDao.getAll().size();
         assertEquals(6, allUsersSize);
     }
 
     @Test
     void delete() {
-        User user = dao.getById(1);
-        dao.delete(user);
-        int allUsersSize = dao.getAll().size();
+        User user = (User)genericDao.getById(1);
+        genericDao.delete(user);
+        int allUsersSize = genericDao.getAll().size();
         assertEquals(4, allUsersSize);
+        assertNull(genericDao.getById(1));
     }
 
     @Test
     void getAll() {
-        int getAllSize = dao.getAll().size();
+        int getAllSize = genericDao.getAll().size();
         assertEquals(5, getAllSize);
     }
 }
