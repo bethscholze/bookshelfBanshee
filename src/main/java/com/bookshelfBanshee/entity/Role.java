@@ -1,5 +1,7 @@
 package com.bookshelfBanshee.entity;
 
+import java.util.Objects;
+
 /**
  * The type Role.
  */
@@ -7,6 +9,25 @@ public class Role {
     private String role;
     private String username;
     private int id;
+
+    /**
+     * Instantiates a new Role.
+     */
+    public Role() {
+    }
+
+    /**
+     * Instantiates a new Role.
+     *
+     * @param role     the role
+     * @param username the username
+     * @param id       the id
+     */
+    public Role(String role, String username, int id) {
+        this.role = role;
+        this.username = username;
+        this.id = id;
+    }
 
     /**
      * Gets role.
@@ -62,24 +83,27 @@ public class Role {
         this.id = id;
     }
 
-    /**
-     * Instantiates a new Role.
-     */
-    public Role() {
+    @Override
+    public String toString() {
+        return "Role{" +
+                "role='" + role + '\'' +
+                ", username='" + username + '\'' +
+                ", id=" + id +
+                '}';
     }
 
-    /**
-     * Instantiates a new Role.
-     *
-     * @param role     the role
-     * @param username the username
-     * @param id       the id
-     */
-    public Role(String role, String username, int id) {
-        this.role = role;
-        this.username = username;
-        this.id = id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Role role1 = (Role) o;
+        return id == role1.id &&
+                Objects.equals(role, role1.role) &&
+                Objects.equals(username, role1.username);
     }
 
-    //TODO to string method?
+    @Override
+    public int hashCode() {
+        return Objects.hash(role, username, id);
+    }
 }
