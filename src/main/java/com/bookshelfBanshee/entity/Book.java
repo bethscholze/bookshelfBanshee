@@ -30,8 +30,13 @@ public class Book {
     @Column
     private String title;
 
+    // TODO fix this, there can be more than one author, needs to be an array....figure out how to store in table
     @Column
     private String author;
+
+    // TODO add in data instance variables that arent stored in db: publishedDate, pages
+
+
 
     /**
      * Instantiates a new Book.

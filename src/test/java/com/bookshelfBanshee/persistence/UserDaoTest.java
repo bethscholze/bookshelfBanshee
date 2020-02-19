@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserDaoTest {
 
     UserDao dao;
+    GenericDao genericDao;
 
     @BeforeEach
     void setUp() {
@@ -17,10 +18,14 @@ class UserDaoTest {
         database.runSQL("cleandb.sql");
 
         dao = new UserDao();
+        //you pass in the object.class as the type
+        genericDao = new GenericDao(User.class);
+
     }
 
     @Test
     void getById() {
+        //will need to cast for a bunch of these
         User retrievedUser = dao.getById(1);
         assertNotNull(retrievedUser);
         assertEquals("notAdmin", retrievedUser.getUsername());
