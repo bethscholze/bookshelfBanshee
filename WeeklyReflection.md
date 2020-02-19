@@ -9,4 +9,6 @@
 
 - I know caches are hard, could I query on start up and store data in session for the user?
 - maybe limit to certain books, how should I do this, maybe have active reading lists and preferentially load that data?
-- oooo maybe temporary mysql storage, ie query at start then drop data so I am not permanently storing the data.....
+- maybe temporary mysql storage, ie query at start then drop data so I am not permanently storing the data.....
+- If book objects exists throughout the whole session, I could store the data in their instance vairables and it would be available throughout the session.
+- I would need to be careful about putting a time limit on the session though, in case stuff gets left open..*[]: 
