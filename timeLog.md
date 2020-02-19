@@ -15,3 +15,5 @@
 |2/10|5|Finalize exercise 3. Project design|All test passing for exercise 3, click on the run on the left side and it will provide test coverage. Update stuff more tonight since you for got the list you made. Work on wireframes.|
 |2/12|5|Week 4 videos and exercise|Caught up on week 4 videos and started the week 4 exercise. Remember to colpy the config file to the test directory to get mysql test db to work.|
 |2/16|3|Week 4 exercise|Got week 4 exercise almost done, need to get the rest of the tests working. MYSQL DATADUMP= mysqldump -u root -p BookshelfBansheeTest > BookshelfBansheeTest_backup.sql|
+|2/17|7|Week 4 exercise and project jsps|Finished the week 4 exercise and workied on jsps. Watched some week 5 videos.|
+|2/18|1|Week 5 videos|Finished week 5 videos.|
