@@ -13,6 +13,7 @@ import java.util.Set;
 @Entity(name = "User")
 @Table(name = "user")
 public class User {
+    //probably dont have to map these since they have the same name as the column
     @Column(name = "username")
     private String username;
 
@@ -24,7 +25,9 @@ public class User {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    private Set<Book> books = new HashSet<Book>();
+    //User is the parent, it gets a set of its children(in this case) and maps one to many
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Book> books = new HashSet<>();
 
     /**
      * Instantiates a new User.

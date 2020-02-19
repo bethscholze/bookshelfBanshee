@@ -14,7 +14,7 @@ public class Book {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    //@Column
+    @ManyToOne //book is the child table of users so gets a one to many with a User
     private User user;
 
     @Column(name = "isbn_10")
