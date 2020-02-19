@@ -26,18 +26,19 @@ class UserDaoTest {
     @Test
     void getById() {
         //will need to cast for a bunch of these
-        User retrievedUser = dao.getById(1);
+        User retrievedUser = (User)genericDao.getById(1);
         assertNotNull(retrievedUser);
         assertEquals("notAdmin", retrievedUser.getUsername());
     }
 
     @Test
     void saveOrUpdate() {
-        User retrievedUser = dao.getById(1);
-        retrievedUser.setUsername("resetUsername");
-        dao.saveOrUpdate(retrievedUser);
-        User updatedUser = dao.getById(1);
-        assertEquals("resetUsername", updatedUser.getUsername());
+        User retrievedUser = (User)genericDao.getById(1);
+        String newUsername = "resetUsername";
+        retrievedUser.setUsername(newUsername);
+        genericDao.saveOrUpdate(retrievedUser);
+        User updatedUser = (User)genericDao.getById(1);
+        assertEquals(retrievedUser, updatedUser);
     }
 
     @Test
