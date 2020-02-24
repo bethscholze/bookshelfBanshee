@@ -17,4 +17,6 @@
 |2/16|3|Week 4 exercise|Got week 4 exercise almost done, need to get the rest of the tests working. MYSQL DATADUMP= mysqldump -u root -p BookshelfBansheeTest > BookshelfBansheeTest_backup.sql|
 |2/17|7|Week 4 exercise and project jsps|Finished the week 4 exercise and workied on jsps. Watched some week 5 videos.|
 |2/18|1|Week 5 videos|Finished week 5 videos.|
-
+|2/19|5|Week 5 work|Created book class and added book table to database|
+|2/22|4|Project work|Worked on html pages for my project, need to paste the hmtl into my current jsps|
+|2/23|4|Week 5 daotests|writing and debuggin why tests weren't passing. Put user and book in toString creating a stackoverflow. Don't do that|

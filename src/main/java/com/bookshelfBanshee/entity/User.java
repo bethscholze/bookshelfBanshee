@@ -136,13 +136,12 @@ public class User {
         User user = (User) o;
         return id == user.id &&
                 Objects.equals(username, user.username) &&
-                Objects.equals(password, user.password) &&
-                Objects.equals(books, user.books);
+                Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, password, id, books);
+        return Objects.hash(username, password, id);
     }
 }
 

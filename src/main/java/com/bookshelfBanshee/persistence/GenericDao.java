@@ -32,7 +32,7 @@ public class GenericDao<T> {
         //have to cast the type of object
         T entity = (T)session.get(type, id);
         session.close();
-        logger.info("User Retrieved: {}", entity);
+        logger.info("Entity Retrieved: {}", entity);
         return entity;
     }
 
@@ -42,7 +42,7 @@ public class GenericDao<T> {
         session.saveOrUpdate(entity);
         transaction.commit();
         session.close();
-        logger.info("Updated user: {}", entity);
+        logger.info("Updated entity: {}", entity);
     }
 
     public int insert(T entity) {
@@ -52,7 +52,7 @@ public class GenericDao<T> {
         id = (int)session.save(entity);
         transaction.commit();
         session.close();
-        logger.info("Inserted user: {}", entity);
+        logger.info("Inserted entity: {}", entity);
         return id;
     }
 
@@ -62,7 +62,7 @@ public class GenericDao<T> {
         session.delete(entity);
         transaction.commit();
         session.close();
-        logger.info("Deleted user: {}", entity);
+        logger.info("Deleted entity: {}", entity);
     }
 
     public List<T> getAll() {
@@ -77,7 +77,7 @@ public class GenericDao<T> {
         List<T> entities = session.createQuery(query).getResultList();
         session.close();
 
-        logger.info("Retrieved all users");
+        logger.info("Retrieved all entities");
 
         return entities;
     }

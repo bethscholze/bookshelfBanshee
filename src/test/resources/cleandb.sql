@@ -4,3 +4,7 @@ INSERT INTO user VALUES (2,'admin','password');
 INSERT INTO user VALUES (3,'user','secure');
 INSERT INTO user VALUES (4,'user2','password2');
 INSERT INTO user VALUES (5,'encrypt','me');
+delete from book;
+insert into book (id, isbn_10, isbn_13, title, author, user_id)values (1, '125031318X', '9781250313188', 'Gideon the Ninth', 'Tamsyn Muir', 2);
+INSERT INTO book (id, isbn_10, isbn_13, title, author, user_id) values (2, '1781084491', '9781781084496', 'Ninefox Gambit', 'Yoon Ha Lee', 1);
+INSERT INTO book (id, isbn_10, isbn_13, title, author, user_id) values (3, '1781085374', '9781781085370', 'Raven Stratagem', 'Yoon Ha Lee', 1);

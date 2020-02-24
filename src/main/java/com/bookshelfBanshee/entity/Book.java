@@ -17,22 +17,22 @@ public class Book {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @ManyToOne //book is the child table of users so gets a one to many with a User
-    private User user;
-
     @Column(name = "isbn_10")
-    private int isbn10;
+    private String isbn10;
 
     @Column(name = "isbn_13")
-    private int isbn13;
+    private String isbn13;
 
     //double check that I don't have to specify since the names are the same as the column
-    @Column
+    @Column(name = "title")
     private String title;
 
     // TODO fix this, there can be more than one author, needs to be an array....figure out how to store in table
-    @Column
+    @Column(name = "author")
     private String author;
+
+    @ManyToOne
+    private User user;
 
     // TODO add in data instance variables that arent stored in db: publishedDate, pages
 
@@ -53,7 +53,7 @@ public class Book {
      * @param author the author
      * @param user   the user
      */
-    public Book(int isbn10, int isbn13, String title, String author, User user) {
+    public Book(String isbn10, String isbn13, String title, String author, User user) {
         this.user = user;
         this.isbn10 = isbn10;
         this.isbn13 = isbn13;
@@ -102,7 +102,7 @@ public class Book {
      *
      * @return the isbn 10
      */
-    public int getIsbn10() {
+    public String getIsbn10() {
         return isbn10;
     }
 
@@ -111,7 +111,7 @@ public class Book {
      *
      * @param isbn10 the isbn 10
      */
-    public void setIsbn10(int isbn10) {
+    public void setIsbn10(String isbn10) {
         this.isbn10 = isbn10;
     }
 
@@ -120,7 +120,7 @@ public class Book {
      *
      * @return the isbn 13
      */
-    public int getIsbn13() {
+    public String getIsbn13() {
         return isbn13;
     }
 
@@ -129,7 +129,7 @@ public class Book {
      *
      * @param isbn13 the isbn 13
      */
-    public void setIsbn13(int isbn13) {
+    public void setIsbn13(String isbn13) {
         this.isbn13 = isbn13;
     }
 
@@ -170,32 +170,30 @@ public class Book {
     }
 
     @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", user=" + user +
-                ", isbn10=" + isbn10 +
-                ", isbn13=" + isbn13 +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
         return id == book.id &&
-                isbn10 == book.isbn10 &&
-                isbn13 == book.isbn13 &&
-                Objects.equals(user, book.user) &&
+                Objects.equals(isbn10, book.isbn10) &&
+                Objects.equals(isbn13, book.isbn13) &&
                 Objects.equals(title, book.title) &&
                 Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user, isbn10, isbn13, title, author);
+        return Objects.hash(id, isbn10, isbn13, title, author);
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", isbn10='" + isbn10 + '\'' +
+                ", isbn13='" + isbn13 + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                '}';
     }
 }

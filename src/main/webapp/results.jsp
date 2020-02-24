@@ -33,6 +33,25 @@
         </c:forEach>
         </tbody>
     </table>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Author</td>
+        </tr>
+
+        </thead>
+        <tbody>
+        <c:forEach items="${books}" var="book">
+            <tr>
+                <td>${book.id}</td>
+                <td>${book.title}</td>
+                <td>${book.author}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 
 </div>
 

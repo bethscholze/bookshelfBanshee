@@ -1125,30 +1125,28 @@
     </column>
     <column id="283" parent="280" name="isbn_10">
       <Position>2</Position>
-      <DataType>int(10)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="284" parent="280" name="isbn_13">
       <Position>3</Position>
-      <DataType>int(13)|0s</DataType>
+      <DataType>varchar(13)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="285" parent="280" name="title">
       <Position>4</Position>
       <DataType>varchar(65)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="286" parent="280" name="author">
       <Position>5</Position>
       <DataType>varchar(65)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="287" parent="280" name="user_id">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="288" parent="280" name="book_user_id_fk">
