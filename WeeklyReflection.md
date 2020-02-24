@@ -35,3 +35,6 @@ saleInfo{country}
 - https://developers.google.com/books/docs/viewer/developers_guide
 - SET UP API KEY- login to google developers with my google account...there is a create credentials
 
+- add an AUTHOR table maybe or remove author data
+
+- special bookDataTable table userid, dataid, colmn_name, data_value
