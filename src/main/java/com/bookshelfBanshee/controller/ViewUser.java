@@ -23,8 +23,6 @@ public class ViewUser extends HttpServlet {
 
         GenericDao userDao = new GenericDao(User.class);
         req.setAttribute("users", userDao.getAll());
-//        UserDao userDao = new UserDao();
-//        req.setAttribute("users", userDao.getAll());
         GenericDao bookDao = new GenericDao(Book.class);
         req.setAttribute("books", bookDao.getAll());
         RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");

@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <h2>Search Results: </h2>
     <table class="table">
-        <thead>
+        <thead class="table-light">
         <tr>
             <td>ID</td>
             <td>Username</td>
@@ -23,7 +23,7 @@
         </tr>
 
         </thead>
-        <tbody>
+        <tbody class="bg-white">
         <c:forEach items="${users}" var="user">
             <tr>
                 <td>${user.id}</td>
@@ -34,7 +34,7 @@
         </tbody>
     </table>
     <table class="table">
-        <thead>
+        <thead class="table-light">
         <tr>
             <td>ID</td>
             <td>Title</td>
@@ -42,7 +42,7 @@
         </tr>
 
         </thead>
-        <tbody>
+        <tbody class="bg-white">
         <c:forEach items="${books}" var="book">
             <tr>
                 <td>${book.id}</td>

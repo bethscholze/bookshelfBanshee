@@ -45,7 +45,7 @@ class UserDaoTest {
     void insert() {
         User user = new User("newUser", "newPassword");
         genericDao.insert(user);
-        int allUsersSize =genericDao.getAll().size();
+        int allUsersSize = genericDao.getAll().size();
         assertEquals(6, allUsersSize);
     }
 

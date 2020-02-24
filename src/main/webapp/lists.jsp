@@ -1,7 +1,12 @@
-
+<%--
+  Created by IntelliJ IDEA.
+  User: student
+  Date: 2/24/20
+  Time: 10:46 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<!-- <%-- <%@include file="head.jsp"%> --%> -->
-<!-- this is the stuff in the head.jsp -->
 <%--TODO take out head stuff and replace with import--%>
     <head>
         <meta charset="utf-8">
@@ -54,21 +59,18 @@
                 </div>
             </nav>
         </header>
-        <section class="row justify-content-around d-flex align-items-center mx-5">
-            <div class="col-3 card">
-                <h2>Bookshelf</h2>
+        <section class="row d-flex justify-content-between align-items-center">
+            <div class="col-3 bg-dark text-light text-center">
+                <h2 class="p-1">Lists</h2>
             </div>
-            <div class="col-3 card">
-                <h2>Lists</h2>
+            <div class="col-6 bg-light">
+                <h2>Current list</h2>
             </div>
-            <div class="col-3 card">
-                <h2>Stats</h2>
+            <div class="col-2">
+                <h2>Manage List</h2>
             </div>
-
         </section>
 
 
     </body>
-
-
 </html>
