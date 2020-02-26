@@ -37,6 +37,6 @@ saleInfo{country}
 
 - add an AUTHOR table maybe or remove author data
 
-- special bookDataTable table userid, dataid, colmn_name, data_value
+- special bookDataTable table userid, dataid, column_name, data_value
 
 - double check password length
