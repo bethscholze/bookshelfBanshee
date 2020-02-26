@@ -20,3 +20,6 @@
 |2/19|5|Week 5 work|Created book class and added book table to database|
 |2/22|4|Project work|Worked on html pages for my project, need to paste the hmtl into my current jsps|
 |2/23|4|Week 5 daotests|writing and debuggin why tests weren't passing. Put user and book in toString creating a stackoverflow. Don't do that|
+|2/24|3|Week 6|In class code reviews/discussions. Read a little on aws for the week|
+|2/26|3|Week 6|Got my account id to send to Paula. Code reviewed Elspeth's project.|
+|2/26|2|Week 6|Code review Anthony's project|
