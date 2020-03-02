@@ -46,3 +46,9 @@ saleInfo{country}
 QUESTIONS for checkpoint 2
 
 -with hibernate, I do not need to make objects for the bridging table correct?
+
+@transient to have hibernate ignore the data that I don't want to put into the database
+
+-make sure to implement unit testing for all my dao's as I go so I can see if I break them and am doing them correctly.
+
+
