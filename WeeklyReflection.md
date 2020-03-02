@@ -40,3 +40,9 @@ saleInfo{country}
 - special bookDataTable table userid, dataid, column_name, data_value
 
 - double check password length
+
+- do I need a bookshelf controller? that everything gets routed through? like we had employee directory?
+
+QUESTIONS for checkpoint 2
+
+-with hibernate, I do not need to make objects for the bridging table correct?

@@ -81,4 +81,6 @@ public class GenericDao<T> {
 
         return entities;
     }
+
+    //add in the get by property methods to get books based on user id
 }

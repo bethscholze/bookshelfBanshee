@@ -22,4 +22,7 @@
 |2/23|4|Week 5 daotests|writing and debuggin why tests weren't passing. Put user and book in toString creating a stackoverflow. Don't do that|
 |2/24|3|Week 6|In class code reviews/discussions. Read a little on aws for the week|
 |2/26|3|Week 6|Got my account id to send to Paula. Code reviewed Elspeth's project.|
-|2/26|2|Week 6|Code review Anthony's project|
+|2/26|2|Week 6|Code review Anthony's project. Planning some methods for my project.|
+|3/1|4|Week 6|setup aws, videos|
+|3/2|3|Week 6-7|Working on checkpoint 2, erd and class diagrams|
+
