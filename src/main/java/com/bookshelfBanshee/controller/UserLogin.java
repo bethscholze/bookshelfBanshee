@@ -20,6 +20,7 @@ public class UserLogin extends HttpServlet {
         //set these in a new user object
         //pass this new user object into the userdao to insert it into the database
         //return a success to the screen if the username and password is found in the user table.
+        //redirect to the users home page.
         /*
         GenericDao userDao = new GenericDao(User.class);
         userDao.insert();
