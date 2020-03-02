@@ -5,7 +5,7 @@
 - [x] Write project plan
 
 ### Week 4
-- [ ] Do database design
+- [x] Do database design
 - [x] Create sign up/log in tables
 - [x] Create jsp's for sign up / login in
 - [x] try to finish home page jsp
@@ -25,7 +25,7 @@
 - [x] create books models
 
 ### Week 6
-- [ ] create db on AWS
+- [x] create db on AWS
 - [ ] deploy to aws
 - [x] create books dao
 - [ ] create edit Books functionality

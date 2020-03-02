@@ -3,7 +3,6 @@ package com.bookshelfBanshee.controller;
 import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.persistence.GenericDao;
-import com.bookshelfBanshee.persistence.UserDao;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

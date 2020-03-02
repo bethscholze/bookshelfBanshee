@@ -41,10 +41,9 @@ public class Database {
         try {
             properties.load (this.getClass().getResourceAsStream("/database.properties"));
         } catch (IOException ioe) {
-            System.out.println("Database.loadProperties()...Cannot load the properties file");
-            ioe.printStackTrace();
+            logger.error("Database.loadProperties()...Cannot load the properties file", ioe);
         } catch (Exception e) {
-            System.out.println("Database.loadProperties()..." + e);
+            logger.error("Database.loadProperties()...", e);
             e.printStackTrace();
         }
 
@@ -78,7 +77,7 @@ public class Database {
             try {
                 connection.close();
             } catch (SQLException e) {
-                System.out.println("Cannot close connection" + e);
+               logger.error("Cannot close connection", e);
             }
         }
 
@@ -90,7 +89,7 @@ public class Database {
      *
      * @param sqlFile the sql file to be read and executed line by line
      */
-//    TODO update this with the new class she has which can read multiline sql statements
+
     public void runSQL(String sqlFile) {
 
         Statement stmt = null;

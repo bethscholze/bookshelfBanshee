@@ -9,7 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserDaoTest {
 
-    //UserDao dao;
     GenericDao genericDao;
 
     @BeforeEach
@@ -17,7 +16,6 @@ class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        //dao = new UserDao();
         //you pass in the object.class as the type
         genericDao = new GenericDao(User.class);
 
