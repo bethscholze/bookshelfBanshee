@@ -24,10 +24,17 @@ public class UserLogin extends HttpServlet {
         /*
         GenericDao userDao = new GenericDao(User.class);
         userDao.insert();
-        req.setAttribute("users", userDao.getAll());
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
-        dispatcher.forward(req, resp);
 
-        */
+        req.setAttribute("users", userDao.getAll());
+         */
+//        if (req.isUserInRole("admin")) {
+//            RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
+//            dispatcher.forward(req, resp);
+//        } else {
+//            RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
+//            dispatcher.forward(req, resp);
+//        }
+
     }
+
 }

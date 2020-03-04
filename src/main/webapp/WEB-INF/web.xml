@@ -3,4 +3,40 @@
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
         version="3.1">
   <display-name>Archetype Created Web Application</display-name>
+
+  <!-- Tell the server to use form-based authentication. -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/login.jsp</form-login-page>
+      <form-error-page>/loginError.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+
+  <!-- Protect the viewUser page. -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>UserHome</web-resource-name>
+      <url-pattern>/home.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+<!--  &lt;!&ndash; Protect everything in the adminOnly directory &ndash;&gt;-->
+<!--  <security-constraint>-->
+<!--    <web-resource-collection>-->
+<!--      <web-resource-name>admin</web-resource-name>-->
+<!--      <url-pattern>/adminOnly/*</url-pattern>-->
+<!--    </web-resource-collection>-->
+<!--    <auth-constraint>-->
+<!--      <role-name>admin</role-name>-->
+<!--    </auth-constraint>-->
+<!--  </security-constraint>-->
+
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
 </web-app>
+

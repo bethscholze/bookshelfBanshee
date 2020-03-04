@@ -1,14 +1,29 @@
 package com.bookshelfBanshee.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
  * The type Role.
  */
+@Entity(name = "Role")
+@Table(name = "role")
 public class Role {
+    @Column(name="role")
     private String role;
+
+    @Column(name = "username")
     private String username;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int id;
+
+    @ManyToOne
+    private User user;
 
     /**
      * Instantiates a new Role.
@@ -22,11 +37,13 @@ public class Role {
      * @param role     the role
      * @param username the username
      * @param id       the id
+     * @param user     the user
      */
-    public Role(String role, String username, int id) {
+    public Role(String role, String username, int id, User user) {
         this.role = role;
         this.username = username;
         this.id = id;
+        this.user = user;
     }
 
     /**
@@ -57,6 +74,15 @@ public class Role {
     }
 
     /**
+     * Gets user.
+     *
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
      * Sets role.
      *
      * @param role the role
@@ -81,6 +107,15 @@ public class Role {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
