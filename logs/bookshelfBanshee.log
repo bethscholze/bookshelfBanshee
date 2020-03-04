@@ -1,0 +1,69 @@
+[INFO ] 2020-03-04 15:44:36.655 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:44:36.702 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:44:36.829 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:44:36.838 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-04 15:44:36.921 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:44:36.964 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=73}
+[INFO ] 2020-03-04 15:44:36.979 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:44:37.011 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:44:37.043 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:44:37.052 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:44:37.057 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:44:37.102 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:44:37.138 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:44:37.157 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:44:37.167 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-04 15:44:37.232 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:44:37.271 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-04 15:44:37.276 [main] GenericDao - Inserted entity: Book{id=45, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:44:37.286 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:44:37.318 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:44:37.361 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:44:37.373 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:44:37.387 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:48:03.381 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:48:03.431 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:48:03.559 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:48:03.572 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-04 15:48:03.665 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:48:03.732 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=74}
+[INFO ] 2020-03-04 15:48:03.756 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:48:03.810 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:48:03.853 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:48:03.866 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:48:03.885 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:48:03.931 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:48:03.966 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:48:03.991 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:48:03.996 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-04 15:48:04.046 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:48:04.096 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-04 15:48:04.104 [main] GenericDao - Inserted entity: Book{id=46, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:48:04.121 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:48:04.179 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:48:04.235 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:48:04.240 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:48:04.250 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:51:18.529 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:51:18.596 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:51:18.705 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:51:18.712 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-04 15:51:18.812 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:51:18.902 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=75}
+[INFO ] 2020-03-04 15:51:18.928 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:51:18.976 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:51:19.024 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:51:19.042 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:51:19.060 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-04 15:51:19.131 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:51:19.173 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:51:19.185 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:51:19.190 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-04 15:51:19.242 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:51:19.301 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-04 15:51:19.318 [main] GenericDao - Inserted entity: Book{id=47, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:51:19.342 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-04 15:51:19.375 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:51:19.416 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:51:19.424 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-04 15:51:19.432 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
