@@ -1,5 +1,6 @@
 package com.bookshelfBanshee.persistence;
 
+import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserDaoTest {
 
     GenericDao genericDao;
+    GenericDao bookDao;
 
     @BeforeEach
     void setUp() {
@@ -18,6 +20,7 @@ class UserDaoTest {
 
         //you pass in the object.class as the type
         genericDao = new GenericDao(User.class);
+        bookDao = new GenericDao(Book.class);
 
     }
 
@@ -54,6 +57,8 @@ class UserDaoTest {
         int allUsersSize = genericDao.getAll().size();
         assertEquals(4, allUsersSize);
         assertNull(genericDao.getById(1));
+        int allBooksSize = bookDao.getAll().size();
+        assertEquals(1, allBooksSize);
     }
 
     @Test

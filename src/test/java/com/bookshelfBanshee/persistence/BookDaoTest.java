@@ -55,6 +55,8 @@ class BookDaoTest {
         int allBooksSize = genericDao.getAll().size();
         assertEquals(2, allBooksSize);
         assertNull(genericDao.getById(1));
+        int allUsersSize = userDao.getAll().size();
+        assertEquals(5, allUsersSize);
     }
 
     @Test

@@ -25,4 +25,7 @@
 |2/26|2|Week 6|Code review Anthony's project. Planning some methods for my project.|
 |3/1|4|Week 6|setup aws, videos|
 |3/2|3|Week 6-7|Working on checkpoint 2, erd and class diagrams|
+|3/4|5|Week 7|implemented login, worked on professional development presentation|
+|3/8|3|Professional Dev|added links to materials for presentation|
+|3/9|1|Week 5 testing|Fixed mysql daylight savings error, updated my tests for the one to many to test the outcome of deletes.|
 
