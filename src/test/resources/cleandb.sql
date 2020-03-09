@@ -1,10 +1,13 @@
 delete from user;
+delete from book;
+delete from user_role;
 Insert into user (id, username, password) values (1, 'notAdmin', 'notPassword');
-INSERT INTO user VALUES (2,'admin','password');
+INSERT INTO user VALUES (2,'me','password');
 INSERT INTO user VALUES (3,'user','secure');
 INSERT INTO user VALUES (4,'user2','password2');
 INSERT INTO user VALUES (5,'encrypt','me');
-delete from book;
 insert into book (id, isbn_10, isbn_13, title, author, user_id)values (1, '125031318X', '9781250313188', 'Gideon the Ninth', 'Tamsyn Muir', 2);
 INSERT INTO book (id, isbn_10, isbn_13, title, author, user_id) values (2, '1781084491', '9781781084496', 'Ninefox Gambit', 'Yoon Ha Lee', 1);
 INSERT INTO book (id, isbn_10, isbn_13, title, author, user_id) values (3, '1781085374', '9781781085370', 'Raven Stratagem', 'Yoon Ha Lee', 1);
+insert into user_role (id, user_id, user_username, role)values (1,2,'me','administrator');
+insert into user_role (id, user_id, user_username, role)values (2,1,'notAdmin','user');

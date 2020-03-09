@@ -61,7 +61,7 @@ class BookDaoTest {
 
     @Test
     void getAll() {
-        int allBooksSize =genericDao.getAll().size();
+        int allBooksSize = genericDao.getAll().size();
         assertEquals(3, allBooksSize);
     }
 }

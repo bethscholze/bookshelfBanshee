@@ -9,20 +9,24 @@ import java.util.Objects;
  * The type Role.
  */
 @Entity(name = "Role")
-@Table(name = "role")
+@Table(name = "user_role")
 public class Role {
-    @Column(name="role")
+    @Column(name = "role")
     private String role;
 
-    @Column(name = "username")
-    private String username;
+//    @Column(name = "username")
+    //private String username;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
+    // this sets the user, I will have to pull the username out of this ifI want to access it
+    // with the one to many relationship mapping on the username, I cannot have the username
+    // as an instance variable in this class
     @ManyToOne
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "userrole_user_id_fk"))
     private User user;
 
     /**
@@ -35,13 +39,11 @@ public class Role {
      * Instantiates a new Role.
      *
      * @param role     the role
-     * @param username the username
      * @param id       the id
      * @param user     the user
      */
-    public Role(String role, String username, int id, User user) {
+    public Role(String role, int id, User user) {
         this.role = role;
-        this.username = username;
         this.id = id;
         this.user = user;
     }
@@ -53,15 +55,6 @@ public class Role {
      */
     public String getRole() {
         return role;
-    }
-
-    /**
-     * Gets username.
-     *
-     * @return the username
-     */
-    public String getUsername() {
-        return username;
     }
 
     /**
@@ -91,14 +84,6 @@ public class Role {
         this.role = role;
     }
 
-    /**
-     * Sets username.
-     *
-     * @param username the username
-     */
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     /**
      * Sets id.
@@ -122,7 +107,6 @@ public class Role {
     public String toString() {
         return "Role{" +
                 "role='" + role + '\'' +
-                ", username='" + username + '\'' +
                 ", id=" + id +
                 '}';
     }
@@ -133,12 +117,11 @@ public class Role {
         if (o == null || getClass() != o.getClass()) return false;
         Role role1 = (Role) o;
         return id == role1.id &&
-                Objects.equals(role, role1.role) &&
-                Objects.equals(username, role1.username);
+                Objects.equals(role, role1.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(role, username, id);
+        return Objects.hash(role, id);
     }
 }

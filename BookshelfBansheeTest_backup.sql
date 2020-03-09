@@ -19,7 +19,7 @@
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS user;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `user` (
@@ -34,10 +34,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'notAdmin','notPassword');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES user WRITE;
+/*!40000 ALTER TABLE user DISABLE KEYS */;
+INSERT INTO user VALUES (1,'notAdmin','notPassword');
+/*!40000 ALTER TABLE user ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

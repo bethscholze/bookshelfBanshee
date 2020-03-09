@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="BookshelfBanshee@localhost">
+<dataSource name="BookshelfBansheeTest@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
       <ServerVersion>8.0.16</ServerVersion>
@@ -8,11 +8,11 @@
       <DefaultCasing>exact</DefaultCasing>
     </root>
     <schema id="2" parent="1" name="BookshelfBanshee">
-      <Current>1</Current>
-      <Visible>1</Visible>
       <Collation>utf8mb4_0900_ai_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="BookshelfBansheeTest">
+      <Current>1</Current>
+      <Visible>1</Visible>
       <Collation>utf8mb4_0900_ai_ci</Collation>
     </schema>
     <schema id="4" parent="1" name="information_schema">
@@ -1117,9 +1117,9 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="281" parent="2" name="book"/>
-    <table id="282" parent="2" name="user"/>
-    <table id="283" parent="2" name="user_role"/>
+    <table id="281" parent="3" name="book"/>
+    <table id="282" parent="3" name="user"/>
+    <table id="283" parent="3" name="user_role"/>
     <column id="284" parent="281" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -1164,7 +1164,7 @@
     </key>
     <foreign-key id="292" parent="281" name="book_user_id_fk">
       <ColNames>user_id</ColNames>
-      <RefSchemaName>BookshelfBanshee</RefSchemaName>
+      <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
@@ -1210,31 +1210,37 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="283" name="username">
+    <column id="300" parent="283" name="user_username">
       <Position>2</Position>
       <DataType>varchar(25)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="301" parent="283" name="role">
       <Position>3</Position>
       <DataType>varchar(25)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="302" parent="283" name="role_user_username_fk">
-      <ColNames>username</ColNames>
+    <column id="302" parent="283" name="user_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="303" parent="283" name="user_role_user_id_fk">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="303" parent="283" name="PRIMARY">
+    <key id="304" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="304" parent="283" name="role_user_username_fk">
-      <ColNames>username</ColNames>
-      <RefSchemaName>BookshelfBanshee</RefSchemaName>
+    <foreign-key id="305" parent="283" name="user_role_user_id_fk">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>user</RefTableName>
-      <RefColNames>username</RefColNames>
+      <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>

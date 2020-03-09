@@ -144,3 +144,209 @@
 [INFO ] 2020-03-09 09:55:01.231 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
 [INFO ] 2020-03-09 09:55:01.238 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
 [INFO ] 2020-03-09 09:55:01.246 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-09 10:31:02.112 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:31:04.823 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 10:31:04.872 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 10:31:05.097 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 10:31:05.118 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 10:31:05.138 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 10:31:05.195 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:31:05.218 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 10:31:05.262 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:31:05.281 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=78}
+[INFO ] 2020-03-09 10:31:05.311 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 10:31:05.344 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:31:05.352 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[ERROR] 2020-03-09 10:31:05.385 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:31:05.410 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 10:31:05.426 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 10:31:05.433 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[ERROR] 2020-03-09 10:32:02.718 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:32:04.536 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 10:32:04.574 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 10:32:04.674 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 10:32:04.679 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 10:32:04.708 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 10:32:04.753 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:32:04.789 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 10:32:04.822 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:32:04.827 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-09 10:32:04.854 [main] GenericDao - Inserted entity: Book{id=50, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 10:32:04.863 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 10:32:04.895 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:32:04.901 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[ERROR] 2020-03-09 10:32:04.942 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[INFO ] 2020-03-09 10:32:04.948 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 10:32:04.955 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 10:32:04.970 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-09 10:37:55.774 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.role' doesn't exist
+[ERROR] 2020-03-09 10:55:11.587 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 10:58:26.229 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[INFO ] 2020-03-09 11:10:26.514 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=79}
+[INFO ] 2020-03-09 11:12:06.883 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:07.004 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:07.059 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:07.075 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 11:12:07.091 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:07.150 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:07.201 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=80}
+[INFO ] 2020-03-09 11:12:07.250 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:07.303 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:07.351 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:07.369 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:07.379 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:07.462 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:07.492 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:07.507 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:07.516 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 11:12:07.536 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:07.581 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:07.614 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-09 11:12:07.621 [main] GenericDao - Inserted entity: Book{id=51, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:07.635 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:07.678 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:07.733 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:07.742 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:07.760 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:41.015 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:41.059 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:41.176 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:41.186 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 11:12:41.202 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:41.307 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:41.372 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=81}
+[INFO ] 2020-03-09 11:12:41.397 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:41.446 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:41.502 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:41.521 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:41.532 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:12:41.606 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:41.634 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:41.645 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:41.652 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 11:12:41.674 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:41.713 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:41.762 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-09 11:12:41.773 [main] GenericDao - Inserted entity: Book{id=52, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:41.794 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:12:41.845 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:41.884 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:41.889 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:12:41.897 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:24:15.339 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:24:15.391 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:24:15.550 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:24:15.558 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 11:24:15.582 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:24:15.674 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:24:15.737 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=82}
+[INFO ] 2020-03-09 11:24:15.801 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:24:15.854 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:24:15.901 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:24:15.920 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:24:15.932 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 11:24:16.000 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:24:16.027 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:24:16.034 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:24:16.041 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 11:24:16.065 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:24:16.106 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:24:16.143 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-09 11:24:16.148 [main] GenericDao - Inserted entity: Book{id=53, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:24:16.160 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 11:24:16.200 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:24:16.264 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:24:16.275 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 11:24:16.288 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:12:40.977 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:12:41.010 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:12:41.110 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:12:41.122 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 12:12:41.131 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:12:41.224 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:12:41.282 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=83}
+[INFO ] 2020-03-09 12:12:41.321 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:12:41.375 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:12:41.420 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:12:41.432 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:12:41.440 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[ERROR] 2020-03-09 12:15:40.120 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[INFO ] 2020-03-09 12:15:41.915 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 12:20:13.866 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE)
+[INFO ] 2020-03-09 12:20:15.763 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 12:24:58.665 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 12:25:00.424 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 12:25:00.761 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 12:25:00.797 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 12:25:00.822 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_role`, CONSTRAINT `role_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[INFO ] 2020-03-09 12:41:07.191 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:07.259 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:07.314 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:07.330 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 12:41:07.354 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:07.455 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:07.518 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=84}
+[INFO ] 2020-03-09 12:41:07.585 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:07.629 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:07.678 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:07.693 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:07.703 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:07.757 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:07.786 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:07.815 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:07.820 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 12:41:07.863 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:07.917 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:07.956 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-09 12:41:07.963 [main] GenericDao - Inserted entity: Book{id=54, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:07.978 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:08.051 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:08.100 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:08.107 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:08.119 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:36.508 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:36.574 [main] GenericDao - Deleted entity: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:36.693 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:36.700 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 12:41:36.710 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:36.758 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:36.845 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=85}
+[INFO ] 2020-03-09 12:41:36.913 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:36.962 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:37.008 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:37.018 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:37.027 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-09 12:41:37.128 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:37.180 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:37.189 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:37.192 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 12:41:37.220 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:37.259 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:37.315 [main] GenericDao - Entity Retrieved: User{username='admin', password='password', id=2}
+[INFO ] 2020-03-09 12:41:37.321 [main] GenericDao - Inserted entity: Book{id=55, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:37.340 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 12:41:37.383 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:37.424 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:37.430 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-09 12:41:37.438 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-09 13:04:04.309 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_role' doesn't exist
+[ERROR] 2020-03-09 13:04:42.146 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_role' doesn't exist
+[INFO ] 2020-03-09 13:04:44.090 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 13:06:46.940 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userRole`, CONSTRAINT `userRole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:07:50.897 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userRole`, CONSTRAINT `userRole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[INFO ] 2020-03-09 13:15:38.194 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-09 13:16:13.327 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-09 13:25:05.492 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:26:16.436 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:30:52.481 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:31:54.369 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:32:36.330 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:33:23.614 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:34:05.686 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:34:31.599 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[ERROR] 2020-03-09 13:39:00.013 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_username_fk` FOREIGN KEY (`username`) REFERENCES `user` (`username`))
+[INFO ] 2020-03-09 13:46:28.675 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-09 14:04:11.440 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`userrole`, CONSTRAINT `userrole_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+[ERROR] 2020-03-09 14:07:59.808 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.userrole' doesn't exist
+[INFO ] 2020-03-09 14:08:01.612 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-09 14:08:39.162 [main] GenericDao - Retrieved all entities

@@ -19,7 +19,7 @@
 -- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `role`;
+DROP TABLE IF EXISTS user;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `role` (
@@ -34,16 +34,16 @@ CREATE TABLE `role` (
 -- Dumping data for table `role`
 --
 
-LOCK TABLES `role` WRITE;
-/*!40000 ALTER TABLE `role` DISABLE KEYS */;
-/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+LOCK TABLES user WRITE;
+/*!40000 ALTER TABLE user DISABLE KEYS */;
+/*!40000 ALTER TABLE user ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS user;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `user` (
@@ -58,10 +58,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'notAdmin','notPassword');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES user WRITE;
+/*!40000 ALTER TABLE user DISABLE KEYS */;
+INSERT INTO user VALUES (1,'notAdmin','notPassword');
+/*!40000 ALTER TABLE user ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
