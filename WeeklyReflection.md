@@ -52,3 +52,6 @@ QUESTIONS for checkpoint 2
 -make sure to implement unit testing for all my dao's as I go so I can see if I break them and am doing them correctly.
 
 
+https://vladmihalcea.com/how-to-map-a-manytoone-association-using-a-non-primary-key-column/
+
+
