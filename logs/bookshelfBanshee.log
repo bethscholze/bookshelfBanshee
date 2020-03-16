@@ -529,3 +529,90 @@
 [INFO ] 2020-03-16 16:21:18.112 [main] GenericDao - Retrieved all entities
 [INFO ] 2020-03-16 16:21:18.119 [main] GenericDao - Entity Retrieved: null
 [INFO ] 2020-03-16 16:21:18.196 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:54:25.659 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:54:25.722 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:54:25.877 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:54:25.887 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 16:54:26.003 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:54:26.079 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:54:26.165 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 16:54:26.204 [main] GenericDao - Inserted entity: Book{id=6, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:54:26.210 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:54:26.275 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:54:26.340 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:54:26.349 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:54:26.357 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 18:10:13.956 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:10:16.511 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:10:16.891 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:10:17.167 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:10:17.537 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:14:29.667 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:14:31.880 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:14:32.411 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:14:32.775 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:14:33.102 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:16:44.342 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[INFO ] 2020-03-16 18:16:47.316 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:16:47.370 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:16:47.593 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 18:16:47.616 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-16 18:16:47.768 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[INFO ] 2020-03-16 18:16:47.775 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 18:16:47.815 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:16:47.871 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[INFO ] 2020-03-16 18:16:47.878 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 18:16:47.919 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[INFO ] 2020-03-16 18:16:47.925 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:16:47.937 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:16:47.945 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 18:17:13.189 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[INFO ] 2020-03-16 18:17:16.097 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:17:16.156 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:17:16.383 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 18:17:16.391 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-16 18:17:16.543 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[INFO ] 2020-03-16 18:17:16.559 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 18:17:16.632 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[ERROR] 2020-03-16 18:17:16.713 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[INFO ] 2020-03-16 18:17:16.737 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 18:17:16.788 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.user_book_data' doesn't exist
+[INFO ] 2020-03-16 18:17:16.797 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:17:16.808 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:17:16.814 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 18:19:25.258 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:19:28.181 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:19:28.283 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:19:28.549 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 18:19:28.559 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 18:19:28.642 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 18:19:28.727 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:19:28.740 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 18:19:28.808 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:19:28.822 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 18:19:28.867 [main] GenericDao - Inserted entity: Book{id=7, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:19:28.879 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 18:19:28.955 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:19:28.966 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 18:19:29.033 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:19:29.053 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:19:29.067 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:19:29.074 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 18:20:54.811 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:20:57.571 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:20:57.676 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:20:57.890 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 18:20:57.908 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 18:20:57.995 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 18:20:58.086 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:20:58.102 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 18:20:58.176 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:20:58.194 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 18:20:58.265 [main] GenericDao - Inserted entity: Book{id=8, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:20:58.280 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 18:20:58.365 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:20:58.370 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 18:20:58.421 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-16 18:20:58.427 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:20:58.441 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 18:20:58.448 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}

@@ -55,3 +55,18 @@ QUESTIONS for checkpoint 2
 https://vladmihalcea.com/how-to-map-a-manytoone-association-using-a-non-primary-key-column/
 
 
+### hibernate problems
+user_book to user_book_data
+change many to many to one to manys on both sides
+add extra instance variables for data
+look into hibernate filters for filtering the results for user_books
+-would want only one book even if lots of data for each book, since query would grab all data.
+https://docs.jboss.org/hibernate/core/3.6/reference/en-US/html/filters.html
+@Entity
+@FilterDef(name="minLength", parameters=@ParamDef( name="minLength", type="integer" ) )
+@Filters( {
+    @Filter(name="betweenLength", condition=":minLength <= length and :maxLength >= length"),
+    @Filter(name="minLength", condition=":minLength <= length")
+} )
+public class Forest { ... }
+the realationship between data and book might be reversed too ie bookdata would map book?

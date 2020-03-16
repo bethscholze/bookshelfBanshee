@@ -72,7 +72,7 @@ UNLOCK TABLES;
 -- Table structure for table `user_book`
 --
 
-DROP TABLE IF EXISTS `user_book`;
+DROP TABLE IF EXISTS user_book_data;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `user_book` (
@@ -89,10 +89,10 @@ CREATE TABLE `user_book` (
 -- Dumping data for table `user_book`
 --
 
-LOCK TABLES `user_book` WRITE;
-/*!40000 ALTER TABLE `user_book` DISABLE KEYS */;
-INSERT INTO `user_book` VALUES (2,1),(1,2),(1,3);
-/*!40000 ALTER TABLE `user_book` ENABLE KEYS */;
+LOCK TABLES user_book_data WRITE;
+/*!40000 ALTER TABLE user_book_data DISABLE KEYS */;
+INSERT INTO user_book_data VALUES (2,1),(1,2),(1,3);
+/*!40000 ALTER TABLE user_book_data ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

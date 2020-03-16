@@ -3,7 +3,9 @@ package com.bookshelfBanshee.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * The type Book.
@@ -23,6 +25,7 @@ public class Book {
     @Column(name = "isbn_13")
     private String isbn13;
 
+    // TODO remove title and author once api call is ready to use
     //double check that I don't have to specify since the names are the same as the column
     @Column(name = "title")
     private String title;
@@ -31,10 +34,8 @@ public class Book {
     @Column(name = "author")
     private String author;
 
-    // TODO add in data instance variables that arent stored in db: publishedDate, pages
-
-
-
+    @ManyToMany(mappedBy = "bookList")
+    private Set<List> lists = new HashSet<>();
     /**
      * Instantiates a new Book.
      */

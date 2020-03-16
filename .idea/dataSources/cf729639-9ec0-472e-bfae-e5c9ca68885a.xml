@@ -1119,7 +1119,7 @@
     </collation>
     <table id="281" parent="3" name="book"/>
     <table id="282" parent="3" name="user"/>
-    <table id="283" parent="3" name="user_book"/>
+    <table id="283" parent="3" name="user_book_data"/>
     <table id="284" parent="3" name="user_role"/>
     <column id="285" parent="281" name="id">
       <Position>1</Position>
@@ -1198,15 +1198,36 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="299" parent="283" name="user_book_user_id_fk">
+    <column id="299" parent="283" name="data_label">
+      <Position>3</Position>
+      <DataType>varchar(65)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="300" parent="283" name="data_value">
+      <Position>4</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="301" parent="283" name="id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="302" parent="283" name="user_book_data_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="300" parent="283" name="user_book_book_id_fk">
+    <index id="303" parent="283" name="user_book_data_book_id_fk">
       <ColNames>book_id</ColNames>
       <Type>btree</Type>
     </index>
-    <foreign-key id="301" parent="283" name="user_book_user_id_fk">
+    <key id="304" parent="283" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="305" parent="283" name="user_book_data_user_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -1214,7 +1235,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="302" parent="283" name="user_book_book_id_fk">
+    <foreign-key id="306" parent="283" name="user_book_data_book_id_fk">
       <ColNames>book_id</ColNames>
       <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>book</RefTableName>
@@ -1222,34 +1243,34 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="303" parent="284" name="id">
+    <column id="307" parent="284" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="284" name="user_id">
+    <column id="308" parent="284" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="305" parent="284" name="role">
+    <column id="309" parent="284" name="role">
       <Position>3</Position>
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="306" parent="284" name="role_user_user_id_fk">
+    <index id="310" parent="284" name="role_user_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="307" parent="284" name="PRIMARY">
+    <key id="311" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="308" parent="284" name="role_user_user_id_fk">
+    <foreign-key id="312" parent="284" name="role_user_user_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>user</RefTableName>

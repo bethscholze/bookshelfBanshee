@@ -15,6 +15,8 @@
         <mapping class="com.bookshelfBanshee.entity.User"/>
         <mapping class="com.bookshelfBanshee.entity.Role"/>
         <mapping class="com.bookshelfBanshee.entity.Book"/>
+        <mapping class="com.bookshelfBanshee.entity.List"/>
+        <mapping class="com.bookshelfBanshee.entity.UserBookData"/>
 
     </session-factory>
 

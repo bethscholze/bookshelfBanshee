@@ -57,7 +57,7 @@
         <section class="row justify-content-around d-flex align-items-center mx-5">
             <div class="col-3 card">
                 <h2>Bookshelf</h2>
-<%--                TODO pull list of books here, make sure to limit #--%>
+<%--                TODO pull list of bookList here, make sure to limit #--%>
             </div>
             <div class="col-3 card">
                 <h2>Lists</h2>

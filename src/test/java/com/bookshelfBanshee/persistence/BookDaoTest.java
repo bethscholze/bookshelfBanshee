@@ -42,14 +42,10 @@ class BookDaoTest {
     @Test
     void insert() {
         User user = (User)userDao.getById(2);
-        int userBookNumber = user.getBooks().size();
         Book book = new Book("125031318X","9781250313188","Gideon the Ninth","Tamsyn Muir");
         bookDao.insert(book);
         int allBooksSize = bookDao.getAll().size();
         assertEquals(4, allBooksSize);
-        user.getBooks().add(book);
-        int newBookNumber = user.getBooks().size();
-        assertEquals(userBookNumber + 1, newBookNumber);
 
     }
 

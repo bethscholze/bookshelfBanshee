@@ -27,18 +27,30 @@ public class User {
     private int id;
 
     //User is the parent, it gets a set of its children(in this case) and maps one to many
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
-    //need the join table annotation because it tries to use the name of the set to get the id, so books instead of book
-    //if it was singular this would work without the join table annotation
-    @JoinTable(
-            name = "user_book",
-            joinColumns = { @JoinColumn(name = "user_id") },
-            inverseJoinColumns = { @JoinColumn(name = "book_id") }
-    )
-    private Set<Book> books = new HashSet<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<UserBookData> userBooks = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Role> lists = new HashSet<>();
+
+    public Set<UserBookData> getUserBooks() {
+        return userBooks;
+    }
+
+    public void setUserBooks(Set<UserBookData> userBooks) {
+        this.userBooks = userBooks;
+    }
+
+    public Set<Role> getLists() {
+        return lists;
+    }
+
+    public void setLists(Set<Role> lists) {
+        this.lists = lists;
+    }
 
     /**
      * Instantiates a new User.
@@ -112,23 +124,6 @@ public class User {
         this.id = id;
     }
 
-    /**
-     * Gets books.
-     *
-     * @return the books
-     */
-    public Set<Book> getBooks() {
-        return books;
-    }
-
-    /**
-     * Sets books.
-     *
-     * @param books the books
-     */
-    public void setBooks(Set<Book> books) {
-        this.books = books;
-    }
 
     /**
      * Gets roles.
