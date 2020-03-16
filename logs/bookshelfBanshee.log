@@ -350,3 +350,182 @@
 [ERROR] 2020-03-09 14:07:59.808 [main] Database - java.sql.SQLSyntaxErrorException: Table 'BookshelfBansheeTest.userrole' doesn't exist
 [INFO ] 2020-03-09 14:08:01.612 [main] GenericDao - Retrieved all entities
 [INFO ] 2020-03-09 14:08:39.162 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:04:25.607 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:04:25.649 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:04:25.947 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:04:25.955 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 15:04:26.011 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:04:26.136 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:04:26.285 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 15:04:26.316 [main] GenericDao - Inserted entity: Book{id=4, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:04:26.327 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:04:26.408 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:04:26.502 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:04:26.523 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:04:26.528 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:09:22.180 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:09:22.243 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:09:22.458 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:09:22.466 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 15:09:22.528 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:09:22.643 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:09:22.730 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 15:09:22.834 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:09:22.915 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:09:22.929 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:09:22.935 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:13:31.251 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:13:31.310 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:13:31.528 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:13:31.537 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 15:13:31.781 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:13:32.026 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:13:32.110 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:13:32.127 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:13:32.132 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 15:15:26.118 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_book`, CONSTRAINT `user_book_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+[INFO ] 2020-03-16 15:15:28.692 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 15:15:28.902 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_book`, CONSTRAINT `user_book_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+[INFO ] 2020-03-16 15:15:29.103 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 15:15:29.154 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_book`, CONSTRAINT `user_book_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+[ERROR] 2020-03-16 15:15:29.212 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_book`, CONSTRAINT `user_book_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+[INFO ] 2020-03-16 15:15:29.220 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 15:15:29.270 [main] Database - java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`BookshelfBansheeTest`.`user_book`, CONSTRAINT `user_book_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+[INFO ] 2020-03-16 15:15:29.276 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:15:29.284 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:15:29.288 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:18:20.452 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:18:20.497 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:18:20.709 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:18:20.731 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 15:18:20.977 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:18:21.206 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:18:21.280 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:18:21.296 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:18:21.302 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:23:03.961 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=86}
+[INFO ] 2020-03-16 15:23:04.626 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:23:04.792 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:23:04.830 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:23:04.845 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 15:23:05.043 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:23:05.302 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:23:05.448 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:23:05.479 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:23:05.498 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:35:43.993 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:35:44.058 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:35:44.227 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:35:44.241 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 15:35:44.415 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:35:44.676 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:35:44.768 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:35:44.784 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:35:44.790 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:38:46.230 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 15:38:46.405 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:38:46.509 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:38:46.539 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:38:46.543 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 15:45:01.790 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[ERROR] 2020-03-16 15:45:04.529 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[INFO ] 2020-03-16 15:45:04.690 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 15:45:04.803 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[ERROR] 2020-03-16 15:45:04.900 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[INFO ] 2020-03-16 15:45:04.913 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 15:45:04.993 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[INFO ] 2020-03-16 15:45:05.002 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:45:05.029 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 15:45:05.034 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 15:45:52.207 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[ERROR] 2020-03-16 15:45:55.017 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[ERROR] 2020-03-16 15:45:55.449 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[ERROR] 2020-03-16 15:45:55.523 [main] Database - java.sql.SQLSyntaxErrorException: Unknown column 'user_id' in 'field list'
+[ERROR] 2020-03-16 15:53:27.103 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:53:29.729 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 15:53:29.991 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 15:53:30.055 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:53:30.104 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:54:14.961 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:54:17.991 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 15:54:18.274 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 15:54:18.408 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:54:18.531 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:55:47.144 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:55:49.644 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 15:55:50.009 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 15:55:50.142 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:55:50.237 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:56:14.790 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:56:17.126 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 15:56:17.412 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 15:56:17.503 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:56:17.581 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 15:56:17.686 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:00:33.351 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:00:35.931 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:00:36.178 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 16:00:36.298 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:00:36.381 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:00:36.417 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-16 16:00:36.493 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:00:59.504 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:01:01.987 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 16:01:02.058 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:01:02.318 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 16:01:02.405 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:01:02.413 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 16:01:02.488 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:01:02.505 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 16:01:02.535 [main] GenericDao - Inserted entity: Book{id=4, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:01:02.546 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 16:01:02.605 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:01:02.615 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 16:01:02.679 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:01:02.688 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:01:02.719 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:01:02.725 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-16 16:06:05.052 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:06:07.793 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:06:08.192 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:06:08.600 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:06:08.933 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:09:59.502 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:10:01.538 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:10:01.922 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:10:02.259 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:10:02.586 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:12:22.667 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:12:25.209 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:12:25.550 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 16:12:25.631 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:12:25.705 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:12:25.729 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-16 16:12:25.795 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:12:58.287 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:13:00.786 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:13:01.090 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-16 16:13:01.177 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[ERROR] 2020-03-16 16:13:01.255 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:13:01.276 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-16 16:13:01.351 [main] Database - java.sql.SQLException: Column count doesn't match value count at row 1
+[INFO ] 2020-03-16 16:16:30.367 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:16:30.542 [main] GenericDao - Entity Retrieved: Role{role='administrator', id=1}
+[INFO ] 2020-03-16 16:18:23.637 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:18:23.811 [main] GenericDao - Entity Retrieved: Role{role='administrator', id=1}
+[INFO ] 2020-03-16 16:18:43.366 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 16:18:43.394 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:18:43.607 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:18:43.722 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:18:43.807 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-16 16:18:43.829 [main] GenericDao - Inserted entity: Book{id=5, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:18:43.845 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:18:43.917 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:18:43.986 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:18:44.006 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:18:44.012 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:21:17.857 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:21:17.923 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-16 16:21:18.112 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-16 16:21:18.119 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-16 16:21:18.196 [main] GenericDao - Retrieved all entities

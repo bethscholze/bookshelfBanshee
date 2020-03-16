@@ -23,14 +23,14 @@ class RoleDaoTest {
 
     }
 
-//    @Test
-//    void getById() {
-//        Role retrievedUserRole = (Role)roleDao.getById(1);
-//        assertNotNull(retrievedUserRole);
-//        User retrievedUser = (User)retrievedUserRole.getUser();
-//        assertEquals("Admin", retrievedUser.getUsername());
-//        assertEquals("admin", retrievedUserRole.getRole());
-//    }
+    @Test
+    void getById() {
+        Role retrievedUserRole = (Role)roleDao.getById(1);
+        assertNotNull(retrievedUserRole);
+        User retrievedUser = (User)retrievedUserRole.getUser();
+        assertEquals("me", retrievedUser.getUsername());
+        assertEquals("administrator", retrievedUserRole.getRole());
+    }
 
     @Test
     void saveOrUpdate() {

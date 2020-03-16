@@ -27,7 +27,14 @@ public class User {
     private int id;
 
     //User is the parent, it gets a set of its children(in this case) and maps one to many
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    //need the join table annotation because it tries to use the name of the set to get the id, so books instead of book
+    //if it was singular this would work without the join table annotation
+    @JoinTable(
+            name = "user_book",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "book_id") }
+    )
     private Set<Book> books = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)

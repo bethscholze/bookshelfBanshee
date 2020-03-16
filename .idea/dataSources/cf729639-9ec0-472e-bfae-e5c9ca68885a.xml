@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="BookshelfBanshee@localhost">
+<dataSource name="BookshelfBansheeTest@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
       <ServerVersion>8.0.16</ServerVersion>
@@ -8,11 +8,11 @@
       <DefaultCasing>exact</DefaultCasing>
     </root>
     <schema id="2" parent="1" name="BookshelfBanshee">
-      <Current>1</Current>
-      <Visible>1</Visible>
       <Collation>utf8mb4_0900_ai_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="BookshelfBansheeTest">
+      <Current>1</Current>
+      <Visible>1</Visible>
       <Collation>utf8mb4_0900_ai_ci</Collation>
     </schema>
     <schema id="4" parent="1" name="information_schema">
@@ -1117,10 +1117,10 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="281" parent="2" name="book"/>
-    <table id="282" parent="2" name="user"/>
-    <table id="283" parent="2" name="user_book"/>
-    <table id="284" parent="2" name="user_role"/>
+    <table id="281" parent="3" name="book"/>
+    <table id="282" parent="3" name="user"/>
+    <table id="283" parent="3" name="user_book"/>
+    <table id="284" parent="3" name="user_role"/>
     <column id="285" parent="281" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
@@ -1208,7 +1208,7 @@
     </index>
     <foreign-key id="301" parent="283" name="user_book_user_id_fk">
       <ColNames>user_id</ColNames>
-      <RefSchemaName>BookshelfBanshee</RefSchemaName>
+      <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
@@ -1216,7 +1216,7 @@
     </foreign-key>
     <foreign-key id="302" parent="283" name="user_book_book_id_fk">
       <ColNames>book_id</ColNames>
-      <RefSchemaName>BookshelfBanshee</RefSchemaName>
+      <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>book</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
@@ -1251,7 +1251,7 @@
     </key>
     <foreign-key id="308" parent="284" name="role_user_user_id_fk">
       <ColNames>user_id</ColNames>
-      <RefSchemaName>BookshelfBanshee</RefSchemaName>
+      <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>

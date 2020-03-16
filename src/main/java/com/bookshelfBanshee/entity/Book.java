@@ -31,9 +31,6 @@ public class Book {
     @Column(name = "author")
     private String author;
 
-    @ManyToOne
-    private User user;
-
     // TODO add in data instance variables that arent stored in db: publishedDate, pages
 
 
@@ -51,32 +48,12 @@ public class Book {
      * @param isbn13 the isbn 13
      * @param title  the title
      * @param author the author
-     * @param user   the user
      */
-    public Book(String isbn10, String isbn13, String title, String author, User user) {
-        this.user = user;
+    public Book(String isbn10, String isbn13, String title, String author) {
         this.isbn10 = isbn10;
         this.isbn13 = isbn13;
         this.title = title;
         this.author = author;
-    }
-
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets user.
-     *
-     * @param user the user
-     */
-    public void setUser(User user) {
-        this.user = user;
     }
 
     /**

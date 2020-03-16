@@ -26,7 +26,7 @@ public class Role {
     // with the one to many relationship mapping on the username, I cannot have the username
     // as an instance variable in this class
     @ManyToOne
-    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "userrole_user_id_fk"))
+    @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "user_role_user_id_fk"))
     private User user;
 
     /**
