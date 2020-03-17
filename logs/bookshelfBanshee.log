@@ -616,3 +616,203 @@
 [INFO ] 2020-03-16 18:20:58.427 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
 [INFO ] 2020-03-16 18:20:58.441 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
 [INFO ] 2020-03-16 18:20:58.448 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-17 12:31:47.896 [main] Database - java.sql.SQLException: The server time zone value 'CDT' is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.
+[ERROR] 2020-03-17 12:36:47.566 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:36:50.958 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-17 12:36:51.020 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-17 12:36:51.276 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 12:36:51.286 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-17 12:36:51.345 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-17 12:36:51.397 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:36:51.405 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-17 12:36:51.476 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:36:51.523 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 12:36:51.595 [main] GenericDao - Inserted entity: Book{id=9, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-17 12:36:51.607 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-17 12:36:51.666 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:36:51.677 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[ERROR] 2020-03-17 12:36:51.744 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:36:51.754 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='Gideon the Ninth', author='Tamsyn Muir'}
+[INFO ] 2020-03-17 12:36:51.771 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[INFO ] 2020-03-17 12:36:51.780 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188', title='resetTitle', author='Tamsyn Muir'}
+[ERROR] 2020-03-17 12:56:46.561 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:56:49.643 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-17 12:56:49.723 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:56:49.752 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-17 12:56:49.822 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:56:49.828 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-17 12:59:46.307 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 12:59:49.529 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-17 13:01:47.068 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[ERROR] 2020-03-17 13:07:13.643 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 13:07:16.373 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-17 13:07:44.922 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 13:07:47.622 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-17 13:18:09.576 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:29:23.155 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:29:23.220 [main] GenericDao - Deleted entity: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:29:23.469 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:29:23.640 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:29:23.738 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 13:29:23.774 [main] GenericDao - Inserted entity: List{id=3, name='last list', description='this is the last list'}
+[INFO ] 2020-03-17 13:29:23.812 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:29:23.958 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:29:24.062 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:29:24.078 [main] GenericDao - Updated entity: List{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-03-17 13:29:24.113 [main] GenericDao - Entity Retrieved: List{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-03-17 13:30:12.442 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:30:12.485 [main] GenericDao - Deleted entity: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:30:12.676 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:30:12.684 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-17 13:30:12.761 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:30:12.895 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:30:12.985 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 13:30:13.028 [main] GenericDao - Inserted entity: List{id=4, name='last list', description='this is the last list'}
+[INFO ] 2020-03-17 13:30:13.087 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:30:13.199 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:30:13.276 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:30:13.287 [main] GenericDao - Updated entity: List{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-03-17 13:30:13.298 [main] GenericDao - Entity Retrieved: List{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-03-17 13:32:00.496 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:32:00.557 [main] GenericDao - Deleted entity: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:32:00.803 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:32:00.812 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-17 13:32:00.891 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:32:01.019 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:32:01.102 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 13:32:01.135 [main] GenericDao - Inserted entity: List{id=5, name='last list', description='this is the last list'}
+[INFO ] 2020-03-17 13:32:01.175 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 13:32:01.273 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:32:01.364 [main] GenericDao - Entity Retrieved: List{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 13:32:01.375 [main] GenericDao - Updated entity: List{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-03-17 13:32:01.403 [main] GenericDao - Entity Retrieved: List{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-03-17 15:08:46.040 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 15:08:46.113 [main] GenericDao - Deleted entity: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 15:08:46.357 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:08:46.371 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-17 15:08:46.442 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:08:46.592 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:08:46.708 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:08:46.732 [main] GenericDao - Inserted entity: BookList{id=6, name='last list', description='this is the last list'}
+[INFO ] 2020-03-17 15:08:46.753 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:08:46.837 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 15:08:46.918 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-03-17 15:08:46.928 [main] GenericDao - Updated entity: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-03-17 15:08:46.941 [main] GenericDao - Entity Retrieved: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-03-17 15:09:06.490 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:09:06.948 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:09:07.039 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=6}
+[INFO ] 2020-03-17 15:09:07.106 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:09:07.183 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:09:07.258 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:09:07.338 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:09:07.356 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:09:07.372 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:13:10.915 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:13:11.450 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:13:11.573 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=7}
+[INFO ] 2020-03-17 15:13:11.662 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:13:11.784 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:13:11.877 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:13:11.957 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:13:11.975 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:13:11.985 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:15:29.011 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[ERROR] 2020-03-17 15:20:38.221 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 15:20:41.010 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-17 15:22:36.755 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 15:22:39.451 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-17 15:22:39.558 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 15:22:39.884 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-17 15:22:39.968 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 15:22:40.007 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=12}
+[INFO ] 2020-03-17 15:22:40.087 [main] GenericDao - Retrieved all entities
+[ERROR] 2020-03-17 15:22:40.155 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 15:22:40.161 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-17 15:22:40.217 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 15:22:40.226 [main] GenericDao - Entity Retrieved: null
+[ERROR] 2020-03-17 15:22:40.289 [main] Database - java.sql.SQLException: Field 'id' doesn't have a default value
+[INFO ] 2020-03-17 15:22:40.299 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-17 15:24:46.143 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:24:46.576 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:24:46.672 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=16}
+[INFO ] 2020-03-17 15:24:46.738 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:24:46.841 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:24:46.958 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:24:47.034 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:24:47.059 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:24:47.076 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:28:07.085 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:28:07.524 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:28:07.605 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=17}
+[INFO ] 2020-03-17 15:28:07.661 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:28:07.738 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:28:07.817 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:28:07.915 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:28:07.936 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:28:07.952 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:31:08.067 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:31:08.632 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:31:08.728 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=18}
+[INFO ] 2020-03-17 15:31:08.788 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:31:08.881 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:31:08.978 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:31:09.123 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:31:09.164 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:31:09.195 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:32:42.003 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:32:42.558 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:32:42.677 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=19}
+[INFO ] 2020-03-17 15:32:42.759 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:32:42.854 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:32:42.935 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:32:43.018 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:32:43.037 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:32:43.048 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:34:42.430 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:34:42.899 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:34:43.019 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=20}
+[INFO ] 2020-03-17 15:34:43.092 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:34:43.175 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:34:43.252 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:34:43.342 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:34:43.361 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:34:43.381 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:39:55.965 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:39:56.041 [main] GenericDao - Deleted entity: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:39:56.323 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:39:56.345 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:39:56.523 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:39:56.636 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=21}
+[INFO ] 2020-03-17 15:39:56.696 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:39:56.767 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:39:56.841 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:39:56.913 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:39:56.933 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:39:56.941 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:01.879 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:41:01.931 [main] GenericDao - Deleted entity: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:41:02.185 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:41:02.191 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-17 15:41:02.212 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:41:02.496 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:41:02.625 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=22}
+[INFO ] 2020-03-17 15:41:02.693 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:41:02.828 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:02.942 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:03.046 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:03.079 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:03.095 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:53.133 [main] GenericDao - Entity Retrieved: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:41:53.199 [main] GenericDao - Deleted entity: User{username='me', password='password', id=2}
+[INFO ] 2020-03-17 15:41:53.444 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:41:53.450 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-03-17 15:41:53.461 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:41:53.592 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:41:53.697 [main] GenericDao - Inserted entity: User{username='newUser', password='newPassword', id=23}
+[INFO ] 2020-03-17 15:41:53.766 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-03-17 15:41:53.861 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:53.954 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:54.042 [main] GenericDao - Entity Retrieved: User{username='notAdmin', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:54.075 [main] GenericDao - Updated entity: User{username='resetUsername', password='notPassword', id=1}
+[INFO ] 2020-03-17 15:41:54.092 [main] GenericDao - Entity Retrieved: User{username='resetUsername', password='notPassword', id=1}

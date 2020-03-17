@@ -1,6 +1,5 @@
 package com.bookshelfBanshee.entity;
 
-import com.sun.xml.bind.v2.TODO;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -34,23 +33,7 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Role> lists = new HashSet<>();
-
-    public Set<UserBookData> getUserBooks() {
-        return userBooks;
-    }
-
-    public void setUserBooks(Set<UserBookData> userBooks) {
-        this.userBooks = userBooks;
-    }
-
-    public Set<Role> getLists() {
-        return lists;
-    }
-
-    public void setLists(Set<Role> lists) {
-        this.lists = lists;
-    }
+    private Set<BookList> lists = new HashSet<>();
 
     /**
      * Instantiates a new User.
@@ -141,6 +124,42 @@ public class User {
      */
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    /**
+     * Gets user books.
+     *
+     * @return the user books
+     */
+    public Set<UserBookData> getUserBooks() {
+        return userBooks;
+    }
+
+    /**
+     * Sets user books.
+     *
+     * @param userBooks the user books
+     */
+    public void setUserBooks(Set<UserBookData> userBooks) {
+        this.userBooks = userBooks;
+    }
+
+    /**
+     * Gets lists.
+     *
+     * @return the lists
+     */
+    public Set<BookList> getLists() {
+        return lists;
+    }
+
+    /**
+     * Sets lists.
+     *
+     * @param lists the lists
+     */
+    public void setLists(Set<BookList> lists) {
+        this.lists = lists;
     }
 
     @Override

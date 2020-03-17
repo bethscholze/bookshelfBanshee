@@ -7,6 +7,9 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * The type User book data.
+ */
 @Entity(name = "UserBookData")
 @Table(name = "user_book_data")
 public class UserBookData {
@@ -29,34 +32,84 @@ public class UserBookData {
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "user_book_data_user_id_fk"))
     private User user;
 
+    public UserBookData() {
+    }
+
+    public UserBookData(String dataLabel, String dataValue, Book book, User user) {
+        this.dataLabel = dataLabel;
+        this.dataValue = dataValue;
+        this.book = book;
+        this.user = user;
+    }
+
+    /**
+     * Gets book.
+     *
+     * @return the book
+     */
     public Book getBook() {
         return book;
     }
 
+    /**
+     * Sets book.
+     *
+     * @param book the book
+     */
     public void setBook(Book book) {
         this.book = book;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets data label.
+     *
+     * @return the data label
+     */
     public String getDataLabel() {
         return dataLabel;
     }
 
+    /**
+     * Sets data label.
+     *
+     * @param dataLabel the data label
+     */
     public void setDataLabel(String dataLabel) {
         this.dataLabel = dataLabel;
     }
 
+    /**
+     * Gets data value.
+     *
+     * @return the data value
+     */
     public String getDataValue() {
         return dataValue;
     }
 
+    /**
+     * Sets data value.
+     *
+     * @param dataValue the data value
+     */
     public void setDataValue(String dataValue) {
         this.dataValue = dataValue;
     }

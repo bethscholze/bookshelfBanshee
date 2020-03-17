@@ -1,16 +1,19 @@
 package com.bookshelfBanshee.persistence;
 
 import com.bookshelfBanshee.entity.Book;
+import com.bookshelfBanshee.entity.BookList;
 import com.bookshelfBanshee.entity.User;
+import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserDaoTest {
 
-    GenericDao genericDao;
+    GenericDao userDao;
     GenericDao bookDao;
 
     @BeforeEach
@@ -19,7 +22,7 @@ class UserDaoTest {
         database.runSQL("cleandb.sql");
 
         //you pass in the object.class as the type
-        genericDao = new GenericDao(User.class);
+        userDao = new GenericDao(User.class);
         bookDao = new GenericDao(Book.class);
 
     }
@@ -27,43 +30,51 @@ class UserDaoTest {
     @Test
     void getById() {
         //will need to cast for a bunch of these
-        User retrievedUser = (User)genericDao.getById(1);
+        User retrievedUser = (User) userDao.getById(1);
         assertNotNull(retrievedUser);
         assertEquals("notAdmin", retrievedUser.getUsername());
     }
 
     @Test
     void saveOrUpdate() {
-        User retrievedUser = (User)genericDao.getById(1);
+        User retrievedUser = (User) userDao.getById(1);
         String newUsername = "resetUsername";
         retrievedUser.setUsername(newUsername);
-        genericDao.saveOrUpdate(retrievedUser);
-        User updatedUser = (User)genericDao.getById(1);
+        userDao.saveOrUpdate(retrievedUser);
+        User updatedUser = (User) userDao.getById(1);
         assertEquals(retrievedUser, updatedUser);
     }
 
     @Test
     void insert() {
         User user = new User("newUser", "newPassword");
-        genericDao.insert(user);
-        int allUsersSize = genericDao.getAll().size();
+        userDao.insert(user);
+        int allUsersSize = userDao.getAll().size();
         assertEquals(6, allUsersSize);
     }
 
     @Test
     void delete() {
-        User user = (User)genericDao.getById(1);
-        genericDao.delete(user);
-        int allUsersSize = genericDao.getAll().size();
+        User user = (User) userDao.getById(2);
+        userDao.delete(user);
+        int allUsersSize = userDao.getAll().size();
         assertEquals(4, allUsersSize);
-        assertNull(genericDao.getById(1));
+        assertNull(userDao.getById(2));
         int allBooksSize = bookDao.getAll().size();
-        assertEquals(1, allBooksSize);
+        assertEquals(3, allBooksSize);
     }
 
     @Test
     void getAll() {
-        int getAllSize = genericDao.getAll().size();
+        int getAllSize = userDao.getAll().size();
         assertEquals(5, getAllSize);
+    }
+
+    @Test
+    void getAllBooks(){
+        User user = (User) userDao.getById(1);
+        Set<UserBookData> books = user.getUserBooks();
+        int booksSize = books.size();
+        assertEquals(2, booksSize);
     }
 }

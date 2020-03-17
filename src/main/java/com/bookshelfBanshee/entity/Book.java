@@ -35,7 +35,7 @@ public class Book {
     private String author;
 
     @ManyToMany(mappedBy = "bookList")
-    private Set<List> lists = new HashSet<>();
+    private Set<BookList> lists = new HashSet<>();
     /**
      * Instantiates a new Book.
      */
