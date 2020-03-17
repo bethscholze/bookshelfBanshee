@@ -28,4 +28,7 @@
 |3/4|5|Week 7|implemented login, worked on professional development presentation|
 |3/8|3|Professional Dev|added links to materials for presentation|
 |3/9|1|Week 5 testing|Fixed mysql daylight savings error, updated my tests for the one to many to test the outcome of deletes.|
-
+|3/11|5|prof dev presentation prep|researched a bunch of stuff for presentation planned out analyzer|
+|3/13|5|prof dev presentation|finished up presentation|
+|3/16|6|bookshelf banshee|updated my database design and entities for it|
+|3/17|6|bookshelf banshee|working on entity relationships in my project and dao testing for my entities|
