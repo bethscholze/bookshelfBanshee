@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
@@ -82,5 +83,38 @@ public class GenericDao<T> {
         return entities;
     }
 
-    //add in the get by property methods to get books based on user id
+
+    public List<T> getByPropertyEqual(String propertyName, String value) {
+        Session session = sessionFactory.openSession();
+
+        logger.debug("Searching for user with " + propertyName + " = " + value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get(propertyName), value));
+        List<T> entities = session.createQuery(query).getResultList();
+
+        session.close();
+        return entities;
+    }
+
+
+    public List<T> getByPropertyLike(String propertyName, String value) {
+        Session session = sessionFactory.openSession();
+
+        logger.debug("Searching for user with {} = {}",  propertyName, value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        Expression<String> propertyPath = root.get(propertyName);
+
+        query.where(builder.like(propertyPath, "%" + value + "%"));
+
+        List<T> entities = session.createQuery( query ).getResultList();
+        session.close();
+        return entities;
+    }
+
 }

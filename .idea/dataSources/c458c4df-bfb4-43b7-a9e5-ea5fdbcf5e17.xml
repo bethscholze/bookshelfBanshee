@@ -1339,16 +1339,22 @@
       <DataType>varchar(25)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="325" parent="286" name="role_user_user_id_fk">
+    <column id="325" parent="286" name="username">
+      <Position>4</Position>
+      <DataType>varchar(25)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="326" parent="286" name="role_user_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="326" parent="286" name="PRIMARY">
+    <key id="327" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="327" parent="286" name="role_user_user_id_fk">
+    <foreign-key id="328" parent="286" name="role_user_user_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>BookshelfBanshee</RefSchemaName>
       <RefTableName>user</RefTableName>

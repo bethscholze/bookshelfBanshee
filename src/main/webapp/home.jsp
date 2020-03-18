@@ -3,24 +3,9 @@
 <!-- <%-- <%@include file="head.jsp"%> --%> -->
 <!-- this is the stuff in the head.jsp -->
 <%--TODO take out head stuff and replace with import--%>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>${title}</title>
-        <link href="https://fonts.googleapis.com/css?family=Rye&display=swap" rel="stylesheet">
-        <!-- Bootstrap 4 -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <!-- My stylesheet -->
-        <link rel="stylesheet" href="styles.css">
-
-
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    </head>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@include file="head.jsp"%>
     <!-- this is the head stuff -->
     <!--  -->
 
@@ -57,6 +42,25 @@
         <section class="row justify-content-around d-flex align-items-center mx-5">
             <div class="col-3 card">
                 <h2>Bookshelf</h2>
+                <table class="table">
+                    <thead class="table-light">
+                    <tr>
+                        <td>ID</td>
+                        <td>Title</td>
+                        <td>Author</td>
+                    </tr>
+
+                    </thead>
+                    <tbody class="bg-white">
+                    <c:forEach items="${userBooks}" var="books">
+                        <tr>
+                            <td>${books.id}</td>
+                            <td>${books.title}</td>
+                            <td>${books.author}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
 <%--                TODO pull list of bookList here, make sure to limit #--%>
             </div>
             <div class="col-3 card">

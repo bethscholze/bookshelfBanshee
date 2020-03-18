@@ -14,8 +14,8 @@ INSERT INTO book (id, isbn_10, isbn_13, title, author) values (3, '1781085374', 
 insert into user_book_data (id, user_id, book_id) values (1, 2, 1);
 insert into user_book_data (id, user_id, book_id) values (2, 1, 2);
 insert into user_book_data (id, user_id, book_id) values (3, 1, 3);
-insert into user_role (id, user_id, role)values (1,2,'administrator');
-insert into user_role (id, user_id, role)values (2,1,'user');
+insert into user_role (id, user_id, role, username)values (1,2,'administrator', 'admin');
+insert into user_role (id, user_id, role, username)values (2,1,'user', 'notAdmin');
 insert into list values (1, 1, 'first list', 'this is the first list');
 insert into list values (2, 2, 'second list', 'this is the second list');
 insert into user_book_list values (1, 2);
