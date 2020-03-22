@@ -52,11 +52,11 @@
 
                     </thead>
                     <tbody class="bg-white">
-                    <c:forEach items="${userBooks}" var="books">
+                    <c:forEach items="${sessionScope.userBooks}" var="books">
                         <tr>
                             <td>${books.id}</td>
-                            <td>${books.title}</td>
-                            <td>${books.author}</td>
+                            <td>${books.book.title}</td>
+                            <td>${books.book.author}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

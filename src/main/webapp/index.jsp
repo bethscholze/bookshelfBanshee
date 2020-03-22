@@ -9,7 +9,7 @@
                 <h1 class="col-8 text-*-center text-uppercase mt-5">Bookshelf Banshee</h1>
             <div class="col-3"></div>
 <%--            so here I need to put the restricted page, it will redirect to login for me--%>
-                <a class="btn btn-dark col-2 my-2 p-2" href="home.jsp">Login</a>
+                <a class="btn btn-dark col-2 my-2 p-2" href="UserHome">Login</a>
             <div class="col-2"></div>
                 <a class="btn btn-dark col-2 my-2 p-2" href="signup.jsp">Signup</a>
             <div class="col-3"></div>

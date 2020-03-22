@@ -36,6 +36,8 @@ public class Book {
 
     @ManyToMany(mappedBy = "bookList")
     private Set<BookList> lists = new HashSet<>();
+
+//    @JSONproperty('author')
     /**
      * Instantiates a new Book.
      */

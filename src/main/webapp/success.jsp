@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<p>Congrats you logged in. Go to <a href="UserHome">Homepage</a></p>
+<p>There was an error logging in. <a href="login.jsp">Retry</a></p>
 
 </body>
 </html>
