@@ -19,6 +19,7 @@ public class GoogleBooksAPI {
         //https://www.googleapis.com/books/v1/volumes?q=isbn:9781250313188
         WebTarget target = client.target("https://www.googleapis.com/books/v1/volumes?q=" + queryParam + ":" + isbn);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
+        logger.info("The response from the api: {}", response);
         return response;
     }
     public VolumeInfo getBook(String queryParam, String isbn) {
@@ -30,6 +31,7 @@ public class GoogleBooksAPI {
             BookResponse mappedResponse = mapper.readValue(response, BookResponse.class);
             ItemsItem item = mappedResponse.getItems().get(0);
             volumeInfo = item.getVolumeInfo();
+            logger.info("The VolumeInfo Item: {}", volumeInfo);
             // TODO create dao to call your service and have different functions for each call you need
         } catch (JsonProcessingException e) {
             logger.error("couldnt create object from given json data");
