@@ -44,7 +44,7 @@ class UserBookDataDaoTest {
     @Test
     void insert() {
         User user = (User)userDao.getById(2);
-        Book book = new Book("125031318X","9781250313188","Gideon the Ninth","Tamsyn Muir");
+        Book book = new Book("125031318X","9781250313188");
         userBookDataDao.insert(book);
         int allBooksSize = userBookDataDao.getAll().size();
         assertEquals(3, allBooksSize);

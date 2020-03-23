@@ -25,15 +25,6 @@ public class Book {
     @Column(name = "isbn_13")
     private String isbn13;
 
-    // TODO remove title and author once api call is ready to use
-    //double check that I don't have to specify since the names are the same as the column
-    @Column(name = "title")
-    private String title;
-
-    // TODO fix this, there can be more than one author, needs to be an array....figure out how to store in table
-    @Column(name = "author")
-    private String author;
-
     @ManyToMany(mappedBy = "bookList")
     private Set<BookList> lists = new HashSet<>();
 
@@ -49,14 +40,11 @@ public class Book {
      *
      * @param isbn10 the isbn 10
      * @param isbn13 the isbn 13
-     * @param title  the title
-     * @param author the author
+
      */
-    public Book(String isbn10, String isbn13, String title, String author) {
+    public Book(String isbn10, String isbn13) {
         this.isbn10 = isbn10;
         this.isbn13 = isbn13;
-        this.title = title;
-        this.author = author;
     }
 
     /**
@@ -113,42 +101,6 @@ public class Book {
         this.isbn13 = isbn13;
     }
 
-    /**
-     * Gets title.
-     *
-     * @return the title
-     */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * Sets title.
-     *
-     * @param title the title
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * Gets author.
-     *
-     * @return the author
-     */
-    public String getAuthor() {
-        return author;
-    }
-
-    /**
-     * Sets author.
-     *
-     * @param author the author
-     */
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -156,14 +108,12 @@ public class Book {
         Book book = (Book) o;
         return id == book.id &&
                 Objects.equals(isbn10, book.isbn10) &&
-                Objects.equals(isbn13, book.isbn13) &&
-                Objects.equals(title, book.title) &&
-                Objects.equals(author, book.author);
+                Objects.equals(isbn13, book.isbn13);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, isbn10, isbn13, title, author);
+        return Objects.hash(id, isbn10, isbn13);
     }
 
     @Override
@@ -172,8 +122,6 @@ public class Book {
                 "id=" + id +
                 ", isbn10='" + isbn10 + '\'' +
                 ", isbn13='" + isbn13 + '\'' +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
                 '}';
     }
 }

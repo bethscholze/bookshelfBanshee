@@ -25,15 +25,15 @@ class BookDaoTest {
     @Test
     void getById() {
         Book retrievedBook = (Book) bookDao.getById(1);
-        String retrievedTitle = retrievedBook.getTitle();
-        assertEquals("Gideon the Ninth", retrievedTitle);
+        String retrievedIsbn = retrievedBook.getIsbn13();
+        assertEquals("9781250313188", retrievedIsbn);
     }
 
     @Test
     void saveOrUpdate() {
         Book retrievedBook = (Book) bookDao.getById(1);
-        String newTitle = "resetTitle";
-        retrievedBook.setTitle(newTitle);
+        String newIsbn = "resetIsbn";
+        retrievedBook.setIsbn13(newIsbn);
         bookDao.saveOrUpdate(retrievedBook);
         Book updatedBook = (Book) bookDao.getById(1);
         assertEquals(retrievedBook, updatedBook);
@@ -42,7 +42,7 @@ class BookDaoTest {
     @Test
     void insert() {
         User user = (User)userDao.getById(2);
-        Book book = new Book("125031318X","9781250313188","Gideon the Ninth","Tamsyn Muir");
+        Book book = new Book("125031318X","9781250313188");
         bookDao.insert(book);
         int allBooksSize = bookDao.getAll().size();
         assertEquals(4, allBooksSize);
