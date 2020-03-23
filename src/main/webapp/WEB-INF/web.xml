@@ -12,7 +12,6 @@
       <form-error-page>/loginError.jsp</form-error-page>
     </form-login-config>
   </login-config>
-
   <!-- Protect the viewUser page. -->
   <security-constraint>
     <web-resource-collection>
@@ -23,6 +22,7 @@
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>
+  <!-- Protect the UserHome page. -->
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>UserHome</web-resource-name>

@@ -29,6 +29,7 @@ public class UserHome extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
         //username and password passed in post
         //set these in a new user object
         //pass this new user object into the userdao to insert it into the database
