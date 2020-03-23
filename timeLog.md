@@ -13,3 +13,25 @@
 |2/8|2.5|Presentation feedback, working on project|work on wireframe, database design, and revisit user stories|
 |2/9|2.5|Project design|Problem statement, project plan.|
 |2/10|5|Finalize exercise 3. Project design|All test passing for exercise 3, click on the run on the left side and it will provide test coverage. Update stuff more tonight since you for got the list you made. Work on wireframes.|
+|2/12|5|Week 4 videos and exercise|Caught up on week 4 videos and started the week 4 exercise. Remember to colpy the config file to the test directory to get mysql test db to work.|
+|2/16|3|Week 4 exercise|Got week 4 exercise almost done, need to get the rest of the tests working. MYSQL DATADUMP= mysqldump -u root -p BookshelfBansheeTest > BookshelfBansheeTest_backup.sql|
+|2/17|7|Week 4 exercise and project jsps|Finished the week 4 exercise and worked on jsps. Watched some week 5 videos.|
+|2/18|1|Week 5 videos|Finished week 5 videos.|
+|2/19|5|Week 5 work|Created book class and added book table to database|
+|2/22|4|Project work|Worked on html pages for my project, need to paste the hmtl into my current jsps|
+|2/23|4|Week 5 daotests|writing and debuggin why tests weren't passing. Put user and book in toString creating a stackoverflow. Don't do that|
+|2/24|3|Week 6|In class code reviews/discussions. Read a little on aws for the week|
+|2/26|3|Week 6|Got my account id to send to Paula. Code reviewed Elspeth's project.|
+|2/26|2|Week 6|Code review Anthony's project. Planning some methods for my project.|
+|3/1|4|Week 6|setup aws, videos|
+|3/2|3|Week 6-7|Working on checkpoint 2, erd and class diagrams|
+|3/4|5|Week 7|implemented login, worked on professional development presentation|
+|3/8|3|Professional Dev|added links to materials for presentation|
+|3/9|1|Week 5 testing|Fixed mysql daylight savings error, updated my tests for the one to many to test the outcome of deletes.|
+|3/11|5|prof dev presentation prep|researched a bunch of stuff for presentation planned out analyzer|
+|3/13|5|prof dev presentation|finished up presentation|
+|3/16|6|bookshelf banshee|updated my database design and entities for it|
+|3/17|6|bookshelf banshee|working on entity relationships in my project and dao testing for my entities|
+|3/22|3|week 8 rest|Got the call to the rest client working but could not get pojo generation working|
+|3/23|3|week 8 Rest|Got pojo generator working(used older version) and got the tests running, errors occur if client isn't created in TEST class, have to add an additional dependency that has the scope of tests|
+>>>>>>> 244205aed1b1baf3c630168af82a61b906896e0e

@@ -6,7 +6,7 @@
 |4|Search Books|As a user I want to be able to use a search to find books to add.|MVP|
 |5|Create Lists|As a user I want to be able to create list of my books.|MVP|
 |6|Generate Lists|As a user I want to be able to select certain criteria to autogenerate lists of books based on their info|nonMVP|
-|7|Randomize Reading list|As a user I want to be able to randomizereading lists|MVP|
+|7|Randomize Reading list|As a user I want to be able to randomize reading lists|MVP|
 |8|Update lists|As a user I want to update lists by adding or deleting books|MVP|
 |9|Update books|As a user I want to edit my books to change info|MVP|
 |10|View Data|As a user I want to view data about the books I have read|nonMVP|

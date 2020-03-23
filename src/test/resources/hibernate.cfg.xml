@@ -1,0 +1,25 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/BookshelfBansheeTest</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <property name="connection.username">root</property>
+        <property name="connection.password">student</property>
+
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <property name="hibernate.show_sql">True</property>
+
+
+        <mapping class="com.bookshelfBanshee.entity.User"/>
+        <mapping class="com.bookshelfBanshee.entity.Role"/>
+        <mapping class="com.bookshelfBanshee.entity.Book"/>
+        <mapping class="com.bookshelfBanshee.entity.BookList"/>
+        <mapping class="com.bookshelfBanshee.entity.UserBookData"/>
+
+    </session-factory>
+
+</hibernate-configuration>
