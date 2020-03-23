@@ -4,6 +4,7 @@ import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
+import com.googlebooksapi.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -42,9 +44,15 @@ public class UserHome extends HttpServlet {
         session.setAttribute("user", user);
         Set<UserBookData> userBookData = user.getUserBooks();
         BookManager bookManager = new BookManager();
-        bookManager.getGoogleAPIBookData(userBookData);
+        Set<VolumeInfo> googleBooksData = new HashSet<>();
+        try {
+            googleBooksData = bookManager.getGoogleAPIBookData(userBookData);
+        } catch (Exception e) {
+            logger.error("Could not load Book data from api.");
+        }
 
-        session.setAttribute("userBooks", userBookData);
+
+        session.setAttribute("userBooks", googleBooksData);
         logger.info(user.toString());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");

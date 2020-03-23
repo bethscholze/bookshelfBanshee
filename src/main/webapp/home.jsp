@@ -45,18 +45,18 @@
                 <table class="table">
                     <thead class="table-light">
                     <tr>
-                        <td>ID</td>
                         <td>Title</td>
-                        <td>Author</td>
+                        <td>Authors</td>
+                        <td>Publish Date</td>
                     </tr>
 
                     </thead>
                     <tbody class="bg-white">
                     <c:forEach items="${sessionScope.userBooks}" var="books">
                         <tr>
-                            <td>${books.id}</td>
-                            <td>${books.book.title}</td>
-                            <td>${books.book.author}</td>
+                            <td>${books.title}</td>
+                            <td>${books.authors}</td>
+                            <td>${books.publishedDate}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
