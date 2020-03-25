@@ -51,4 +51,4 @@ fabric.properties
 
 #sensitive info pswds etc
 /secrets/
-/source/main/resources/*
+/src/main/resources/
