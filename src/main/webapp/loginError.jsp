@@ -6,12 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<p>Congrats you logged in. Go to <a href="UserHome">Homepage</a></p>
-
+<p>There was an error logging in <a href="login.jsp">Retry</a></p>
 </body>
 </html>
