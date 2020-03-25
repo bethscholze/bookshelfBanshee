@@ -17,7 +17,7 @@ public class GenericDao<T> {
     //this will hold the type of the object we are dealing with
     private Class<T> type;
     private final Logger logger = LogManager.getLogger(this.getClass());
-    SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
+//    SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
     public GenericDao(Class<T> type) {
         this.type = type;
@@ -85,7 +85,8 @@ public class GenericDao<T> {
 
 
     public List<T> getByPropertyEqual(String propertyName, String value) {
-        Session session = sessionFactory.openSession();
+//        Session session = sessionFactory.openSession();
+        Session session = getSession();
 
         logger.debug("Searching for user with " + propertyName + " = " + value);
 
@@ -101,7 +102,8 @@ public class GenericDao<T> {
 
 
     public List<T> getByPropertyLike(String propertyName, String value) {
-        Session session = sessionFactory.openSession();
+//        Session session = sessionFactory.openSession();
+        Session session = getSession();
 
         logger.debug("Searching for user with {} = {}",  propertyName, value);
 
