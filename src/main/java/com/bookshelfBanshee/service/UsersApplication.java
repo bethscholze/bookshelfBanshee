@@ -12,6 +12,7 @@ public class UsersApplication extends Application{
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
         h.add(Users.class);
+        h.add(JSONUsers.class);
         return h;
     }
 }
