@@ -69,8 +69,11 @@ https://docs.jboss.org/hibernate/core/3.6/reference/en-US/html/filters.html
     @Filter(name="minLength", condition=":minLength <= length")
 } )
 public class Forest { ... }
-the realationship between data and book might be reversed too ie bookdata would map book?
+the relationship between data and book might be reversed too ie bookdata would map book?
 
 
 Link to rest client if not in the same class for tests...
 https://www.ibm.com/mysupport/s/question/0D50z00005q4DZ9CAM/using-javaxwsrsclientclientbuilder-in-junit?language=en_US
+
+resetting mysql password
+http://www.ihp.sinica.edu.tw/dashboard/docs/reset-mysql-password.html

@@ -35,3 +35,6 @@
 |3/22|3|week 8 rest|Got the call to the rest client working but could not get pojo generation working|
 |3/23|3|week 8 Rest|Got pojo generator working(used older version) and got the tests running, errors occur if client isn't created in TEST class, have to add an additional dependency that has the scope of tests|
 |3/24|3|Checkpoint 3|Finally got my app working on aws with authentication, I did not configure the realm properly for the db in the server.xml file (tomee manager goes in tomcat-user.xml)|
+|3/25|4|Group project|worked on jsps|
+|3/30|3|Week 9|read up on jersey stuff, and implemented a service in my indie project to return the users|
+

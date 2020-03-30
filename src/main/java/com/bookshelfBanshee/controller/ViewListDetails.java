@@ -1,6 +1,6 @@
 package com.bookshelfBanshee.controller;
 
-public class viewListDetails {
+public class ViewListDetails {
 
     //this will have a get that will load the selected list(the first list by default)
     // and a post
