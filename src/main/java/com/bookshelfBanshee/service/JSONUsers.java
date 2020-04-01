@@ -18,19 +18,29 @@ import java.util.List;
 @Path("/json/users")
 public class JSONUsers {
     private final Logger logger = LogManager.getLogger(this.getClass());
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    TODO figure out how to do a list with json
-//    public Response getUsersJSON() {
-//        GenericDao userDao = new GenericDao(User.class);
-//        List<User> users = userDao.getAll();
-//        //TODO remove duplicate code
-//        if(users != null) {
-//            return Response.status(200).entity(users).build();
-//        } else {
-//            return Response.status(404).build();
-//        }
-//    }
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    //TODO figure out how to do a list with json
+    public Response getUsersJSON() {
+
+        ObjectMapper mapper = new ObjectMapper();
+        GenericDao userDao = new GenericDao(User.class);
+        List<User> users = userDao.getAll();
+        //TODO remove duplicate code
+        try {
+            String jsonString = mapper.writeValueAsString(users);
+            logger.info(jsonString);
+            return Response.status(200).entity(jsonString).build();
+        } catch (JsonProcessingException e){
+            logger.error(e);
+            return Response.status(400).build();
+        }
+        /*if(users != null) {
+            return Response.status(200).entity(users).build();
+        } else {
+            return Response.status(404).build();
+        }*/
+    }
 
     @GET
     @Path("/{param}")
