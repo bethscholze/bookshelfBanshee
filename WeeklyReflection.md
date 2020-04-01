@@ -82,7 +82,10 @@ json links
 https://stackoverflow.com/questions/41989906/jackson-referencing-an-object-as-a-property
 https://stackoverflow.com/questions/3325387/infinite-recursion-with-jackson-json-and-hibernate-jpa-issue
 https://stackoverflow.com/questions/48117059/could-not-write-json-failed-to-lazily-initialize-a-collection-of-role/48152153
-
+https://stackoverflow.com/questions/11746499/how-to-solve-the-failed-to-lazily-initialize-a-collection-of-role-hibernate-ex
+https://mkyong.com/java/jackson-how-to-parse-json/
+https://www.geeksforgeeks.org/convert-java-object-to-json-string-using-jackson-api/
+https://makeinjava.com/convert-list-objects-to-from-json-java-jackson-objectmapper-example/
 
 ////////////////////////////////////////////////////////////////
 In my project I came across the same problem as yours. The problem is that by the time of reading the data "one to many" the session has already been closed. To get all the data, you need to explicitly initialize or use the transaction. I used an explicit initialization. You need to add a line in the DAO:

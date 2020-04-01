@@ -65,6 +65,23 @@
             </div>
             <div class="col-3 card">
                 <h2>Lists</h2>
+                <table class="table">
+                    <thead class="table-light">
+                    <tr>
+                        <td>List Name</td>
+                        <td>Description</td>
+                    </tr>
+
+                    </thead>
+                    <tbody class="bg-white">
+                    <c:forEach items="${sessionScope.userLists}" var="list">
+                        <tr>
+                            <td>${list.name}</td>
+                            <td>${list.description}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
 <%--                TODO pull list of lists here, make sure to limit #--%>
             </div>
             <div class="col-3 card">

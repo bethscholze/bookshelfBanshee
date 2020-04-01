@@ -1,6 +1,7 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
+import com.bookshelfBanshee.entity.BookList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
@@ -52,7 +53,8 @@ public class UserHome extends HttpServlet {
             logger.error("Could not load Book data from api.");
         }
 
-
+        Set<BookList> userLists = user.getLists();
+        session.setAttribute("userLists", userLists);
         session.setAttribute("userBooks", googleBooksData);
         logger.info(user.toString());
 
