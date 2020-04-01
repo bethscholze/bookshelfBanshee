@@ -37,4 +37,6 @@
 |3/24|3|Checkpoint 3|Finally got my app working on aws with authentication, I did not configure the realm properly for the db in the server.xml file (tomee manager goes in tomcat-user.xml)|
 |3/25|4|Group project|worked on jsps|
 |3/30|3|Week 9|read up on jersey stuff, and implemented a service in my indie project to return the users|
+|3/30|3|Week 9|worked on branching and merge requests|
 |3/31|4|Week 9|Fixing json data returns, needed json properties in the constructor for user and json ignore for the hibernate relationships. Need to look in to lazy loading for hibernate relationships|
+|3/31|1|Week 9|loading user lists to the homepage.|
