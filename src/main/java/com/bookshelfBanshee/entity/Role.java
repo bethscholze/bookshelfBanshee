@@ -1,8 +1,10 @@
 package com.bookshelfBanshee.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -10,7 +12,7 @@ import java.util.Objects;
  */
 @Entity(name = "Role")
 @Table(name = "user_role")
-public class Role {
+public class Role implements Serializable {
     @Column(name = "role")
     private String role;
 
@@ -27,6 +29,7 @@ public class Role {
     // as an instance variable in this class
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "user_role_user_id_fk"))
+//    @JsonBackReference
     private User user;
 
     /**

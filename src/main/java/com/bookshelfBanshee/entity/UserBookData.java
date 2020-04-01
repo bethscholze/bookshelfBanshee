@@ -1,8 +1,10 @@
 package com.bookshelfBanshee.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -12,7 +14,7 @@ import java.util.Set;
  */
 @Entity(name = "UserBookData")
 @Table(name = "user_book_data")
-public class UserBookData {
+public class UserBookData implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -30,6 +32,7 @@ public class UserBookData {
 
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "user_book_data_user_id_fk"))
+//    @JsonBackReference
     private User user;
 
     public UserBookData() {

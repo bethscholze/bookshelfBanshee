@@ -1,18 +1,20 @@
 package com.bookshelfBanshee.entity;
 
+import com.fasterxml.jackson.annotation.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.io.Serializable;
 
 /**
  * The type User.
  */
 @Entity(name = "User")
 @Table(name = "user")
-public class User {
+public class User implements Serializable{
     //probably dont have to map these since they have the same name as the column
     @Column(name = "username")
     private String username;
@@ -27,12 +29,19 @@ public class User {
 
     //User is the parent, it gets a set of its children(in this case) and maps one to many
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    @JsonManagedReference this is for if I want to returna all the user data, however I will need to to a hibernate
+//    initalize (in weekly reflection) because the session closes before the objects can be returned.
+    @JsonIgnore
     private Set<UserBookData> userBooks = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    @JsonManagedReference
+    @JsonIgnore
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    @JsonManagedReference
+    @JsonIgnore
     private Set<BookList> lists = new HashSet<>();
 
     /**
@@ -42,13 +51,19 @@ public class User {
 
     }
 
-    /**
-     * Instantiates a new User.
-     *
-     * @param username the username
-     * @param password the password
-     */
-    public User(String username, String password) {
+//    /**
+//     * Instantiates a new User.
+//     *
+//     * @param username the username
+//     * @param password the password
+//     */
+//    public User(String username, String password) {
+//        this.username = username;
+//        this.password = password;
+//    }
+    @JsonCreator
+    public User(@JsonProperty("username") String username,
+                @JsonProperty("password") String password) {
         this.username = username;
         this.password = password;
     }
@@ -164,11 +179,11 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
+        return "User {" +
+                "username=" + username +
+                ", password=" + password +
                 ", id=" + id +
-                '}';
+                "}";
     }
 
     @Override

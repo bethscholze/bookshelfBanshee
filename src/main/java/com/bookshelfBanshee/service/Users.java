@@ -2,7 +2,10 @@ package com.bookshelfBanshee.service;
 
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.persistence.GenericDao;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.databind.util.Converter;
 
+import javax.validation.constraints.Null;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -18,7 +21,12 @@ public class Users {
     public Response getUsers() {
         GenericDao userDao = new GenericDao(User.class);
         List<User> users = userDao.getAll();
-        return Response.status(200).entity(users.toString()).build();
+        if(users != null) {
+            return Response.status(200).entity(users.toString()).build();
+        } else {
+            return Response.status(404).build();
+        }
+
     }
 
     @GET
@@ -28,6 +36,11 @@ public class Users {
         int userId = Integer.parseInt(id);
         GenericDao userDao = new GenericDao(User.class);
         User user = (User)userDao.getById(userId);
-        return Response.status(200).entity(user.toString()).build();
+        if(user != null) {
+            return Response.status(200).entity(user.toString()).build();
+        } else {
+            return Response.status(404).build();
+        }
+
     }
 }

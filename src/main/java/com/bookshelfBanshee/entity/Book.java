@@ -1,8 +1,10 @@
 package com.bookshelfBanshee.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -12,7 +14,7 @@ import java.util.Set;
  */
 @Entity(name = "Book")
 @Table(name = "book")
-public class Book {
+public class Book implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -26,6 +28,7 @@ public class Book {
     private String isbn13;
 
     @ManyToMany(mappedBy = "bookList")
+    @JsonManagedReference
     private Set<BookList> lists = new HashSet<>();
 
 //    @JSONproperty('author')

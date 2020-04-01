@@ -77,3 +77,35 @@ https://www.ibm.com/mysupport/s/question/0D50z00005q4DZ9CAM/using-javaxwsrsclien
 
 resetting mysql password
 http://www.ihp.sinica.edu.tw/dashboard/docs/reset-mysql-password.html
+
+json links
+https://stackoverflow.com/questions/41989906/jackson-referencing-an-object-as-a-property
+https://stackoverflow.com/questions/3325387/infinite-recursion-with-jackson-json-and-hibernate-jpa-issue
+https://stackoverflow.com/questions/48117059/could-not-write-json-failed-to-lazily-initialize-a-collection-of-role/48152153
+
+
+////////////////////////////////////////////////////////////////
+In my project I came across the same problem as yours. The problem is that by the time of reading the data "one to many" the session has already been closed. To get all the data, you need to explicitly initialize or use the transaction. I used an explicit initialization. You need to add a line in the DAO:
+
+Hibernate.initialize(supplier.getIngredients());
+
+After that, Hibernate will load all the data from the database. To avoid generating an exception when serializing to JSON, I add the @JsonIgnore annotation in the one-to-many model field.
+
+Here is an example of my code:
+
+1.Model
+
+@OneToMany(mappedBy = "commandByEv", fetch = FetchType.LAZY)
+@JsonIgnore
+private Set<Evaluation> evaluations;
+
+2. DAO
+
+public Command getCommand(long id) {
+Session session = sessionFactory.getCurrentSession();
+Evaluation evaluation = session.get(Evaluation.class, id);
+Hibernate.initialize(evaluation.getCommand());
+return evaluation.getCommand();
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
