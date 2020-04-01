@@ -29,7 +29,8 @@ public class User implements Serializable{
 
     //User is the parent, it gets a set of its children(in this case) and maps one to many
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-//    @JsonManagedReference this is for if I want to returna all the user data, however I will need to to a hibernate
+//    @JsonManagedReference
+    //this is for if I want to returna all the user data, however I will need to to a hibernate
 //    initalize (in weekly reflection) because the session closes before the objects can be returned.
     @JsonIgnore
     private Set<UserBookData> userBooks = new HashSet<>();
@@ -51,16 +52,12 @@ public class User implements Serializable{
 
     }
 
-//    /**
-//     * Instantiates a new User.
-//     *
-//     * @param username the username
-//     * @param password the password
-//     */
-//    public User(String username, String password) {
-//        this.username = username;
-//        this.password = password;
-//    }
+    /**
+     * Instantiates a new User.
+     *
+     * @param username the username
+     * @param password the password
+     */
     @JsonCreator
     public User(@JsonProperty("username") String username,
                 @JsonProperty("password") String password) {

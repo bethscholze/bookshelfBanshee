@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.transaction.Transactional;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -33,13 +34,8 @@ public class JSONUsers {
             return Response.status(200).entity(jsonString).build();
         } catch (JsonProcessingException e){
             logger.error(e);
-            return Response.status(400).build();
-        }
-        /*if(users != null) {
-            return Response.status(200).entity(users).build();
-        } else {
             return Response.status(404).build();
-        }*/
+        }
     }
 
     @GET
@@ -58,7 +54,7 @@ public class JSONUsers {
             return Response.status(200).entity(jsonString).build();
         } catch (JsonProcessingException e){
             logger.error(e);
-            return Response.status(400).build();
+            return Response.status(404).build();
         }
 
 //        if(user != null) {
