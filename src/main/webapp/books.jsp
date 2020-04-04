@@ -1,13 +1,16 @@
-
+<%--
+  Created by IntelliJ IDEA.
+  User: student
+  Date: 2/24/20
+  Time: 10:46 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<!-- <%-- <%@include file="head.jsp"%> --%> -->
-<!-- this is the stuff in the head.jsp -->
 <%--TODO take out head stuff and replace with import--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@include file="head.jsp"%>
-    <!-- this is the head stuff -->
-    <!--  -->
 
     <body class="container-fluid p-0">
         <header class="pageBackground jumbotron jumbotron-fluid d-flex flex-wrap p-0">
@@ -27,9 +30,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarCollapse1">
                     <div class="navbar-nav">
-                        <a href="/UserHome" class="nav-item nav-link active">Home</a>
-                        <a href="books.jsp" class="nav-item nav-link">Bookshelf</a>
-                        <a href="lists.jsp" class="nav-item nav-link">Lists</a>
+                        <a href="#" class="nav-item nav-link active">Home</a>
+                        <a href="#" class="nav-item nav-link">Bookshelf</a>
+                        <a href="#" class="nav-item nav-link">Lists</a>
                         <a href="#" class="nav-item nav-link">Stats</a>
                     </div>
                     <form class="form-inline ml-auto bg-dark">
@@ -39,9 +42,27 @@
                 </div>
             </nav>
         </header>
-        <section class="row justify-content-around d-flex align-items-center mx-5">
-            <div class="col-3 card">
-                <h2>Bookshelf</h2>
+        <section class="row d-flex justify-content-between align-items-center">
+            <div class="col-3 bg-dark text-light text-center">
+                <h2 class="p-1">Sort By</h2>
+                <div>
+<%--                    I want these buttons loaded from the backend? on page load users sort categories--%>
+                    <button>Title</button>
+                    <button>Author</button>
+                    <button>Date added</button>
+                    <button>Publish Date</button>
+                    <button># of pages</button>
+                </div>
+            </div>
+            <div class="col-9 bg-light visible">
+                <form>
+                    <input>
+                    <button type="submit">Search</button>
+                    <button type="reset">Clear</button>
+                </form>
+                <%-- this one should just be done with js to toggle class for visible to invisible--%>
+                <h3>Booklist</h3>
+
                 <table class="table">
                     <thead class="table-light">
                     <tr>
@@ -57,42 +78,26 @@
                             <td>${books.title}</td>
                             <td>${books.authors}</td>
                             <td>${books.publishedDate}</td>
+                            <td><button>Edit</button></td>
+                            <td><button>Add to list</button></td>
+<%--                            this will have to pop up a modal? or something--%>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
-<%--                TODO pull list of bookList here, make sure to limit #--%>
             </div>
-            <div class="col-3 card">
-                <h2>Lists</h2>
-                <table class="table">
-                    <thead class="table-light">
-                    <tr>
-                        <td>List Name</td>
-                        <td>Description</td>
-                    </tr>
-
-                    </thead>
-                    <tbody class="bg-white">
-                    <c:forEach items="${sessionScope.userLists}" var="list">
-                        <tr>
-                            <td>${list.name}</td>
-                            <td>${list.description}</td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-<%--                TODO pull list of lists here, make sure to limit #--%>
+            <div class="col-9 bg-light invisible">
+<%--                //this one should just be done with js to toggle class for visible to invisible--%>
+                <h3>Edit Book</h3>
             </div>
-            <div class="col-3 card">
-                <h2>Stats</h2>
-<%--                TODO put something here--%>
+            <div class="col-9 bg-light invisible">
+<%--                this one needs to be loaded from the servlet on form submit--%>
+                <h3>Search results</h3>
+<%--                button on each to add book--%>
             </div>
 
         </section>
 
 
     </body>
-
-
 </html>

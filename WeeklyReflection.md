@@ -112,3 +112,7 @@ return evaluation.getCommand();
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+NEW API TO GET GENRE/OTHER INFO NOT IN GOOGLE BOOKS
+https://www.isbndb.com/
+//nevermind this is pay to use
