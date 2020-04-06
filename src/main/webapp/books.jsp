@@ -54,7 +54,7 @@
                     <button># of pages</button>
                 </div>
             </div>
-            <div class="col-9 bg-light visible">
+            <div id="bookList" class="col-9 bg-light">
                 <form>
                     <input>
                     <button type="submit">Search</button>
@@ -78,7 +78,7 @@
                             <td>${books.title}</td>
                             <td>${books.authors}</td>
                             <td>${books.publishedDate}</td>
-                            <td><button>Edit</button></td>
+                            <td><button onclick="toggleEdit()">Edit</button></td>
                             <td><button>Add to list</button></td>
 <%--                            this will have to pop up a modal? or something--%>
                         </tr>
@@ -86,11 +86,11 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-9 bg-light invisible">
+            <div id="editBook" class="col-9 bg-light d-none">
 <%--                //this one should just be done with js to toggle class for visible to invisible--%>
                 <h3>Edit Book</h3>
             </div>
-            <div class="col-9 bg-light invisible">
+            <div class="col-9 bg-light d-none">
 <%--                this one needs to be loaded from the servlet on form submit--%>
                 <h3>Search results</h3>
 <%--                button on each to add book--%>
