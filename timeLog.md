@@ -40,3 +40,6 @@
 |3/30|3|Week 9|worked on branching and merge requests|
 |3/31|4|Week 9|Fixing json data returns, needed json properties in the constructor for user and json ignore for the hibernate relationships. Need to look in to lazy loading for hibernate relationships|
 |3/31|1|Week 9|loading user lists to the homepage.|
+|4/1-4/5|6|Week 10|Spent time figuring out how my books.jsp page was going to work for editing books and adding books|
+|4/6|4|Week 10|Helped matt look at stuff to hide api keys|
+|4/8|6|Team project|entity workflow diagram|
