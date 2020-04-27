@@ -12,10 +12,11 @@
 
     <body class="container-fluid">
     <%@include file="header.jsp"%>
-    <c:if test = "${sessionScope.successMessage}">
-        <div class="alert-success"><p> <c:out value = "${sessionScope.successMessage}" /></p></div>
+    <c:if test = "${!empty sessionScope.successMessage}">
+        <div class="alert-success"><p>${sessionScope.successMessage}</p></div>
     </c:if>
         <section class="pageBackground h-100 row justify-content-center align-items-center mx-0">
+
             <form method="post" action="j_security_check" class="form bg-light rounded px-2 py-2">
                 <div class="form-group">
                     <label for="username">Username</label>

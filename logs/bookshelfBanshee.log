@@ -9410,3 +9410,278 @@
 [INFO ] 2020-04-27 14:33:58.499 [http-nio-8080-exec-8] UserHome - test
 [DEBUG] 2020-04-27 14:33:58.504 [http-nio-8080-exec-8] GenericDao - Searching for user with username = test
 [INFO ] 2020-04-27 14:33:58.802 [http-nio-8080-exec-8] UserHome - User {username=test, password=test, id=15}
+[INFO ] 2020-04-27 15:00:24.984 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:25.068 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:00:25.102 [main] GenericDao - Inserted entity: Book{id=412, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:00:25.157 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:25.375 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:25.458 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=243}
+[INFO ] 2020-04-27 15:00:25.475 [main] GenericDao - Inserted entity: Role{role='user', id=24}
+[INFO ] 2020-04-27 15:00:25.599 [main] GenericDao - Entity Retrieved: Role{role='administrator', id=1}
+[INFO ] 2020-04-27 15:00:25.762 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:00:25.796 [main] GenericDao - Deleted entity: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:00:25.826 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:25.835 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:00:25.996 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:26.153 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:26.258 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:00:26.279 [main] GenericDao - Inserted entity: BookList{id=195, name='last list', description='this is the last list'}
+[INFO ] 2020-04-27 15:00:26.351 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:26.468 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:00:26.597 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:00:26.606 [main] GenericDao - Updated entity: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:00:26.645 [main] GenericDao - Entity Retrieved: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:00:26.747 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:00:26.807 [main] GenericDao - Deleted entity: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:00:26.879 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:26.886 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:00:26.899 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:27.045 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:27.121 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=244}
+[INFO ] 2020-04-27 15:00:27.217 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:27.331 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:00:27.435 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:00:27.519 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:00:27.554 [main] GenericDao - Updated entity: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:00:27.589 [main] GenericDao - Entity Retrieved: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:00:27.678 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:00:27.684 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:00:27.691 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:27.696 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:00:27.763 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:27.828 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:27.892 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:00:27.901 [main] GenericDao - Inserted entity: Book{id=413, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:00:27.911 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:00:27.987 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:00:28.044 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:00:28.054 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[INFO ] 2020-04-27 15:00:28.065 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[DEBUG] 2020-04-27 15:01:15.143 [http-nio-8080-exec-3] SignupServlet - the username: this
+[DEBUG] 2020-04-27 15:01:15.156 [http-nio-8080-exec-3] SignupServlet - the password: not
+[DEBUG] 2020-04-27 15:01:15.156 [http-nio-8080-exec-3] SignupServlet - the retyped Password: right
+[INFO ] 2020-04-27 15:12:38.445 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:38.559 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:12:38.676 [main] GenericDao - Inserted entity: Book{id=414, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:12:38.733 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:39.008 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:39.073 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=245}
+[INFO ] 2020-04-27 15:12:39.094 [main] GenericDao - Inserted entity: Role{role='user', id=25}
+[INFO ] 2020-04-27 15:12:39.194 [main] GenericDao - Entity Retrieved: Role{role='administrator', id=1}
+[INFO ] 2020-04-27 15:12:39.385 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:12:39.419 [main] GenericDao - Deleted entity: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:12:39.460 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:39.475 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:12:39.569 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:39.684 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:39.766 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:12:39.778 [main] GenericDao - Inserted entity: BookList{id=196, name='last list', description='this is the last list'}
+[INFO ] 2020-04-27 15:12:39.803 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:39.901 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:12:39.988 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:12:40.007 [main] GenericDao - Updated entity: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:12:40.034 [main] GenericDao - Entity Retrieved: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:12:40.116 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:12:40.157 [main] GenericDao - Deleted entity: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:12:40.243 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:40.259 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:12:40.275 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:40.418 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:40.474 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=246}
+[INFO ] 2020-04-27 15:12:40.563 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:40.666 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:12:40.736 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:12:40.809 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:12:40.822 [main] GenericDao - Updated entity: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:12:40.847 [main] GenericDao - Entity Retrieved: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:12:40.914 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:12:40.918 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:12:40.922 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:40.924 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:12:40.964 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:41.042 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:41.116 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:12:41.126 [main] GenericDao - Inserted entity: Book{id=415, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:12:41.139 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:12:41.211 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:12:41.282 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:12:41.288 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[INFO ] 2020-04-27 15:12:41.291 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[DEBUG] 2020-04-27 15:14:01.730 [http-nio-8080-exec-3] SignupServlet - the username: thisuser
+[DEBUG] 2020-04-27 15:14:01.759 [http-nio-8080-exec-3] SignupServlet - the password: e
+[DEBUG] 2020-04-27 15:14:01.760 [http-nio-8080-exec-3] SignupServlet - the retyped Password: e
+[DEBUG] 2020-04-27 15:14:01.780 [http-nio-8080-exec-3] SignupServlet - User {username=thisuser, password=e, id=0}
+[INFO ] 2020-04-27 15:14:06.492 [http-nio-8080-exec-3] GenericDao - Inserted entity: User {username=thisuser, password=e, id=16}
+[INFO ] 2020-04-27 15:14:06.508 [http-nio-8080-exec-3] GenericDao - Inserted entity: Role{role='user', id=9}
+[INFO ] 2020-04-27 15:15:49.705 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:49.832 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:15:49.917 [main] GenericDao - Inserted entity: Book{id=416, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:15:49.961 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:50.193 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:50.283 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=247}
+[INFO ] 2020-04-27 15:15:50.302 [main] GenericDao - Inserted entity: Role{role='user', id=26}
+[INFO ] 2020-04-27 15:15:50.417 [main] GenericDao - Entity Retrieved: Role{role='administrator', id=1}
+[INFO ] 2020-04-27 15:15:50.585 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:15:50.618 [main] GenericDao - Deleted entity: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:15:50.663 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:50.667 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:15:50.756 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:50.858 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:50.950 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:15:50.963 [main] GenericDao - Inserted entity: BookList{id=197, name='last list', description='this is the last list'}
+[INFO ] 2020-04-27 15:15:51.001 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:51.152 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:15:51.235 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:15:51.244 [main] GenericDao - Updated entity: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:15:51.264 [main] GenericDao - Entity Retrieved: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:15:51.363 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:15:51.404 [main] GenericDao - Deleted entity: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:15:51.498 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:51.507 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:15:51.522 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:51.685 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:51.745 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=248}
+[INFO ] 2020-04-27 15:15:51.777 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:51.853 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:15:51.941 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:15:52.031 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:15:52.055 [main] GenericDao - Updated entity: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:15:52.066 [main] GenericDao - Entity Retrieved: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:15:52.155 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:15:52.165 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:15:52.175 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:52.178 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:15:52.210 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:52.294 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:52.374 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:15:52.388 [main] GenericDao - Inserted entity: Book{id=417, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:15:52.403 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:15:52.482 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:15:52.564 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:15:52.569 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[INFO ] 2020-04-27 15:15:52.571 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[DEBUG] 2020-04-27 15:16:27.757 [http-nio-8080-exec-2] SignupServlet - the username: this
+[DEBUG] 2020-04-27 15:16:27.814 [http-nio-8080-exec-2] SignupServlet - the password: d
+[DEBUG] 2020-04-27 15:16:27.814 [http-nio-8080-exec-2] SignupServlet - the retyped Password: d
+[DEBUG] 2020-04-27 15:16:27.839 [http-nio-8080-exec-2] SignupServlet - User {username=this, password=d, id=0}
+[INFO ] 2020-04-27 15:16:32.696 [http-nio-8080-exec-2] GenericDao - Inserted entity: User {username=this, password=d, id=17}
+[INFO ] 2020-04-27 15:16:32.709 [http-nio-8080-exec-2] GenericDao - Inserted entity: Role{role='user', id=10}
+[INFO ] 2020-04-27 15:20:13.238 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:13.313 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:20:13.352 [main] GenericDao - Inserted entity: Book{id=418, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:20:13.470 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:13.782 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:13.882 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=249}
+[INFO ] 2020-04-27 15:20:13.910 [main] GenericDao - Inserted entity: Role{role='user', id=27}
+[INFO ] 2020-04-27 15:20:14.026 [main] GenericDao - Entity Retrieved: Role{role='administrator', id=1}
+[INFO ] 2020-04-27 15:20:14.253 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:20:14.301 [main] GenericDao - Deleted entity: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:20:14.335 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:14.345 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:20:14.461 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:14.598 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:14.694 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:20:14.720 [main] GenericDao - Inserted entity: BookList{id=198, name='last list', description='this is the last list'}
+[INFO ] 2020-04-27 15:20:14.777 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:14.926 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:20:15.042 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:20:15.063 [main] GenericDao - Updated entity: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:20:15.104 [main] GenericDao - Entity Retrieved: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:20:15.241 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:20:15.281 [main] GenericDao - Deleted entity: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:20:15.419 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:15.434 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:20:15.455 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:15.635 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:15.703 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=250}
+[INFO ] 2020-04-27 15:20:15.810 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:15.892 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:20:16.003 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:20:16.091 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:20:16.119 [main] GenericDao - Updated entity: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:20:16.135 [main] GenericDao - Entity Retrieved: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:20:16.223 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:20:16.230 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:20:16.240 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:16.244 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:20:16.321 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:16.411 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:16.500 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:20:16.508 [main] GenericDao - Inserted entity: Book{id=419, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:20:16.517 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:20:16.592 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:20:16.665 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:20:16.675 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[INFO ] 2020-04-27 15:20:16.681 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[DEBUG] 2020-04-27 15:20:53.084 [http-nio-8080-exec-3] SignupServlet - the username: userRole
+[DEBUG] 2020-04-27 15:20:53.103 [http-nio-8080-exec-3] SignupServlet - the password: w
+[DEBUG] 2020-04-27 15:20:53.103 [http-nio-8080-exec-3] SignupServlet - the retyped Password: e
+[DEBUG] 2020-04-27 15:21:17.043 [http-nio-8080-exec-6] SignupServlet - the username: this
+[DEBUG] 2020-04-27 15:21:17.044 [http-nio-8080-exec-6] SignupServlet - the password: e
+[DEBUG] 2020-04-27 15:21:17.045 [http-nio-8080-exec-6] SignupServlet - the retyped Password: e
+[DEBUG] 2020-04-27 15:21:17.118 [http-nio-8080-exec-6] SignupServlet - User {username=this, password=e, id=0}
+[DEBUG] 2020-04-27 15:21:36.712 [http-nio-8080-exec-9] SignupServlet - the username: tws
+[DEBUG] 2020-04-27 15:21:36.712 [http-nio-8080-exec-9] SignupServlet - the password: 3
+[DEBUG] 2020-04-27 15:21:36.712 [http-nio-8080-exec-9] SignupServlet - the retyped Password: 3
+[DEBUG] 2020-04-27 15:21:36.712 [http-nio-8080-exec-9] SignupServlet - User {username=tws, password=3, id=0}
+[DEBUG] 2020-04-27 15:22:02.609 [http-nio-8080-exec-1] SignupServlet - the username: tws
+[DEBUG] 2020-04-27 15:22:02.609 [http-nio-8080-exec-1] SignupServlet - the password: 3
+[DEBUG] 2020-04-27 15:22:02.609 [http-nio-8080-exec-1] SignupServlet - the retyped Password: 3
+[DEBUG] 2020-04-27 15:22:02.609 [http-nio-8080-exec-1] SignupServlet - User {username=tws, password=3, id=0}
+[INFO ] 2020-04-27 15:23:53.374 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:53.479 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:23:53.536 [main] GenericDao - Inserted entity: Book{id=420, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:23:53.600 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:53.824 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:53.914 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=251}
+[INFO ] 2020-04-27 15:23:53.937 [main] GenericDao - Inserted entity: Role{role='user', id=28}
+[INFO ] 2020-04-27 15:23:54.034 [main] GenericDao - Entity Retrieved: Role{role='administrator', id=1}
+[INFO ] 2020-04-27 15:23:54.219 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:23:54.251 [main] GenericDao - Deleted entity: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:23:54.269 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:54.277 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:23:54.362 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:54.452 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:54.513 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:23:54.523 [main] GenericDao - Inserted entity: BookList{id=199, name='last list', description='this is the last list'}
+[INFO ] 2020-04-27 15:23:54.544 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:54.620 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:23:54.706 [main] GenericDao - Entity Retrieved: BookList{id=1, name='first list', description='this is the first list'}
+[INFO ] 2020-04-27 15:23:54.719 [main] GenericDao - Updated entity: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:23:54.738 [main] GenericDao - Entity Retrieved: BookList{id=1, name='resetName', description='this is the first list'}
+[INFO ] 2020-04-27 15:23:54.804 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:23:54.829 [main] GenericDao - Deleted entity: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:23:54.881 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:54.896 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:23:54.908 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:55.002 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:55.066 [main] GenericDao - Inserted entity: User {username=newUser, password=newPassword, id=252}
+[INFO ] 2020-04-27 15:23:55.122 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:55.192 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:23:55.260 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:23:55.333 [main] GenericDao - Entity Retrieved: User {username=notAdmin, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:23:55.365 [main] GenericDao - Updated entity: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:23:55.387 [main] GenericDao - Entity Retrieved: User {username=resetPassword, password=notPassword, id=1}
+[INFO ] 2020-04-27 15:23:55.464 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:23:55.473 [main] GenericDao - Deleted entity: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:23:55.490 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:55.496 [main] GenericDao - Entity Retrieved: null
+[INFO ] 2020-04-27 15:23:55.570 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:55.629 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:55.692 [main] GenericDao - Entity Retrieved: User {username=me, password=password, id=2}
+[INFO ] 2020-04-27 15:23:55.702 [main] GenericDao - Inserted entity: Book{id=421, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:23:55.709 [main] GenericDao - Retrieved all entities
+[INFO ] 2020-04-27 15:23:55.763 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:23:55.844 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='9781250313188'}
+[INFO ] 2020-04-27 15:23:55.851 [main] GenericDao - Updated entity: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[INFO ] 2020-04-27 15:23:55.854 [main] GenericDao - Entity Retrieved: Book{id=1, isbn10='125031318X', isbn13='resetIsbn'}
+[DEBUG] 2020-04-27 15:25:24.136 [http-nio-8080-exec-6] SignupServlet - the username: test
+[DEBUG] 2020-04-27 15:25:24.152 [http-nio-8080-exec-6] SignupServlet - the password: test
+[DEBUG] 2020-04-27 15:25:24.152 [http-nio-8080-exec-6] SignupServlet - the retyped Password: test
+[DEBUG] 2020-04-27 15:25:24.184 [http-nio-8080-exec-6] SignupServlet - User {username=test, password=test, id=0}
+[INFO ] 2020-04-27 15:25:29.114 [http-nio-8080-exec-6] GenericDao - Inserted entity: User {username=test, password=test, id=21}
+[INFO ] 2020-04-27 15:25:29.122 [http-nio-8080-exec-6] GenericDao - Inserted entity: Role{role='user', id=11}
+[DEBUG] 2020-04-27 15:25:43.933 [http-nio-8080-exec-10] UserHome - here
+[INFO ] 2020-04-27 15:25:43.937 [http-nio-8080-exec-10] UserHome - test
+[DEBUG] 2020-04-27 15:25:43.946 [http-nio-8080-exec-10] GenericDao - Searching for user with username = test
+[INFO ] 2020-04-27 15:25:44.428 [http-nio-8080-exec-10] UserHome - User {username=test, password=test, id=21}

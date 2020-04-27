@@ -49,13 +49,13 @@ public class SignupServlet extends HttpServlet {
             GenericDao<Role> roleDao = new GenericDao<>(Role.class);
             roleDao.insert(userRole);
             String successMessage = "Success account created! Please log in to get started.";
-            session.setAttribute("signup", successMessage);
+            session.setAttribute("successMessage", successMessage);
             //goes to new url
             String location = "UserHome";
             resp.sendRedirect(location);
         } else {
             String errorMessage = "Passwords do not match. Please retry.";
-            session.setAttribute("signup", errorMessage);
+            session.setAttribute("errorMessage", errorMessage);
             //stays at same url
             RequestDispatcher dispatcher = req.getRequestDispatcher("signup.jsp");
             dispatcher.forward(req, resp);
