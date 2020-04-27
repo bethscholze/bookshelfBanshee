@@ -16,7 +16,7 @@
     <c:if test = "${sessionScope.errorMessage}">
         <div class="alert-danger"><p> <c:out value = "${sessionScope.errorMessage}" /></p></div>
     </c:if>
-    <form method="post" action="/signup" class="form bg-light rounded px-2 py-2">
+    <form method="post" action="Signup" class="form bg-light rounded px-2 py-2">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="enter username" />
