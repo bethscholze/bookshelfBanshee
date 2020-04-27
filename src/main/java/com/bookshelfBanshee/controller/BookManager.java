@@ -9,13 +9,19 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BookManager {
+    // Holds the data returned form the google books api for all of a users books,
+    // This needs to be refactored to only call the first 200 of a users books then
+    //use pagination to call the next 200 books.
+    private Set<VolumeInfo> returnedBookInfo = new HashSet<>();
     //this class will be created after a user signs in
-    //it will need to create a bookFactory to create all the book objects for a user
-    //this will also create the bookDao?
+    // It will hold all the book data returned from the api, I need to maintain this data in the session
+    // so if I need to check if a book has already been added to the session of userBooks. ie make sure I
+    // append when i query for more data. if(book !in userbook call api)
+
+    //I think pass a param in based on the page you are on ...
 
     public Set<VolumeInfo> getGoogleAPIBookData(Set<UserBookData> userBooks) throws Exception {
         GoogleBooksAPI api = new GoogleBooksAPI();
-        Set<VolumeInfo> returnedBookInfo = new HashSet<>();
         String queryParam = "isbn";
         // TODO make sure to limit number of queries to 200!!!! pagination will call next set afterward
         // TODO make sure there is an ability to load new books on each page then so that if they switch to a new set

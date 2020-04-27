@@ -43,3 +43,6 @@
 |4/1-4/5|6|Week 10|Spent time figuring out how my books.jsp page was going to work for editing books and adding books|
 |4/6|4|Week 10|Helped matt look at stuff to hide api keys|
 |4/8|6|Team project|entity workflow diagram|
+|4/20-4/23|Indie project|15|Did work on book details, spent a lot of time figuring out where I was and how I could accomplish what I need to by presentation day. Decided to do servlets instead of javascript for the book details because it was too complicated to figure out how to convert java object in session to js object in order to display things on the page and then save the modified version of the object. Will come back to this if I have time at end of project since I already wasted too much time messing with it. |
+|4/27|2|Week 13|Did message exercise. Gave feedback on prof dev project|
+|4/27|4|Indie project work|Create signup page logic, and add later|
