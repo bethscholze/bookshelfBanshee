@@ -2,7 +2,6 @@
 
 ## Problem Statement
 
-<<<<<<< HEAD
 Many avid readers have extensive lists of books they have read and plan to read. 
 It can be hard to keep these lists organized and track which books you 
 have, want to rent, or want to buy. Traditional websites such as 
