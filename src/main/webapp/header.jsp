@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <header class="pageBackground jumbotron jumbotron-fluid d-flex flex-wrap p-0">
     <div class="col-12 align-self-top d-flex justify-content-end">
-        <button class="btn my-1 mx-1 p-1" type="button" name="logout">Logout</button>
-        <button  class="btn my-1 mx-1 p-1" type="button" name="button">Profile</button>
+        <a class="btn btn-dark col-1 my-2 p-2" href="logout">Logout</a>
+        <a class="btn btn-dark col-1 my-2 p-2" href="#">Profile</a>
     </div>
     <div class="col-12 align-self-center p-5">
         <h1>Bookshelf Banshee</h1>
@@ -23,9 +23,9 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse1">
             <div class="navbar-nav">
-                <a href="#" class="nav-item nav-link active">Home</a>
-                <a href="#" class="nav-item nav-link">Bookshelf</a>
-                <a href="#" class="nav-item nav-link">Lists</a>
+                <a href="UserHome" class="nav-item nav-link active">Home</a>
+                <a href="books.jsp" class="nav-item nav-link">Bookshelf</a>
+                <a href="lists.jsp" class="nav-item nav-link">Lists</a>
                 <a href="#" class="nav-item nav-link">Stats</a>
             </div>
             <form class="form-inline ml-auto bg-dark">
