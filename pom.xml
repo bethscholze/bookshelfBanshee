@@ -67,6 +67,8 @@
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql-version}</version>
+<!--todo check this      this is for local might break aws deployment-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>jstl</groupId>
