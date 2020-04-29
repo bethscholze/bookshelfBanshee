@@ -37,9 +37,10 @@ class UserDaoTest {
 
     @Test
     void saveOrUpdate() {
+        //TODO fix this to work with username
         User retrievedUser = (User) userDao.getById(1);
-        String newUsername = "resetUsername";
-        retrievedUser.setUsername(newUsername);
+        String newPassword = "resetPassword";
+        retrievedUser.setUsername(newPassword);
         userDao.saveOrUpdate(retrievedUser);
         User updatedUser = (User) userDao.getById(1);
         assertEquals(retrievedUser, updatedUser);

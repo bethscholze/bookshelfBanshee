@@ -1332,10 +1332,9 @@
     <column id="323" parent="286" name="username">
       <Position>4</Position>
       <DataType>varchar(25)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="324" parent="286" name="role_user_user_id_fk">
+    <index id="324" parent="286" name="user_role_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1344,7 +1343,7 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="326" parent="286" name="role_user_user_id_fk">
+    <foreign-key id="326" parent="286" name="user_role_user_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>BookshelfBansheeTest</RefSchemaName>
       <RefTableName>user</RefTableName>

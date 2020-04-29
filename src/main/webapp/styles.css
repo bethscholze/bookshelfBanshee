@@ -10,7 +10,7 @@ header {
     text-align: center;
 }
 #landingPage {
-    background-image: url("indexLibrary.jpg");
+    background-image: url("images/indexLibrary.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -27,7 +27,7 @@ h1 {
 }
 
 .pageBackground {
-    background-image: url("indexLibrary.jpg");
+    background-image: url("images/indexLibrary.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

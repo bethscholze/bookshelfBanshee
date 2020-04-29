@@ -7,8 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<%--TODO take out head stuff and replace with import--%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@include file="head.jsp"%>
 
@@ -63,38 +61,45 @@
                 <%-- this one should just be done with js to toggle class for visible to invisible--%>
                 <h3>Booklist</h3>
 
-                <table class="table">
-                    <thead class="table-light">
-                    <tr>
-                        <td>Title</td>
-                        <td>Authors</td>
-                        <td>Publish Date</td>
-                    </tr>
-
-                    </thead>
-                    <tbody class="bg-white">
+                <div class="d-flex">
                     <c:forEach items="${sessionScope.userBooks}" var="books">
-                        <tr>
-                            <td>${books.title}</td>
-                            <td>${books.authors}</td>
-                            <td>${books.publishedDate}</td>
-                            <td><button onclick="toggleEdit()">Edit</button></td>
-                            <td><button>Add to list</button></td>
-<%--                            this will have to pop up a modal? or something--%>
-                        </tr>
+                        <div class="card" style="width: 14rem;">
+                            <img class="card-img-top" src="${books.imageLinks.smallThumbnail}" alt="Book Cover">
+                            <div class="card-body">
+                                <h5 class="card-title">${books.title}</h5>
+                                <table class="table">
+                                    <thead class="table-light">
+                                    </thead>
+                                    <tbody class="bg-white">
+                                    <tr>
+                                        <th>Authors</th>
+                                        <td>${books.authors}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Publish Date</th>
+                                        <td>${books.publishedDate}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <button type="button" class="editBook" value="${books}">Edit</button>
+                                <button>Add to list</button>
+                            </div>
+                        </div>
                     </c:forEach>
-                    </tbody>
-                </table>
+                </div>
             </div>
-            <div id="editBook" class="col-9 bg-light d-none">
-<%--                //this one should just be done with js to toggle class for visible to invisible--%>
-                <h3>Edit Book</h3>
-            </div>
-            <div class="col-9 bg-light d-none">
-<%--                this one needs to be loaded from the servlet on form submit--%>
-                <h3>Search results</h3>
-<%--                button on each to add book--%>
-            </div>
+<%--            js should create these sections--%>
+<%--            <div id="editBook" class="col-9 bg-light">--%>
+<%--&lt;%&ndash;                //this one should just be done with js to toggle class for visible to invisible&ndash;%&gt;--%>
+<%--                <h3>Edit Book</h3>--%>
+<%--                <form></form>--%>
+<%--            </div>--%>
+<%--            <div class="col-9 bg-light d-none">--%>
+<%--&lt;%&ndash;                this one needs to be loaded from the servlet on form submit&ndash;%&gt;--%>
+<%--                <h3>Search results</h3>--%>
+<%--&lt;%&ndash;                button on each to add book&ndash;%&gt;--%>
+<%--            </div>--%>
 
         </section>
 

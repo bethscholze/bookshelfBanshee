@@ -16,8 +16,8 @@ public class Role implements Serializable {
     @Column(name = "role")
     private String role;
 
-//    @Column(name = "username")
-    //private String username;
+    @Column(name = "username")
+    private String username;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -41,14 +41,13 @@ public class Role implements Serializable {
     /**
      * Instantiates a new Role.
      *
-     * @param role     the role
-     * @param id       the id
-     * @param user     the user
+     * @param role the role
+     * @param user the user
      */
-    public Role(String role, int id, User user) {
+    public Role(String role, User user, String username) {
         this.role = role;
-        this.id = id;
         this.user = user;
+        this.username = username;
     }
 
     /**
@@ -104,6 +103,24 @@ public class Role implements Serializable {
      */
     public void setUser(User user) {
         this.user = user;
+    }
+
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
