@@ -8,7 +8,7 @@ const init = () => {
 
 }
 
-const getDetails = (book) => {
+const setBook = (book) => {
     //
     //currentbook = userBook.id== to passed in id form function call
     let currentBook = book;
