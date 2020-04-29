@@ -46,3 +46,4 @@
 |4/20-4/23|Indie project|15|Did work on book details, spent a lot of time figuring out where I was and how I could accomplish what I need to by presentation day. Decided to do servlets instead of javascript for the book details because it was too complicated to figure out how to convert java object in session to js object in order to display things on the page and then save the modified version of the object. Will come back to this if I have time at end of project since I already wasted too much time messing with it. |
 |4/27|2|Week 13|Did message exercise. Gave feedback on prof dev project|
 |4/27|4|Indie project work|Create signup page logic, and add later|
+|4/29|6|Indie Project Work|Added the login to logout the user and delete their session. Started to work on the edit book logic. Books are now in lists so they can be passed to the next page by their number in the list and the corresponding dao can be grabbed to save edits|
