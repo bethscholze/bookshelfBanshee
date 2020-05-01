@@ -47,3 +47,5 @@
 |4/27|2|Week 13|Did message exercise. Gave feedback on prof dev project|
 |4/27|4|Indie project work|Create signup page logic, and add later|
 |4/29|6|Indie Project Work|Added the login to logout the user and delete their session. Started to work on the edit book logic. Books are now in lists so they can be passed to the next page by their number in the list and the corresponding dao can be grabbed to save edits|
+|4/29|3|Week14|Reviewed anthony's project and provided feedback|
+|5/1||Indie project work||

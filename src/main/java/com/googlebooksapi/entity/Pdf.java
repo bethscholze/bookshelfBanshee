@@ -1,10 +1,10 @@
-package com.googlebooksapi;
+package com.googlebooksapi.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class Epub{
+public class Pdf{
 
 	@JsonProperty("isAvailable")
 	private boolean isAvailable;
@@ -20,7 +20,7 @@ public class Epub{
 	@Override
  	public String toString(){
 		return 
-			"Epub{" + 
+			"Pdf{" + 
 			"isAvailable = '" + isAvailable + '\'' + 
 			"}";
 		}

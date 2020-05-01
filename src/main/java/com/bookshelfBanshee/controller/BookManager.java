@@ -1,12 +1,10 @@
 package com.bookshelfBanshee.controller;
 
-import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.UserBookData;
-import com.googlebooksapi.GoogleBooksAPI;
-import com.googlebooksapi.VolumeInfo;
+import com.googlebooksapi.controller.GoogleBooksAPI;
+import com.googlebooksapi.entity.VolumeInfo;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 

@@ -1,10 +1,10 @@
-package com.googlebooksapi;
+package com.googlebooksapi.controller;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import com.googlebooksapi.GoogleBooksAPI;
-import com.googlebooksapi.VolumeInfo;
+import com.googlebooksapi.controller.GoogleBooksAPI;
+import com.googlebooksapi.entity.VolumeInfo;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;

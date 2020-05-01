@@ -93,10 +93,9 @@ public class GenericDao<T> {
 
 
     public List<T> getByPropertyEqual(String propertyName, String value) {
-//        Session session = sessionFactory.openSession();
         Session session = getSession();
 
-        logger.debug("Searching for user with " + propertyName + " = " + value);
+        logger.debug("Searching for Entity with " + propertyName + " = " + value);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
@@ -113,7 +112,7 @@ public class GenericDao<T> {
 //        Session session = sessionFactory.openSession();
         Session session = getSession();
 
-        logger.debug("Searching for user with {} = {}",  propertyName, value);
+        logger.debug("Searching for Entity with {} = {}",  propertyName, value);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);

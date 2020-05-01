@@ -1,4 +1,4 @@
-package com.googlebooksapi;
+package com.googlebooksapi.entity;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;

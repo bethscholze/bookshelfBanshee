@@ -34,27 +34,27 @@
                 <h3>Booklist</h3>
 
                 <div class="d-flex">
-                    <c:forEach items="${sessionScope.userBooks}" var="books">
+                    <c:forEach items="${sessionScope.userBooks}" var="book">
                         <div class="card" style="width: 14rem;">
-                            <img class="card-img-top" src="${books.imageLinks.smallThumbnail}" alt="Book Cover">
+                            <img class="card-img-top" src="${book.imageLinks.smallThumbnail}" alt="Book Cover">
                             <div class="card-body">
-                                <h5 class="card-title">${books.title}</h5>
+                                <h5 class="card-title">${book.title}</h5>
                                 <table class="table">
                                     <thead class="table-light">
                                     </thead>
                                     <tbody class="bg-white">
                                     <tr>
                                         <th>Authors</th>
-                                        <td>${books.authors}</td>
+                                        <td>${book.authors}</td>
                                     </tr>
                                     <tr>
                                         <th>Publish Date</th>
-                                        <td>${books.publishedDate}</td>
+                                        <td>${book.publishedDate}</td>
                                     </tr>
                                     </tbody>
                                 </table>
 
-                                <a class="btn btn-dark col-1 my-2 p-2" href="BookDetails?id=${indexOf(books)}">Edit</a>
+                                <a class="btn btn-dark col-1 my-2 p-2" href="BookDetails?id=${userBooks.indexOf(book)}">Edit</a>
 <%--                                <button type="button" class="editBook" value="">Edit</button>--%>
                                 <button>Add to list</button>
                             </div>
