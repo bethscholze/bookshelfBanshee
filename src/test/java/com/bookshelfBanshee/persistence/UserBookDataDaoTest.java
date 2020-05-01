@@ -14,6 +14,7 @@ class UserBookDataDaoTest {
 // TODO fix this class I just copy and pasted, The tests aren't testing the right thing i think
     GenericDao userBookDataDao;
     GenericDao userDao;
+    GenericDao userBookDao;
 
     @BeforeEach
     void setUp() {
@@ -21,6 +22,7 @@ class UserBookDataDaoTest {
         database.runSQL("cleandb.sql");
         userBookDataDao = new GenericDao(UserBookData.class);
         userDao = new GenericDao(User.class);
+        userBookDao = new GenericDao(Book.class);
 
     }
 
@@ -30,7 +32,12 @@ class UserBookDataDaoTest {
 //        String retrievedTitle = retrievedBook.getTitle();
 //        assertEquals("Gideon the Ninth", retrievedTitle);
 //    }
-
+@Test
+    void getByBook() {
+        UserBookData userBookData = (UserBookData)userBookDataDao.getById(1);
+        Book retrievedBook = (Book) userBookDao.getById(1);
+        assertEquals(retrievedBook, userBookData.getBook());
+    }
 //    @Test
 //    void saveOrUpdate() {
 //        Book retrievedBook = (Book) userBookDataDao.getById(1);

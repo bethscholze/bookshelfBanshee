@@ -54,6 +54,7 @@ public class UserHome extends HttpServlet {
         Set<BookList> userLists = user.getLists();
         session.setAttribute("userLists", userLists);
         session.setAttribute("userBooks", googleBooksData);
+        session.setAttribute("userBookData", userBookData);
         logger.info(user.toString());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
