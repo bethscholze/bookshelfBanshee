@@ -18,17 +18,18 @@ import java.util.List;
 public class GoogleBooksAPI {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-    public String createClient(String queryParam, String searchType) {
+    public String createClient(String queryParam, String searchTerm) {
         Client client = ClientBuilder.newClient();
         //https://www.googleapis.com/books/v1/volumes?q=isbn:9781250313188
-        WebTarget target = client.target("https://www.googleapis.com/books/v1/volumes?q=" + queryParam + ":" + searchType);
+        logger.info("https://www.googleapis.com/books/v1/volumes?q={}:{}", queryParam, searchTerm);
+        WebTarget target = client.target("https://www.googleapis.com/books/v1/volumes?q=" + queryParam + ":" + searchTerm);
         logger.info("url for request: {}", target);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         logger.info("The response from the api: {}", response);
         return response;
     }
-    public VolumeInfo getBook(String queryParam, String searchType) {
-        String response = createClient(queryParam, searchType);
+    public VolumeInfo getBook(String queryParam, String searchTerm) {
+        String response = createClient(queryParam, searchTerm);
 
         ObjectMapper mapper = new ObjectMapper();
         VolumeInfo volumeInfo = new VolumeInfo();
@@ -45,14 +46,15 @@ public class GoogleBooksAPI {
         return volumeInfo;
     }
 
-    public List<VolumeInfo> searchBooks(String queryParam, String searchType) {
-        String response = createClient(queryParam, searchType);
+    public List<VolumeInfo> searchBooks(String queryParam, String searchTerm) {
+        String response = createClient(queryParam, searchTerm);
         ObjectMapper mapper = new ObjectMapper();
         List<VolumeInfo> volumeInfoList = new ArrayList<>();
         try {
             BookResponse mappedResponse = mapper.readValue(response, BookResponse.class);
-            for(int i = 0; i < mappedResponse.getTotalItems() || i < 10; i++) {
-                ItemsItem item = mappedResponse.getItems().get(i);
+            List<ItemsItem> bookResults = mappedResponse.getItems();
+            for(int i = 0; i < bookResults.size(); i++) {
+                ItemsItem item = bookResults.get(i);
                 VolumeInfo volumeInfo = item.getVolumeInfo();
                 volumeInfoList.add(volumeInfo);
                 logger.info("The VolumeInfo Item: {}", volumeInfo);

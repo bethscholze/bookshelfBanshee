@@ -1,12 +1,6 @@
 package com.googlebooksapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.annotation.Generated;
-
-@Generated("com.robohorse.robopojogenerator")
 public class SearchInfo{
-
-	@JsonProperty("textSnippet")
 	private String textSnippet;
 
 	public void setTextSnippet(String textSnippet){

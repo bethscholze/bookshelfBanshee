@@ -1,15 +1,7 @@
 package com.googlebooksapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.annotation.Generated;
-
-@Generated("com.robohorse.robopojogenerator")
 public class ReadingModes{
-
-	@JsonProperty("image")
 	private boolean image;
-
-	@JsonProperty("text")
 	private boolean text;
 
 	public void setImage(boolean image){

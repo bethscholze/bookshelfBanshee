@@ -1,15 +1,7 @@
 package com.googlebooksapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.annotation.Generated;
-
-@Generated("com.robohorse.robopojogenerator")
 public class ImageLinks{
-
-	@JsonProperty("thumbnail")
 	private String thumbnail;
-
-	@JsonProperty("smallThumbnail")
 	private String smallThumbnail;
 
 	public void setThumbnail(String thumbnail){

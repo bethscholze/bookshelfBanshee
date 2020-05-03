@@ -1,19 +1,10 @@
 package com.googlebooksapi.entity;
 
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.annotation.Generated;
 
-@Generated("com.robohorse.robopojogenerator")
-public class BookResponse {
-
-	@JsonProperty("totalItems")
+public class BookResponse{
 	private int totalItems;
-
-	@JsonProperty("kind")
 	private String kind;
-
-	@JsonProperty("items")
 	private List<ItemsItem> items;
 
 	public void setTotalItems(int totalItems){
@@ -43,7 +34,7 @@ public class BookResponse {
 	@Override
  	public String toString(){
 		return 
-			"BookResponse{" +
+			"BookResponse{" + 
 			"totalItems = '" + totalItems + '\'' + 
 			",kind = '" + kind + '\'' + 
 			",items = '" + items + '\'' + 

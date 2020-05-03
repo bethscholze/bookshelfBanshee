@@ -1,15 +1,7 @@
 package com.googlebooksapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.annotation.Generated;
-
-@Generated("com.robohorse.robopojogenerator")
 public class IndustryIdentifiersItem{
-
-	@JsonProperty("identifier")
 	private String identifier;
-
-	@JsonProperty("type")
 	private String type;
 
 	public void setIdentifier(String identifier){
