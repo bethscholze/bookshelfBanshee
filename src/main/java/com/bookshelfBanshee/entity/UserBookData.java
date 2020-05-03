@@ -38,7 +38,7 @@ public class UserBookData implements Serializable {
     public UserBookData() {
     }
 
-    public UserBookData(String dataLabel, String dataValue, Book book, User user) {
+    public UserBookData(User user, Book book, String dataLabel, String dataValue) {
         this.dataLabel = dataLabel;
         this.dataValue = dataValue;
         this.book = book;

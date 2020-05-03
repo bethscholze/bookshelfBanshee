@@ -8,7 +8,7 @@
 
 <section class="pageBackground h-100 row justify-content-center align-items-center mx-0">
     <c:if test = "${!empty sessionScope.currentBookGoogle}">
-        <table>
+        <table class="table bg-light rounded px-2 py-2">
             <tr><td>Title</td><td>${currentBookGoogle.title}</td></tr>
             <tr><td>Author</td><td>${currentBookGoogle.authors[0]}</td></tr>
             <c:forEach items="${sessionScope.currentBookData}" var="bookData">
@@ -16,7 +16,7 @@
             </c:forEach>
 
         </table>
-        <form method="put" action="BookDetails" class="form bg-light rounded px-2 py-2">
+        <form method="post" action="BookDetails" class="form bg-light rounded px-2 py-2">
             <div class="form-group">
                 <label for="dataLabel">data label</label>
                 <input type="text" class="form-control" id="dataLabel" name="dataLabel" placeholder="enter label" />
