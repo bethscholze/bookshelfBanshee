@@ -10,6 +10,7 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 class GoogleBooksAPITest {
     String jsonResponseBook = "{\n" +
@@ -97,9 +98,9 @@ class GoogleBooksAPITest {
     void createClient() {
         Client client = ClientBuilder.newClient();
         String queryParam = "isbn";
-        String isbn = "9781250313188";
+        String queryTerm = "9781250313188";
         //https://www.googleapis.com/books/v1/volumes?q=isbn:9781250313188
-        WebTarget target = client.target("https://www.googleapis.com/books/v1/volumes?q=" + queryParam + ":" + isbn);
+        WebTarget target = client.target("https://www.googleapis.com/books/v1/volumes?q=" + queryParam + ":" + queryTerm);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class).trim();
         assertEquals(jsonResponseBook,response);
     }
@@ -113,4 +114,17 @@ class GoogleBooksAPITest {
         String expectedTitle = "Gideon the Ninth";
         assertEquals(expectedTitle, volumeInfo.getTitle());
     }
+//
+//    @Test
+//    void searchBooks() {
+//    https://www.googleapis.com/books/v1/volumes?q=intitle:the+fifth+element
+//        GoogleBooksAPI googleBooksAPI = new GoogleBooksAPI();
+//        String queryParam = "intitle";
+//        String queryTerm = "the fifth element";
+//        queryTerm = queryTerm.replaceAll("\\s", "+");
+//        List<VolumeInfo> searchResults = googleBooksAPI.searchBooks(queryParam, queryTerm);
+//        VolumeInfo topResult = searchResults.get(0);
+//        String expectedTitle = "The Fifth Element";
+//        assertEquals(expectedTitle, topResult.getTitle());
+//    }
 }

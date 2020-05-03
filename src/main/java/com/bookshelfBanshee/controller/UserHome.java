@@ -56,6 +56,7 @@ public class UserHome extends HttpServlet {
         }
 
         BookManager bookManager = new BookManager();
+
         List<VolumeInfo> googleBooksData = new ArrayList<>();
         try {
             googleBooksData = bookManager.getGoogleAPIBookData(books);
@@ -66,6 +67,7 @@ public class UserHome extends HttpServlet {
         session.setAttribute("userLists", userLists);
         session.setAttribute("userBooks", googleBooksData);
         session.setAttribute("userBookData", userBookData);
+        session.setAttribute("bookManger", bookManager);
         logger.info(user.toString());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");

@@ -24,14 +24,70 @@
                     <button># of pages</button>
                 </div>
             </div>
+
             <div id="bookList" class="col-9 bg-light">
-                <form>
-                    <input>
-                    <button type="submit">Search</button>
-                    <button type="reset">Clear</button>
-                </form>
+                <c:choose>
+                    <c:when test = "${empty sessionScope.bookResults}">
+                        <h2>Add a New Book</h2>
+                        <form method="get" action="addBook" class="form bg-light rounded px-2 py-2">
+                            <div class="form-group">
+                                <label for="searchTerm">Enter a search value: </label>
+                                <input class="form-control" type="text" name="searchTerm" id="searchTerm">
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="searchType" value="intitle">Title
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="searchType" value="inauthor">Author
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="searchType" value="subject">Keyword
+                                </label>
+                            </div>
+
+                            <button type="submit">Search</button>
+                            <button type="reset">Clear</button>
+                        </form>
+                    </c:when>
+                    <c:when test = "${!empty sessionScope.bookResults}">
+                        <c:forEach items="${sessionScope.bookResults}" var="bookResult">
+                            <div class="card" style="width: 14rem;">
+                                <img class="card-img-top" src="${bookResult.imageLinks.smallThumbnail}" alt="Book Cover">
+                                <div class="card-body">
+                                    <h5 class="card-title">${bookResult.title}</h5>
+                                    <table class="table">
+                                        <thead class="table-light">
+                                        </thead>
+                                        <tbody class="bg-white">
+                                        <tr>
+<%--                                            todo loop through returned authors in lots of places--%>
+                                            <th>Authors</th>
+                                            <td>${bookResult.authors}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Publish Date</th>
+                                            <td>${bookResult.publishedDate}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <form method="post" action="addBook" class="form bg-light rounded px-2 py-2">
+                                        <input type="hidden" id="bookToAdd" name="bookToAdd" value="${bookResults.indexOf(bookResult)}">
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </c:when>
+
+                </c:choose>
                 <%-- this one should just be done with js to toggle class for visible to invisible--%>
-                <h3>Booklist</h3>
+                <h3>My Booklist</h3>
 
                 <div class="d-flex">
                     <c:forEach items="${sessionScope.userBooks}" var="book">

@@ -37,5 +37,14 @@ public class BookManager {
 
     }
 
+    public List<VolumeInfo> searchGoogleAPIBook(String searchTerm, String searchType) {
+        GoogleBooksAPI api = new GoogleBooksAPI();
+        // the maxResults value is by default 10 books, which I think works for my program
+        List<VolumeInfo> searchResults = api.searchBooks(searchType, searchTerm);
+
+        return searchResults;
+
+    }
+
 
 }
