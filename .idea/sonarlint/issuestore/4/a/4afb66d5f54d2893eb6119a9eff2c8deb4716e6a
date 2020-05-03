@@ -1,0 +1,12 @@
+
+;
+java:S2629:"%Invoke method(s) only conditionally. (İ¯ú±
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤ãÂúùÿÿÿÿ
+c
+java:S24418"MMake "List" and its parameters serializable or don't store it in the session.(ãÀ³É
+w
+java:S1989="aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(òø½
+J
+java:S3740+"/Provide the parametrized type for this generic.(Ôİôöùÿÿÿÿ
+J
+java:S3740+"/Provide the parametrized type for this generic.(Ôİôöùÿÿÿÿ

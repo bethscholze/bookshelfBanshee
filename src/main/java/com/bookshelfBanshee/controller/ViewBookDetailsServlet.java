@@ -1,10 +1,11 @@
 package com.bookshelfBanshee.controller;
 
+import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.BookList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
-import com.googlebooksapi.VolumeInfo;
+import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,8 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @WebServlet(
         name = "BookDetails",
@@ -40,41 +40,69 @@ public class ViewBookDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
-        //username and password passed in post
-        //set these in a new user object
-        //pass this new user object into the userdao to insert it into the database
-        //return a success to the screen if the username and password is found in the user table.
-        //redirect to the users home page.
-
         HttpSession session = req.getSession();
-        Set<BookList> userLists = (Set<BookList>)session.getAttribute("userLists");
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBooks");
-        VolumeInfo currentBook = (VolumeInfo)req.getAttribute("currentBook");
-        logger.info(currentBook);
+        int id = Integer.parseInt(req.getParameter("id"));
+        //Set<BookList> userLists = (Set<BookList>)session.getAttribute("userLists");
+        List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userBooks");
+        VolumeInfo currentBookGoogle = googleBooksData.get(id);
 
-        GenericDao userDao = new GenericDao(User.class);
-        //User user = (User)userDao.getByPropertyEqual("username", username).get(0);
-        //session.setAttribute("user", user);
+        GenericDao<Book> bookDao= new GenericDao<>(Book.class);
+        String isbnType = currentBookGoogle.getIndustryIdentifiers().get(0).getType();
+        isbnType = isbnType.toLowerCase().replace("_","");
+        logger.debug(isbnType);
+        String isbnNumber = currentBookGoogle.getIndustryIdentifiers().get(0).getIdentifier();
+        List<Book> currentBookDbList = bookDao.getByPropertyEqual(isbnType, isbnNumber);
+        Book currentBook = currentBookDbList.get(0);
+        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
 
-        BookManager bookManager = new BookManager();
-        Set<VolumeInfo> googleBooksData = new HashSet<>();
-        try {
-            googleBooksData = bookManager.getGoogleAPIBookData(userBookData);
-        } catch (Exception e) {
-            logger.error("Could not load Book data from api.");
+        Set<UserBookData> currentBookData = new HashSet<UserBookData>();
+
+        for (UserBookData bookData: userBookData) {
+            Book bookDataBook = bookData.getBook();
+            logger.debug(bookDataBook);
+            if (bookDataBook.equals(currentBook)) {
+                currentBookData.add(bookData);
+            }
         }
 
+//        session.setAttribute("userLists", userLists);
 
-        session.setAttribute("userLists", userLists);
-        session.setAttribute("userBooks", googleBooksData);
-        //logger.info(user.toString());
-
+        session.setAttribute("currentBookGoogle", currentBookGoogle);
+        session.setAttribute("currentBookDb", currentBook);
+        session.setAttribute("currentBookData", currentBookData);
+        logger.info(currentBookGoogle.toString());
+        logger.info(currentBook.toString());
+        logger.info(currentBookData.toString());
+//
         RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
         dispatcher.forward(req, resp);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    //do post saves changed data for wards back to booksjsp?
+        HttpSession session = req.getSession();
+        Book currentDBBook = (Book) session.getAttribute("currentBookDb");
+        User user = (User) session.getAttribute("user");
+        Set<UserBookData> currentBookData = (Set<UserBookData>)session.getAttribute("currentBookData");
+        String dataLabel = req.getParameter("dataLabel");
+        String dataValue = req.getParameter("dataValue");
+
+        UserBookData newBookData = new UserBookData(user, currentDBBook, dataLabel, dataValue);
+
+        GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
+
+        userBookDataDao.insert(newBookData);
+
+        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
+
+        currentBookData.add(newBookData);
+        userBookData.add(newBookData);
+        session.setAttribute("userBookData", userBookData);
+        session.setAttribute("currentBookData", currentBookData);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
+        dispatcher.forward(req, resp);
+    }
 
 }

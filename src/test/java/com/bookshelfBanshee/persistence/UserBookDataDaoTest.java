@@ -14,6 +14,7 @@ class UserBookDataDaoTest {
 // TODO fix this class I just copy and pasted, The tests aren't testing the right thing i think
     GenericDao userBookDataDao;
     GenericDao userDao;
+    GenericDao userBookDao;
 
     @BeforeEach
     void setUp() {
@@ -21,25 +22,27 @@ class UserBookDataDaoTest {
         database.runSQL("cleandb.sql");
         userBookDataDao = new GenericDao(UserBookData.class);
         userDao = new GenericDao(User.class);
+        userBookDao = new GenericDao(Book.class);
 
     }
 
-//    @Test
-//    void getById() {
-//        Book retrievedBook = (Book) userBookDataDao.getById(1);
-//        String retrievedTitle = retrievedBook.getTitle();
-//        assertEquals("Gideon the Ninth", retrievedTitle);
-//    }
-
-//    @Test
-//    void saveOrUpdate() {
-//        Book retrievedBook = (Book) userBookDataDao.getById(1);
-//        String newTitle = "resetTitle";
-//        retrievedBook.setTitle(newTitle);
-//        userBookDataDao.saveOrUpdate(retrievedBook);
-//        Book updatedBook = (Book) userBookDataDao.getById(1);
-//        assertEquals(retrievedBook, updatedBook);
-//    }
+@Test
+    void getById() {
+        UserBookData userBookData = (UserBookData)userBookDataDao.getById(1);
+        Book retrievedBook = (Book) userBookDao.getById(1);
+        assertEquals(retrievedBook, userBookData.getBook());
+    }
+    @Test
+    void saveOrUpdate() {
+        UserBookData retrievedBookData = (UserBookData) userBookDataDao.getById(1);
+        String dataLabel = "own, rent, borrow, buy";
+        String dataValue = "own";
+        retrievedBookData.setDataLabel(dataLabel);
+        retrievedBookData.setDataValue(dataValue);
+        userBookDataDao.saveOrUpdate(retrievedBookData);
+        UserBookData updatedBookData = (UserBookData) userBookDataDao.getById(1);
+        assertEquals(retrievedBookData, updatedBookData);
+    }
 
     @Test
     void insert() {
@@ -50,17 +53,17 @@ class UserBookDataDaoTest {
         assertEquals(3, allBooksSize);
 
     }
-//
-//    @Test
-//    void delete() {
-//        Book book = (Book) userBookDataDao.getById(1);
-//        userBookDataDao.delete(book);
-//        int allBooksSize = userBookDataDao.getAll().size();
-//        assertEquals(2, allBooksSize);
-//        assertNull(userBookDataDao.getById(1));
-//        int allUsersSize = userDao.getAll().size();
-//        assertEquals(5, allUsersSize);
-//    }
+
+    @Test
+    void delete() {
+        UserBookData bookData = (UserBookData) userBookDataDao.getById(1);
+        userBookDataDao.delete(bookData);
+        int allBooksSize = userBookDataDao.getAll().size();
+        assertEquals(2, allBooksSize);
+        assertNull(userBookDataDao.getById(1));
+        int allUsersSize = userDao.getAll().size();
+        assertEquals(5, allUsersSize);
+    }
 
     @Test
     void getAll() {

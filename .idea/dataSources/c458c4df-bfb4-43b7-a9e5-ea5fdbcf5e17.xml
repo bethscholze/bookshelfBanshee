@@ -1244,6 +1244,7 @@
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="309" parent="284" name="user_book_data_user_id_fk">
