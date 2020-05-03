@@ -1,5 +1,6 @@
 package com.bookshelfBanshee.controller;
 
+import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.BookList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -44,10 +46,19 @@ public class UserHome extends HttpServlet {
         User user = (User)userDao.getByPropertyEqual("username", username).get(0);
         session.setAttribute("user", user);
         Set<UserBookData> userBookData = user.getUserBooks();
+
+        //todo place a bunch of my logic inside of the book manager instead of within my servlets
+
+        Set<Book> books = new HashSet<>();
+
+        for (UserBookData bookData: userBookData) {
+            books.add(bookData.getBook());
+        }
+
         BookManager bookManager = new BookManager();
         List<VolumeInfo> googleBooksData = new ArrayList<>();
         try {
-            googleBooksData = bookManager.getGoogleAPIBookData(userBookData);
+            googleBooksData = bookManager.getGoogleAPIBookData(books);
         } catch (Exception e) {
             logger.error("Could not load Book data from api.");
         }
