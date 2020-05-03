@@ -1,5 +1,6 @@
 package com.bookshelfBanshee.controller;
 
+import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.googlebooksapi.controller.GoogleBooksAPI;
 import com.googlebooksapi.entity.VolumeInfo;
@@ -20,16 +21,17 @@ public class BookManager {
 
     //I think pass a param in based on the page you are on ...
 
-    public List<VolumeInfo> getGoogleAPIBookData(Set<UserBookData> userBooks) {
+    public List<VolumeInfo> getGoogleAPIBookData(Set<Book> userBooks) {
         GoogleBooksAPI api = new GoogleBooksAPI();
         String queryParam = "isbn";
         // TODO make sure to limit number of queries to 200!!!! pagination will call next set afterward
         // TODO make sure there is an ability to load new books on each page then so that if they switch to a new set
         //  of 200 books it is still loaded for the user
-        for(UserBookData bookData : userBooks) {
-            VolumeInfo book = api.getBook(queryParam, bookData.getBook().getIsbn13());
+        for(Book book : userBooks) {
+            //todo make it so it checks for isbn13 then falls back to isbn10 if there is no 13
+            VolumeInfo googleBook = api.getBook(queryParam, book.getIsbn13());
 
-            returnedBookInfo.add(book);
+            returnedBookInfo.add(googleBook);
         }
         return returnedBookInfo;
 
