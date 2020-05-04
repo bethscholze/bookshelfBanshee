@@ -1,6 +1,7 @@
 package com.googlebooksapi.entity;
 
 import java.util.List;
+import java.util.Objects;
 
 public class VolumeInfo{
 	private List<IndustryIdentifiersItem> industryIdentifiers;
@@ -204,6 +205,26 @@ public class VolumeInfo{
 
 	public String getLeadAuthor() {
 		return this.authors.get(0);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		VolumeInfo that = (VolumeInfo) o;
+		return pageCount == that.pageCount &&
+				Objects.equals(industryIdentifiers, that.industryIdentifiers) &&
+				Objects.equals(language, that.language) &&
+				Objects.equals(title, that.title) &&
+				Objects.equals(publisher, that.publisher) &&
+				Objects.equals(publishedDate, that.publishedDate) &&
+				Objects.equals(contentVersion, that.contentVersion) &&
+				Objects.equals(authors, that.authors);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(industryIdentifiers, pageCount, language, title, publisher, publishedDate, contentVersion, authors);
 	}
 
 	@Override

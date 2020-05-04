@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,10 +36,9 @@ public class AddBookServlet extends HttpServlet {
 
         HttpSession session = req.getSession();
 
-        //todo figure out why this isn't working, for some reason the client can't make a second request if I use the same book manager
-//        BookManager bookManager = (BookManager) session.getAttribute("bookManager");
-
-        BookManager bookManager = new BookManager();
+        ServletContext servletContext = getServletContext();
+        BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
+        ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
 
         String searchTerm = req.getParameter("searchTerm");
         searchTerm = searchTerm.replaceAll("\\s", "+");
@@ -71,7 +71,10 @@ public class AddBookServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("bookToAdd"));
         VolumeInfo bookToAdd = bookResults.get(id);
 
-        googleBooksData.add(bookToAdd);
+        //todo chekc if this is working, i think I need .eqauls and hashcode in volumeInfo
+        if (!googleBooksData.contains(bookToAdd)) {
+            googleBooksData.add(bookToAdd);
+        }
 
         List<IndustryIdentifiersItem> isbns = bookToAdd.getIndustryIdentifiers();
         GenericDao<Book> bookDao = new GenericDao<>(Book.class);
@@ -81,7 +84,7 @@ public class AddBookServlet extends HttpServlet {
         String isbnType;
         String isbnNumber;
         Boolean insertBook = true;
-        //todo also check if the user already has that book!!!
+
         for(IndustryIdentifiersItem isbn: isbns){
             isbnType = isbn.getType();
             isbnType = isbnType.toLowerCase().replace("_","");
@@ -110,13 +113,13 @@ public class AddBookServlet extends HttpServlet {
 
         UserBookData newBookData = new UserBookData(user, newBook);
 
+        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
         GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
 
-        userBookDataDao.insert(newBookData);
-
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-
-        userBookData.add(newBookData);
+        if(!userBookData.contains(newBookData)) {
+            userBookDataDao.insert(newBookData);
+            userBookData.add(newBookData);
+        }
 
         session.setAttribute("userBookData", userBookData);
         session.setAttribute("userGoogleBooks", googleBooksData);
