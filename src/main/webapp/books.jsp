@@ -17,11 +17,11 @@
                 <h2 class="p-1">Sort By</h2>
 <%--                    I want these buttons loaded from the backend? on page load users sort categories--%>
                 <ul>
-                    <li>Title <a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=titleAsc">Asc</a><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=titleDesc">Desc</a></li>
-                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=author">Author</a></li>
+                    <li>Title <a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=titleAsc">Asc</a><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=titleDesc">Desc</a></li>
+                    <li><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=author">Author</a></li>
 <%--                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=addedDate">Date Added</a></li>--%>
-                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=pubDate">Publish Date</a></li>
-                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=pageCount">Page Count</a></li>
+                    <li><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=pubDate">Publish Date</a></li>
+                    <li><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=pageCount">Page Count</a></li>
                 </ul>
             </div>
 
@@ -44,11 +44,11 @@
                                     <input type="radio" class="form-check-input" name="searchType" value="inauthor">Author
                                 </label>
                             </div>
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="searchType" value="subject">Keyword
-                                </label>
-                            </div>
+<%--                            <div class="form-check-inline">--%>
+<%--                                <label class="form-check-label">--%>
+<%--                                    <input type="radio" class="form-check-input" name="searchType" value="subject">Keyword--%>
+<%--                                </label>--%>
+<%--                            </div>--%>
 
                             <button type="submit">Search</button>
                             <button type="reset">Clear</button>
@@ -56,31 +56,32 @@
                     </c:when>
                     <c:when test = "${!empty sessionScope.bookResults}">
                         <c:forEach items="${sessionScope.bookResults}" var="bookResult">
-                            <div class="card" style="width: 14rem;">
-                                <img class="card-img-top" src="${bookResult.imageLinks.smallThumbnail}" alt="Book Cover">
-                                <div class="card-body">
-                                    <h5 class="card-title">${bookResult.title}</h5>
-                                    <table class="table">
-                                        <thead class="table-light">
-                                        </thead>
-                                        <tbody class="bg-white">
-                                        <tr>
-<%--                                            todo loop through returned authors in lots of places--%>
-                                            <th>Authors</th>
-                                            <td>${bookResult.authors}</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Publish Date</th>
-                                            <td>${bookResult.publishedDate}</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <form method="post" action="addBook" class="form bg-light rounded px-2 py-2">
-                                        <input type="hidden" id="bookToAdd" name="bookToAdd" value="${bookResults.indexOf(bookResult)}">
-                                        <button type="submit">Add</button>
-                                    </form>
+                            <div class="d-flex">
+                                <div class="card" style="width: 14rem;">
+                                    <img class="card-img-top" src="${bookResult.imageLinks.smallThumbnail}" alt="Book Cover">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${bookResult.title}</h5>
+                                        <table class="table">
+                                            <tbody class="bg-white">
+                                            <tr>
+                                                <th rowspan="${bookResult.authors.size()}">Authors</th>
+                                                <c:forEach items="${bookResult.authors}" var="author">
+                                                    <td>${author}</td>
+                                            </tr>
+                                            <tr>
+                                                </c:forEach>
+                                                <th>Publish Date</th>
+                                                <td>${bookResult.publishedDate}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <form method="post" action="addBook" class="form bg-light rounded px-2 py-2">
+                                            <input type="hidden" id="bookToAdd" name="bookToAdd" value="${bookResults.indexOf(bookResult)}">
+                                            <button type="submit">Add</button>
+                                        </form>
 
 
+                                    </div>
                                 </div>
                             </div>
                         </c:forEach>
@@ -101,18 +102,20 @@
                                     </thead>
                                     <tbody class="bg-white">
                                     <tr>
-                                        <th>Authors</th>
-                                        <td>${book.authors}</td>
+                                        <th rowspan="${book.authors.size()}">Authors</th>
+                                        <c:forEach items="${book.authors}" var="author">
+                                        <td>${author}</td>
                                     </tr>
                                     <tr>
+                                        </c:forEach>
                                         <th>Publish Date</th>
                                         <td>${book.publishedDate}</td>
                                     </tr>
                                     </tbody>
                                 </table>
 
-                                <a class="btn btn-dark col-1 my-2 p-2" href="BookDetails?id=${userGoogleBooks.indexOf(book)}">Edit</a>
-                                <a class="btn btn-dark col-1 my-2 p-2" href="deleteBook?id=${userGoogleBooks.indexOf(book)}">Delete</a>
+                                <a class="btn btn-dark my-2 p-2" href="BookDetails?id=${userGoogleBooks.indexOf(book)}">Edit</a>
+                                <a class="btn btn-dark my-2 p-2" href="deleteBook?id=${userGoogleBooks.indexOf(book)}">Delete</a>
                             </div>
                         </div>
                     </c:forEach>
