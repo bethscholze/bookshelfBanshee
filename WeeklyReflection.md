@@ -121,3 +121,7 @@ https://www.isbndb.com/
 //////////////////Compare to for sorting ////////
 https://dev.to/codebyamir/sort-a-list-of-objects-by-field-in-java-3coj
 -option 3 is what I used because it was available after java8
+-this is amazing!!!!
+
+/////////Logging for property loader/////
+https://stackoverflow.com/questions/28720845/logging-from-default-interface-methods

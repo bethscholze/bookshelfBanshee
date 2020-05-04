@@ -1,5 +1,8 @@
 package com.bookshelfBanshee.utilities;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.*;
 import java.util.*;
 
@@ -23,10 +26,14 @@ public interface PropertiesLoader{
         try {
             properties.load(this.getClass().getResourceAsStream(propertiesFilePath));
         } catch (IOException ioException) {
-            ioException.printStackTrace();
+            PropertyLogger.logger.error(ioException);
         } catch (Exception exception) {
-            exception.printStackTrace();
+            PropertyLogger.logger.error(exception);
         }
         return properties;
     }
+}
+
+final class PropertyLogger {
+    static final Logger logger = LogManager.getLogger(PropertiesLoader.class);
 }
