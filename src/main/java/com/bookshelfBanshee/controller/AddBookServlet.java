@@ -81,6 +81,7 @@ public class AddBookServlet extends HttpServlet {
         String isbnType;
         String isbnNumber;
         Boolean insertBook = true;
+        //todo also check if the user already has that book!!!
         for(IndustryIdentifiersItem isbn: isbns){
             isbnType = isbn.getType();
             isbnType = isbnType.toLowerCase().replace("_","");
