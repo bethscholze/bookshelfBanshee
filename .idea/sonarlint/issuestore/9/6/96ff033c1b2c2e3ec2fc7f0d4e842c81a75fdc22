@@ -1,20 +1,26 @@
 
-X	java:S125R"<This block of commented-out lines of code should be removed.(øáí8µÁÕç.
-]	java:S125W"<This block of commented-out lines of code should be removed.(¼—«Ïûÿÿÿÿ8µÁÕç.
-W	java:S125C"<This block of commented-out lines of code should be removed.(òm8µÁÕç.
-]	java:S1257"<This block of commented-out lines of code should be removed.(»§»–ıÿÿÿÿ8õŠâ.
-]	java:S125J"<This block of commented-out lines of code should be removed.(¼ÂÄ°úÿÿÿÿ8µÁÕç.
-J
-java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX8®¨â.
-]	java:S125A"<This block of commented-out lines of code should be removed.(¼˜¬ùÿÿÿÿÿ8µÁÕç.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤ãÂúùÿÿÿÿ
-]	java:S125N"<This block of commented-out lines of code should be removed.(òäâŒşÿÿÿÿ8µÁÕç.
-X	java:S125L"<This block of commented-out lines of code should be removed.(Ú÷¦›8µÁÕç.
-o
-java:S24419"MMake "List" and its parameters serializable or don't store it in the session.(ôÿÑáøÿÿÿÿ8‚ŸÄè.
 ~
-java:S1989="aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(òø½8õŠâ.
+java:S1989>"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(òø½8õŠâ.
+L
+java:S5411i"*Use the primitive boolean expression here.(¤„ç¢ÿÿÿÿÿ8·Ş….
+v
+java:S1989G"YHandle the following exception that could be thrown by "parseInt": NumberFormatException.(ŸÉ¼é8†ŸÊ‚.
+T
+java:S1135T"2Complete the task associated to this TODO comment.(âá‡ûøÿÿÿÿ8¹¨‡†.
+Z
+java:S1155[">Use isEmpty() to check whether the collection is empty or not.(Îûœj8‹û§….
 O
-java:S1135%"2Complete the task associated to this TODO comment.(´®ôÒ8•ñÙê.
-]	java:S125P"<This block of commented-out lines of code should be removed.(Ûê¾¯şÿÿÿÿ8µÁÕç.
-]	java:S125&"<This block of commented-out lines of code should be removed.(Èğ¤Šûÿÿÿÿ8şàªë.
+java:S1135&"2Complete the task associated to this TODO comment.(´®ôÒ8•ñÙê.
+o
+java:S2441:"MMake "List" and its parameters serializable or don't store it in the session.(ôÿÑáøÿÿÿÿ8‚ŸÄè.
+o
+java:S2441z"MMake "List" and its parameters serializable or don't store it in the session.(½°ñ£øÿÿÿÿ8´„.
+]	java:S125'"<This block of commented-out lines of code should be removed.(Èğ¤Šûÿÿÿÿ8şàªë.
+n
+java:S1192:"LDefine a constant instead of duplicating this literal "bookResults" 3 times.(ôÿÑáøÿÿÿÿ8ùšî….
+]	java:S1258"<This block of commented-out lines of code should be removed.(»§»–ıÿÿÿÿ8õŠâ.
+J
+java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX8®¨â.
+~
+java:S1989}"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(òø½8´„.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤ãÂúùÿÿÿÿ

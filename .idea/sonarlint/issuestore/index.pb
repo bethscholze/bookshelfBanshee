@@ -72,3 +72,11 @@ p
 @src/main/java/com/bookshelfBanshee/service/UsersApplication.java,c/3/c378b8f3299c151a3543c92a51e73b062846e4de
 m
 =src/main/java/com/bookshelfBanshee/controller/UserLogout.java,c/c/cc789a33c1a510851bac2c380c7de219b50c4fda
+t
+Dsrc/main/java/com/bookshelfBanshee/controller/DeleteBookServlet.java,6/c/6cbbf62d1f683e445edca5e158561cd9c51bd5e8
+H
+src/main/webapp/home.jsp,6/8/6853166b9553bb500860233db274f93560c021c5
+s
+Csrc/main/java/com/bookshelfBanshee/controller/SortBooksServlet.java,9/d/9d59f08b6ce044a53b83034316d67a641bbabfd0
+J
+src/main/webapp/styles.css,a/5/a528d543f5b88a435b4532b41af24e79b3ccc297

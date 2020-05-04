@@ -52,3 +52,6 @@ fabric.properties
 #sensitive info pswds etc
 /secrets/
 /src/main/resources/
+
+#sonarlint files
+.idea/sonarlint/*

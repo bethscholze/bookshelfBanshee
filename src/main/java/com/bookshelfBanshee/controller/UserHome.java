@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,8 +40,12 @@ public class UserHome extends HttpServlet {
         //redirect to the users home page.
 
         HttpSession session = req.getSession();
+        ServletContext servletContext = getServletContext();
+        BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
+        ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
+
         String username = req.getRemoteUser();
-        logger.debug("here");
+
         logger.info(username);
         GenericDao userDao = new GenericDao(User.class);
         User user = (User)userDao.getByPropertyEqual("username", username).get(0);
@@ -54,18 +59,12 @@ public class UserHome extends HttpServlet {
         for (UserBookData bookData: userBookData) {
             books.add(bookData.getBook());
         }
-
-        BookManager bookManager = new BookManager();
-
         List<VolumeInfo> googleBooksData = new ArrayList<>();
         try {
             googleBooksData = bookManager.getGoogleAPIBookData(books);
         } catch (Exception e) {
             logger.error("Could not load Book data from api.");
         }
-
-//        ListManager listManager = new ListManager();
-
         Set<BookList> userLists = user.getLists();
         session.setAttribute("userLists", userLists);
         session.setAttribute("userGoogleBooks", googleBooksData);
