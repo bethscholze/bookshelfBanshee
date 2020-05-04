@@ -28,20 +28,26 @@ import java.util.Set;
 
 public class AddBookServlet extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession();
 
-        BookManager bookManager = (BookManager) session.getAttribute("bookManager");
+        //todo figure out why this isn't working, for some reason the client can't make a second request if I use the same book manager
+//        BookManager bookManager = (BookManager) session.getAttribute("bookManager");
+
+        BookManager bookManager = new BookManager();
 
         String searchTerm = req.getParameter("searchTerm");
         searchTerm = searchTerm.replaceAll("\\s", "+");
         String searchType = req.getParameter("searchType");
+        logger.info(searchTerm);
+        logger.info(searchType);
 
         List<VolumeInfo> bookResults = new ArrayList<>();
         try {
-            bookResults = bookManager.searchGoogleAPIBook(searchTerm, searchType);
+            bookResults = bookManager.searchGoogleAPIBook(searchType, searchTerm);
         } catch (Exception e) {
             logger.error("Could not load Book data from api.");
         }

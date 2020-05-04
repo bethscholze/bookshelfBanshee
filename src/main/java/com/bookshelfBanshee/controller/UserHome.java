@@ -63,6 +63,9 @@ public class UserHome extends HttpServlet {
         } catch (Exception e) {
             logger.error("Could not load Book data from api.");
         }
+
+//        ListManager listManager = new ListManager();
+
         Set<BookList> userLists = user.getLists();
         session.setAttribute("userLists", userLists);
         session.setAttribute("userBooks", googleBooksData);

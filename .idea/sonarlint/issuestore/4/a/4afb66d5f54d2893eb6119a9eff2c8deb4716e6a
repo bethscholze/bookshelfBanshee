@@ -1,12 +1,16 @@
 
-;
-java:S2629:"%Invoke method(s) only conditionally. (İ¯ú±
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤ãÂúùÿÿÿÿ
+J
+java:S3740-"/Provide the parametrized type for this generic.(Ôİôöùÿÿÿÿ
+j
+java:S2441D"MMake "List" and its parameters serializable or don't store it in the session.(ãÀ³É8âƒá.
+B
+java:S2629G"%Invoke method(s) only conditionally. (İ¯ú±8âƒá.
+T
+java:S11352"2Complete the task associated to this TODO comment.(§Ñ½¢ıÿÿÿÿ8½ÿà.
 c
-java:S24418"MMake "List" and its parameters serializable or don't store it in the session.(ãÀ³É
-w
-java:S1989="aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(òø½
+java:S2441F"AMake "BookManager" serializable or don't store it in the session.(ò¬‰æÿÿÿÿÿ8µõâ.
+~
+java:S1989J"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(òø½8âƒá.
 J
-java:S3740+"/Provide the parametrized type for this generic.(Ôİôöùÿÿÿÿ
-J
-java:S3740+"/Provide the parametrized type for this generic.(Ôİôöùÿÿÿÿ
+java:S3740-"/Provide the parametrized type for this generic.(Ôİôöùÿÿÿÿ
