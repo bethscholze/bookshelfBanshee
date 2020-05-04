@@ -34,7 +34,7 @@ public class AddBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(false);
 
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
@@ -65,7 +65,7 @@ public class AddBookServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(false);
         List<VolumeInfo> googleBooksData = (List<VolumeInfo>)session.getAttribute("userGoogleBooks");
         List<VolumeInfo> bookResults = (List<VolumeInfo>)session.getAttribute("bookResults");
         int id = Integer.parseInt(req.getParameter("bookToAdd"));
@@ -73,6 +73,7 @@ public class AddBookServlet extends HttpServlet {
 
         //todo chekc if this is working, i think I need .eqauls and hashcode in volumeInfo
         if (!googleBooksData.contains(bookToAdd)) {
+            logger.info("Book added to ggogle results: {}", bookToAdd);
             googleBooksData.add(bookToAdd);
         }
 
@@ -91,6 +92,7 @@ public class AddBookServlet extends HttpServlet {
 
             isbnNumber = isbn.getIdentifier();
             List<Book> currentBookDb = bookDao.getByPropertyEqual(isbnType, isbnNumber);
+            logger.info("The matching book found in database: {}", currentBookDb.get(0));
             if(currentBookDb.size() > 0) {
                 newBook = currentBookDb.get(0);
                 insertBook = false;
@@ -101,7 +103,6 @@ public class AddBookServlet extends HttpServlet {
                 } else if (isbn.getIdentifier().length() == ISBN13_SIZE) {
                     newBook.setIsbn13(isbn.getIdentifier());
                 }
-
 
             }
         }

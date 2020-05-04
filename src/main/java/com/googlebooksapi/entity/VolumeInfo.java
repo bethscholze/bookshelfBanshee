@@ -1,9 +1,10 @@
 package com.googlebooksapi.entity;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
-public class VolumeInfo{
+public class VolumeInfo implements Serializable {
 	private List<IndustryIdentifiersItem> industryIdentifiers;
 	private int pageCount;
 	private String printType;

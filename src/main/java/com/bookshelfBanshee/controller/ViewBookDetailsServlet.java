@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,32 +40,16 @@ public class ViewBookDetailsServlet extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        HttpSession session = req.getSession();
+        ServletContext servletContext = getServletContext();
+        BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
+        HttpSession session = req.getSession(false);
         int id = Integer.parseInt(req.getParameter("id"));
         //Set<BookList> userLists = (Set<BookList>)session.getAttribute("userLists");
         List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
         VolumeInfo currentBookGoogle = googleBooksData.get(id);
-
-        GenericDao<Book> bookDao= new GenericDao<>(Book.class);
-        String isbnType = currentBookGoogle.getIndustryIdentifiers().get(0).getType();
-        isbnType = isbnType.toLowerCase().replace("_","");
-        logger.debug(isbnType);
-        String isbnNumber = currentBookGoogle.getIndustryIdentifiers().get(0).getIdentifier();
-        List<Book> currentBookDbList = bookDao.getByPropertyEqual(isbnType, isbnNumber);
-        Book currentBook = currentBookDbList.get(0);
         Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-
-        Set<UserBookData> currentBookData = new HashSet<UserBookData>();
-
-        for (UserBookData bookData: userBookData) {
-            Book bookDataBook = bookData.getBook();
-            logger.debug(bookDataBook);
-            if (bookDataBook.equals(currentBook)) {
-                currentBookData.add(bookData);
-            }
-        }
-
+        Book currentBook = bookManager.getBookFromDatabase(currentBookGoogle);
+        Set<UserBookData> currentBookData = bookManager.getBookDetails(currentBook, userBookData);
 //        session.setAttribute("userLists", userLists);
 
         session.setAttribute("currentBookGoogle", currentBookGoogle);

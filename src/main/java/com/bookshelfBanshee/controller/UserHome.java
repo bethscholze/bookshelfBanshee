@@ -30,7 +30,7 @@ import java.util.Set;
 public class UserHome extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp){
 
 
         //username and password passed in post
@@ -44,36 +44,42 @@ public class UserHome extends HttpServlet {
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
 
-        String username = req.getRemoteUser();
+        if(session.getAttribute("userGoogleBooks") == null) {
+            logger.info("the users Books: {}", session.getAttribute("userGoogleBooks"));
+            session.setAttribute("userGoogleBooks", null);
 
-        logger.info(username);
-        GenericDao userDao = new GenericDao(User.class);
-        User user = (User)userDao.getByPropertyEqual("username", username).get(0);
-        session.setAttribute("user", user);
-        Set<UserBookData> userBookData = user.getUserBooks();
+            String username = req.getRemoteUser();
 
-        //todo place a bunch of my logic inside of the book manager instead of within my servlets
-
-        Set<Book> books = new HashSet<>();
-
-        for (UserBookData bookData: userBookData) {
-            books.add(bookData.getBook());
+            logger.info(username);
+            User user = bookManager.getUser(username);
+            Set<UserBookData> userBookData = user.getUserBooks();
+            Set<Book> books = new HashSet<>();
+            for (UserBookData bookData : userBookData) {
+                books.add(bookData.getBook());
+            }
+            logger.debug("The books to call google api with: {}", books);
+            List<VolumeInfo> googleBooksData = new ArrayList<>();
+            try {
+                googleBooksData = bookManager.getGoogleAPIBookData(books);
+            } catch (Exception e) {
+                logger.error("Could not load Book data from api.");
+            }
+            Set<BookList> userLists = user.getLists();
+            session.setAttribute("user", user);
+            session.setAttribute("userLists", userLists);
+            session.setAttribute("userGoogleBooks", googleBooksData);
+            session.setAttribute("userBookData", userBookData);
+            logger.info(user.toString());
         }
-        List<VolumeInfo> googleBooksData = new ArrayList<>();
-        try {
-            googleBooksData = bookManager.getGoogleAPIBookData(books);
-        } catch (Exception e) {
-            logger.error("Could not load Book data from api.");
-        }
-        Set<BookList> userLists = user.getLists();
-        session.setAttribute("userLists", userLists);
-        session.setAttribute("userGoogleBooks", googleBooksData);
-        session.setAttribute("userBookData", userBookData);
-        session.setAttribute("bookManger", bookManager);
-        logger.info(user.toString());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
-        dispatcher.forward(req, resp);
+        try {
+            dispatcher.forward(req, resp);
+        } catch (ServletException servletException) {
+            logger.error(servletException);
+        } catch (IOException ioException) {
+            logger.error(ioException);
+        }
     }
 
 }

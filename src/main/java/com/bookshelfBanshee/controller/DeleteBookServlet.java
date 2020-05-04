@@ -31,7 +31,7 @@ public class DeleteBookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(false);
         int id = Integer.parseInt(req.getParameter("id"));
         List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
         VolumeInfo currentBookGoogle = googleBooksData.get(id);
