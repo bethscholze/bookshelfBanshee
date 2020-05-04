@@ -68,7 +68,7 @@ public class UserHome extends HttpServlet {
 
         Set<BookList> userLists = user.getLists();
         session.setAttribute("userLists", userLists);
-        session.setAttribute("userBooks", googleBooksData);
+        session.setAttribute("userGoogleBooks", googleBooksData);
         session.setAttribute("userBookData", userBookData);
         session.setAttribute("bookManger", bookManager);
         logger.info(user.toString());

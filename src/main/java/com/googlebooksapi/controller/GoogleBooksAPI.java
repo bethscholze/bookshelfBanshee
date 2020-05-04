@@ -17,22 +17,20 @@ import java.util.List;
 
 public class GoogleBooksAPI {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    private Client client;
 
     public String createClient(String queryParam, String searchTerm) {
-        client = ClientBuilder.newClient();
+        Client client = ClientBuilder.newClient();
         //https://www.googleapis.com/books/v1/volumes?q=isbn:9781250313188
         logger.info("https://www.googleapis.com/books/v1/volumes?q={}:{}", queryParam, searchTerm);
         WebTarget target = client.target("https://www.googleapis.com/books/v1/volumes?q=" + queryParam + ":" + searchTerm + "&country=US");
         logger.info("url for request: {}", target);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         logger.info("The response from the api: {}", response);
-
+        //client.close();
         return response;
     }
     public VolumeInfo getBook(String queryParam, String searchTerm) {
         String response = createClient(queryParam, searchTerm);
-        client.close();
         ObjectMapper mapper = new ObjectMapper();
         VolumeInfo volumeInfo = new VolumeInfo();
         try {
@@ -50,7 +48,6 @@ public class GoogleBooksAPI {
 
     public List<VolumeInfo> searchBooks(String queryParam, String searchTerm) {
         String response = createClient(queryParam, searchTerm);
-        client.close();
         ObjectMapper mapper = new ObjectMapper();
         List<VolumeInfo> volumeInfoList = new ArrayList<>();
         try {

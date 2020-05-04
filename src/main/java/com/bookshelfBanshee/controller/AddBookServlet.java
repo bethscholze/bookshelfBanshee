@@ -4,6 +4,7 @@ import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
+import com.googlebooksapi.entity.IndustryIdentifiersItem;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -61,30 +62,65 @@ public class AddBookServlet extends HttpServlet {
         dispatcher.forward(req, resp);
     }
 
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//
-//        HttpSession session = req.getSession();
-//        Book currentDBBook = (Book) session.getAttribute("currentBookDb");
-//        User user = (User) session.getAttribute("user");
-//        Set<UserBookData> currentBookData = (Set<UserBookData>)session.getAttribute("currentBookData");
-//        String dataLabel = req.getParameter("dataLabel");
-//        String dataValue = req.getParameter("dataValue");
-//
-//        UserBookData newBookData = new UserBookData(user, currentDBBook, dataLabel, dataValue);
-//
-//        GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
-//
-//        userBookDataDao.insert(newBookData);
-//
-//        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-//
-//        currentBookData.add(newBookData);
-//        userBookData.add(newBookData);
-//        session.setAttribute("userBookData", userBookData);
-//        session.setAttribute("currentBookData", currentBookData);
-//
-//        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
-//        dispatcher.forward(req, resp);
-//    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        HttpSession session = req.getSession();
+        List<VolumeInfo> googleBooksData = (List<VolumeInfo>)session.getAttribute("userGoogleBooks");
+        List<VolumeInfo> bookResults = (List<VolumeInfo>)session.getAttribute("bookResults");
+        int id = Integer.parseInt(req.getParameter("bookToAdd"));
+        VolumeInfo bookToAdd = bookResults.get(id);
+
+        googleBooksData.add(bookToAdd);
+
+        List<IndustryIdentifiersItem> isbns = bookToAdd.getIndustryIdentifiers();
+        GenericDao<Book> bookDao = new GenericDao<>(Book.class);
+        Book newBook = new Book();
+        final int ISBN10_SIZE = 10;
+        final int ISBN13_SIZE = 13;
+        String isbnType;
+        String isbnNumber;
+        Boolean insertBook = true;
+        for(IndustryIdentifiersItem isbn: isbns){
+            isbnType = isbn.getType();
+            isbnType = isbnType.toLowerCase().replace("_","");
+
+            isbnNumber = isbn.getIdentifier();
+            List<Book> currentBookDb = bookDao.getByPropertyEqual(isbnType, isbnNumber);
+            if(currentBookDb.size() > 0) {
+                newBook = currentBookDb.get(0);
+                insertBook = false;
+                break;
+            } else {
+                if(isbn.getIdentifier().length() == ISBN10_SIZE) {
+                    newBook.setIsbn10(isbn.getIdentifier());
+                } else if (isbn.getIdentifier().length() == ISBN13_SIZE) {
+                    newBook.setIsbn13(isbn.getIdentifier());
+                }
+
+
+            }
+        }
+        if(insertBook) {
+            bookDao.insert(newBook);
+        }
+
+        User user = (User) session.getAttribute("user");
+
+        UserBookData newBookData = new UserBookData(user, newBook);
+
+        GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
+
+        userBookDataDao.insert(newBookData);
+
+        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
+
+        userBookData.add(newBookData);
+
+        session.setAttribute("userBookData", userBookData);
+        session.setAttribute("userGoogleBooks", googleBooksData);
+        session.setAttribute("bookResults", null);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
+        dispatcher.forward(req, resp);
+    }
 }

@@ -77,6 +77,7 @@
                                     </table>
                                     <form method="post" action="addBook" class="form bg-light rounded px-2 py-2">
                                         <input type="hidden" id="bookToAdd" name="bookToAdd" value="${bookResults.indexOf(bookResult)}">
+                                        <button type="submit">Add</button>
                                     </form>
 
 
@@ -90,7 +91,7 @@
                 <h3>My Booklist</h3>
 
                 <div class="d-flex">
-                    <c:forEach items="${sessionScope.userBooks}" var="book">
+                    <c:forEach items="${sessionScope.userGoogleBooks}" var="book">
                         <div class="card" style="width: 14rem;">
                             <img class="card-img-top" src="${book.imageLinks.smallThumbnail}" alt="Book Cover">
                             <div class="card-body">
@@ -110,9 +111,8 @@
                                     </tbody>
                                 </table>
 
-                                <a class="btn btn-dark col-1 my-2 p-2" href="BookDetails?id=${userBooks.indexOf(book)}">Edit</a>
-<%--                                <button type="button" class="editBook" value="">Edit</button>--%>
-                                <button>Add to list</button>
+                                <a class="btn btn-dark col-1 my-2 p-2" href="BookDetails?id=${userGoogleBooks.indexOf(book)}">Edit</a>
+                                <a class="btn btn-dark col-1 my-2 p-2" href="deleteBook?id=${userGoogleBooks.indexOf(book)}">Delete</a>
                             </div>
                         </div>
                     </c:forEach>

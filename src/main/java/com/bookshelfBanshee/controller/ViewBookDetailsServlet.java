@@ -43,7 +43,7 @@ public class ViewBookDetailsServlet extends HttpServlet {
         HttpSession session = req.getSession();
         int id = Integer.parseInt(req.getParameter("id"));
         //Set<BookList> userLists = (Set<BookList>)session.getAttribute("userLists");
-        List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userBooks");
+        List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
         VolumeInfo currentBookGoogle = googleBooksData.get(id);
 
         GenericDao<Book> bookDao= new GenericDao<>(Book.class);

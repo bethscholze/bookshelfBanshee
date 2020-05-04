@@ -70,4 +70,5 @@ class UserBookDataDaoTest {
         int allBooksSize = userBookDataDao.getAll().size();
         assertEquals(3, allBooksSize);
     }
+
 }

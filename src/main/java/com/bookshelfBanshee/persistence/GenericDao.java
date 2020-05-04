@@ -101,7 +101,14 @@ public class GenericDao<T> {
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
         query.select(root).where(builder.equal(root.get(propertyName), value));
-        List<T> entities = session.createQuery(query).getResultList();
+        List<T> entities;
+        try {
+            entities = session.createQuery( query ).getResultList();
+        } catch(IllegalArgumentException e) {
+            logger.error(e);
+            return null;
+        }
+
         session.disconnect();
         session.close();
         return entities;
@@ -109,7 +116,7 @@ public class GenericDao<T> {
 
 
     public List<T> getByPropertyLike(String propertyName, String value) {
-//        Session session = sessionFactory.openSession();
+
         Session session = getSession();
 
         logger.debug("Searching for Entity with {} = {}",  propertyName, value);
@@ -120,8 +127,14 @@ public class GenericDao<T> {
         Expression<String> propertyPath = root.get(propertyName);
 
         query.where(builder.like(propertyPath, "%" + value + "%"));
+        List<T> entities;
+        try {
+            entities = session.createQuery( query ).getResultList();
+        } catch(IllegalArgumentException e) {
+            logger.error(e);
+            return null;
+        }
 
-        List<T> entities = session.createQuery( query ).getResultList();
         session.disconnect();
         session.close();
         return entities;
