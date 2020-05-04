@@ -202,6 +202,10 @@ public class VolumeInfo{
 		return ratingsCount;
 	}
 
+	public String getLeadAuthor() {
+		return this.authors.get(0);
+	}
+
 	@Override
  	public String toString(){
 		return 

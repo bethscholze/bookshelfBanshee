@@ -15,14 +15,14 @@
         <section class="row d-flex justify-content-between align-items-center">
             <div class="col-3 bg-dark text-light text-center">
                 <h2 class="p-1">Sort By</h2>
-                <div>
 <%--                    I want these buttons loaded from the backend? on page load users sort categories--%>
-                    <button>Title</button>
-                    <button>Author</button>
-                    <button>Date added</button>
-                    <button>Publish Date</button>
-                    <button># of pages</button>
-                </div>
+                <ul>
+                    <li>Title <a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=titleAsc">Asc</a><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=titleDesc">Desc</a></li>
+                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=author">Author</a></li>
+<%--                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=addedDate">Date Added</a></li>--%>
+                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=pubDate">Publish Date</a></li>
+                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=pageCount">Page Count</a></li>
+                </ul>
             </div>
 
             <div id="bookList" class="col-9 bg-light">
@@ -118,17 +118,6 @@
                     </c:forEach>
                 </div>
             </div>
-<%--            js should create these sections--%>
-<%--            <div id="editBook" class="col-9 bg-light">--%>
-<%--&lt;%&ndash;                //this one should just be done with js to toggle class for visible to invisible&ndash;%&gt;--%>
-<%--                <h3>Edit Book</h3>--%>
-<%--                <form></form>--%>
-<%--            </div>--%>
-<%--            <div class="col-9 bg-light d-none">--%>
-<%--&lt;%&ndash;                this one needs to be loaded from the servlet on form submit&ndash;%&gt;--%>
-<%--                <h3>Search results</h3>--%>
-<%--&lt;%&ndash;                button on each to add book&ndash;%&gt;--%>
-<%--            </div>--%>
 
         </section>
 

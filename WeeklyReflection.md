@@ -116,3 +116,8 @@ return evaluation.getCommand();
 NEW API TO GET GENRE/OTHER INFO NOT IN GOOGLE BOOKS
 https://www.isbndb.com/
 //nevermind this is pay to use
+
+
+//////////////////Compare to for sorting ////////
+https://dev.to/codebyamir/sort-a-list-of-objects-by-field-in-java-3coj
+-option 3 is what I used because it was available after java8
