@@ -35,14 +35,23 @@ public class SortBooksServlet extends HttpServlet {
             case "titleDesc":
                 googleBooksData.sort(Comparator.comparing(VolumeInfo::getTitle).reversed());
                 break;
-            case "author":
+            case "authorAsc":
                 googleBooksData.sort(Comparator.comparing(VolumeInfo::getLeadAuthor));
                 break;
-            case "pubDate":
+            case "authorDesc":
+                googleBooksData.sort(Comparator.comparing(VolumeInfo::getLeadAuthor).reversed());
+                break;
+            case "pubDateAsc":
                 googleBooksData.sort(Comparator.comparing(VolumeInfo::getPublishedDate));
                 break;
-            case "pageCount":
+            case "pubDateDesc":
+                googleBooksData.sort(Comparator.comparing(VolumeInfo::getPublishedDate).reversed());
+                break;
+            case "pageCountAsc":
                 googleBooksData.sort(Comparator.comparing(VolumeInfo::getPageCount));
+                break;
+            case "pageCountDesc":
+                googleBooksData.sort(Comparator.comparing(VolumeInfo::getPageCount).reversed());
                 break;
             default:
                 googleBooksData.sort(Comparator.comparing(VolumeInfo::getTitle));

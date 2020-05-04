@@ -16,12 +16,12 @@
             <div class="col-3 bg-dark text-light text-center">
                 <h2 class="p-1">Sort By</h2>
 <%--                    I want these buttons loaded from the backend? on page load users sort categories--%>
-                <ul>
-                    <li>Title <a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=titleAsc">Asc</a><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=titleDesc">Desc</a></li>
-                    <li><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=author">Author</a></li>
+                <ul class="list-group">
+                    <li class="list-group-item">Title <a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=titleAsc">Asc</a><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=titleDesc">Desc</a></li>
+                    <li class="list-group-item">Author <a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=authorAsc">Asc</a><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=authorDesc">Desc</a></li>
 <%--                    <li><a class="btn btn-dark col-1 my-2 p-2" href="sortBooks?sortBy=addedDate">Date Added</a></li>--%>
-                    <li><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=pubDate">Publish Date</a></li>
-                    <li><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=pageCount">Page Count</a></li>
+                    <li class="list-group-item">Publish Date<a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=pubDateAsc">Asc</a><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=pubDateDesc">Desc</a></li>
+                    <li class="list-group-item">Page Count<a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=pageCountAsc">Asc</a><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=pageCountDesc">Desc</a></li>
                 </ul>
             </div>
 
