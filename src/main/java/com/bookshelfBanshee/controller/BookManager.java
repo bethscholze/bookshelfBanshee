@@ -19,7 +19,7 @@ public class BookManager {
     // Holds the data returned form the google books api for all of a users books,
     // This needs to be refactored to only call the first 200 of a users books then
     //use pagination to call the next 200 books.
-    private List<VolumeInfo> returnedBookInfo = new ArrayList<>();
+
     private GoogleBooksAPI api = new GoogleBooksAPI();
     private GenericDao userDao = new GenericDao(User.class);
     private GenericDao<Book> bookDao= new GenericDao<>(Book.class);
@@ -32,7 +32,7 @@ public class BookManager {
     //I think pass a param in based on the page you are on ...
 
     public List<VolumeInfo> getGoogleAPIBookData(Set<Book> userBooks) {
-
+        List<VolumeInfo> returnedBookInfo = new ArrayList<>();
         String queryParam = "isbn";
         // TODO make sure to limit number of queries to 200!!!! pagination will call next set afterward
         // TODO make sure there is an ability to load new books on each page then so that if they switch to a new set
