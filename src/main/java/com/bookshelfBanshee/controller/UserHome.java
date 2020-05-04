@@ -56,16 +56,21 @@ public class UserHome extends HttpServlet {
         }
 
         BookManager bookManager = new BookManager();
+
         List<VolumeInfo> googleBooksData = new ArrayList<>();
         try {
             googleBooksData = bookManager.getGoogleAPIBookData(books);
         } catch (Exception e) {
             logger.error("Could not load Book data from api.");
         }
+
+//        ListManager listManager = new ListManager();
+
         Set<BookList> userLists = user.getLists();
         session.setAttribute("userLists", userLists);
-        session.setAttribute("userBooks", googleBooksData);
+        session.setAttribute("userGoogleBooks", googleBooksData);
         session.setAttribute("userBookData", userBookData);
+        session.setAttribute("bookManger", bookManager);
         logger.info(user.toString());
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");

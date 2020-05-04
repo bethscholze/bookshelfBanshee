@@ -58,9 +58,9 @@ public class JSONUsers {
         }
 
 //        if(user != null) {
-//            return Response.status(200).entity(jsonString).build();
+//            return SearchResponse.status(200).entity(jsonString).build();
 //        } else {
-//            return Response.status(404).build();
+//            return SearchResponse.status(404).build();
 //        }
     }
 }

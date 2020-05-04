@@ -1,15 +1,7 @@
 package com.googlebooksapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.annotation.Generated;
-
-@Generated("com.robohorse.robopojogenerator")
 public class PanelizationSummary{
-
-	@JsonProperty("containsImageBubbles")
 	private boolean containsImageBubbles;
-
-	@JsonProperty("containsEpubBubbles")
 	private boolean containsEpubBubbles;
 
 	public void setContainsImageBubbles(boolean containsImageBubbles){

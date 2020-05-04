@@ -18,7 +18,7 @@
 
                     </thead>
                     <tbody class="bg-white">
-                    <c:forEach items="${sessionScope.userBooks}" var="books">
+                    <c:forEach items="${sessionScope.userGoogleBooks}" var="books">
                         <tr>
                             <td>${books.title}</td>
                             <td>${books.authors}</td>

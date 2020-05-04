@@ -1,19 +1,15 @@
 package com.googlebooksapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.annotation.Generated;
+import java.util.List;
 
-@Generated("com.robohorse.robopojogenerator")
 public class SaleInfo{
-
-	@JsonProperty("country")
 	private String country;
-
-	@JsonProperty("isEbook")
 	private boolean isEbook;
-
-	@JsonProperty("saleability")
 	private String saleability;
+	private List<OffersItem> offers;
+	private String buyLink;
+	private RetailPrice retailPrice;
+	private ListPrice listPrice;
 
 	public void setCountry(String country){
 		this.country = country;
@@ -39,6 +35,38 @@ public class SaleInfo{
 		return saleability;
 	}
 
+	public void setOffers(List<OffersItem> offers){
+		this.offers = offers;
+	}
+
+	public List<OffersItem> getOffers(){
+		return offers;
+	}
+
+	public void setBuyLink(String buyLink){
+		this.buyLink = buyLink;
+	}
+
+	public String getBuyLink(){
+		return buyLink;
+	}
+
+	public void setRetailPrice(RetailPrice retailPrice){
+		this.retailPrice = retailPrice;
+	}
+
+	public RetailPrice getRetailPrice(){
+		return retailPrice;
+	}
+
+	public void setListPrice(ListPrice listPrice){
+		this.listPrice = listPrice;
+	}
+
+	public ListPrice getListPrice(){
+		return listPrice;
+	}
+
 	@Override
  	public String toString(){
 		return 
@@ -46,6 +74,10 @@ public class SaleInfo{
 			"country = '" + country + '\'' + 
 			",isEbook = '" + isEbook + '\'' + 
 			",saleability = '" + saleability + '\'' + 
+			",offers = '" + offers + '\'' + 
+			",buyLink = '" + buyLink + '\'' + 
+			",retailPrice = '" + retailPrice + '\'' + 
+			",listPrice = '" + listPrice + '\'' + 
 			"}";
 		}
 }

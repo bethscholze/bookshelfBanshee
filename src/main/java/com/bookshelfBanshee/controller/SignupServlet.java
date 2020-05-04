@@ -35,7 +35,7 @@ public class SignupServlet extends HttpServlet {
         logger.debug("the password: {}", password);
         logger.debug("the retyped Password: {}", retypedPassword);
 
-        //TODO check the username here
+        //TODO check the username here, move password authentication to front end
         if (password.equals(retypedPassword)){
             User newUser = new User();
             newUser.setUsername(username);

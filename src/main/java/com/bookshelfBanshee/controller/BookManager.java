@@ -14,6 +14,7 @@ public class BookManager {
     // This needs to be refactored to only call the first 200 of a users books then
     //use pagination to call the next 200 books.
     private List<VolumeInfo> returnedBookInfo = new ArrayList<>();
+    private GoogleBooksAPI api = new GoogleBooksAPI();
     //this class will be created after a user signs in
     // It will hold all the book data returned from the api, I need to maintain this data in the session
     // so if I need to check if a book has already been added to the session of userBooks. ie make sure I
@@ -22,7 +23,7 @@ public class BookManager {
     //I think pass a param in based on the page you are on ...
 
     public List<VolumeInfo> getGoogleAPIBookData(Set<Book> userBooks) {
-        GoogleBooksAPI api = new GoogleBooksAPI();
+
         String queryParam = "isbn";
         // TODO make sure to limit number of queries to 200!!!! pagination will call next set afterward
         // TODO make sure there is an ability to load new books on each page then so that if they switch to a new set
@@ -35,6 +36,11 @@ public class BookManager {
         }
         return returnedBookInfo;
 
+    }
+
+    public List<VolumeInfo> searchGoogleAPIBook(String searchType, String searchTerm) {
+        // the maxResults value is by default 10 books, which I think works for my program
+        return  api.searchBooks(searchType, searchTerm);
     }
 
 

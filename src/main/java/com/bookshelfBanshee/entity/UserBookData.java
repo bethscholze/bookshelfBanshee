@@ -38,6 +38,11 @@ public class UserBookData implements Serializable {
     public UserBookData() {
     }
 
+    public UserBookData(User user, Book book) {
+        this.book = book;
+        this.user = user;
+    }
+
     public UserBookData(User user, Book book, String dataLabel, String dataValue) {
         this.dataLabel = dataLabel;
         this.dataValue = dataValue;

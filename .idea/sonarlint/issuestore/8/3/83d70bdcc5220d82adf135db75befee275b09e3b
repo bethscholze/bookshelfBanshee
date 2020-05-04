@@ -1,0 +1,16 @@
+
+;
+java:S2629+"%Invoke method(s) only conditionally. (£œĞ¾
+w
+java:S1989>"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(òø½
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤ãÂúùÿÿÿÿ
+H
+java:S1135&"2Complete the task associated to this TODO comment.(–È³Ã
+C
+java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX
+i
+java:S19898"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ü±êâ
+P
+java:S1161":Add the "@Override" annotation above this method signature(üª¼í
+E
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ

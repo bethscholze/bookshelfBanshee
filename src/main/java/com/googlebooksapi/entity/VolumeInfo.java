@@ -1,74 +1,30 @@
 package com.googlebooksapi.entity;
 
 import java.util.List;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.annotation.Generated;
 
-@Generated("com.robohorse.robopojogenerator")
 public class VolumeInfo{
-
-	@JsonProperty("industryIdentifiers")
 	private List<IndustryIdentifiersItem> industryIdentifiers;
-
-	@JsonProperty("pageCount")
 	private int pageCount;
-
-	@JsonProperty("printType")
 	private String printType;
-
-	@JsonProperty("readingModes")
 	private ReadingModes readingModes;
-
-	@JsonProperty("previewLink")
 	private String previewLink;
-
-	@JsonProperty("canonicalVolumeLink")
 	private String canonicalVolumeLink;
-
-	@JsonProperty("description")
 	private String description;
-
-	@JsonProperty("language")
 	private String language;
-
-	@JsonProperty("title")
 	private String title;
-
-	@JsonProperty("imageLinks")
 	private ImageLinks imageLinks;
-
-	@JsonProperty("averageRating")
-	private double averageRating;
-
-	@JsonProperty("panelizationSummary")
 	private PanelizationSummary panelizationSummary;
-
-	@JsonProperty("publisher")
 	private String publisher;
-
-	@JsonProperty("ratingsCount")
-	private int ratingsCount;
-
-	@JsonProperty("publishedDate")
 	private String publishedDate;
-
-	@JsonProperty("categories")
 	private List<String> categories;
-
-	@JsonProperty("maturityRating")
 	private String maturityRating;
-
-	@JsonProperty("allowAnonLogging")
 	private boolean allowAnonLogging;
-
-	@JsonProperty("contentVersion")
 	private String contentVersion;
-
-	@JsonProperty("authors")
 	private List<String> authors;
-
-	@JsonProperty("infoLink")
 	private String infoLink;
+	private String subtitle;
+	private double averageRating;
+	private int ratingsCount;
 
 	public void setIndustryIdentifiers(List<IndustryIdentifiersItem> industryIdentifiers){
 		this.industryIdentifiers = industryIdentifiers;
@@ -150,14 +106,6 @@ public class VolumeInfo{
 		return imageLinks;
 	}
 
-	public void setAverageRating(double averageRating){
-		this.averageRating = averageRating;
-	}
-
-	public double getAverageRating(){
-		return averageRating;
-	}
-
 	public void setPanelizationSummary(PanelizationSummary panelizationSummary){
 		this.panelizationSummary = panelizationSummary;
 	}
@@ -172,14 +120,6 @@ public class VolumeInfo{
 
 	public String getPublisher(){
 		return publisher;
-	}
-
-	public void setRatingsCount(int ratingsCount){
-		this.ratingsCount = ratingsCount;
-	}
-
-	public int getRatingsCount(){
-		return ratingsCount;
 	}
 
 	public void setPublishedDate(String publishedDate){
@@ -238,6 +178,30 @@ public class VolumeInfo{
 		return infoLink;
 	}
 
+	public void setSubtitle(String subtitle){
+		this.subtitle = subtitle;
+	}
+
+	public String getSubtitle(){
+		return subtitle;
+	}
+
+	public void setAverageRating(double averageRating){
+		this.averageRating = averageRating;
+	}
+
+	public double getAverageRating(){
+		return averageRating;
+	}
+
+	public void setRatingsCount(int ratingsCount){
+		this.ratingsCount = ratingsCount;
+	}
+
+	public int getRatingsCount(){
+		return ratingsCount;
+	}
+
 	@Override
  	public String toString(){
 		return 
@@ -252,10 +216,8 @@ public class VolumeInfo{
 			",language = '" + language + '\'' + 
 			",title = '" + title + '\'' + 
 			",imageLinks = '" + imageLinks + '\'' + 
-			",averageRating = '" + averageRating + '\'' + 
 			",panelizationSummary = '" + panelizationSummary + '\'' + 
 			",publisher = '" + publisher + '\'' + 
-			",ratingsCount = '" + ratingsCount + '\'' + 
 			",publishedDate = '" + publishedDate + '\'' + 
 			",categories = '" + categories + '\'' + 
 			",maturityRating = '" + maturityRating + '\'' + 
@@ -263,6 +225,9 @@ public class VolumeInfo{
 			",contentVersion = '" + contentVersion + '\'' + 
 			",authors = '" + authors + '\'' + 
 			",infoLink = '" + infoLink + '\'' + 
+			",subtitle = '" + subtitle + '\'' + 
+			",averageRating = '" + averageRating + '\'' + 
+			",ratingsCount = '" + ratingsCount + '\'' + 
 			"}";
 		}
 }
