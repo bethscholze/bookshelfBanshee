@@ -21,7 +21,9 @@
                     <c:forEach items="${sessionScope.userGoogleBooks}" var="books">
                         <tr>
                             <td>${books.title}</td>
-                            <td>${books.authors}</td>
+                        <c:forEach items="${books.authors}" var="author">
+                            <td>${author}</td>
+                        </c:forEach>
                             <td>${books.publishedDate}</td>
                         </tr>
                     </c:forEach>

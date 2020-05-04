@@ -45,3 +45,7 @@ form {
 .cursiveFont{
     font-family: 'Lemonada', cursive;
 }
+
+ul {
+    list-style-type: none;
+}
