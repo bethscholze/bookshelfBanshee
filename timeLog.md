@@ -50,3 +50,4 @@
 |4/29|3|Week14|Reviewed anthony's project and provided feedback|
 |5/1|5|Indie project work|worked on edit books functionality|
 |5/3|6|Indie Project work|finished edit books functionality except for front end styling. Found and fixed a bug in my api call introduced from the edit functionality. Working on add books functionality to search google books and return result to be added to the db.|
+|5/4|4|Indie Project work|completed add books functionality, completed delete books functionality as well (I think)|
