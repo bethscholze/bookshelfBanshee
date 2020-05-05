@@ -64,9 +64,21 @@ public class UserHome extends HttpServlet {
             } catch (Exception e) {
                 logger.error("Could not load Book data from api.");
             }
-            Set<BookList> userLists = user.getLists();
+            List<BookList> userLists = user.getLists();
+            BookList bookList = userLists.get(0);
+            Set<Book> booksOnList = bookList.getBookList();
+            Set<UserBookData> booksOnListData = new HashSet<>();
+            for (Book book:booksOnList) {
+                for(UserBookData bookData: userBookData) {
+                    if (book.equals(bookData.getBook())){
+                        booksOnListData.add(bookData);
+                    }
+                }
+            }
             session.setAttribute("user", user);
             session.setAttribute("userLists", userLists);
+            session.setAttribute("currentList", bookList);
+            session.setAttribute("currentListBooks", booksOnListData);
             session.setAttribute("userGoogleBooks", googleBooksData);
             session.setAttribute("userBookData", userBookData);
             logger.info(user.toString());

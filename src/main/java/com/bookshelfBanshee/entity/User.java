@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.io.Serializable;
 
 /**
@@ -43,7 +41,7 @@ public class User implements Serializable{
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 //    @JsonManagedReference
     @JsonIgnore
-    private Set<BookList> lists = new HashSet<>();
+    private List<BookList> lists = new ArrayList<>();
 
     /**
      * Instantiates a new User.
@@ -161,7 +159,7 @@ public class User implements Serializable{
      *
      * @return the lists
      */
-    public Set<BookList> getLists() {
+    public List<BookList> getLists() {
         return lists;
     }
 
@@ -170,7 +168,7 @@ public class User implements Serializable{
      *
      * @param lists the lists
      */
-    public void setLists(Set<BookList> lists) {
+    public void setLists(List<BookList> lists) {
         this.lists = lists;
     }
 

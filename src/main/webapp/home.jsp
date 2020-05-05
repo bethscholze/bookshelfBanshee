@@ -34,7 +34,6 @@
                     </c:forEach>
                     </tbody>
                 </table>
-<%--                TODO pull list of bookList here, make sure to limit #--%>
             </div>
             <div class="col-3 card">
                 <h2>Lists</h2>
@@ -55,7 +54,6 @@
                     </c:forEach>
                     </tbody>
                 </table>
-<%--                TODO pull list of lists here, make sure to limit #--%>
             </div>
             <div class="col-3 card">
                 <h2>Stats</h2>

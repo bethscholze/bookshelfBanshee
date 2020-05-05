@@ -43,7 +43,7 @@ public class BookList implements Serializable {
     /**
      * The Book list.
      */
-    @ManyToMany(cascade = { CascadeType.PERSIST })
+    @ManyToMany(cascade = { CascadeType.PERSIST }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_book_list",
             joinColumns = { @JoinColumn(name = "book_id") },
