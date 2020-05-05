@@ -72,8 +72,9 @@ public class AddBookServlet extends HttpServlet {
         VolumeInfo bookToAdd = bookResults.get(id);
 
         //todo chekc if this is working, i think I need .eqauls and hashcode in volumeInfo
-        if (!googleBooksData.contains(bookToAdd)) {
-            logger.info("Book added to ggogle results: {}", bookToAdd);
+        Set<VolumeInfo> setGoogleBooks = new HashSet<>(googleBooksData);
+        if (setGoogleBooks.add(bookToAdd)) {
+            logger.info("Book added to google results: {}", bookToAdd);
             googleBooksData.add(bookToAdd);
         }
 
@@ -117,9 +118,8 @@ public class AddBookServlet extends HttpServlet {
         Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
         GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
 
-        if(!userBookData.contains(newBookData)) {
+        if(userBookData.add(newBookData)) {
             userBookDataDao.insert(newBookData);
-            userBookData.add(newBookData);
         }
 
         session.setAttribute("userBookData", userBookData);

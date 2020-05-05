@@ -122,36 +122,20 @@ public class UserBookData implements Serializable {
         this.dataValue = dataValue;
     }
 
-    @Override
+        @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserBookData that = (UserBookData) o;
-        return Objects.equals(dataLabel, that.dataLabel) &&
-                Objects.equals(dataValue, that.dataValue) &&
-                Objects.equals(book, that.book) &&
-                Objects.equals(user, that.user);
+        return id == that.id &&
+                Objects.equals(dataLabel, that.dataLabel) &&
+                Objects.equals(dataValue, that.dataValue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dataLabel, dataValue, book, user);
+        return Objects.hash(id, dataLabel, dataValue);
     }
-
-    //    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        UserBookData that = (UserBookData) o;
-//        return id == that.id &&
-//                Objects.equals(dataLabel, that.dataLabel) &&
-//                Objects.equals(dataValue, that.dataValue);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id, dataLabel, dataValue);
-//    }
 
     @Override
     public String toString() {
