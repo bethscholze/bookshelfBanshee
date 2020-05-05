@@ -11,6 +11,15 @@
 
 <html>
 <body>
+<header class="pageBackground jumbotron jumbotron-fluid d-flex flex-wrap p-0">
+    <div class="col-12 align-self-top d-flex justify-content-end">
+        <a class="btn btn-dark col-1 my-2 p-2" href="logout">Logout</a>
+        <a class="btn btn-dark col-1 my-2 p-2" href="#">Profile</a>
+    </div>
+    <div class="col-12 align-self-center p-5">
+        <h1>Admin page</h1>
+    </div>
+</header>
 
 <div class="container-fluid">
     <h2>Search Results: </h2>

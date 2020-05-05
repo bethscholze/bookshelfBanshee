@@ -26,7 +26,6 @@ public class GoogleBooksAPI {
         logger.info("url for request: {}", target);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         logger.info("The response from the api: {}", response);
-        //client.close();
         return response;
     }
     public VolumeInfo getBook(String queryParam, String searchTerm) {
@@ -38,7 +37,6 @@ public class GoogleBooksAPI {
             ItemsItem item = mappedResponse.getItems().get(0);
             volumeInfo = item.getVolumeInfo();
             logger.info("The VolumeInfo Item: {}", volumeInfo);
-            // TODO create dao to call your service and have different functions for each call you need
         } catch (JsonProcessingException e) {
             logger.error("couldnt create object from given json data");
         }
