@@ -65,20 +65,25 @@ public class UserHome extends HttpServlet {
                 logger.error("Could not load Book data from api.");
             }
             List<BookList> userLists = user.getLists();
-            BookList bookList = userLists.get(0);
-            Set<Book> booksOnList = bookList.getBookList();
-            Set<UserBookData> booksOnListData = new HashSet<>();
-            for (Book book:booksOnList) {
-                for(UserBookData bookData: userBookData) {
-                    if (book.equals(bookData.getBook())){
-                        booksOnListData.add(bookData);
+            try{
+                BookList bookList = userLists.get(0);
+                Set<Book> booksOnList = bookList.getBookList();
+                Set<UserBookData> booksOnListData = new HashSet<>();
+                for (Book book:booksOnList) {
+                    for(UserBookData bookData: userBookData) {
+                        if (book.equals(bookData.getBook())){
+                            booksOnListData.add(bookData);
+                        }
                     }
                 }
+                session.setAttribute("currentList", bookList);
+                session.setAttribute("currentListBooks", booksOnListData);
+            } catch(IndexOutOfBoundsException e){
+                logger.error(e);
             }
+
             session.setAttribute("user", user);
             session.setAttribute("userLists", userLists);
-            session.setAttribute("currentList", bookList);
-            session.setAttribute("currentListBooks", booksOnListData);
             session.setAttribute("userGoogleBooks", googleBooksData);
             session.setAttribute("userBookData", userBookData);
             logger.info(user.toString());
