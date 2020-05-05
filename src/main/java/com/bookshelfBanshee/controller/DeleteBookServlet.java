@@ -41,10 +41,12 @@ public class DeleteBookServlet extends HttpServlet {
         GenericDao<Book> bookDao= new GenericDao<>(Book.class);
         String isbnType = currentBookGoogle.getIndustryIdentifiers().get(0).getType();
         isbnType = isbnType.toLowerCase().replace("_","");
-        logger.debug(isbnType);
+        logger.info(isbnType);
         String isbnNumber = currentBookGoogle.getIndustryIdentifiers().get(0).getIdentifier();
+        logger.info(isbnNumber);
         List<Book> currentBookDbList = bookDao.getByPropertyEqual(isbnType, isbnNumber);
         Book currentBook = currentBookDbList.get(0);
+        logger.info(currentBook);
 
        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
 
@@ -70,6 +72,7 @@ public class DeleteBookServlet extends HttpServlet {
         session.setAttribute("userBookData", userBookData);
         session.setAttribute("userGoogleBooks", googleBooksData);
 
+        //todo redirect instead of forward
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);
     }

@@ -93,8 +93,9 @@ public class AddBookServlet extends HttpServlet {
 
             isbnNumber = isbn.getIdentifier();
             List<Book> currentBookDb = bookDao.getByPropertyEqual(isbnType, isbnNumber);
-            logger.info("The matching book found in database: {}", currentBookDb.get(0));
+
             if(currentBookDb.size() > 0) {
+                logger.info("The matching book found in database: {}", currentBookDb.get(0));
                 newBook = currentBookDb.get(0);
                 insertBook = false;
                 break;
@@ -125,6 +126,7 @@ public class AddBookServlet extends HttpServlet {
         session.setAttribute("userBookData", userBookData);
         session.setAttribute("userGoogleBooks", googleBooksData);
         session.setAttribute("bookResults", null);
+        //todo redirect instead of forward
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);
     }
