@@ -1,26 +1,21 @@
 package com.bookshelfBanshee.persistence;
 
-import com.mchange.v2.c3p0.C3P0Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 //the T means that it will deal with different types
 public class GenericDao<T> {
     //this will hold the type of the object we are dealing with
     private Class<T> type;
     private final Logger logger = LogManager.getLogger(this.getClass());
-//    SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
     public GenericDao(Class<T> type) {
         this.type = type;
@@ -36,7 +31,10 @@ public class GenericDao<T> {
         //have to cast the type of object
         T entity = (T)session.get(type, id);
         session.disconnect();
+        session.clear();
         session.close();
+        logger.debug(session.isOpen());
+        session = null;
         logger.info("Entity Retrieved: {}", entity);
         return entity;
     }
@@ -47,7 +45,9 @@ public class GenericDao<T> {
         session.saveOrUpdate(entity);
         transaction.commit();
         session.disconnect();
+        session.clear();
         session.close();
+        session = null;
         logger.info("Updated entity: {}", entity);
     }
 
@@ -58,7 +58,9 @@ public class GenericDao<T> {
         id = (int)session.save(entity);
         transaction.commit();
         session.disconnect();
+        session.clear();
         session.close();
+        session = null;
         logger.info("Inserted entity: {}", entity);
         return id;
     }
@@ -69,7 +71,9 @@ public class GenericDao<T> {
         session.delete(entity);
         transaction.commit();
         session.disconnect();
+        session.clear();
         session.close();
+        session = null;
         logger.info("Deleted entity: {}", entity);
     }
 
@@ -84,7 +88,9 @@ public class GenericDao<T> {
         Root<T> root = query.from(type);
         List<T> entities = session.createQuery(query).getResultList();
         session.disconnect();
+        session.clear();
         session.close();
+        session = null;
 
         logger.info("Retrieved all entities");
 
@@ -110,7 +116,9 @@ public class GenericDao<T> {
         }
 
         session.disconnect();
+        session.clear();
         session.close();
+        session = null;
         return entities;
     }
 
@@ -136,7 +144,9 @@ public class GenericDao<T> {
         }
 
         session.disconnect();
+        session.clear();
         session.close();
+        session = null;
         return entities;
     }
 
