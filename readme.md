@@ -15,14 +15,16 @@ inventory your books and create and sort reading lists based on data you enter.
 ## List of Technologies
 
 Technologies
-- hibernate
-- maven
-- log4j
-- mySQL
-- google books api
-- bootstrap 4
-- google charts js library?
-- elasticsearch??
+- hibernate - ORM Framework
+- maven - Dependency management
+- log4j - Logging
+- mySQL - database
+- google books api - used to gather data for books
+- bootstrap 4 - css framework for front end styling
+- google charts js library? -eventually for data visualization
+- elasticsearch?? -not used yet
+- jQuery-validator -for front end form validation
+
 
 Link to video of running program
 https://drive.google.com/file/d/1mz5Gv-RRnKvnWymZx127J-BX9-e8ubA2/view?usp=sharing

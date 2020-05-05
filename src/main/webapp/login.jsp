@@ -17,17 +17,20 @@
     </c:if>
         <section class="pageBackground h-100 row justify-content-center align-items-center mx-0">
 
-            <form method="post" action="j_security_check" class="form bg-light rounded px-2 py-2">
+            <form id="loginForm" method="post" action="j_security_check" class="form bg-light rounded px-2 py-2">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="j_username" placeholder="enter username" />
+                    <input type="text" minlength="5" class="form-control" id="username" name="j_username" placeholder="enter username" required/>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="j_password" placeholder="enter password" />
+                    <input type="password" minlength="5" class="form-control" id="password" name="j_password" placeholder="enter password" required/>
                 </div>
                 <button type="submit" value="Log In" class="btn btn-primary">Submit</button>
             </form>
+            <script>
+                $('#loginForm').validate();
+            </script>
         </section>
 
 
