@@ -24,3 +24,6 @@ Technologies
 - google charts js library?
 - elasticsearch??
 
+Link to video of running program
+https://drive.google.com/file/d/1mz5Gv-RRnKvnWymZx127J-BX9-e8ubA2/view?usp=sharing
+
