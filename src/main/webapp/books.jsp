@@ -13,9 +13,8 @@
     <body class="container-fluid p-0">
     <%@include file="header.jsp"%>
         <section class="row d-flex justify-content-between align-items-center">
-            <div class="col-3 bg-dark text-light text-center">
+            <div class="col-3 bg-light text-dark text-center">
                 <h2 class="p-1">Sort By</h2>
-<%--                    I want these buttons loaded from the backend? on page load users sort categories--%>
                 <ul class="list-group">
                     <li class="list-group-item">Title <a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=titleAsc">Asc</a><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=titleDesc">Desc</a></li>
                     <li class="list-group-item">Author <a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=authorAsc">Asc</a><a class="btn btn-dark col-4 my-2 p-2" href="sortBooks?sortBy=authorDesc">Desc</a></li>

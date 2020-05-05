@@ -23,7 +23,7 @@ public class SortBooksServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         //todo I think this will have to recall the api since it matters which books have been loaded from it...
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(false);
         List<VolumeInfo> googleBooksData = (List<VolumeInfo>)session.getAttribute("userGoogleBooks");
 
         String sortBy = req.getParameter("sortBy");

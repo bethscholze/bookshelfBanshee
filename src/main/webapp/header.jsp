@@ -16,7 +16,7 @@
     </div>
     <!-- create header image with navbar elements below -->
     <nav class="navbar navbar-expand-md navbar navbar-dark bg-dark col-12 align-self-end">
-        <a href="#" class="navbar-brand">Bookshelf Banshee</a>
+        <a href="index.jsp" class="navbar-brand">Bookshelf Banshee</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse1">
             <span class="navbar-toggler-icon"></span>
         </button>

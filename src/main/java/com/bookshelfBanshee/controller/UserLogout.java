@@ -21,14 +21,14 @@ public class UserLogout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.debug("This is the logout page");
-        req.logout();
         HttpSession session = req.getSession();
-        session.invalidate();
         req.logout();
+        session.setMaxInactiveInterval(0);
+        session.invalidate();
         logger.debug(req.getUserPrincipal());
-        String location = "UserHome";
+        req.logout();
+        String location = "index.jsp";
         resp.sendRedirect(location);
-
     }
 
 }
