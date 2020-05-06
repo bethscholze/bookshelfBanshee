@@ -110,9 +110,10 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                <a class="btn btn-dark my-2 p-1" href="deleteBook?id=${userGoogleBooks.indexOf(book)}">Delete</a>
+                                <a class="btn btn-dark my-2 p-1" href="BookDetails?id=${userGoogleBooks.indexOf(book)}">Edit</a>
+                                <a class="btn btn-dark my-2 p-1" href="addToList?id=${userGoogleBooks.indexOf(book)}">Add to List</a>
 
-                                <a class="btn btn-dark my-2 p-2" href="BookDetails?id=${userGoogleBooks.indexOf(book)}">Edit</a>
-                                <a class="btn btn-dark my-2 p-2" href="deleteBook?id=${userGoogleBooks.indexOf(book)}">Delete</a>
                             </div>
                         </div>
                     </c:forEach>

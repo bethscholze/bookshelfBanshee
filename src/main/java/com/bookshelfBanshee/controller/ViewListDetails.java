@@ -29,7 +29,7 @@ public class ViewListDetails extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp){
         //this will have a get that will load the selected list(the first list by default)
         // and a post
         //the post will be for editing adding and deleting lists
@@ -55,29 +55,32 @@ public class ViewListDetails extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        HttpSession session = req.getSession();
-        Book currentDBBook = (Book) session.getAttribute("currentBookDb");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+        HttpSession session = req.getSession(false);
+        ServletContext servletContext = getServletContext();
+        ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
         User user = (User) session.getAttribute("user");
-        Set<UserBookData> currentBookData = (Set<UserBookData>)session.getAttribute("currentBookData");
-        String dataLabel = req.getParameter("dataLabel");
-        String dataValue = req.getParameter("dataValue");
+        List<BookList> userLists = (List<BookList>)session.getAttribute("userLists");
+        String name = req.getParameter("name");
+        String description = req.getParameter("description");
 
-        UserBookData newBookData = new UserBookData(user, currentDBBook, dataLabel, dataValue);
+        BookList newList = new BookList(name, description, user);
 
-        GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
+        GenericDao<BookList> bookListDao = new GenericDao<>(BookList.class);
+        userLists.add(newList);
 
-        userBookDataDao.insert(newBookData);
+        bookListDao.insert(newList);
 
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
+        session.setAttribute("currentList", newList);
 
-        currentBookData.add(newBookData);
-        userBookData.add(newBookData);
-        session.setAttribute("userBookData", userBookData);
-        session.setAttribute("currentBookData", currentBookData);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
+        try {
+            dispatcher.forward(req, resp);
+        } catch (ServletException servletException) {
+            logger.error(servletException);
+        } catch (IOException ioException) {
+            logger.error(ioException);
+        }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
-        dispatcher.forward(req, resp);
     }
 }
