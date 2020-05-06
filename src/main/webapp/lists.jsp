@@ -17,8 +17,8 @@
             <div class="col-3 bg-dark text-light text-center">
                 <h2 class="p-1">Lists</h2>
                 <table class="table bg-light rounded px-2 py-2">
-                    <c:forEach items="${sessionScope.userLists}" var="bookList">
-                        <tr><td><a href="viewList?id=${userLists.indexOf(bookList)}">${bookList.name}</a></td></tr>
+                    <c:forEach items="${sessionScope.userLists}" var="booksOnList">
+                        <tr><td><a href="viewList?id=${userLists.indexOf(booksOnList)}">${booksOnList.name}</a></td></tr>
                     </c:forEach>
 
                 </table>
@@ -27,17 +27,17 @@
             <div class="col-6 bg-light">
                 <h2>Current list</h2>
                 <table class="table bg-light rounded px-2 py-2">
-                    <tr><th>${sessionScope.currentList.name}</th></tr>
-                    <c:forEach items="${sessionScope.currentListBooks}" var="book">
-                        <tr><td>${book.title}</td><td>${book.author()}</td></tr>
+                    <tr><th colspan="3">${sessionScope.currentList.name}</th></tr>
+                    <c:forEach items="${sessionScope.currentListBooks}" var="listBook">
+                        <tr><td>${listBook.title}</td><td>${listBook.leadAuthor}</td><td><a class="btn btn-dark my-2 p-1" href="removeFromList?id=${sessionScope.currentListBooks.indexOf(listBook)}">Remove</a></tr>
                     </c:forEach>
 
                 </table>
                 <a class="btn btn-dark my-2 p-2" href="deleteList">Delete</a>
                 <table class="table bg-light rounded px-2 py-2">
                     <tr><th colspan="3">Books not on list</th></tr>
-                    <c:forEach items="${sessionScope.booksNotOnList}" var="book">
-                        <tr><td>${book.title}</td><td>${book.authors(0)}</td><td><a class="btn btn-dark my-2 p-1" href="addToList?id=${booksNotOnList.indexOf(book)}">Edit</a></td></tr>
+                    <c:forEach items="${sessionScope.booksNotOnList}" var="nonListBook">
+                        <tr><td>${nonListBook.title}</td><td>${nonListBook.leadAuthor}</td><td><a class="btn btn-dark my-2 p-1" href="addToList?id=${sessionScope.booksNotOnList.indexOf(nonListBook)}">Add</a></td></tr>
                     </c:forEach>
 
                 </table>

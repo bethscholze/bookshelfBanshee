@@ -41,7 +41,7 @@ public class User implements Serializable{
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 //    @JsonManagedReference
     @JsonIgnore
-    private List<BookList> lists = new ArrayList<>();
+    private List<UserList> lists = new ArrayList<>();
 
     /**
      * Instantiates a new User.
@@ -159,7 +159,7 @@ public class User implements Serializable{
      *
      * @return the lists
      */
-    public List<BookList> getLists() {
+    public List<UserList> getLists() {
         return lists;
     }
 
@@ -168,7 +168,7 @@ public class User implements Serializable{
      *
      * @param lists the lists
      */
-    public void setLists(List<BookList> lists) {
+    public void setLists(List<UserList> lists) {
         this.lists = lists;
     }
 

@@ -1,6 +1,6 @@
 package com.bookshelfBanshee.controller;
 
-import com.bookshelfBanshee.entity.BookList;
+import com.bookshelfBanshee.entity.UserList;
 import com.bookshelfBanshee.persistence.GenericDao;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,10 +21,10 @@ public class DeleteListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession(false);
-        List<BookList> userLists = (List<BookList>)session.getAttribute("userLists");
-        BookList currentList = (BookList)session.getAttribute("currentList");
+        List<UserList> userLists = (List<UserList>)session.getAttribute("userLists");
+        UserList currentList = (UserList)session.getAttribute("currentList");
 
-        GenericDao<BookList> bookListDao = new GenericDao<>(BookList.class);
+        GenericDao<UserList> bookListDao = new GenericDao<>(UserList.class);
         bookListDao.delete(currentList);
 
         session.setAttribute("currentList", userLists.get(0));

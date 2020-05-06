@@ -24,7 +24,7 @@
                 </ul>
             </div>
 
-            <div id="bookList" class="col-9 bg-light">
+            <div id="booksOnList" class="col-9 bg-light">
                 <c:choose>
                     <c:when test = "${empty sessionScope.bookResults}">
                         <h2>Add a New Book</h2>

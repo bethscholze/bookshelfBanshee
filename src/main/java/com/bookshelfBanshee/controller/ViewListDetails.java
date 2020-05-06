@@ -1,9 +1,8 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.BookList;
+import com.bookshelfBanshee.entity.UserList;
 import com.bookshelfBanshee.entity.User;
-import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.entity.IndustryIdentifiersItem;
 import com.googlebooksapi.entity.VolumeInfo;
@@ -20,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -42,12 +40,19 @@ public class ViewListDetails extends HttpServlet {
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
-        int id = Integer.parseInt(req.getParameter("id"));
-        List<BookList> userLists = (List<BookList>)session.getAttribute("userLists");
+        int id = 0;
+        if(!(req.getParameter("id")).isEmpty()){
+            id = Integer.parseInt(req.getParameter("id"));
+        }
+
+        List<UserList> userLists = (List<UserList>)session.getAttribute("userLists");
         List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
-        BookList currentList = userLists.get(id);
+
+
+        UserList currentList = userLists.get(id);
         List<VolumeInfo> booksNotOnList = googleBooksData;
-        Set<Book> booksOnList = currentList.getBookList();
+        List<VolumeInfo> currentListBooks = new ArrayList<>();
+        Set<Book> booksOnList = currentList.getBooksOnList();
         //todo add this method to bookManager?
         for(VolumeInfo googleBook:googleBooksData){
             List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
@@ -55,11 +60,12 @@ public class ViewListDetails extends HttpServlet {
                 if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
                         isbns.get(0).getIdentifier().equals(book.getIsbn13())){
                     booksNotOnList.remove(googleBook);
+                    currentListBooks.add(googleBook);
+
                 }
             }
         }
-        List<VolumeInfo> googleBooksOnList = bookManager.//get volumeInfo whare book == volume info book
-        //create a list of userbooks that arent on the list and show them with add buttons
+        session.setAttribute("currentListBooks", currentListBooks);
         session.setAttribute("currentList", currentList);
         session.setAttribute("booksNotOnList", booksNotOnList);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
@@ -80,13 +86,13 @@ public class ViewListDetails extends HttpServlet {
         ServletContext servletContext = getServletContext();
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
         User user = (User) session.getAttribute("user");
-        List<BookList> userLists = (List<BookList>)session.getAttribute("userLists");
+        List<UserList> userLists = (List<UserList>)session.getAttribute("userLists");
         String name = req.getParameter("name");
         String description = req.getParameter("description");
 
-        BookList newList = new BookList(name, description, user);
+        UserList newList = new UserList(name, description, user);
 
-        GenericDao<BookList> bookListDao = new GenericDao<>(BookList.class);
+        GenericDao<UserList> bookListDao = new GenericDao<>(UserList.class);
         userLists.add(newList);
 
         bookListDao.insert(newList);
