@@ -66,67 +66,32 @@ public class AddBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession(false);
+        ServletContext servletContext = getServletContext();
+        BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         List<VolumeInfo> googleBooksData = (List<VolumeInfo>)session.getAttribute("userGoogleBooks");
         List<VolumeInfo> bookResults = (List<VolumeInfo>)session.getAttribute("bookResults");
-        int id = Integer.parseInt(req.getParameter("bookToAdd"));
-        VolumeInfo bookToAdd = bookResults.get(id);
-
-        //todo chekc if this is working, i think I need .eqauls and hashcode in volumeInfo
-        Set<VolumeInfo> setGoogleBooks = new HashSet<>(googleBooksData);
-        if (setGoogleBooks.add(bookToAdd)) {
-            logger.info("Book added to google results: {}", bookToAdd);
-            googleBooksData.add(bookToAdd);
-        }
-
-        List<IndustryIdentifiersItem> isbns = bookToAdd.getIndustryIdentifiers();
-        GenericDao<Book> bookDao = new GenericDao<>(Book.class);
-        Book newBook = new Book();
-        final int ISBN10_SIZE = 10;
-        final int ISBN13_SIZE = 13;
-        String isbnType;
-        String isbnNumber;
-        Boolean insertBook = true;
-
-        for(IndustryIdentifiersItem isbn: isbns){
-            isbnType = isbn.getType();
-            isbnType = isbnType.toLowerCase().replace("_","");
-
-            isbnNumber = isbn.getIdentifier();
-            List<Book> currentBookDb = bookDao.getByPropertyEqual(isbnType, isbnNumber);
-
-            if(currentBookDb.size() > 0) {
-                logger.info("The matching book found in database: {}", currentBookDb.get(0));
-                newBook = currentBookDb.get(0);
-                insertBook = false;
-                break;
-            } else {
-                if(isbn.getIdentifier().length() == ISBN10_SIZE) {
-                    newBook.setIsbn10(isbn.getIdentifier());
-                } else if (isbn.getIdentifier().length() == ISBN13_SIZE) {
-                    newBook.setIsbn13(isbn.getIdentifier());
-                }
-
-            }
-        }
-        if(insertBook) {
-            bookDao.insert(newBook);
-        }
-
+        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
         User user = (User) session.getAttribute("user");
 
-        UserBookData newBookData = new UserBookData(user, newBook);
+        int id = Integer.parseInt(req.getParameter("bookToAdd"));
+        //get the google book data for this book
+        VolumeInfo bookToAdd = bookResults.get(id);
 
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-        GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
+        List<IndustryIdentifiersItem> isbns = bookToAdd.getIndustryIdentifiers();
+        //check if the book is in the db already, return a new book or the book from the db
+        Book book = bookManager.checkForExistingBook(isbns);
 
-        if(userBookData.add(newBookData)) {
-            userBookDataDao.insert(newBookData);
+        //check if user has book
+        if (!bookManager.userHasBook(userBookData, book)){
+            UserBookData newUserBookData = new UserBookData(user, book);
+            userBookData.add(newUserBookData);
+            googleBooksData.add(bookToAdd);
         }
 
         session.setAttribute("userBookData", userBookData);
         session.setAttribute("userGoogleBooks", googleBooksData);
         session.setAttribute("bookResults", null);
-        //todo redirect instead of forward
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);
     }

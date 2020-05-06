@@ -49,21 +49,24 @@ public class DeleteBookServlet extends HttpServlet {
         logger.info(currentBook);
 
        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-
-       UserBookData toDelete = null;
+       GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
+       Set<UserBookData> dataToDelete = new HashSet<>();
+       Set<UserBookData> dataToKeep = new HashSet<>();
        for(UserBookData book: userBookData) {
            if(book.getBook().equals(currentBook)) {
-               toDelete = book;
-               userBookData.remove(book);
+               dataToDelete.add(book);
                googleBooksData.remove(currentBookGoogle);
-               break;
+           } else {
+               dataToKeep.add(book);
            }
        }
 
-       GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
-       userBookDataDao.delete(toDelete);
-
-
+       if (dataToDelete.size() > 0){
+           for(UserBookData bookData: dataToDelete){
+               userBookDataDao.delete(bookData);
+           }
+           userBookData = dataToKeep;
+       }
 //        session.setAttribute("userLists", userLists);
 
         session.setAttribute("currentBookGoogle", null);

@@ -5,6 +5,7 @@ import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.controller.GoogleBooksAPI;
+import com.googlebooksapi.entity.IndustryIdentifiersItem;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -77,4 +78,51 @@ public class BookManager {
         return currentBookData;
     }
 
+    public Book checkForExistingBook(List<IndustryIdentifiersItem> isbns){
+        Book newBook = new Book();
+        final int ISBN10_SIZE = 10;
+        final int ISBN13_SIZE = 13;
+        String isbnType;
+        String isbnNumber;
+
+        for(IndustryIdentifiersItem isbn: isbns){
+            //get the isbns from the google book
+            isbnType = isbn.getType();
+            isbnType = isbnType.toLowerCase().replace("_","");
+            isbnNumber = isbn.getIdentifier();
+
+            //check db to see if the book already exists
+            List<Book> currentBookDb = bookDao.getByPropertyEqual(isbnType, isbnNumber);
+
+            if(currentBookDb.size() > 0) {
+                logger.info("The matching book found in database: {}", currentBookDb.get(0));
+                //return the book if it is found
+                return currentBookDb.get(0);
+
+            } else {
+                //set the isbns if it is a new book
+                if(isbn.getIdentifier().length() == ISBN10_SIZE) {
+                    newBook.setIsbn10(isbn.getIdentifier());
+                } else if (isbn.getIdentifier().length() == ISBN13_SIZE) {
+                    newBook.setIsbn13(isbn.getIdentifier());
+                }
+
+            }
+        }
+        //insert the new book into the database
+        bookDao.insert(newBook);
+        return newBook;
+
+    }
+
+    public Boolean userHasBook(Set<UserBookData> userBookData, Book book){
+
+        //check if the book was already in the users books
+        for (UserBookData bookData: userBookData){
+            if(bookData.getBook().equals(book)){
+             return true;
+            }
+        }
+        return false;
+    }
 }
