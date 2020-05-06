@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,35 +46,41 @@ public class ViewListDetails extends HttpServlet {
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
         int id = 0;
-        if(!(req.getParameter("id")).isEmpty()){
-            id = Integer.parseInt(req.getParameter("id"));
+        try {
+            if(!req.getParameter("id").isEmpty()){
+                id = Integer.parseInt(req.getParameter("id"));
+            }
+        } catch (NullPointerException e){
+            logger.error("No list id passed: {}", e);
         }
 
         List<UserList> userLists = (List<UserList>)session.getAttribute("userLists");
         List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
 
+        if(!userLists.isEmpty()){
+            UserList currentList = userLists.get(id);
+            List<VolumeInfo> booksNotOnList = googleBooksData;
+            List<VolumeInfo> currentListBooks = new ArrayList<>();
+            Set<Book> booksOnList = currentList.getBooksOnList();
+            //todo add this method to bookManager?
+            for( int i = 0; i < googleBooksData.size(); i++){
+                VolumeInfo googleBook = googleBooksData.get(i);
+                List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
+                for(Book book: booksOnList){
+                    if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
+                            isbns.get(0).getIdentifier().equals(book.getIsbn13())){
+                        booksNotOnList.remove(googleBook);
+                        currentListBooks.add(googleBook);
+                        i--;
 
-        UserList currentList = userLists.get(id);
-        List<VolumeInfo> booksNotOnList = googleBooksData;
-        List<VolumeInfo> currentListBooks = new ArrayList<>();
-        Set<Book> booksOnList = currentList.getBooksOnList();
-        //todo add this method to bookManager?
-        for( int i = 0; i < googleBooksData.size(); i++){
-            VolumeInfo googleBook = googleBooksData.get(i);
-            List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
-            for(Book book: booksOnList){
-                if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
-                        isbns.get(0).getIdentifier().equals(book.getIsbn13())){
-                    booksNotOnList.remove(googleBook);
-                    currentListBooks.add(googleBook);
-                    i--;
-
+                    }
                 }
             }
+            session.setAttribute("currentListBooks", currentListBooks);
+            session.setAttribute("currentList", currentList);
+            session.setAttribute("booksNotOnList", booksNotOnList);
         }
-        session.setAttribute("currentListBooks", currentListBooks);
-        session.setAttribute("currentList", currentList);
-        session.setAttribute("booksNotOnList", booksNotOnList);
+
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         try {
