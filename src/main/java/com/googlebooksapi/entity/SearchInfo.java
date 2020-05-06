@@ -6,21 +6,21 @@ package com.googlebooksapi.entity;
 public class SearchInfo{
 	private String textSnippet;
 
-    /**
-     * Set text snippet.
-     *
-     * @param textSnippet the text snippet
-     */
-    public void setTextSnippet(String textSnippet){
+	/**
+	 * Set text snippet.
+	 *
+	 * @param textSnippet the text snippet
+	 */
+	public void setTextSnippet(String textSnippet){
 		this.textSnippet = textSnippet;
 	}
 
-    /**
-     * Get text snippet string.
-     *
-     * @return the string
-     */
-    public String getTextSnippet(){
+	/**
+	 * Get text snippet string.
+	 *
+	 * @return the string
+	 */
+	public String getTextSnippet(){
 		return textSnippet;
 	}
 

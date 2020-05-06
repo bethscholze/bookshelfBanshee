@@ -105,10 +105,20 @@ public class Book implements Serializable {
         this.isbn13 = isbn13;
     }
 
+    /**
+     * Gets user lists.
+     *
+     * @return the user lists
+     */
     public Set<UserList> getUserLists() {
         return userLists;
     }
 
+    /**
+     * Sets user lists.
+     *
+     * @param userLists the user lists
+     */
     public void setUserLists(Set<UserList> userLists) {
         this.userLists = userLists;
     }

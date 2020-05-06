@@ -15,183 +15,183 @@ public class AccessInfo{
 	private boolean embeddable;
 	private String textToSpeechPermission;
 
-    /**
-     * Set access view status.
-     *
-     * @param accessViewStatus the access view status
-     */
-    public void setAccessViewStatus(String accessViewStatus){
+	/**
+	 * Set access view status.
+	 *
+	 * @param accessViewStatus the access view status
+	 */
+	public void setAccessViewStatus(String accessViewStatus){
 		this.accessViewStatus = accessViewStatus;
 	}
 
-    /**
-     * Get access view status string.
-     *
-     * @return the string
-     */
-    public String getAccessViewStatus(){
+	/**
+	 * Get access view status string.
+	 *
+	 * @return the string
+	 */
+	public String getAccessViewStatus(){
 		return accessViewStatus;
 	}
 
-    /**
-     * Set country.
-     *
-     * @param country the country
-     */
-    public void setCountry(String country){
+	/**
+	 * Set country.
+	 *
+	 * @param country the country
+	 */
+	public void setCountry(String country){
 		this.country = country;
 	}
 
-    /**
-     * Get country string.
-     *
-     * @return the string
-     */
-    public String getCountry(){
+	/**
+	 * Get country string.
+	 *
+	 * @return the string
+	 */
+	public String getCountry(){
 		return country;
 	}
 
-    /**
-     * Set viewability.
-     *
-     * @param viewability the viewability
-     */
-    public void setViewability(String viewability){
+	/**
+	 * Set viewability.
+	 *
+	 * @param viewability the viewability
+	 */
+	public void setViewability(String viewability){
 		this.viewability = viewability;
 	}
 
-    /**
-     * Get viewability string.
-     *
-     * @return the string
-     */
-    public String getViewability(){
+	/**
+	 * Get viewability string.
+	 *
+	 * @return the string
+	 */
+	public String getViewability(){
 		return viewability;
 	}
 
-    /**
-     * Set pdf.
-     *
-     * @param pdf the pdf
-     */
-    public void setPdf(Pdf pdf){
+	/**
+	 * Set pdf.
+	 *
+	 * @param pdf the pdf
+	 */
+	public void setPdf(Pdf pdf){
 		this.pdf = pdf;
 	}
 
-    /**
-     * Get pdf pdf.
-     *
-     * @return the pdf
-     */
-    public Pdf getPdf(){
+	/**
+	 * Get pdf pdf.
+	 *
+	 * @return the pdf
+	 */
+	public Pdf getPdf(){
 		return pdf;
 	}
 
-    /**
-     * Set web reader link.
-     *
-     * @param webReaderLink the web reader link
-     */
-    public void setWebReaderLink(String webReaderLink){
+	/**
+	 * Set web reader link.
+	 *
+	 * @param webReaderLink the web reader link
+	 */
+	public void setWebReaderLink(String webReaderLink){
 		this.webReaderLink = webReaderLink;
 	}
 
-    /**
-     * Get web reader link string.
-     *
-     * @return the string
-     */
-    public String getWebReaderLink(){
+	/**
+	 * Get web reader link string.
+	 *
+	 * @return the string
+	 */
+	public String getWebReaderLink(){
 		return webReaderLink;
 	}
 
-    /**
-     * Set epub.
-     *
-     * @param epub the epub
-     */
-    public void setEpub(Epub epub){
+	/**
+	 * Set epub.
+	 *
+	 * @param epub the epub
+	 */
+	public void setEpub(Epub epub){
 		this.epub = epub;
 	}
 
-    /**
-     * Get epub epub.
-     *
-     * @return the epub
-     */
-    public Epub getEpub(){
+	/**
+	 * Get epub epub.
+	 *
+	 * @return the epub
+	 */
+	public Epub getEpub(){
 		return epub;
 	}
 
-    /**
-     * Set public domain.
-     *
-     * @param publicDomain the public domain
-     */
-    public void setPublicDomain(boolean publicDomain){
+	/**
+	 * Set public domain.
+	 *
+	 * @param publicDomain the public domain
+	 */
+	public void setPublicDomain(boolean publicDomain){
 		this.publicDomain = publicDomain;
 	}
 
-    /**
-     * Is public domain boolean.
-     *
-     * @return the boolean
-     */
-    public boolean isPublicDomain(){
+	/**
+	 * Is public domain boolean.
+	 *
+	 * @return the boolean
+	 */
+	public boolean isPublicDomain(){
 		return publicDomain;
 	}
 
-    /**
-     * Set quote sharing allowed.
-     *
-     * @param quoteSharingAllowed the quote sharing allowed
-     */
-    public void setQuoteSharingAllowed(boolean quoteSharingAllowed){
+	/**
+	 * Set quote sharing allowed.
+	 *
+	 * @param quoteSharingAllowed the quote sharing allowed
+	 */
+	public void setQuoteSharingAllowed(boolean quoteSharingAllowed){
 		this.quoteSharingAllowed = quoteSharingAllowed;
 	}
 
-    /**
-     * Is quote sharing allowed boolean.
-     *
-     * @return the boolean
-     */
-    public boolean isQuoteSharingAllowed(){
+	/**
+	 * Is quote sharing allowed boolean.
+	 *
+	 * @return the boolean
+	 */
+	public boolean isQuoteSharingAllowed(){
 		return quoteSharingAllowed;
 	}
 
-    /**
-     * Set embeddable.
-     *
-     * @param embeddable the embeddable
-     */
-    public void setEmbeddable(boolean embeddable){
+	/**
+	 * Set embeddable.
+	 *
+	 * @param embeddable the embeddable
+	 */
+	public void setEmbeddable(boolean embeddable){
 		this.embeddable = embeddable;
 	}
 
-    /**
-     * Is embeddable boolean.
-     *
-     * @return the boolean
-     */
-    public boolean isEmbeddable(){
+	/**
+	 * Is embeddable boolean.
+	 *
+	 * @return the boolean
+	 */
+	public boolean isEmbeddable(){
 		return embeddable;
 	}
 
-    /**
-     * Set text to speech permission.
-     *
-     * @param textToSpeechPermission the text to speech permission
-     */
-    public void setTextToSpeechPermission(String textToSpeechPermission){
+	/**
+	 * Set text to speech permission.
+	 *
+	 * @param textToSpeechPermission the text to speech permission
+	 */
+	public void setTextToSpeechPermission(String textToSpeechPermission){
 		this.textToSpeechPermission = textToSpeechPermission;
 	}
 
-    /**
-     * Get text to speech permission string.
-     *
-     * @return the string
-     */
-    public String getTextToSpeechPermission(){
+	/**
+	 * Get text to speech permission string.
+	 *
+	 * @return the string
+	 */
+	public String getTextToSpeechPermission(){
 		return textToSpeechPermission;
 	}
 

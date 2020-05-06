@@ -8,57 +8,57 @@ public class RetailPrice{
 	private String currencyCode;
 	private double amountInMicros;
 
-    /**
-     * Set amount.
-     *
-     * @param amount the amount
-     */
-    public void setAmount(double amount){
+	/**
+	 * Set amount.
+	 *
+	 * @param amount the amount
+	 */
+	public void setAmount(double amount){
 		this.amount = amount;
 	}
 
-    /**
-     * Get amount double.
-     *
-     * @return the double
-     */
-    public double getAmount(){
+	/**
+	 * Get amount double.
+	 *
+	 * @return the double
+	 */
+	public double getAmount(){
 		return amount;
 	}
 
-    /**
-     * Set currency code.
-     *
-     * @param currencyCode the currency code
-     */
-    public void setCurrencyCode(String currencyCode){
+	/**
+	 * Set currency code.
+	 *
+	 * @param currencyCode the currency code
+	 */
+	public void setCurrencyCode(String currencyCode){
 		this.currencyCode = currencyCode;
 	}
 
-    /**
-     * Get currency code string.
-     *
-     * @return the string
-     */
-    public String getCurrencyCode(){
+	/**
+	 * Get currency code string.
+	 *
+	 * @return the string
+	 */
+	public String getCurrencyCode(){
 		return currencyCode;
 	}
 
-    /**
-     * Set amount in micros.
-     *
-     * @param amountInMicros the amount in micros
-     */
-    public void setAmountInMicros(double amountInMicros){
+	/**
+	 * Set amount in micros.
+	 *
+	 * @param amountInMicros the amount in micros
+	 */
+	public void setAmountInMicros(double amountInMicros){
 		this.amountInMicros = amountInMicros;
 	}
 
-    /**
-     * Get amount in micros double.
-     *
-     * @return the double
-     */
-    public double getAmountInMicros(){
+	/**
+	 * Get amount in micros double.
+	 *
+	 * @return the double
+	 */
+	public double getAmountInMicros(){
 		return amountInMicros;
 	}
 

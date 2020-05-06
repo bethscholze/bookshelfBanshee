@@ -60,9 +60,19 @@ public class UserList implements Serializable {
     )
     Set<Book> booksOnList = new HashSet<>();
 
+    /**
+     * Instantiates a new User list.
+     */
     public UserList() {
     }
 
+    /**
+     * Instantiates a new User list.
+     *
+     * @param name        the name
+     * @param description the description
+     * @param user        the user
+     */
     public UserList(String name, String description, User user) {
         this.name = name;
         this.description = description;

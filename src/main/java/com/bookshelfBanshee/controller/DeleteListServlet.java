@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.util.List;
 
 
+/**
+ * The type Delete list servlet.
+ */
 @WebServlet(
         name = "DeleteList",
         urlPatterns = {"/deleteList"}

@@ -88,6 +88,12 @@ public class BookManager {
         return currentBookData;
     }
 
+    /**
+     * Check for existing book book.
+     *
+     * @param book the book
+     * @return the book
+     */
     public Book checkForExistingBook(VolumeInfo book){
         List<IndustryIdentifiersItem> isbns = book.getIndustryIdentifiers();
         Book newBook = new Book();
@@ -126,6 +132,13 @@ public class BookManager {
 
     }
 
+    /**
+     * User has book boolean.
+     *
+     * @param userBookData the user book data
+     * @param book         the book
+     * @return the boolean
+     */
     public boolean userHasBook(Set<UserBookData> userBookData, Book book){
 
         //check if the book was already in the users books
@@ -137,6 +150,13 @@ public class BookManager {
         return false;
     }
 
+    /**
+     * Delete user book data set.
+     *
+     * @param userBookData the user book data
+     * @param currentBook  the current book
+     * @return the set
+     */
     public Set<UserBookData> deleteUserBookData(Set<UserBookData> userBookData, Book currentBook) {
         Set<UserBookData> dataToDelete = new HashSet<>();
         Set<UserBookData> dataToKeep = new HashSet<>();
