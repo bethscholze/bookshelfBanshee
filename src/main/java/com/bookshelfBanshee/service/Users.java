@@ -13,9 +13,17 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+/**
+ * The type Users.
+ */
 @Path("/users")
 public class Users {
 
+    /**
+     * Gets users.
+     *
+     * @return the users
+     */
     @GET
     @Produces("text/plain")
     public Response getUsers() {
@@ -29,6 +37,12 @@ public class Users {
 
     }
 
+    /**
+     * Gets user.
+     *
+     * @param id the id
+     * @return the user
+     */
     @GET
     @Path("/{param}")
     @Produces("text/plain")

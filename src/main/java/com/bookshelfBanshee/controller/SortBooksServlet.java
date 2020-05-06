@@ -13,6 +13,9 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * The type Sort books servlet.
+ */
 @WebServlet(
         name = "SortBooks",
         urlPatterns = {"/sortBooks"}

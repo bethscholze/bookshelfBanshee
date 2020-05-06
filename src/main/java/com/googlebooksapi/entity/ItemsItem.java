@@ -1,5 +1,8 @@
 package com.googlebooksapi.entity;
 
+/**
+ * The type Items item.
+ */
 public class ItemsItem{
 	private SaleInfo saleInfo;
 	private SearchInfo searchInfo;
@@ -10,67 +13,147 @@ public class ItemsItem{
 	private AccessInfo accessInfo;
 	private String selfLink;
 
-	public void setSaleInfo(SaleInfo saleInfo){
+    /**
+     * Set sale info.
+     *
+     * @param saleInfo the sale info
+     */
+    public void setSaleInfo(SaleInfo saleInfo){
 		this.saleInfo = saleInfo;
 	}
 
-	public SaleInfo getSaleInfo(){
+    /**
+     * Get sale info sale info.
+     *
+     * @return the sale info
+     */
+    public SaleInfo getSaleInfo(){
 		return saleInfo;
 	}
 
-	public void setSearchInfo(SearchInfo searchInfo){
+    /**
+     * Set search info.
+     *
+     * @param searchInfo the search info
+     */
+    public void setSearchInfo(SearchInfo searchInfo){
 		this.searchInfo = searchInfo;
 	}
 
-	public SearchInfo getSearchInfo(){
+    /**
+     * Get search info search info.
+     *
+     * @return the search info
+     */
+    public SearchInfo getSearchInfo(){
 		return searchInfo;
 	}
 
-	public void setKind(String kind){
+    /**
+     * Set kind.
+     *
+     * @param kind the kind
+     */
+    public void setKind(String kind){
 		this.kind = kind;
 	}
 
-	public String getKind(){
+    /**
+     * Get kind string.
+     *
+     * @return the string
+     */
+    public String getKind(){
 		return kind;
 	}
 
-	public void setVolumeInfo(VolumeInfo volumeInfo){
+    /**
+     * Set volume info.
+     *
+     * @param volumeInfo the volume info
+     */
+    public void setVolumeInfo(VolumeInfo volumeInfo){
 		this.volumeInfo = volumeInfo;
 	}
 
-	public VolumeInfo getVolumeInfo(){
+    /**
+     * Get volume info volume info.
+     *
+     * @return the volume info
+     */
+    public VolumeInfo getVolumeInfo(){
 		return volumeInfo;
 	}
 
-	public void setEtag(String etag){
+    /**
+     * Set etag.
+     *
+     * @param etag the etag
+     */
+    public void setEtag(String etag){
 		this.etag = etag;
 	}
 
-	public String getEtag(){
+    /**
+     * Get etag string.
+     *
+     * @return the string
+     */
+    public String getEtag(){
 		return etag;
 	}
 
-	public void setId(String id){
+    /**
+     * Set id.
+     *
+     * @param id the id
+     */
+    public void setId(String id){
 		this.id = id;
 	}
 
-	public String getId(){
+    /**
+     * Get id string.
+     *
+     * @return the string
+     */
+    public String getId(){
 		return id;
 	}
 
-	public void setAccessInfo(AccessInfo accessInfo){
+    /**
+     * Set access info.
+     *
+     * @param accessInfo the access info
+     */
+    public void setAccessInfo(AccessInfo accessInfo){
 		this.accessInfo = accessInfo;
 	}
 
-	public AccessInfo getAccessInfo(){
+    /**
+     * Get access info access info.
+     *
+     * @return the access info
+     */
+    public AccessInfo getAccessInfo(){
 		return accessInfo;
 	}
 
-	public void setSelfLink(String selfLink){
+    /**
+     * Set self link.
+     *
+     * @param selfLink the self link
+     */
+    public void setSelfLink(String selfLink){
 		this.selfLink = selfLink;
 	}
 
-	public String getSelfLink(){
+    /**
+     * Get self link string.
+     *
+     * @return the string
+     */
+    public String getSelfLink(){
 		return selfLink;
 	}
 

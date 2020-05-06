@@ -32,6 +32,7 @@ public class Book implements Serializable {
     private Set<BookList> lists = new HashSet<>();
 
 //    @JSONproperty('author')
+
     /**
      * Instantiates a new Book.
      */
@@ -43,7 +44,6 @@ public class Book implements Serializable {
      *
      * @param isbn10 the isbn 10
      * @param isbn13 the isbn 13
-
      */
     public Book(String isbn10, String isbn13) {
         this.isbn10 = isbn10;

@@ -20,6 +20,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type Delete book servlet.
+ */
 @WebServlet(
         name = "DeleteBook",
         urlPatterns = {"/deleteBook"}

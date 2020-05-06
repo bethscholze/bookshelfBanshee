@@ -1,22 +1,45 @@
 package com.googlebooksapi.entity;
 
+/**
+ * The type Reading modes.
+ */
 public class ReadingModes{
 	private boolean image;
 	private boolean text;
 
-	public void setImage(boolean image){
+    /**
+     * Set image.
+     *
+     * @param image the image
+     */
+    public void setImage(boolean image){
 		this.image = image;
 	}
 
-	public boolean isImage(){
+    /**
+     * Is image boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isImage(){
 		return image;
 	}
 
-	public void setText(boolean text){
+    /**
+     * Set text.
+     *
+     * @param text the text
+     */
+    public void setText(boolean text){
 		this.text = text;
 	}
 
-	public boolean isText(){
+    /**
+     * Is text boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isText(){
 		return text;
 	}
 

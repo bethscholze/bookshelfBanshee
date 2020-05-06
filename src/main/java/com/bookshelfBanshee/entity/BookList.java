@@ -32,10 +32,20 @@ public class BookList implements Serializable {
 //    @JsonBackReference
     private User user;
 
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
     public void setUser(User user) {
         this.user = user;
     }
@@ -46,14 +56,24 @@ public class BookList implements Serializable {
     @ManyToMany(cascade = { CascadeType.PERSIST }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_book_list",
-            joinColumns = { @JoinColumn(name = "book_id") },
-            inverseJoinColumns = { @JoinColumn(name = "list_id") }
+            joinColumns = { @JoinColumn(name = "list_id") },
+            inverseJoinColumns = { @JoinColumn(name = "book_id") }
     )
     Set<Book> bookList = new HashSet<>();
 
+    /**
+     * Instantiates a new Book list.
+     */
     public BookList() {
     }
 
+    /**
+     * Instantiates a new Book list.
+     *
+     * @param name        the name
+     * @param description the description
+     * @param user        the user
+     */
     public BookList(String name, String description, User user) {
         this.name = name;
         this.description = description;
