@@ -5,6 +5,8 @@ import com.bookshelfBanshee.entity.BookList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
+import com.googlebooksapi.entity.IndustryIdentifiersItem;
+import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,6 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -36,12 +40,28 @@ public class ViewListDetails extends HttpServlet {
         // this page will have to have the bookManager passes as well so you can add books
         HttpSession session = req.getSession(false);
         ServletContext servletContext = getServletContext();
+        BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
         int id = Integer.parseInt(req.getParameter("id"));
         List<BookList> userLists = (List<BookList>)session.getAttribute("userLists");
+        List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
         BookList currentList = userLists.get(id);
+        List<VolumeInfo> booksNotOnList = googleBooksData;
+        Set<Book> booksOnList = currentList.getBookList();
+        //todo add this method to bookManager?
+        for(VolumeInfo googleBook:googleBooksData){
+            List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
+            for(Book book: booksOnList){
+                if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
+                        isbns.get(0).getIdentifier().equals(book.getIsbn13())){
+                    booksNotOnList.remove(googleBook);
+                }
+            }
+        }
+        List<VolumeInfo> googleBooksOnList = bookManager.//get volumeInfo whare book == volume info book
+        //create a list of userbooks that arent on the list and show them with add buttons
         session.setAttribute("currentList", currentList);
-
+        session.setAttribute("booksNotOnList", booksNotOnList);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         try {
             dispatcher.forward(req, resp);

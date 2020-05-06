@@ -29,11 +29,19 @@
                 <table class="table bg-light rounded px-2 py-2">
                     <tr><th>${sessionScope.currentList.name}</th></tr>
                     <c:forEach items="${sessionScope.currentListBooks}" var="book">
-                        <tr><td>${book.title}</td><td>${book.author}</td></tr>
+                        <tr><td>${book.title}</td><td>${book.author()}</td></tr>
                     </c:forEach>
 
                 </table>
                 <a class="btn btn-dark my-2 p-2" href="deleteList">Delete</a>
+                <table class="table bg-light rounded px-2 py-2">
+                    <tr><th colspan="3">Books not on list</th></tr>
+                    <c:forEach items="${sessionScope.booksNotOnList}" var="book">
+                        <tr><td>${book.title}</td><td>${book.authors(0)}</td><td><a class="btn btn-dark my-2 p-1" href="addToList?id=${booksNotOnList.indexOf(book)}">Edit</a></td></tr>
+                    </c:forEach>
+
+                </table>
+
             </div>
             <div class="col-2">
                 <h2>Add List</h2>
@@ -44,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="textarea" class="form-control" id="description" name="description" placeholder="enter value" />
+                        <textarea class="form-control" aria-label="With textarea" id="description" name="description"></textarea>
                     </div>
                     <button type="submit" value="submit" class="btn btn-primary">Submit</button>
                 </form>
