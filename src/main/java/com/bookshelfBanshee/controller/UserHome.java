@@ -1,10 +1,7 @@
 package com.bookshelfBanshee.controller;
 
-import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.BookList;
-import com.bookshelfBanshee.entity.User;
-import com.bookshelfBanshee.entity.UserBookData;
-import com.bookshelfBanshee.persistence.GenericDao;
+import com.bookshelfBanshee.entity.*;
+import com.googlebooksapi.entity.IndustryIdentifiersItem;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -62,27 +59,32 @@ public class UserHome extends HttpServlet {
             }
             logger.debug("The books to call google api with: {}", books);
             List<VolumeInfo> googleBooksData = new ArrayList<>();
+            List<UserList> userLists = user.getLists();
             try {
                 googleBooksData = bookManager.getGoogleAPIBookData(books);
-            } catch (Exception e) {
-                logger.error("Could not load Book data from api.");
-            }
-            List<BookList> userLists = user.getLists();
-            try{
-                BookList bookList = userLists.get(0);
-                Set<Book> booksOnList = bookList.getBookList();
-                Set<UserBookData> booksOnListData = new HashSet<>();
-                for (Book book:booksOnList) {
-                    for(UserBookData bookData: userBookData) {
-                        if (book.equals(bookData.getBook())){
-                            booksOnListData.add(bookData);
+                
+                UserList currentList = userLists.get(0);
+                List<VolumeInfo> booksNotOnList = googleBooksData;
+                List<VolumeInfo> currentListBooks = new ArrayList<>();
+                Set<Book> booksOnList = currentList.getBooksOnList();
+                //todo add this method to bookManager?
+                for(VolumeInfo googleBook:googleBooksData){
+                    List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
+                    for(Book book: booksOnList){
+                        if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
+                                isbns.get(0).getIdentifier().equals(book.getIsbn13())){
+                            booksNotOnList.remove(googleBook);
+                            currentListBooks.add(googleBook);
+
                         }
                     }
                 }
-                session.setAttribute("currentList", bookList);
-                session.setAttribute("currentListBooks", booksOnListData);
-            } catch(IndexOutOfBoundsException e){
-                logger.error(e);
+                session.setAttribute("currentListBooks", currentListBooks);
+                session.setAttribute("currentList", currentList);
+                session.setAttribute("booksNotOnList", booksNotOnList);
+
+            } catch (Exception e) {
+                logger.error("Could not load Book data from api.");
             }
 
             session.setAttribute("user", user);

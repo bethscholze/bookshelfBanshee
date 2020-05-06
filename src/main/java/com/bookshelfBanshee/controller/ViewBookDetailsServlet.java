@@ -1,7 +1,7 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.BookList;
+import com.bookshelfBanshee.entity.UserList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
@@ -47,11 +47,11 @@ public class ViewBookDetailsServlet extends HttpServlet {
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         HttpSession session = req.getSession(false);
         int id = Integer.parseInt(req.getParameter("id"));
-        //Set<BookList> userLists = (Set<BookList>)session.getAttribute("userLists");
+        //Set<UserList> userLists = (Set<UserList>)session.getAttribute("userLists");
         List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
         VolumeInfo currentBookGoogle = googleBooksData.get(id);
         Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-        Book currentBook = bookManager.getBookFromDatabase(currentBookGoogle);
+        Book currentBook = bookManager.checkForExistingBook(currentBookGoogle);
         Set<UserBookData> currentBookData = bookManager.getBookDetails(currentBook, userBookData);
 //        session.setAttribute("userLists", userLists);
 
@@ -70,26 +70,18 @@ public class ViewBookDetailsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession();
-        Book currentDBBook = (Book) session.getAttribute("currentBookDb");
         User user = (User) session.getAttribute("user");
-        Set<UserBookData> currentBookData = (Set<UserBookData>)session.getAttribute("currentBookData");
-        String dataLabel = req.getParameter("dataLabel");
-        String dataValue = req.getParameter("dataValue");
+        String name = req.getParameter("dataLabel");
+        String description = req.getParameter("dataValue");
 
-        UserBookData newBookData = new UserBookData(user, currentDBBook, dataLabel, dataValue);
+        UserList newUserList = new UserList(name, description, user);
 
-        GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
+        GenericDao<UserList> bookListDao = new GenericDao<>(UserList.class);
+        bookListDao.insert(newUserList);
 
-        userBookDataDao.insert(newBookData);
+        session.setAttribute("currentList", newUserList);
 
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-
-        currentBookData.add(newBookData);
-        userBookData.add(newBookData);
-        session.setAttribute("userBookData", userBookData);
-        session.setAttribute("currentBookData", currentBookData);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         dispatcher.forward(req, resp);
     }
 

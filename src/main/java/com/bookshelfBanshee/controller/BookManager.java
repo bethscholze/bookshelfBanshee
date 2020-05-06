@@ -5,6 +5,7 @@ import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.controller.GoogleBooksAPI;
+import com.googlebooksapi.entity.IndustryIdentifiersItem;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +25,7 @@ public class BookManager {
     //use pagination to call the next 200 books.
 
     private GoogleBooksAPI api = new GoogleBooksAPI();
-    private GenericDao userDao = new GenericDao(User.class);
+    private GenericDao<User> userDao = new GenericDao(User.class);
     private GenericDao<Book> bookDao= new GenericDao<>(Book.class);
     private GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
     //this class will be created after a user signs in
@@ -69,31 +70,6 @@ public class BookManager {
     }
 
     /**
-     * Gets user.
-     *
-     * @param username the username
-     * @return the user
-     */
-    public User getUser(String username) {
-        return (User)userDao.getByPropertyEqual("username", username).get(0);
-    }
-
-    /**
-     * Gets book from database.
-     *
-     * @param currentBookGoogle the current book google
-     * @return the book from database
-     */
-    public Book getBookFromDatabase(VolumeInfo currentBookGoogle) {
-        String isbnType = currentBookGoogle.getIndustryIdentifiers().get(0).getType();
-        isbnType = isbnType.toLowerCase().replace("_","");
-        logger.debug(isbnType);
-        String isbnNumber = currentBookGoogle.getIndustryIdentifiers().get(0).getIdentifier();
-        List<Book> currentBookDbList = bookDao.getByPropertyEqual(isbnType, isbnNumber);
-       return currentBookDbList.get(0);
-    }
-
-    /**
      * Gets book details.
      *
      * @param currentBook  the current book
@@ -112,4 +88,81 @@ public class BookManager {
         return currentBookData;
     }
 
+    public Book checkForExistingBook(VolumeInfo book){
+        List<IndustryIdentifiersItem> isbns = book.getIndustryIdentifiers();
+        Book newBook = new Book();
+        final int ISBN10_SIZE = 10;
+        final int ISBN13_SIZE = 13;
+        String isbnType;
+        String isbnNumber;
+
+        for(IndustryIdentifiersItem isbn: isbns){
+            //get the isbns from the google book
+            isbnType = isbn.getType();
+            isbnType = isbnType.toLowerCase().replace("_","");
+            isbnNumber = isbn.getIdentifier();
+
+            //check db to see if the book already exists
+            List<Book> currentBookDb = bookDao.getByPropertyEqual(isbnType, isbnNumber);
+
+            if(!currentBookDb.isEmpty()) {
+                logger.info("The matching book found in database: {}", currentBookDb.get(0));
+                //return the book if it is found
+                return currentBookDb.get(0);
+
+            } else {
+                //set the isbns if it is a new book
+                if(isbn.getIdentifier().length() == ISBN10_SIZE) {
+                    newBook.setIsbn10(isbn.getIdentifier());
+                } else if (isbn.getIdentifier().length() == ISBN13_SIZE) {
+                    newBook.setIsbn13(isbn.getIdentifier());
+                }
+
+            }
+        }
+        //insert the new book into the database
+        bookDao.insert(newBook);
+        return newBook;
+
+    }
+
+    public boolean userHasBook(Set<UserBookData> userBookData, Book book){
+
+        //check if the book was already in the users books
+        for (UserBookData bookData: userBookData){
+            if(bookData.getBook().equals(book)){
+             return true;
+            }
+        }
+        return false;
+    }
+
+    public Set<UserBookData> deleteUserBookData(Set<UserBookData> userBookData, Book currentBook) {
+        Set<UserBookData> dataToDelete = new HashSet<>();
+        Set<UserBookData> dataToKeep = new HashSet<>();
+        for(UserBookData book: userBookData) {
+            if(book.getBook().equals(currentBook)) {
+                dataToDelete.add(book);
+
+            } else {
+                dataToKeep.add(book);
+            }
+        }
+
+        if (!dataToDelete.isEmpty()){
+            for(UserBookData bookData: dataToDelete){
+                userBookDataDao.delete(bookData);
+            }
+            userBookData = dataToKeep;
+        }
+        return userBookData;
+    }
+//
+//    public List<VolumeInfo> getGoogleDataForBooks(Set<Book> booksOnList, List<VolumeInfo>googleBooksData){
+//        List<VolumeInfo> currentListBooks = new ArrayList<>();
+//        for (VolumeInfo googleBook : googleBooksData) {
+//            List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
+//            if()
+//        }
+//    }
 }

@@ -1,6 +1,5 @@
 package com.bookshelfBanshee.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,11 +9,11 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * The type BookList.
+ * The type UserList.
  */
 @Entity(name = "List")
 @Table(name = "list")
-public class BookList implements Serializable {
+public class UserList implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -59,22 +58,12 @@ public class BookList implements Serializable {
             joinColumns = { @JoinColumn(name = "list_id") },
             inverseJoinColumns = { @JoinColumn(name = "book_id") }
     )
-    Set<Book> bookList = new HashSet<>();
+    Set<Book> booksOnList = new HashSet<>();
 
-    /**
-     * Instantiates a new Book list.
-     */
-    public BookList() {
+    public UserList() {
     }
 
-    /**
-     * Instantiates a new Book list.
-     *
-     * @param name        the name
-     * @param description the description
-     * @param user        the user
-     */
-    public BookList(String name, String description, User user) {
+    public UserList(String name, String description, User user) {
         this.name = name;
         this.description = description;
         this.user = user;
@@ -139,22 +128,22 @@ public class BookList implements Serializable {
      *
      * @return the book list
      */
-    public Set<Book> getBookList() {
-        return bookList;
+    public Set<Book> getBooksOnList() {
+        return booksOnList;
     }
 
     /**
      * Sets book list.
      *
-     * @param bookList the book list
+     * @param booksOnList the book list
      */
-    public void setBookList(Set<Book> bookList) {
-        this.bookList = bookList;
+    public void setBooksOnList(Set<Book> booksOnList) {
+        this.booksOnList = booksOnList;
     }
 
     @Override
     public String toString() {
-        return "BookList{" +
+        return "UserList{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
@@ -165,7 +154,7 @@ public class BookList implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BookList list = (BookList) o;
+        UserList list = (UserList) o;
         return id == list.id &&
                 Objects.equals(name, list.name) &&
                 Objects.equals(description, list.description);

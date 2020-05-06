@@ -27,9 +27,10 @@ public class Book implements Serializable {
     @Column(name = "isbn_13")
     private String isbn13;
 
-    @ManyToMany(mappedBy = "bookList")
+    @ManyToMany(mappedBy = "booksOnList")
     @JsonManagedReference
-    private Set<BookList> lists = new HashSet<>();
+    private Set<UserList> userLists = new HashSet<>();
+
 
 //    @JSONproperty('author')
 
@@ -102,6 +103,14 @@ public class Book implements Serializable {
      */
     public void setIsbn13(String isbn13) {
         this.isbn13 = isbn13;
+    }
+
+    public Set<UserList> getUserLists() {
+        return userLists;
+    }
+
+    public void setUserLists(Set<UserList> userLists) {
+        this.userLists = userLists;
     }
 
     @Override
