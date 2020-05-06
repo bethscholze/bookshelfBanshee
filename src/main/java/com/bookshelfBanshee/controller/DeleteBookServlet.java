@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,38 +36,20 @@ public class DeleteBookServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession(false);
+        ServletContext servletContext = getServletContext();
+        BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
+
         int id = Integer.parseInt(req.getParameter("id"));
         List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
         VolumeInfo currentBookGoogle = googleBooksData.get(id);
 
-
-
-        GenericDao<Book> bookDao= new GenericDao<>(Book.class);
-        String isbnType = currentBookGoogle.getIndustryIdentifiers().get(0).getType();
-        isbnType = isbnType.toLowerCase().replace("_","");
-        logger.info(isbnType);
-        String isbnNumber = currentBookGoogle.getIndustryIdentifiers().get(0).getIdentifier();
-        logger.info(isbnNumber);
-        List<Book> currentBookDbList = bookDao.getByPropertyEqual(isbnType, isbnNumber);
-        Book currentBook = currentBookDbList.get(0);
+        Book currentBook = bookManager.checkForExistingBook(currentBookGoogle);
         logger.info(currentBook);
 
-       Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
+        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
+        userBookData = bookManager.deleteUserBookData(userBookData, currentBook);
 
-       UserBookData toDelete = null;
-       for(UserBookData book: userBookData) {
-           if(book.getBook().equals(currentBook)) {
-               toDelete = book;
-               userBookData.remove(book);
-               googleBooksData.remove(currentBookGoogle);
-               break;
-           }
-       }
-
-       GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
-       userBookDataDao.delete(toDelete);
-
-
+        googleBooksData.remove(currentBookGoogle);
 //        session.setAttribute("userLists", userLists);
 
         session.setAttribute("currentBookGoogle", null);

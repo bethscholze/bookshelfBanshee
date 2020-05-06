@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-check-inline">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="searchType" value="intitle" checked>Title
+                                    <input type="radio" class="form-check-input" checked name="searchType" value="intitle">Title
                                 </label>
                             </div>
                             <div class="form-check-inline">
@@ -79,11 +79,8 @@
                                             <input type="hidden" id="bookToAdd" name="bookToAdd" value="${bookResults.indexOf(bookResult)}">
                                             <button type="submit">Add</button>
                                         </form>
-
-
                                     </div>
                                 </div>
-
                             </c:forEach>
                         </div>
                     </c:when>
@@ -114,9 +111,10 @@
                                     </tr>
                                     </tbody>
                                 </table>
+                                <a class="btn btn-dark my-2 p-1" href="deleteBook?id=${userGoogleBooks.indexOf(book)}">Delete</a>
+                                <a class="btn btn-dark my-2 p-1" href="BookDetails?id=${userGoogleBooks.indexOf(book)}">Edit</a>
+                                <a class="btn btn-dark my-2 p-1" href="addToList?id=${userGoogleBooks.indexOf(book)}">Add to List</a>
 
-                                <a class="btn btn-dark my-2 p-2" href="BookDetails?id=${userGoogleBooks.indexOf(book)}">Edit</a>
-                                <a class="btn btn-dark my-2 p-2" href="deleteBook?id=${userGoogleBooks.indexOf(book)}">Delete</a>
                             </div>
                         </div>
                     </c:forEach>
