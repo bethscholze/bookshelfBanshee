@@ -25,7 +25,7 @@
             <div class="navbar-nav">
                 <a href="UserHome" class="nav-item nav-link active">Home</a>
                 <a href="books.jsp" class="nav-item nav-link">Bookshelf</a>
-                <a href="lists.jsp" class="nav-item nav-link">Lists</a>
+                <a href="viewList" class="nav-item nav-link">Lists</a>
                 <a href="#" class="nav-item nav-link">Stats</a>
             </div>
             <form class="form-inline ml-auto bg-dark">

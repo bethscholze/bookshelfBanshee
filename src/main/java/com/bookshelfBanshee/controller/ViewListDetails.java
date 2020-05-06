@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * The type View list details.
@@ -57,13 +58,15 @@ public class ViewListDetails extends HttpServlet {
         List<VolumeInfo> currentListBooks = new ArrayList<>();
         Set<Book> booksOnList = currentList.getBooksOnList();
         //todo add this method to bookManager?
-        for(VolumeInfo googleBook:googleBooksData){
+        for( int i = 0; i < googleBooksData.size(); i++){
+            VolumeInfo googleBook = googleBooksData.get(i);
             List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
             for(Book book: booksOnList){
                 if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
                         isbns.get(0).getIdentifier().equals(book.getIsbn13())){
                     booksNotOnList.remove(googleBook);
                     currentListBooks.add(googleBook);
+                    i--;
 
                 }
             }
@@ -71,6 +74,7 @@ public class ViewListDetails extends HttpServlet {
         session.setAttribute("currentListBooks", currentListBooks);
         session.setAttribute("currentList", currentList);
         session.setAttribute("booksNotOnList", booksNotOnList);
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         try {
             dispatcher.forward(req, resp);

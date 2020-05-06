@@ -35,6 +35,7 @@ public class AddToList extends HttpServlet {
         HttpSession session = req.getSession(false);
         UserList currentList = (UserList)session.getAttribute("currentList");
         List<VolumeInfo> booksNotOnList = (List<VolumeInfo>)session.getAttribute("booksNotOnList");
+        List<VolumeInfo> currentListBooks = (List<VolumeInfo>)session.getAttribute("currentListBooks");
 
         User user = (User) session.getAttribute("user");
 
@@ -50,11 +51,13 @@ public class AddToList extends HttpServlet {
         bookListDao.saveOrUpdate(currentList);
 
         booksNotOnList.remove(id);
+        currentListBooks.add(bookToAdd);
 
+        session.setAttribute("currentListBooks", currentListBooks);
         session.setAttribute("booksNotOnList", booksNotOnList);
         session.setAttribute("currentList", currentList);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewList");
         dispatcher.forward(req, resp);
     }
 }

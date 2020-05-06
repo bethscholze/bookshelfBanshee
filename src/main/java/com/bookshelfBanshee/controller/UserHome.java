@@ -1,6 +1,7 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.*;
+import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.entity.IndustryIdentifiersItem;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * The type User home.
@@ -44,55 +46,35 @@ public class UserHome extends HttpServlet {
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
 
-        if(session.getAttribute("userGoogleBooks") == null) {
-            logger.info("the users Books: {}", session.getAttribute("userGoogleBooks"));
-            session.setAttribute("userGoogleBooks", null);
 
-            String username = req.getRemoteUser();
+        logger.info("the users Books: {}", session.getAttribute("userGoogleBooks"));
+        session.setAttribute("userGoogleBooks", null);
 
-            logger.info(username);
-            User user = bookManager.getUser(username);
-            Set<UserBookData> userBookData = user.getUserBooks();
-            Set<Book> books = new HashSet<>();
-            for (UserBookData bookData : userBookData) {
-                books.add(bookData.getBook());
-            }
-            logger.debug("The books to call google api with: {}", books);
-            List<VolumeInfo> googleBooksData = new ArrayList<>();
-            List<UserList> userLists = user.getLists();
-            try {
-                googleBooksData = bookManager.getGoogleAPIBookData(books);
-                
-                UserList currentList = userLists.get(0);
-                List<VolumeInfo> booksNotOnList = googleBooksData;
-                List<VolumeInfo> currentListBooks = new ArrayList<>();
-                Set<Book> booksOnList = currentList.getBooksOnList();
-                //todo add this method to bookManager?
-                for(VolumeInfo googleBook:googleBooksData){
-                    List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
-                    for(Book book: booksOnList){
-                        if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
-                                isbns.get(0).getIdentifier().equals(book.getIsbn13())){
-                            booksNotOnList.remove(googleBook);
-                            currentListBooks.add(googleBook);
+        String username = req.getRemoteUser();
+        GenericDao userDao = new GenericDao(User.class);
+        User user = (User)userDao.getByPropertyEqual("username", username).get(0);
 
-                        }
-                    }
-                }
-                session.setAttribute("currentListBooks", currentListBooks);
-                session.setAttribute("currentList", currentList);
-                session.setAttribute("booksNotOnList", booksNotOnList);
-
-            } catch (Exception e) {
-                logger.error("Could not load Book data from api.");
-            }
-
-            session.setAttribute("user", user);
-            session.setAttribute("userLists", userLists);
-            session.setAttribute("userGoogleBooks", googleBooksData);
-            session.setAttribute("userBookData", userBookData);
-            logger.info(user.toString());
+        logger.info(username);
+        Set<UserBookData> userBookData = user.getUserBooks();
+        Set<Book> books = new HashSet<>();
+        for (UserBookData bookData : userBookData) {
+            books.add(bookData.getBook());
         }
+        logger.debug("The books to call google api with: {}", books);
+        List<VolumeInfo> googleBooksData = new ArrayList<>();
+        List<UserList> userLists = user.getLists();
+        try {
+            googleBooksData = bookManager.getGoogleAPIBookData(books);
+        } catch (Exception e) {
+            logger.error("Could not load Book data from api.");
+        }
+
+        session.setAttribute("user", user);
+        session.setAttribute("userLists", userLists);
+        session.setAttribute("userGoogleBooks", googleBooksData);
+        session.setAttribute("userBookData", userBookData);
+        logger.info(user.toString());
+
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
         try {
