@@ -17,21 +17,37 @@
         </c:if>
         <section class="pageBackground h-100 row justify-content-center align-items-center mx-0">
 
-            <form method="post" action="Signup" class="form bg-light rounded px-2 py-2">
+            <form id="signupForm" method="post" action="Signup" class="form bg-light rounded px-2 py-2">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="enter username" />
+                    <input type="text" class="form-control" minlength="5" id="username" name="username" placeholder="enter username" required/>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="enter password" />
+                    <input type="password" class="form-control" minlength="5" id="password" name="password" placeholder="enter password" required/>
                 </div>
                 <div class="form-group">
                     <label for="password2">Password</label>
-                    <input type="password" class="form-control" id="password2" name="password2" placeholder="reenter password" />
+                    <input type="password" class="form-control" minlength="5" id="password2" name="password2" placeholder="reenter password" required/>
                 </div>
                 <button type="submit" value="Sign up" class="btn btn-primary">Submit</button>
             </form>
+            <script>
+                $('#signupForm').validate({
+                    rules: {
+                        password: {
+                            required: true,
+                            minlength: 5,
+                        },
+                        password2: {
+                            required: true,
+                            minlength: 5,
+                            equalTo:'#password'
+                        }
+
+                    }
+                });
+            </script>
         </section>
 
 

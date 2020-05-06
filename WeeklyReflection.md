@@ -125,3 +125,13 @@ https://dev.to/codebyamir/sort-a-list-of-objects-by-field-in-java-3coj
 
 /////////Logging for property loader/////
 https://stackoverflow.com/questions/28720845/logging-from-default-interface-methods
+
+/////jqueryvalidator plugin///
+
+https://jqueryvalidation.org/equalTo-method/
+
+
+
+//password hashing///
+https://howtodoinjava.com/security/how-to-generate-secure-password-hash-md5-sha-pbkdf2-bcrypt-examples/
+https://mkyong.com/spring-security/spring-security-password-hashing-example/

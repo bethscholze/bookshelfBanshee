@@ -10,7 +10,7 @@
 - [x] Create jsp's for sign up / login in
 - [x] try to finish home page jsp
 - [x] try to finish landing page jsp
-- [1/2] create the controllers and models for login signup
+- [x] create the controllers and models for login signup
 - [1/2] create tests for user sign in/up
 
 
@@ -21,16 +21,16 @@
 - [x] create main books table
 - [x] create list table
 - [x] create userbooks table
-- [ ] create all Books jsp
+- [x] create all Books jsp
 - [x] create books models
 
 ### Week 6
 - [x] create db on AWS
 - [x] deploy to aws
 - [x] create books dao
-- [ ] create edit Books functionality
-- [ ] create search books functionality
-- [ ] create lists jsp
+- [x] create edit Books functionality
+- [x] create search books functionality
+- [x] create lists jsp
 
 
 ### Week 7
@@ -42,20 +42,20 @@
 
 
 ### Week 8
-- [1/8?] integrate with api, google books or good reads
-- [ ] create dao's for everything that needs it
+- [x] integrate with api, google books or good reads
+- [x] create dao's for everything that needs it
 - [ ] implement paging of search results
-- [ ] code review
+- [x] code review
 
 ### Week 9
 - [ ] incorporate feedback
 - [ ] add password reset/reminder functionality
 
 ### Week 10
-- [ ] unit test all api integrations
+- [x] unit test all api integrations
 
 ### Week 11
-- [ ] team project stuff
+- [x] team project stuff
  
 ### Week 12
 - [ ] review project and create todos
