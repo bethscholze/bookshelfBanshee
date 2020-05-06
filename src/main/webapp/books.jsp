@@ -54,8 +54,8 @@
                         </form>
                     </c:when>
                     <c:when test = "${!empty sessionScope.bookResults}">
-                        <c:forEach items="${sessionScope.bookResults}" var="bookResult">
-                            <div class="d-flex">
+                        <div class="d-flex flex-wrap">
+                            <c:forEach items="${sessionScope.bookResults}" var="bookResult">
                                 <div class="card" style="width: 14rem;">
                                     <img class="card-img-top" src="${bookResult.imageLinks.smallThumbnail}" alt="Book Cover">
                                     <div class="card-body">
@@ -78,19 +78,17 @@
                                             <input type="hidden" id="bookToAdd" name="bookToAdd" value="${bookResults.indexOf(bookResult)}">
                                             <button type="submit">Add</button>
                                         </form>
-
-
                                     </div>
                                 </div>
-                            </div>
-                        </c:forEach>
+                            </c:forEach>
+                        </div>
                     </c:when>
 
                 </c:choose>
                 <%-- this one should just be done with js to toggle class for visible to invisible--%>
                 <h3>My Booklist</h3>
 
-                <div class="d-flex">
+                <div class="d-flex flex-wrap">
                     <c:forEach items="${sessionScope.userGoogleBooks}" var="book">
                         <div class="card" style="width: 14rem;">
                             <img class="card-img-top" src="${book.imageLinks.smallThumbnail}" alt="Book Cover">
