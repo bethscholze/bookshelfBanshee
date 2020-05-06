@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-check-inline">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="searchType" value="intitle">Title
+                                    <input type="radio" class="form-check-input" checked name="searchType" value="intitle">Title
                                 </label>
                             </div>
                             <div class="form-check-inline">

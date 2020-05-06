@@ -22,7 +22,7 @@ public class BookManager {
     //use pagination to call the next 200 books.
 
     private GoogleBooksAPI api = new GoogleBooksAPI();
-    private GenericDao userDao = new GenericDao(User.class);
+    private GenericDao<User> userDao = new GenericDao(User.class);
     private GenericDao<Book> bookDao= new GenericDao<>(Book.class);
     private GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
     //this class will be created after a user signs in
@@ -57,15 +57,6 @@ public class BookManager {
         return (User)userDao.getByPropertyEqual("username", username).get(0);
     }
 
-    public Book getBookFromDatabase(VolumeInfo currentBookGoogle) {
-        String isbnType = currentBookGoogle.getIndustryIdentifiers().get(0).getType();
-        isbnType = isbnType.toLowerCase().replace("_","");
-        logger.debug(isbnType);
-        String isbnNumber = currentBookGoogle.getIndustryIdentifiers().get(0).getIdentifier();
-        List<Book> currentBookDbList = bookDao.getByPropertyEqual(isbnType, isbnNumber);
-       return currentBookDbList.get(0);
-    }
-
     public Set<UserBookData> getBookDetails(Book currentBook, Set<UserBookData> userBookData) {
         Set<UserBookData> currentBookData = new HashSet<UserBookData>();
         for (UserBookData bookData: userBookData) {
@@ -78,7 +69,8 @@ public class BookManager {
         return currentBookData;
     }
 
-    public Book checkForExistingBook(List<IndustryIdentifiersItem> isbns){
+    public Book checkForExistingBook(VolumeInfo book){
+        List<IndustryIdentifiersItem> isbns = book.getIndustryIdentifiers();
         Book newBook = new Book();
         final int ISBN10_SIZE = 10;
         final int ISBN13_SIZE = 13;
@@ -94,7 +86,7 @@ public class BookManager {
             //check db to see if the book already exists
             List<Book> currentBookDb = bookDao.getByPropertyEqual(isbnType, isbnNumber);
 
-            if(currentBookDb.size() > 0) {
+            if(!currentBookDb.isEmpty()) {
                 logger.info("The matching book found in database: {}", currentBookDb.get(0));
                 //return the book if it is found
                 return currentBookDb.get(0);
@@ -115,7 +107,7 @@ public class BookManager {
 
     }
 
-    public Boolean userHasBook(Set<UserBookData> userBookData, Book book){
+    public boolean userHasBook(Set<UserBookData> userBookData, Book book){
 
         //check if the book was already in the users books
         for (UserBookData bookData: userBookData){
@@ -124,5 +116,26 @@ public class BookManager {
             }
         }
         return false;
+    }
+
+    public Set<UserBookData> deleteUserBookData(Set<UserBookData> userBookData, Book currentBook) {
+        Set<UserBookData> dataToDelete = new HashSet<>();
+        Set<UserBookData> dataToKeep = new HashSet<>();
+        for(UserBookData book: userBookData) {
+            if(book.getBook().equals(currentBook)) {
+                dataToDelete.add(book);
+
+            } else {
+                dataToKeep.add(book);
+            }
+        }
+
+        if (!dataToDelete.isEmpty()){
+            for(UserBookData bookData: dataToDelete){
+                userBookDataDao.delete(bookData);
+            }
+            userBookData = dataToKeep;
+        }
+        return userBookData;
     }
 }

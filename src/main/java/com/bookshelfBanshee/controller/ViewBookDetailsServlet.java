@@ -48,7 +48,7 @@ public class ViewBookDetailsServlet extends HttpServlet {
         List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
         VolumeInfo currentBookGoogle = googleBooksData.get(id);
         Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-        Book currentBook = bookManager.getBookFromDatabase(currentBookGoogle);
+        Book currentBook = bookManager.checkForExistingBook(currentBookGoogle);
         Set<UserBookData> currentBookData = bookManager.getBookDetails(currentBook, userBookData);
 //        session.setAttribute("userLists", userLists);
 

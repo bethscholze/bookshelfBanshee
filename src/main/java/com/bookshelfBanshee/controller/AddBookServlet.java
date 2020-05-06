@@ -53,11 +53,8 @@ public class AddBookServlet extends HttpServlet {
             logger.error("Could not load Book data from api.");
         }
 
-//        session.setAttribute("userLists", userLists);
-
         session.setAttribute("bookResults", bookResults);
         logger.info(bookResults);
-//
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);
     }
@@ -77,13 +74,14 @@ public class AddBookServlet extends HttpServlet {
         //get the google book data for this book
         VolumeInfo bookToAdd = bookResults.get(id);
 
-        List<IndustryIdentifiersItem> isbns = bookToAdd.getIndustryIdentifiers();
         //check if the book is in the db already, return a new book or the book from the db
-        Book book = bookManager.checkForExistingBook(isbns);
+        Book book = bookManager.checkForExistingBook(bookToAdd);
 
         //check if user has book
         if (!bookManager.userHasBook(userBookData, book)){
             UserBookData newUserBookData = new UserBookData(user, book);
+            GenericDao<UserBookData> userBookDao = new GenericDao<>(UserBookData.class);
+            userBookDao.insert(newUserBookData);
             userBookData.add(newUserBookData);
             googleBooksData.add(bookToAdd);
         }
