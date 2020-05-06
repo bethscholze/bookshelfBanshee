@@ -48,7 +48,7 @@
 - [x] code review
 
 ### Week 9
-- [ add] incorporate feedback
+- [ ] incorporate feedback
 - [ ] add password reset/reminder functionality
 
 ### Week 10
