@@ -41,8 +41,9 @@ public class Role implements Serializable {
     /**
      * Instantiates a new Role.
      *
-     * @param role the role
-     * @param user the user
+     * @param role     the role
+     * @param user     the user
+     * @param username the username
      */
     public Role(String role, User user, String username) {
         this.role = role;

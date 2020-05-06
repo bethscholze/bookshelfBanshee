@@ -16,9 +16,18 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+/**
+ * The type Json users.
+ */
 @Path("/json/users")
 public class JSONUsers {
     private final Logger logger = LogManager.getLogger(this.getClass());
+
+    /**
+     * Gets users json.
+     *
+     * @return the users json
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     //TODO figure out how to do a list with json
@@ -38,6 +47,12 @@ public class JSONUsers {
         }
     }
 
+    /**
+     * Gets user json.
+     *
+     * @param id the id
+     * @return the user json
+     */
     @GET
     @Path("/{param}")
     @Produces(MediaType.APPLICATION_JSON)

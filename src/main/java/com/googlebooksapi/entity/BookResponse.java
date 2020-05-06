@@ -2,32 +2,65 @@ package com.googlebooksapi.entity;
 
 import java.util.List;
 
+/**
+ * The type Book response.
+ */
 public class BookResponse{
 	private int totalItems;
 	private String kind;
 	private List<ItemsItem> items;
 
-	public void setTotalItems(int totalItems){
+    /**
+     * Set total items.
+     *
+     * @param totalItems the total items
+     */
+    public void setTotalItems(int totalItems){
 		this.totalItems = totalItems;
 	}
 
-	public int getTotalItems(){
+    /**
+     * Get total items int.
+     *
+     * @return the int
+     */
+    public int getTotalItems(){
 		return totalItems;
 	}
 
-	public void setKind(String kind){
+    /**
+     * Set kind.
+     *
+     * @param kind the kind
+     */
+    public void setKind(String kind){
 		this.kind = kind;
 	}
 
-	public String getKind(){
+    /**
+     * Get kind string.
+     *
+     * @return the string
+     */
+    public String getKind(){
 		return kind;
 	}
 
-	public void setItems(List<ItemsItem> items){
+    /**
+     * Set items.
+     *
+     * @param items the items
+     */
+    public void setItems(List<ItemsItem> items){
 		this.items = items;
 	}
 
-	public List<ItemsItem> getItems(){
+    /**
+     * Get items list.
+     *
+     * @return the list
+     */
+    public List<ItemsItem> getItems(){
 		return items;
 	}
 

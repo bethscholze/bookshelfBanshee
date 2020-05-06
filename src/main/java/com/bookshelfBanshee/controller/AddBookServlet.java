@@ -23,6 +23,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type Add book servlet.
+ */
 @WebServlet(
         name = "AddBook",
         urlPatterns = {"/addBook"}

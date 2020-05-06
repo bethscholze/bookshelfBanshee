@@ -14,6 +14,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type Book manager.
+ */
 public class BookManager {
     private final Logger logger = LogManager.getLogger(this.getClass());
     // Holds the data returned form the google books api for all of a users books,
@@ -31,6 +34,12 @@ public class BookManager {
 
     //I think pass a param in based on the page you are on ...
 
+    /**
+     * Gets google api book data.
+     *
+     * @param userBooks the user books
+     * @return the google api book data
+     */
     public List<VolumeInfo> getGoogleAPIBookData(Set<Book> userBooks) {
         List<VolumeInfo> returnedBookInfo = new ArrayList<>();
         String queryParam = "isbn";
@@ -47,15 +56,34 @@ public class BookManager {
 
     }
 
+    /**
+     * Search google api book list.
+     *
+     * @param searchType the search type
+     * @param searchTerm the search term
+     * @return the list
+     */
     public List<VolumeInfo> searchGoogleAPIBook(String searchType, String searchTerm) {
         // the maxResults value is by default 10 books, which I think works for my program
         return  api.searchBooks(searchType, searchTerm);
     }
 
+    /**
+     * Gets user.
+     *
+     * @param username the username
+     * @return the user
+     */
     public User getUser(String username) {
         return (User)userDao.getByPropertyEqual("username", username).get(0);
     }
 
+    /**
+     * Gets book from database.
+     *
+     * @param currentBookGoogle the current book google
+     * @return the book from database
+     */
     public Book getBookFromDatabase(VolumeInfo currentBookGoogle) {
         String isbnType = currentBookGoogle.getIndustryIdentifiers().get(0).getType();
         isbnType = isbnType.toLowerCase().replace("_","");
@@ -65,6 +93,13 @@ public class BookManager {
        return currentBookDbList.get(0);
     }
 
+    /**
+     * Gets book details.
+     *
+     * @param currentBook  the current book
+     * @param userBookData the user book data
+     * @return the book details
+     */
     public Set<UserBookData> getBookDetails(Book currentBook, Set<UserBookData> userBookData) {
         Set<UserBookData> currentBookData = new HashSet<UserBookData>();
         for (UserBookData bookData: userBookData) {

@@ -1,13 +1,26 @@
 package com.googlebooksapi.entity;
 
+/**
+ * The type Search info.
+ */
 public class SearchInfo{
 	private String textSnippet;
 
-	public void setTextSnippet(String textSnippet){
+    /**
+     * Set text snippet.
+     *
+     * @param textSnippet the text snippet
+     */
+    public void setTextSnippet(String textSnippet){
 		this.textSnippet = textSnippet;
 	}
 
-	public String getTextSnippet(){
+    /**
+     * Get text snippet string.
+     *
+     * @return the string
+     */
+    public String getTextSnippet(){
 		return textSnippet;
 	}
 

@@ -7,7 +7,9 @@ import javax.servlet.annotation.*;
 import java.util.*;
 
 
-
+/**
+ * The type Application startup.
+ */
 @WebServlet(
         name = "applicationStartup",
         urlPatterns = {"/project4-startup"},
