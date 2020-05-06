@@ -1,6 +1,9 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.BookList;
+import com.bookshelfBanshee.entity.User;
+import com.bookshelfBanshee.entity.UserBookData;
+import com.bookshelfBanshee.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,7 +27,7 @@ public class ViewListDetails extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp){
         //this will have a get that will load the selected list(the first list by default)
         // and a post
         //the post will be for editing adding and deleting lists
@@ -36,6 +39,40 @@ public class ViewListDetails extends HttpServlet {
         List<BookList> userLists = (List<BookList>)session.getAttribute("userLists");
         BookList currentList = userLists.get(id);
         session.setAttribute("currentList", currentList);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
+        try {
+            dispatcher.forward(req, resp);
+        } catch (ServletException servletException) {
+            logger.error(servletException);
+        } catch (IOException ioException) {
+            logger.error(ioException);
+        }
+
+
+    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp){
+        //this will have a get that will load the selected list(the first list by default)
+        // and a post
+        //the post will be for editing
+        // this page will have to have the bookManager passes as well so you can add books
+        HttpSession session = req.getSession(false);
+        ServletContext servletContext = getServletContext();
+        ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
+        User user = (User) session.getAttribute("user");
+        List<BookList> userLists = (List<BookList>)session.getAttribute("userLists");
+        String name = req.getParameter("name");
+        String description = req.getParameter("description");
+
+        BookList newList = new BookList(name, description, user);
+
+        GenericDao<BookList> bookListDao = new GenericDao<>(BookList.class);
+        userLists.add(newList);
+
+        bookListDao.insert(newList);
+
+        session.setAttribute("currentList", newList);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         try {
