@@ -67,26 +67,18 @@ public class ViewBookDetailsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession();
-        Book currentDBBook = (Book) session.getAttribute("currentBookDb");
         User user = (User) session.getAttribute("user");
-        Set<UserBookData> currentBookData = (Set<UserBookData>)session.getAttribute("currentBookData");
-        String dataLabel = req.getParameter("dataLabel");
-        String dataValue = req.getParameter("dataValue");
+        String name = req.getParameter("dataLabel");
+        String description = req.getParameter("dataValue");
 
-        UserBookData newBookData = new UserBookData(user, currentDBBook, dataLabel, dataValue);
+        BookList newBookList = new BookList(name, description, user);
 
-        GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
+        GenericDao<BookList> bookListDao = new GenericDao<>(BookList.class);
+        bookListDao.insert(newBookList);
 
-        userBookDataDao.insert(newBookData);
+        session.setAttribute("currentList", newBookList);
 
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-
-        currentBookData.add(newBookData);
-        userBookData.add(newBookData);
-        session.setAttribute("userBookData", userBookData);
-        session.setAttribute("currentBookData", currentBookData);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         dispatcher.forward(req, resp);
     }
 

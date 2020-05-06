@@ -55,7 +55,6 @@ public class DeleteBookServlet extends HttpServlet {
         session.setAttribute("userBookData", userBookData);
         session.setAttribute("userGoogleBooks", googleBooksData);
 
-        //todo redirect instead of forward
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);
     }

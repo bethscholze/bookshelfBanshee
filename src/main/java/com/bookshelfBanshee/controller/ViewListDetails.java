@@ -1,6 +1,10 @@
 package com.bookshelfBanshee.controller;
 
+import com.bookshelfBanshee.entity.Book;
 import com.bookshelfBanshee.entity.BookList;
+import com.bookshelfBanshee.entity.User;
+import com.bookshelfBanshee.entity.UserBookData;
+import com.bookshelfBanshee.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet(
         name = "viewList",
@@ -47,5 +52,32 @@ public class ViewListDetails extends HttpServlet {
         }
 
 
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        HttpSession session = req.getSession();
+        Book currentDBBook = (Book) session.getAttribute("currentBookDb");
+        User user = (User) session.getAttribute("user");
+        Set<UserBookData> currentBookData = (Set<UserBookData>)session.getAttribute("currentBookData");
+        String dataLabel = req.getParameter("dataLabel");
+        String dataValue = req.getParameter("dataValue");
+
+        UserBookData newBookData = new UserBookData(user, currentDBBook, dataLabel, dataValue);
+
+        GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
+
+        userBookDataDao.insert(newBookData);
+
+        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
+
+        currentBookData.add(newBookData);
+        userBookData.add(newBookData);
+        session.setAttribute("userBookData", userBookData);
+        session.setAttribute("currentBookData", currentBookData);
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
+        dispatcher.forward(req, resp);
     }
 }

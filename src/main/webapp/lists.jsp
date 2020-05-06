@@ -33,17 +33,18 @@
                     </c:forEach>
 
                 </table>
+                <a class="btn btn-dark my-2 p-2" href="deleteList">Delete</a>
             </div>
             <div class="col-2">
-                <h2>Manage List</h2>
-                <form method="post" action="BookDetails" class="form bg-light rounded px-2 py-2">
+                <h2>Add List</h2>
+                <form method="post" action="viewList" class="form bg-light rounded px-2 py-2">
                     <div class="form-group">
-                        <label for="dataLabel">data label</label>
-                        <input type="text" class="form-control" id="dataLabel" name="dataLabel" placeholder="enter label" />
+                        <label for="name">List Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="enter label" />
                     </div>
                     <div class="form-group">
-                        <label for="dataValue">data value</label>
-                        <input type="text" class="form-control" id="dataValue" name="dataValue" placeholder="enter value" />
+                        <label for="description">Description</label>
+                        <input type="textarea" class="form-control" id="description" name="description" placeholder="enter value" />
                     </div>
                     <button type="submit" value="submit" class="btn btn-primary">Submit</button>
                 </form>
