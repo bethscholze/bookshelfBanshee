@@ -1,7 +1,6 @@
 package com.bookshelfBanshee.persistence;
 
 import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.BookList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.test.util.Database;

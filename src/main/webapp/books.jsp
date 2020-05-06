@@ -24,7 +24,7 @@
                 </ul>
             </div>
 
-            <div id="bookList" class="col-9 bg-light">
+            <div id="userList" class="col-9 bg-light">
                 <c:choose>
                     <c:when test = "${empty sessionScope.bookResults}">
                         <h2>Add a New Book</h2>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-check-inline">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="searchType" value="intitle">Title
+                                    <input type="radio" class="form-check-input" name="searchType" value="intitle" checked>Title
                                 </label>
                             </div>
                             <div class="form-check-inline">
@@ -54,8 +54,9 @@
                         </form>
                     </c:when>
                     <c:when test = "${!empty sessionScope.bookResults}">
-                        <c:forEach items="${sessionScope.bookResults}" var="bookResult">
-                            <div class="d-flex">
+                        <div class="d-flex flex-wrap">
+                            <c:forEach items="${sessionScope.bookResults}" var="bookResult">
+
                                 <div class="card" style="width: 14rem;">
                                     <img class="card-img-top" src="${bookResult.imageLinks.smallThumbnail}" alt="Book Cover">
                                     <div class="card-body">
@@ -82,15 +83,16 @@
 
                                     </div>
                                 </div>
-                            </div>
-                        </c:forEach>
+
+                            </c:forEach>
+                        </div>
                     </c:when>
 
                 </c:choose>
                 <%-- this one should just be done with js to toggle class for visible to invisible--%>
                 <h3>My Booklist</h3>
 
-                <div class="d-flex">
+                <div class="d-flex flex-wrap">
                     <c:forEach items="${sessionScope.userGoogleBooks}" var="book">
                         <div class="card" style="width: 14rem;">
                             <img class="card-img-top" src="${book.imageLinks.smallThumbnail}" alt="Book Cover">

@@ -52,7 +52,7 @@
 
         </thead>
         <tbody class="bg-white">
-        <c:forEach items="${bookList}" var="book">
+        <c:forEach items="${userList}" var="book">
             <tr>
                 <td>${book.id}</td>
                 <td>${book.title}</td>

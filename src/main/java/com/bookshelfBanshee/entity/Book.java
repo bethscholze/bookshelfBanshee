@@ -29,7 +29,7 @@ public class Book implements Serializable {
 
     @ManyToMany(mappedBy = "bookList")
     @JsonManagedReference
-    private Set<BookList> lists = new HashSet<>();
+    private Set<UserList> lists = new HashSet<>();
 
 //    @JSONproperty('author')
 

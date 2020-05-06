@@ -17,8 +17,8 @@
             <div class="col-3 bg-dark text-light text-center">
                 <h2 class="p-1">Lists</h2>
                 <table class="table bg-light rounded px-2 py-2">
-                    <c:forEach items="${sessionScope.userLists}" var="bookList">
-                        <tr><td><a href="viewList?id=${userLists.indexOf(bookList)}">${bookList.name}</a></td></tr>
+                    <c:forEach items="${sessionScope.userLists}" var="userList">
+                        <tr><td><a href="viewList?id=${userLists.indexOf(userList)}">${userList.name}</a></td></tr>
                     </c:forEach>
 
                 </table>

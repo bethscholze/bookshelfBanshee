@@ -1,6 +1,6 @@
 package com.bookshelfBanshee.controller;
 
-import com.bookshelfBanshee.entity.BookList;
+import com.bookshelfBanshee.entity.UserList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -36,8 +36,8 @@ public class ViewListDetails extends HttpServlet {
         ServletContext servletContext = getServletContext();
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
         int id = Integer.parseInt(req.getParameter("id"));
-        List<BookList> userLists = (List<BookList>)session.getAttribute("userLists");
-        BookList currentList = userLists.get(id);
+        List<UserList> userLists = (List<UserList>)session.getAttribute("userLists");
+        UserList currentList = userLists.get(id);
         session.setAttribute("currentList", currentList);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");

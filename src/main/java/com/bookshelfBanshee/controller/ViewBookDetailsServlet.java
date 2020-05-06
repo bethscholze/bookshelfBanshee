@@ -1,7 +1,6 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.BookList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
@@ -47,7 +46,7 @@ public class ViewBookDetailsServlet extends HttpServlet {
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         HttpSession session = req.getSession(false);
         int id = Integer.parseInt(req.getParameter("id"));
-        //Set<BookList> userLists = (Set<BookList>)session.getAttribute("userLists");
+        //Set<UserList> userLists = (Set<UserList>)session.getAttribute("userLists");
         List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
         VolumeInfo currentBookGoogle = googleBooksData.get(id);
         Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");

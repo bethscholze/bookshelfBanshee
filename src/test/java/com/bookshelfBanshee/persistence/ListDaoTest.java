@@ -1,6 +1,6 @@
 package com.bookshelfBanshee.persistence;
 
-import com.bookshelfBanshee.entity.BookList;
+import com.bookshelfBanshee.entity.UserList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,32 +18,32 @@ class ListDaoTest {
     void setUp() {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
-        listDao = new GenericDao(BookList.class);
+        listDao = new GenericDao(UserList.class);
         userDao = new GenericDao(User.class);
 
     }
 
     @Test
     void getById() {
-        BookList retrievedList = (BookList) listDao.getById(1);
+        UserList retrievedList = (UserList) listDao.getById(1);
         String retrievedListName = retrievedList.getName();
         assertEquals("first list", retrievedListName);
     }
 
     @Test
     void saveOrUpdate() {
-        BookList retrievedList = (BookList) listDao.getById(1);
+        UserList retrievedList = (UserList) listDao.getById(1);
         String newName = "resetName";
         retrievedList.setName(newName);
         listDao.saveOrUpdate(retrievedList);
-        BookList updatedList = (BookList) listDao.getById(1);
+        UserList updatedList = (UserList) listDao.getById(1);
         assertEquals(retrievedList, updatedList);
     }
 
     @Test
     void insert() {
         User user = (User)userDao.getById(2);
-        BookList list = new BookList("last list","this is the last list",user);
+        UserList list = new UserList("last list","this is the last list",user);
         listDao.insert(list);
         int allBooksSize = listDao.getAll().size();
         assertEquals(3, allBooksSize);
@@ -52,7 +52,7 @@ class ListDaoTest {
 
     @Test
     void delete() {
-        BookList list = (BookList) listDao.getById(1);
+        UserList list = (UserList) listDao.getById(1);
         listDao.delete(list);
         int allBooksSize = listDao.getAll().size();
         assertEquals(1, allBooksSize);

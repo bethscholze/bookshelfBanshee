@@ -1,10 +1,9 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.BookList;
+import com.bookshelfBanshee.entity.UserList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
-import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -67,10 +66,10 @@ public class UserHome extends HttpServlet {
             } catch (Exception e) {
                 logger.error("Could not load Book data from api.");
             }
-            List<BookList> userLists = user.getLists();
+            List<UserList> userLists = user.getLists();
             try{
-                BookList bookList = userLists.get(0);
-                Set<Book> booksOnList = bookList.getBookList();
+                UserList userList = userLists.get(0);
+                Set<Book> booksOnList = userList.getBookList();
                 Set<UserBookData> booksOnListData = new HashSet<>();
                 for (Book book:booksOnList) {
                     for(UserBookData bookData: userBookData) {
@@ -79,7 +78,7 @@ public class UserHome extends HttpServlet {
                         }
                     }
                 }
-                session.setAttribute("currentList", bookList);
+                session.setAttribute("currentList", userList);
                 session.setAttribute("currentListBooks", booksOnListData);
             } catch(IndexOutOfBoundsException e){
                 logger.error(e);
