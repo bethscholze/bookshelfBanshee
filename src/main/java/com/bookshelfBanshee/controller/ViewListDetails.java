@@ -39,44 +39,21 @@ public class ViewListDetails extends HttpServlet {
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
-
-
+        List<UserList> userLists = (List<UserList>)session.getAttribute("userLists");
         int id = 0;
-        if(!(req.getParameter("id")).isEmpty()){
+        if(req.getParameter("id") != null){
             id = Integer.parseInt(req.getParameter("id"));
         }
 
-        List<UserList> userLists = (List<UserList>)session.getAttribute("userLists");
         Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
         UserList currentList = userLists.get(id);
         Set<Integer> keysOfBooksOnList = listManager.getBooksOnList(currentList);
         Set<Integer> keysOfBooksNotOnList = listManager.getBooksNotOnList(mappedBooks, keysOfBooksOnList);
 
-
-
-//        List<VolumeInfo> booksNotOnList = googleBooksData;
-//        List<VolumeInfo> currentListBooks = new ArrayList<>();
-//        Set<Book> booksOnList = currentList.getBooksOnList();
-//        //todo add this method to bookManager?
-//        for(VolumeInfo googleBook:googleBooksData){
-//            List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
-//            for(Book book: booksOnList){
-//                if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
-//                        isbns.get(0).getIdentifier().equals(book.getIsbn13())){
-//                    booksNotOnList.remove(googleBook);
-//                    currentListBooks.add(googleBook);
-//
-//                }
-//            }
-//        }
-
         session.setAttribute("keysOfBooksOnList", keysOfBooksOnList);
         session.setAttribute("currentList", currentList);
         session.setAttribute("keysOfBooksNotOnList", keysOfBooksNotOnList);
 
-//        session.setAttribute("currentListBooks", currentListBooks);
-//        session.setAttribute("currentList", currentList);
-//        session.setAttribute("booksNotOnList", booksNotOnList);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         try {
             dispatcher.forward(req, resp);
