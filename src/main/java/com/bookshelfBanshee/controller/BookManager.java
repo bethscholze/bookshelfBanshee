@@ -122,25 +122,11 @@ public class BookManager {
         return false;
     }
 
-    public Set<UserBookData> deleteUserBookData(Set<UserBookData> userBookData, Book currentBook) {
-        Set<UserBookData> dataToDelete = new HashSet<>();
-        Set<UserBookData> dataToKeep = new HashSet<>();
-        for(UserBookData book: userBookData) {
-            if(book.getBook().equals(currentBook)) {
-                dataToDelete.add(book);
-
-            } else {
-                dataToKeep.add(book);
-            }
+    public void deleteUserBookData(Set<UserBookData> userBookData) {
+        for (UserBookData data: userBookData){
+            userBookDataDao.delete(data);
         }
 
-        if (!dataToDelete.isEmpty()){
-            for(UserBookData bookData: dataToDelete){
-                userBookDataDao.delete(bookData);
-            }
-            userBookData = dataToKeep;
-        }
-        return userBookData;
     }
 
     public Book getBookDB(int bookId){

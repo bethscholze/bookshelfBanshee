@@ -85,6 +85,7 @@ public class AddBookServlet extends HttpServlet {
             userBookData.add(newUserBookData);
             googleBooksData.add(bookToAdd);
         }
+        //todo add the new book info to the mappedBooks map
 
         session.setAttribute("userBookData", userBookData);
         session.setAttribute("userGoogleBooks", googleBooksData);

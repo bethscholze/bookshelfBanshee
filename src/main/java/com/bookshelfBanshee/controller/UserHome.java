@@ -36,9 +36,7 @@ public class UserHome extends HttpServlet {
         HttpSession session = req.getSession();
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
-        //ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
         Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
-        Set<Integer> keysOfBooksOnList = (Set<Integer>)session.getAttribute("keysOfBooksOnList") ;
         if(mappedBooks == null){
             String username = req.getRemoteUser();
 

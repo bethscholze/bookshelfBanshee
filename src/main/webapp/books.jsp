@@ -89,29 +89,29 @@
                 <h3>My Booklist</h3>
 
                 <div class="d-flex flex-wrap">
-                    <c:forEach items="${sessionScope.userGoogleBooks}" var="book">
+                    <c:forEach items="${sessionScope.userMappedBooks}" var="book">
                         <div class="card" style="width: 14rem;">
-                            <img class="card-img-top" src="${book.imageLinks.smallThumbnail}" alt="Book Cover">
+                            <img class="card-img-top" src="${book.value.googleData.imageLinks.smallThumbnail}" alt="Book Cover">
                             <div class="card-body">
-                                <h5 class="card-title">${book.title}</h5>
+                                <h5 class="card-title">${book.value.googleData.title}</h5>
                                 <table class="table">
                                     <thead class="table-light">
                                     </thead>
                                     <tbody class="bg-white">
                                     <tr>
-                                        <th rowspan="${book.authors.size()}">Authors</th>
-                                        <c:forEach items="${book.authors}" var="author">
+                                        <th rowspan="${book.value.googleData.authors.size()}">Authors</th>
+                                        <c:forEach items="${book.value.googleData.authors}" var="author">
                                         <td>${author}</td>
                                     </tr>
                                     <tr>
                                         </c:forEach>
                                         <th>Publish Date</th>
-                                        <td>${book.publishedDate}</td>
+                                        <td>${book.value.googleData.publishedDate}</td>
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a class="btn btn-dark my-2 p-1" href="deleteBook?id=${userGoogleBooks.indexOf(book)}">Delete</a>
-                                <a class="btn btn-dark my-2 p-1" href="BookDetails?id=${userGoogleBooks.indexOf(book)}">Edit</a>
+                                <a class="btn btn-dark my-2 p-1" href="deleteBook?id=${book.key}">Delete</a>
+                                <a class="btn btn-dark my-2 p-1" href="BookDetails?id=${book.key}">Edit</a>
 
                             </div>
                         </div>

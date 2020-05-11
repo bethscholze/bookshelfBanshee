@@ -1,6 +1,7 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
+import com.bookshelfBanshee.entity.MappedBook;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.entity.VolumeInfo;
@@ -16,10 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @WebServlet(
         name = "DeleteBook",
@@ -35,25 +33,20 @@ public class DeleteBookServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
+        Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
 
         int id = Integer.parseInt(req.getParameter("id"));
-        List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
-        VolumeInfo currentBookGoogle = googleBooksData.get(id);
 
-        Book currentBook = bookManager.checkForExistingBook(currentBookGoogle);
-        logger.info(currentBook);
+        Set<UserBookData> userBookData = mappedBooks.get(id).getUsersBookData();
+        bookManager.deleteUserBookData(userBookData);
 
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-        userBookData = bookManager.deleteUserBookData(userBookData, currentBook);
-
-        googleBooksData.remove(currentBookGoogle);
 //        session.setAttribute("userLists", userLists);
 
         session.setAttribute("currentBookGoogle", null);
         session.setAttribute("currentBookDb", null);
         session.setAttribute("currentBookData", null);
-        session.setAttribute("userBookData", userBookData);
-        session.setAttribute("userGoogleBooks", googleBooksData);
+//        session.setAttribute("userBookData", userBookData);
+//        session.setAttribute("userGoogleBooks", googleBooksData);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);

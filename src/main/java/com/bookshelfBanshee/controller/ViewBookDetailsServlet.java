@@ -1,9 +1,6 @@
 package com.bookshelfBanshee.controller;
 
-import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.UserList;
-import com.bookshelfBanshee.entity.User;
-import com.bookshelfBanshee.entity.UserBookData;
+import com.bookshelfBanshee.entity.*;
 import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
@@ -44,21 +41,20 @@ public class ViewBookDetailsServlet extends HttpServlet {
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         HttpSession session = req.getSession(false);
         int id = Integer.parseInt(req.getParameter("id"));
-        //Set<UserList> userLists = (Set<UserList>)session.getAttribute("userLists");
-        List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
-        VolumeInfo currentBookGoogle = googleBooksData.get(id);
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-        Book currentBook = bookManager.checkForExistingBook(currentBookGoogle);
-        Set<UserBookData> currentBookData = bookManager.getBookDetails(currentBook, userBookData);
-//        session.setAttribute("userLists", userLists);
+        Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
+        MappedBook currentMappedBook = mappedBooks.get(id);
+//        VolumeInfo currentBookGoogle = mappedBooks.get(id).getGoogleData();
+//        Set<UserBookData> currentBookData = mappedBooks.get(id).getUsersBookData();
 
-        session.setAttribute("currentBookGoogle", currentBookGoogle);
-        session.setAttribute("currentBookDb", currentBook);
-        session.setAttribute("currentBookData", currentBookData);
-        logger.info(currentBookGoogle.toString());
-        logger.info(currentBook.toString());
-        logger.info(currentBookData.toString());
+        session.setAttribute("currentMappedBook", currentMappedBook);
 //
+//        session.setAttribute("currentBookGoogle", currentBookGoogle);
+////        session.setAttribute("currentBookDb", currentBook);
+//        session.setAttribute("currentBookData", currentBookData);
+//        logger.info(currentBookGoogle.toString());
+////        logger.info(currentBook.toString());
+//        logger.info(currentBookData.toString());
+////
         RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
         dispatcher.forward(req, resp);
     }
