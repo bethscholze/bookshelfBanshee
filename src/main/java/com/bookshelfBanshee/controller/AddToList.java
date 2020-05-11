@@ -1,6 +1,7 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
+import com.bookshelfBanshee.entity.MappedBook;
 import com.bookshelfBanshee.entity.UserList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.persistence.GenericDao;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 @WebServlet(
         name = "AddToList",
@@ -30,24 +32,22 @@ public class AddToList extends HttpServlet {
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         HttpSession session = req.getSession(false);
         UserList currentList = (UserList)session.getAttribute("currentList");
-        List<VolumeInfo> booksNotOnList = (List<VolumeInfo>)session.getAttribute("booksNotOnList");
-
-        User user = (User) session.getAttribute("user");
-
+        Set<Integer> keysOfBooksOnList = (Set<Integer>)session.getAttribute("keysOfBooksOnList");
+        Set<Integer> keysOfBooksNotOnList = (Set<Integer>)session.getAttribute("keysOfBooksNotOnList");
         int id = Integer.parseInt(req.getParameter("id"));
-        VolumeInfo bookToAdd = booksNotOnList.get(id);
         //get from the db
-        Book book = bookManager.checkForExistingBook(bookToAdd);
-
+        Book book = bookManager.getBookDB(id);
         Set<Book> currentBooks = currentList.getBooksOnList();
         currentBooks.add(book);
         currentList.setBooksOnList(currentBooks);
         GenericDao<UserList> bookListDao = new GenericDao<>(UserList.class);
         bookListDao.saveOrUpdate(currentList);
 
-        booksNotOnList.remove(id);
+        keysOfBooksNotOnList.remove(id);
+        keysOfBooksOnList.add(id);
 
-        session.setAttribute("booksNotOnList", booksNotOnList);
+        session.setAttribute("keysOfBooksOnList", keysOfBooksOnList);
+        session.setAttribute("keysOfBooksNotOnList", keysOfBooksNotOnList);
         session.setAttribute("currentList", currentList);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");

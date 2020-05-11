@@ -142,14 +142,10 @@ public class BookManager {
         }
         return userBookData;
     }
-//
-//    public List<VolumeInfo> getGoogleDataForBooks(Set<Book> booksOnList, List<VolumeInfo>googleBooksData){
-//        List<VolumeInfo> currentListBooks = new ArrayList<>();
-//        for (VolumeInfo googleBook : googleBooksData) {
-//            List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
-//            if()
-//        }
-//    }
+
+    public Book getBookDB(int bookId){
+        return (Book)bookDao.getById(bookId);
+    }
 
 
 }

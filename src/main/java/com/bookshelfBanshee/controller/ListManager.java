@@ -40,8 +40,7 @@ public class ListManager {
         logger.debug("Keys of books not on list: {}", keysOfBooksNotOnList);
 
         return keysOfBooksNotOnList;
-
-
     }
+
 
 }

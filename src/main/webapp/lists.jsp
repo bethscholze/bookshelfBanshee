@@ -38,7 +38,7 @@
                 <table class="table bg-light rounded px-2 py-2">
                     <tr><th colspan="3">Books not on list</th></tr>
 
-                    <c:forEach items="${sessionScope.booksNotOnList}" var="nonListBookKey">
+                    <c:forEach items="${sessionScope.keysOfBooksNotOnList}" var="nonListBookKey">
                         <tr><td>${books[(nonListBookKey).intValue()].googleData.title}</td><td>${books[(nonListBookKey).intValue()].googleData.leadAuthor}</td><td><a class="btn btn-dark my-2 p-1" href="addToList?id=${nonListBookKey}">Add</a></td></tr>
                     </c:forEach>
 
