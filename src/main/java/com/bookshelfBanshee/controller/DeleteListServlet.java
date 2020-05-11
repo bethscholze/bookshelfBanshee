@@ -27,7 +27,10 @@ public class DeleteListServlet extends HttpServlet {
         GenericDao<UserList> bookListDao = new GenericDao<>(UserList.class);
         bookListDao.delete(currentList);
 
-        session.setAttribute("currentList", userLists.get(0));
+
+        session.setAttribute("keysOfBooksOnList", null);
+        session.setAttribute("currentList", null);
+        session.setAttribute("keysOfBooksNotOnList", null);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         dispatcher.forward(req, resp);

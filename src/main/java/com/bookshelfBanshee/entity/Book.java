@@ -31,8 +31,6 @@ public class Book implements Serializable {
     @JsonManagedReference
     private Set<UserList> userLists = new HashSet<>();
 
-
-//    @JSONproperty('author')
     /**
      * Instantiates a new Book.
      */

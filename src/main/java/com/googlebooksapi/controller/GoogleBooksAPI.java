@@ -26,10 +26,18 @@ public class GoogleBooksAPI {
         logger.info("url for request: {}", target);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         logger.info("The response from the api: {}", response);
+
         return response;
     }
     public VolumeInfo getBook(String queryParam, String searchTerm) {
         String response = createClient(queryParam, searchTerm);
+
+        // there is a bug in the google books api, where sometimes it returns no data for an isbn # depending on whether isbn is lowercase or capital.
+        final int MIN_VOLUMEINFO_LENGTH = 50;
+        if(response.length() < MIN_VOLUMEINFO_LENGTH) {
+            queryParam.toUpperCase();
+            response = createClient(queryParam, searchTerm);
+        }
         ObjectMapper mapper = new ObjectMapper();
         VolumeInfo volumeInfo = new VolumeInfo();
         try {

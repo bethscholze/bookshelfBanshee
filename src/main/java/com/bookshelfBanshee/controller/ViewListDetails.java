@@ -1,6 +1,7 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
+import com.bookshelfBanshee.entity.MappedBook;
 import com.bookshelfBanshee.entity.UserList;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.persistence.GenericDao;
@@ -18,9 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @WebServlet(
         name = "viewList",
@@ -40,34 +39,44 @@ public class ViewListDetails extends HttpServlet {
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
+
+
         int id = 0;
         if(!(req.getParameter("id")).isEmpty()){
             id = Integer.parseInt(req.getParameter("id"));
         }
 
         List<UserList> userLists = (List<UserList>)session.getAttribute("userLists");
-        List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
-
-
+        Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
         UserList currentList = userLists.get(id);
-        List<VolumeInfo> booksNotOnList = googleBooksData;
-        List<VolumeInfo> currentListBooks = new ArrayList<>();
-        Set<Book> booksOnList = currentList.getBooksOnList();
-        //todo add this method to bookManager?
-        for(VolumeInfo googleBook:googleBooksData){
-            List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
-            for(Book book: booksOnList){
-                if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
-                        isbns.get(0).getIdentifier().equals(book.getIsbn13())){
-                    booksNotOnList.remove(googleBook);
-                    currentListBooks.add(googleBook);
+        Set<Integer> keysOfBooksOnList = listManager.getBooksOnList(currentList);
+        Set<Integer> keysOfBooksNotOnList = listManager.getBooksNotOnList(mappedBooks, keysOfBooksOnList);
 
-                }
-            }
-        }
-        session.setAttribute("currentListBooks", currentListBooks);
+
+
+//        List<VolumeInfo> booksNotOnList = googleBooksData;
+//        List<VolumeInfo> currentListBooks = new ArrayList<>();
+//        Set<Book> booksOnList = currentList.getBooksOnList();
+//        //todo add this method to bookManager?
+//        for(VolumeInfo googleBook:googleBooksData){
+//            List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
+//            for(Book book: booksOnList){
+//                if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
+//                        isbns.get(0).getIdentifier().equals(book.getIsbn13())){
+//                    booksNotOnList.remove(googleBook);
+//                    currentListBooks.add(googleBook);
+//
+//                }
+//            }
+//        }
+
+        session.setAttribute("keysOfBooksOnList", keysOfBooksOnList);
         session.setAttribute("currentList", currentList);
-        session.setAttribute("booksNotOnList", booksNotOnList);
+        session.setAttribute("keysOfBooksNotOnList", keysOfBooksNotOnList);
+
+//        session.setAttribute("currentListBooks", currentListBooks);
+//        session.setAttribute("currentList", currentList);
+//        session.setAttribute("booksNotOnList", booksNotOnList);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/lists.jsp");
         try {
             dispatcher.forward(req, resp);

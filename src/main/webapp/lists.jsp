@@ -26,18 +26,20 @@
             </div>
             <div class="col-6 bg-light">
                 <h2>Current list</h2>
+                <c:set var="books" value="${sessionScope.userMappedBooks}"/>
                 <table class="table bg-light rounded px-2 py-2">
                     <tr><th colspan="3">${sessionScope.currentList.name}</th></tr>
-                    <c:forEach items="${sessionScope.currentListBooks}" var="listBook">
-                        <tr><td>${listBook.title}</td><td>${listBook.leadAuthor}</td><td><a class="btn btn-dark my-2 p-1" href="removeFromList?id=${sessionScope.currentListBooks.indexOf(listBook)}">Remove</a></tr>
+                    <c:forEach items="${sessionScope.keysOfBooksOnList}" var="bookKey">
+                        <tr><td>${books[(bookKey).intValue()].googleData.title}</td><td>${books[bookKey.intValue()].googleData.leadAuthor}</td><td><a class="btn btn-dark my-2 p-1" href="removeFromList?id=${bookKey}">Remove</a></tr>
                     </c:forEach>
 
                 </table>
                 <a class="btn btn-dark my-2 p-2" href="deleteList">Delete</a>
                 <table class="table bg-light rounded px-2 py-2">
                     <tr><th colspan="3">Books not on list</th></tr>
-                    <c:forEach items="${sessionScope.booksNotOnList}" var="nonListBook">
-                        <tr><td>${nonListBook.title}</td><td>${nonListBook.leadAuthor}</td><td><a class="btn btn-dark my-2 p-1" href="addToList?id=${sessionScope.booksNotOnList.indexOf(nonListBook)}">Add</a></td></tr>
+
+                    <c:forEach items="${sessionScope.booksNotOnList}" var="nonListBookKey">
+                        <tr><td>${books[(nonListBookKey).intValue()].googleData.title}</td><td>${books[(nonListBookKey).intValue()].googleData.leadAuthor}</td><td><a class="btn btn-dark my-2 p-1" href="addToList?id=${nonListBookKey}">Add</a></td></tr>
                     </c:forEach>
 
                 </table>

@@ -15,10 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @WebServlet(
         name = "UserHome",
@@ -39,12 +36,10 @@ public class UserHome extends HttpServlet {
         HttpSession session = req.getSession();
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
-        ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
-
-        if(session.getAttribute("userGoogleBooks") == null) {
-            logger.info("the users Books: {}", session.getAttribute("userGoogleBooks"));
-            session.setAttribute("userGoogleBooks", null);
-
+        //ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
+        Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
+        Set<Integer> keysOfBooksOnList = (Set<Integer>)session.getAttribute("keysOfBooksOnList") ;
+        if(mappedBooks == null){
             String username = req.getRemoteUser();
 
             logger.info(username);
@@ -54,40 +49,20 @@ public class UserHome extends HttpServlet {
             for (UserBookData bookData : userBookData) {
                 books.add(bookData.getBook());
             }
+
             logger.debug("The books to call google api with: {}", books);
-            List<VolumeInfo> googleBooksData = new ArrayList<>();
             List<UserList> userLists = user.getLists();
-            try {
-                googleBooksData = bookManager.getGoogleAPIBookData(books);
-                
-                UserList currentList = userLists.get(0);
-                List<VolumeInfo> booksNotOnList = googleBooksData;
-                List<VolumeInfo> currentListBooks = new ArrayList<>();
-                Set<Book> booksOnList = currentList.getBooksOnList();
-                //todo add this method to bookManager?
-                for(VolumeInfo googleBook:googleBooksData){
-                    List<IndustryIdentifiersItem> isbns = googleBook.getIndustryIdentifiers();
-                    for(Book book: booksOnList){
-                        if(isbns.get(0).getIdentifier().equals(book.getIsbn10()) ||
-                                isbns.get(0).getIdentifier().equals(book.getIsbn13())){
-                            booksNotOnList.remove(googleBook);
-                            currentListBooks.add(googleBook);
 
-                        }
-                    }
-                }
-                session.setAttribute("currentListBooks", currentListBooks);
-                session.setAttribute("currentList", currentList);
-                session.setAttribute("booksNotOnList", booksNotOnList);
+            mappedBooks = bookManager.getGoogleAPIBookData(books, userBookData);
 
-            } catch (Exception e) {
-                logger.error("Could not load Book data from api.");
-            }
+            UserList currentList = userLists.get(0);
+            session.setAttribute("currentList", currentList);
+            logger.info("all books mapped: {}", mappedBooks );
+
 
             session.setAttribute("user", user);
             session.setAttribute("userLists", userLists);
-            session.setAttribute("userGoogleBooks", googleBooksData);
-            session.setAttribute("userBookData", userBookData);
+            session.setAttribute("userMappedBooks", mappedBooks);
             logger.info(user.toString());
         }
 
