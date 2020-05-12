@@ -1,18 +1,17 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
+import com.bookshelfBanshee.entity.MappedBook;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.controller.GoogleBooksAPI;
+import com.googlebooksapi.entity.IndustryIdentifiersItem;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * The type Book manager.
@@ -24,7 +23,7 @@ public class BookManager {
     //use pagination to call the next 200 books.
 
     private GoogleBooksAPI api = new GoogleBooksAPI();
-    private GenericDao userDao = new GenericDao(User.class);
+    private GenericDao<User> userDao = new GenericDao(User.class);
     private GenericDao<Book> bookDao= new GenericDao<>(Book.class);
     private GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
     //this class will be created after a user signs in
@@ -37,12 +36,13 @@ public class BookManager {
     /**
      * Gets google api book data.
      *
-     * @param userBooks the user books
+     * @param userBooks   the user books
+     * @param allBookData the all book data
      * @return the google api book data
      */
-    public List<VolumeInfo> getGoogleAPIBookData(Set<Book> userBooks) {
-        List<VolumeInfo> returnedBookInfo = new ArrayList<>();
+    public Map<Integer, MappedBook> getGoogleAPIBookData(Set<Book> userBooks, Set<UserBookData> allBookData) {
         String queryParam = "isbn";
+        Map<Integer, MappedBook> mappedBooks = new HashMap<>();
         // TODO make sure to limit number of queries to 200!!!! pagination will call next set afterward
         // TODO make sure there is an ability to load new books on each page then so that if they switch to a new set
         //  of 200 books it is still loaded for the user
@@ -50,9 +50,15 @@ public class BookManager {
             //todo make it so it checks for isbn13 then falls back to isbn10 if there is no 13
             VolumeInfo googleBook = api.getBook(queryParam, book.getIsbn13());
 
-            returnedBookInfo.add(googleBook);
+            //call getBookDetails
+            Set<UserBookData> eachBookData = getBookDetails(book, allBookData);
+            //call it here passing data
+            MappedBook thisMappedBook = new MappedBook(book.getId(), eachBookData, googleBook);
+//            there is a putIfAbsent method for maps
+            mappedBooks.put(book.getId(), thisMappedBook);
+            logger.info("Adding books to mappedBooks: {}", mappedBooks);
         }
-        return returnedBookInfo;
+        return mappedBooks;
 
     }
 
@@ -79,21 +85,6 @@ public class BookManager {
     }
 
     /**
-     * Gets book from database.
-     *
-     * @param currentBookGoogle the current book google
-     * @return the book from database
-     */
-    public Book getBookFromDatabase(VolumeInfo currentBookGoogle) {
-        String isbnType = currentBookGoogle.getIndustryIdentifiers().get(0).getType();
-        isbnType = isbnType.toLowerCase().replace("_","");
-        logger.debug(isbnType);
-        String isbnNumber = currentBookGoogle.getIndustryIdentifiers().get(0).getIdentifier();
-        List<Book> currentBookDbList = bookDao.getByPropertyEqual(isbnType, isbnNumber);
-       return currentBookDbList.get(0);
-    }
-
-    /**
      * Gets book details.
      *
      * @param currentBook  the current book
@@ -112,4 +103,69 @@ public class BookManager {
         return currentBookData;
     }
 
+    /**
+     * Check for existing book book.
+     *
+     * @param book the book
+     * @return the book
+     */
+    public Book checkForExistingBook(VolumeInfo book){
+        List<IndustryIdentifiersItem> isbns = book.getIndustryIdentifiers();
+        Book newBook = new Book();
+        final int ISBN10_SIZE = 10;
+        final int ISBN13_SIZE = 13;
+        String isbnType;
+        String isbnNumber;
+
+        for(IndustryIdentifiersItem isbn: isbns){
+            //get the isbns from the google book
+            isbnType = isbn.getType();
+            isbnType = isbnType.toLowerCase().replace("_","");
+            isbnNumber = isbn.getIdentifier();
+
+            //check db to see if the book already exists
+            List<Book> currentBookDb = bookDao.getByPropertyEqual(isbnType, isbnNumber);
+
+            if(!currentBookDb.isEmpty()) {
+                logger.info("The matching book found in database: {}", currentBookDb.get(0));
+                //return the book if it is found
+                return currentBookDb.get(0);
+
+            } else {
+                //set the isbns if it is a new book
+                if(isbn.getIdentifier().length() == ISBN10_SIZE) {
+                    newBook.setIsbn10(isbn.getIdentifier());
+                } else if (isbn.getIdentifier().length() == ISBN13_SIZE) {
+                    newBook.setIsbn13(isbn.getIdentifier());
+                }
+
+            }
+        }
+        //insert the new book into the database
+        bookDao.insert(newBook);
+        return newBook;
+
+    }
+
+    /**
+     * Delete user book data.
+     *
+     * @param userBookData the user book data
+     */
+    public void deleteUserBookData(Set<UserBookData> userBookData) {
+        for (UserBookData data: userBookData){
+            userBookDataDao.delete(data);
+        }
+
+    }
+
+    /**
+     * Get book db book.
+     *
+     * @param bookId the book id
+     * @return the book
+     */
+    public Book getBookDB(int bookId){
+        return (Book)bookDao.getById(bookId);
+    }
 }

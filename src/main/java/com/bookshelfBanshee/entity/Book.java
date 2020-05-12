@@ -27,11 +27,9 @@ public class Book implements Serializable {
     @Column(name = "isbn_13")
     private String isbn13;
 
-    @ManyToMany(mappedBy = "bookList")
+    @ManyToMany(mappedBy = "booksOnList")
     @JsonManagedReference
-    private Set<BookList> lists = new HashSet<>();
-
-//    @JSONproperty('author')
+    private Set<UserList> userLists = new HashSet<>();
 
     /**
      * Instantiates a new Book.
@@ -102,6 +100,24 @@ public class Book implements Serializable {
      */
     public void setIsbn13(String isbn13) {
         this.isbn13 = isbn13;
+    }
+
+    /**
+     * Gets user lists.
+     *
+     * @return the user lists
+     */
+    public Set<UserList> getUserLists() {
+        return userLists;
+    }
+
+    /**
+     * Sets user lists.
+     *
+     * @param userLists the user lists
+     */
+    public void setUserLists(Set<UserList> userLists) {
+        this.userLists = userLists;
     }
 
     @Override

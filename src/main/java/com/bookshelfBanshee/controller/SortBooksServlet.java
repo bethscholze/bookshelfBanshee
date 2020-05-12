@@ -1,6 +1,9 @@
 package com.bookshelfBanshee.controller;
 
+import com.bookshelfBanshee.entity.MappedBook;
 import com.googlebooksapi.entity.VolumeInfo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * The type Sort books servlet.
@@ -22,46 +25,72 @@ import java.util.List;
 )
 public class SortBooksServlet extends HttpServlet {
 
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //todo I think this will have to recall the api since it matters which books have been loaded from it...
         HttpSession session = req.getSession(false);
-        List<VolumeInfo> googleBooksData = (List<VolumeInfo>)session.getAttribute("userGoogleBooks");
+        Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
+
+        Map<Integer, VolumeInfo> mapToSort = new TreeMap<>();
+        for (Map.Entry<Integer, MappedBook> entry : mappedBooks.entrySet()) {
+            mapToSort.put(entry.getKey(), entry.getValue().getGoogleData());
+        }
+
+        Map<Integer, VolumeInfo> sortedMap;
 
         String sortBy = req.getParameter("sortBy");
 
         switch(sortBy) {
             case "titleAsc":
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getTitle));
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getTitle))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
                 break;
             case "titleDesc":
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getTitle).reversed());
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getTitle).reversed())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap ::new));
                 break;
             case "authorAsc":
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getLeadAuthor));
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getLeadAuthor))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap ::new));
                 break;
             case "authorDesc":
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getLeadAuthor).reversed());
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getLeadAuthor).reversed())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap ::new));
                 break;
             case "pubDateAsc":
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getPublishedDate));
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getPublishedDate))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
                 break;
             case "pubDateDesc":
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getPublishedDate).reversed());
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getPublishedDate).reversed())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
                 break;
             case "pageCountAsc":
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getPageCount));
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getPageCount))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
                 break;
             case "pageCountDesc":
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getPageCount).reversed());
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getPageCount).reversed())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
                 break;
             default:
-                googleBooksData.sort(Comparator.comparing(VolumeInfo::getTitle));
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getTitle))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, TreeMap::new));
                 break;
         }
 
-        session.setAttribute("userGoogleBooks", googleBooksData);
+        Map<Integer, MappedBook> mappedBooksOrdered = new LinkedHashMap <>();
+        for (Map.Entry<Integer, VolumeInfo> entry : sortedMap.entrySet()) {
+            MappedBook book = mappedBooks.get(entry.getKey());
+            mappedBooksOrdered.put(entry.getKey(), book);
+        }
+
+        logger.debug(mappedBooks);
+        logger.debug(mappedBooksOrdered);
+
+        session.setAttribute("userMappedBooks", mappedBooksOrdered);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);

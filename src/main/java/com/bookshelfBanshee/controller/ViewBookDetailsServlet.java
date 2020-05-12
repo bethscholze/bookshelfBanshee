@@ -1,9 +1,6 @@
 package com.bookshelfBanshee.controller;
 
-import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.BookList;
-import com.bookshelfBanshee.entity.User;
-import com.bookshelfBanshee.entity.UserBookData;
+import com.bookshelfBanshee.entity.*;
 import com.bookshelfBanshee.persistence.GenericDao;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
@@ -47,47 +44,35 @@ public class ViewBookDetailsServlet extends HttpServlet {
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         HttpSession session = req.getSession(false);
         int id = Integer.parseInt(req.getParameter("id"));
-        //Set<BookList> userLists = (Set<BookList>)session.getAttribute("userLists");
-        List<VolumeInfo> googleBooksData = (ArrayList<VolumeInfo>)session.getAttribute("userGoogleBooks");
-        VolumeInfo currentBookGoogle = googleBooksData.get(id);
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-        Book currentBook = bookManager.getBookFromDatabase(currentBookGoogle);
-        Set<UserBookData> currentBookData = bookManager.getBookDetails(currentBook, userBookData);
-//        session.setAttribute("userLists", userLists);
+        Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
+        MappedBook currentMappedBook = mappedBooks.get(id);
 
-        session.setAttribute("currentBookGoogle", currentBookGoogle);
-        session.setAttribute("currentBookDb", currentBook);
-        session.setAttribute("currentBookData", currentBookData);
-        logger.info(currentBookGoogle.toString());
-        logger.info(currentBook.toString());
-        logger.info(currentBookData.toString());
-//
+        //todo add a delete book data button for each userBookdata
+
+        session.setAttribute("currentMappedBook", currentMappedBook);
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
         dispatcher.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         HttpSession session = req.getSession();
-        Book currentDBBook = (Book) session.getAttribute("currentBookDb");
-        User user = (User) session.getAttribute("user");
-        Set<UserBookData> currentBookData = (Set<UserBookData>)session.getAttribute("currentBookData");
+        ServletContext servletContext = getServletContext();
+        BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
+        MappedBook currentMappedBook = (MappedBook) session.getAttribute("currentMappedBook");
+
         String dataLabel = req.getParameter("dataLabel");
         String dataValue = req.getParameter("dataValue");
 
+        Book currentDBBook = bookManager.getBookDB(currentMappedBook.getBookId());
+        User user = (User) session.getAttribute("user");
+        Set<UserBookData> currentBookData = currentMappedBook.getUsersBookData();
         UserBookData newBookData = new UserBookData(user, currentDBBook, dataLabel, dataValue);
-
         GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
-
         userBookDataDao.insert(newBookData);
-
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
-
         currentBookData.add(newBookData);
-        userBookData.add(newBookData);
-        session.setAttribute("userBookData", userBookData);
-        session.setAttribute("currentBookData", currentBookData);
+        currentMappedBook.setUsersBookData(currentBookData);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
         dispatcher.forward(req, resp);

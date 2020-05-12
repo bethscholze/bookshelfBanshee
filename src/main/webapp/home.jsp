@@ -11,6 +11,7 @@
                 <table class="table">
                     <thead class="table-light">
                     <tr>
+                        <td>Book Id</td>
                         <td>Title</td>
                         <td>Authors</td>
                         <td>Publish Date</td>
@@ -18,13 +19,14 @@
 
                     </thead>
                     <tbody class="bg-white">
-                    <c:forEach items="${sessionScope.userGoogleBooks}" var="books">
+                    <c:forEach items="${sessionScope.userMappedBooks}" var="book">
                         <tr>
-                            <td>${books.title}</td>
-                        <c:forEach items="${books.authors}" var="author">
+                            <td>${book.key}</td>
+                            <td>${book.value.googleData.title}</td>
+                        <c:forEach items="${book.value.googleData.authors}" var="author">
                             <td>${author}</td>
                         </c:forEach>
-                            <td>${books.publishedDate}</td>
+                            <td>${book.value.googleData.publishedDate}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

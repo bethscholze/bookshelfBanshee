@@ -7,11 +7,12 @@
 <%@include file="header.jsp"%>
 
 <section class="pageBackground h-100 row justify-content-center align-items-center mx-0">
-    <c:if test = "${!empty sessionScope.currentBookGoogle}">
+    <c:if test = "${!empty sessionScope.currentMappedBook}">
+        <c:set var="currentMappedBook" value="${sessionScope.currentMappedBook}"/>n ma
         <table class="table bg-light rounded px-2 py-2">
-            <tr><td>Title</td><td>${currentBookGoogle.title}</td></tr>
-            <tr><td>Author</td><td>${currentBookGoogle.authors[0]}</td></tr>
-            <c:forEach items="${sessionScope.currentBookData}" var="bookData">
+            <tr><td>Title</td><td>${currentMappedBook.googleData.title}</td></tr>
+            <tr><td>Author</td><td>${currentMappedBook.googleData.authors[0]}</td></tr>
+            <c:forEach items="${currentMappedBook.usersBookData}" var="bookData">
                 <tr><td>${bookData.dataLabel}</td><td>${bookData.dataValue}</td></tr>
             </c:forEach>
 

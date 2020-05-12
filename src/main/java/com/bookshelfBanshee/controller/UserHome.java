@@ -1,10 +1,7 @@
 package com.bookshelfBanshee.controller;
 
-import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.BookList;
-import com.bookshelfBanshee.entity.User;
-import com.bookshelfBanshee.entity.UserBookData;
-import com.bookshelfBanshee.persistence.GenericDao;
+import com.bookshelfBanshee.entity.*;
+import com.googlebooksapi.entity.IndustryIdentifiersItem;
 import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,10 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * The type User home.
@@ -45,12 +39,8 @@ public class UserHome extends HttpServlet {
         HttpSession session = req.getSession();
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
-        ListManager listManager = (ListManager)servletContext.getAttribute("listManager");
-
-        if(session.getAttribute("userGoogleBooks") == null) {
-            logger.info("the users Books: {}", session.getAttribute("userGoogleBooks"));
-            session.setAttribute("userGoogleBooks", null);
-
+        Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
+        if(mappedBooks == null){
             String username = req.getRemoteUser();
 
             logger.info(username);
@@ -60,35 +50,20 @@ public class UserHome extends HttpServlet {
             for (UserBookData bookData : userBookData) {
                 books.add(bookData.getBook());
             }
+
             logger.debug("The books to call google api with: {}", books);
-            List<VolumeInfo> googleBooksData = new ArrayList<>();
-            try {
-                googleBooksData = bookManager.getGoogleAPIBookData(books);
-            } catch (Exception e) {
-                logger.error("Could not load Book data from api.");
-            }
-            List<BookList> userLists = user.getLists();
-            try{
-                BookList bookList = userLists.get(0);
-                Set<Book> booksOnList = bookList.getBookList();
-                Set<UserBookData> booksOnListData = new HashSet<>();
-                for (Book book:booksOnList) {
-                    for(UserBookData bookData: userBookData) {
-                        if (book.equals(bookData.getBook())){
-                            booksOnListData.add(bookData);
-                        }
-                    }
-                }
-                session.setAttribute("currentList", bookList);
-                session.setAttribute("currentListBooks", booksOnListData);
-            } catch(IndexOutOfBoundsException e){
-                logger.error(e);
-            }
+            List<UserList> userLists = user.getLists();
+
+            mappedBooks = bookManager.getGoogleAPIBookData(books, userBookData);
+
+            UserList currentList = userLists.get(0);
+            session.setAttribute("currentList", currentList);
+            logger.info("all books mapped: {}", mappedBooks );
+
 
             session.setAttribute("user", user);
             session.setAttribute("userLists", userLists);
-            session.setAttribute("userGoogleBooks", googleBooksData);
-            session.setAttribute("userBookData", userBookData);
+            session.setAttribute("userMappedBooks", mappedBooks);
             logger.info(user.toString());
         }
 
