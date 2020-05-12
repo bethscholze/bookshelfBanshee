@@ -11,12 +11,21 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * The type List manager.
+ */
 public class ListManager {
     private final Logger logger = LogManager.getLogger(this.getClass());
     //this class will be created after a user signs in
     //it will need to create a listFactory to create all the list objects for a user
     //this will also have to create the listDao?
 
+    /**
+     * Gets books on list.
+     *
+     * @param currentList the current list
+     * @return the books on list
+     */
     public Set<Integer> getBooksOnList(UserList currentList) {
 
         Set<Book> booksOnList = currentList.getBooksOnList();
@@ -31,6 +40,13 @@ public class ListManager {
 
     }
 
+    /**
+     * Gets books not on list.
+     *
+     * @param mappedBooks       the mapped books
+     * @param keysOfBooksOnList the keys of books on list
+     * @return the books not on list
+     */
     public Set<Integer> getBooksNotOnList(Map<Integer, MappedBook> mappedBooks, Set<Integer> keysOfBooksOnList) {
 
         Map<Integer, MappedBook> copyMappedBooks = new HashMap<>(mappedBooks);

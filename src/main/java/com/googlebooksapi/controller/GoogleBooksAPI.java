@@ -15,9 +15,19 @@ import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Google books api.
+ */
 public class GoogleBooksAPI {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Create client string.
+     *
+     * @param queryParam the query param
+     * @param searchTerm the search term
+     * @return the string
+     */
     public String createClient(String queryParam, String searchTerm) {
         Client client = ClientBuilder.newClient();
         //https://www.googleapis.com/books/v1/volumes?q=isbn:9781250313188
@@ -29,6 +39,14 @@ public class GoogleBooksAPI {
 
         return response;
     }
+
+    /**
+     * Gets book.
+     *
+     * @param queryParam the query param
+     * @param searchTerm the search term
+     * @return the book
+     */
     public VolumeInfo getBook(String queryParam, String searchTerm) {
         String response = createClient(queryParam, searchTerm);
 
@@ -52,6 +70,13 @@ public class GoogleBooksAPI {
         return volumeInfo;
     }
 
+    /**
+     * Search books list.
+     *
+     * @param queryParam the query param
+     * @param searchTerm the search term
+     * @return the list
+     */
     public List<VolumeInfo> searchBooks(String queryParam, String searchTerm) {
         String response = createClient(queryParam, searchTerm);
         ObjectMapper mapper = new ObjectMapper();

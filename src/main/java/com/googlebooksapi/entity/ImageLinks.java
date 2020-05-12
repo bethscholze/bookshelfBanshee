@@ -1,22 +1,45 @@
 package com.googlebooksapi.entity;
 
+/**
+ * The type Image links.
+ */
 public class ImageLinks{
 	private String thumbnail;
 	private String smallThumbnail;
 
-	public void setThumbnail(String thumbnail){
+    /**
+     * Set thumbnail.
+     *
+     * @param thumbnail the thumbnail
+     */
+    public void setThumbnail(String thumbnail){
 		this.thumbnail = thumbnail;
 	}
 
-	public String getThumbnail(){
+    /**
+     * Get thumbnail string.
+     *
+     * @return the string
+     */
+    public String getThumbnail(){
 		return thumbnail;
 	}
 
-	public void setSmallThumbnail(String smallThumbnail){
+    /**
+     * Set small thumbnail.
+     *
+     * @param smallThumbnail the small thumbnail
+     */
+    public void setSmallThumbnail(String smallThumbnail){
 		this.smallThumbnail = smallThumbnail;
 	}
 
-	public String getSmallThumbnail(){
+    /**
+     * Get small thumbnail string.
+     *
+     * @return the string
+     */
+    public String getSmallThumbnail(){
 		return smallThumbnail;
 	}
 

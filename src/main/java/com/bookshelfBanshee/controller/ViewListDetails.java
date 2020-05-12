@@ -21,6 +21,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * The type View list details.
+ */
 @WebServlet(
         name = "viewList",
         urlPatterns = {"/viewList"}

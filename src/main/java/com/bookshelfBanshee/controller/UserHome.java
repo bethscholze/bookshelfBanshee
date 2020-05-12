@@ -17,6 +17,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * The type User home.
+ */
 @WebServlet(
         name = "UserHome",
         urlPatterns = {"/UserHome"}

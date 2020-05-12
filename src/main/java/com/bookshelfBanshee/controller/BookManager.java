@@ -13,6 +13,9 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
+/**
+ * The type Book manager.
+ */
 public class BookManager {
     private final Logger logger = LogManager.getLogger(this.getClass());
     // Holds the data returned form the google books api for all of a users books,
@@ -30,6 +33,13 @@ public class BookManager {
 
     //I think pass a param in based on the page you are on ...
 
+    /**
+     * Gets google api book data.
+     *
+     * @param userBooks   the user books
+     * @param allBookData the all book data
+     * @return the google api book data
+     */
     public Map<Integer, MappedBook> getGoogleAPIBookData(Set<Book> userBooks, Set<UserBookData> allBookData) {
         String queryParam = "isbn";
         Map<Integer, MappedBook> mappedBooks = new HashMap<>();
@@ -52,15 +62,35 @@ public class BookManager {
 
     }
 
+    /**
+     * Search google api book list.
+     *
+     * @param searchType the search type
+     * @param searchTerm the search term
+     * @return the list
+     */
     public List<VolumeInfo> searchGoogleAPIBook(String searchType, String searchTerm) {
         // the maxResults value is by default 10 books, which I think works for my program
         return  api.searchBooks(searchType, searchTerm);
     }
 
+    /**
+     * Gets user.
+     *
+     * @param username the username
+     * @return the user
+     */
     public User getUser(String username) {
         return (User)userDao.getByPropertyEqual("username", username).get(0);
     }
 
+    /**
+     * Gets book details.
+     *
+     * @param currentBook  the current book
+     * @param userBookData the user book data
+     * @return the book details
+     */
     public Set<UserBookData> getBookDetails(Book currentBook, Set<UserBookData> userBookData) {
         Set<UserBookData> currentBookData = new HashSet<UserBookData>();
         for (UserBookData bookData: userBookData) {
@@ -73,6 +103,12 @@ public class BookManager {
         return currentBookData;
     }
 
+    /**
+     * Check for existing book book.
+     *
+     * @param book the book
+     * @return the book
+     */
     public Book checkForExistingBook(VolumeInfo book){
         List<IndustryIdentifiersItem> isbns = book.getIndustryIdentifiers();
         Book newBook = new Book();
@@ -110,18 +146,23 @@ public class BookManager {
         return newBook;
 
     }
+//
+//    public boolean userHasBook(Set<UserBookData> userBookData, Book book){
+//
+//        //check if the book was already in the users books
+//        for (UserBookData bookData: userBookData){
+//            if(bookData.getBook().equals(book)){
+//             return true;
+//            }
+//        }
+//        return false;
+//    }
 
-    public boolean userHasBook(Set<UserBookData> userBookData, Book book){
-
-        //check if the book was already in the users books
-        for (UserBookData bookData: userBookData){
-            if(bookData.getBook().equals(book)){
-             return true;
-            }
-        }
-        return false;
-    }
-
+    /**
+     * Delete user book data.
+     *
+     * @param userBookData the user book data
+     */
     public void deleteUserBookData(Set<UserBookData> userBookData) {
         for (UserBookData data: userBookData){
             userBookDataDao.delete(data);
@@ -129,9 +170,13 @@ public class BookManager {
 
     }
 
+    /**
+     * Get book db book.
+     *
+     * @param bookId the book id
+     * @return the book
+     */
     public Book getBookDB(int bookId){
         return (Book)bookDao.getById(bookId);
     }
-
-
 }

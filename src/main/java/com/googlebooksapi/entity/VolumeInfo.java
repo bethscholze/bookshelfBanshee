@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The type Volume info.
+ */
 public class VolumeInfo implements Serializable {
 	private List<IndustryIdentifiersItem> industryIdentifiers;
 	private int pageCount;
@@ -28,183 +31,408 @@ public class VolumeInfo implements Serializable {
 	private double averageRating;
 	private int ratingsCount;
 
-	public void setIndustryIdentifiers(List<IndustryIdentifiersItem> industryIdentifiers){
+    /**
+     * Set industry identifiers.
+     *
+     * @param industryIdentifiers the industry identifiers
+     */
+    public void setIndustryIdentifiers(List<IndustryIdentifiersItem> industryIdentifiers){
 		this.industryIdentifiers = industryIdentifiers;
 	}
 
-	public List<IndustryIdentifiersItem> getIndustryIdentifiers(){
+    /**
+     * Get industry identifiers list.
+     *
+     * @return the list
+     */
+    public List<IndustryIdentifiersItem> getIndustryIdentifiers(){
 		return industryIdentifiers;
 	}
 
-	public void setPageCount(int pageCount){
+    /**
+     * Set page count.
+     *
+     * @param pageCount the page count
+     */
+    public void setPageCount(int pageCount){
 		this.pageCount = pageCount;
 	}
 
-	public int getPageCount(){
+    /**
+     * Get page count int.
+     *
+     * @return the int
+     */
+    public int getPageCount(){
 		return pageCount;
 	}
 
-	public void setPrintType(String printType){
+    /**
+     * Set print type.
+     *
+     * @param printType the print type
+     */
+    public void setPrintType(String printType){
 		this.printType = printType;
 	}
 
-	public String getPrintType(){
+    /**
+     * Get print type string.
+     *
+     * @return the string
+     */
+    public String getPrintType(){
 		return printType;
 	}
 
-	public void setReadingModes(ReadingModes readingModes){
+    /**
+     * Set reading modes.
+     *
+     * @param readingModes the reading modes
+     */
+    public void setReadingModes(ReadingModes readingModes){
 		this.readingModes = readingModes;
 	}
 
-	public ReadingModes getReadingModes(){
+    /**
+     * Get reading modes reading modes.
+     *
+     * @return the reading modes
+     */
+    public ReadingModes getReadingModes(){
 		return readingModes;
 	}
 
-	public void setPreviewLink(String previewLink){
+    /**
+     * Set preview link.
+     *
+     * @param previewLink the preview link
+     */
+    public void setPreviewLink(String previewLink){
 		this.previewLink = previewLink;
 	}
 
-	public String getPreviewLink(){
+    /**
+     * Get preview link string.
+     *
+     * @return the string
+     */
+    public String getPreviewLink(){
 		return previewLink;
 	}
 
-	public void setCanonicalVolumeLink(String canonicalVolumeLink){
+    /**
+     * Set canonical volume link.
+     *
+     * @param canonicalVolumeLink the canonical volume link
+     */
+    public void setCanonicalVolumeLink(String canonicalVolumeLink){
 		this.canonicalVolumeLink = canonicalVolumeLink;
 	}
 
-	public String getCanonicalVolumeLink(){
+    /**
+     * Get canonical volume link string.
+     *
+     * @return the string
+     */
+    public String getCanonicalVolumeLink(){
 		return canonicalVolumeLink;
 	}
 
-	public void setDescription(String description){
+    /**
+     * Set description.
+     *
+     * @param description the description
+     */
+    public void setDescription(String description){
 		this.description = description;
 	}
 
-	public String getDescription(){
+    /**
+     * Get description string.
+     *
+     * @return the string
+     */
+    public String getDescription(){
 		return description;
 	}
 
-	public void setLanguage(String language){
+    /**
+     * Set language.
+     *
+     * @param language the language
+     */
+    public void setLanguage(String language){
 		this.language = language;
 	}
 
-	public String getLanguage(){
+    /**
+     * Get language string.
+     *
+     * @return the string
+     */
+    public String getLanguage(){
 		return language;
 	}
 
-	public void setTitle(String title){
+    /**
+     * Set title.
+     *
+     * @param title the title
+     */
+    public void setTitle(String title){
 		this.title = title;
 	}
 
-	public String getTitle(){
+    /**
+     * Get title string.
+     *
+     * @return the string
+     */
+    public String getTitle(){
 		return title;
 	}
 
-	public void setImageLinks(ImageLinks imageLinks){
+    /**
+     * Set image links.
+     *
+     * @param imageLinks the image links
+     */
+    public void setImageLinks(ImageLinks imageLinks){
 		this.imageLinks = imageLinks;
 	}
 
-	public ImageLinks getImageLinks(){
+    /**
+     * Get image links image links.
+     *
+     * @return the image links
+     */
+    public ImageLinks getImageLinks(){
 		return imageLinks;
 	}
 
-	public void setPanelizationSummary(PanelizationSummary panelizationSummary){
+    /**
+     * Set panelization summary.
+     *
+     * @param panelizationSummary the panelization summary
+     */
+    public void setPanelizationSummary(PanelizationSummary panelizationSummary){
 		this.panelizationSummary = panelizationSummary;
 	}
 
-	public PanelizationSummary getPanelizationSummary(){
+    /**
+     * Get panelization summary panelization summary.
+     *
+     * @return the panelization summary
+     */
+    public PanelizationSummary getPanelizationSummary(){
 		return panelizationSummary;
 	}
 
-	public void setPublisher(String publisher){
+    /**
+     * Set publisher.
+     *
+     * @param publisher the publisher
+     */
+    public void setPublisher(String publisher){
 		this.publisher = publisher;
 	}
 
-	public String getPublisher(){
+    /**
+     * Get publisher string.
+     *
+     * @return the string
+     */
+    public String getPublisher(){
 		return publisher;
 	}
 
-	public void setPublishedDate(String publishedDate){
+    /**
+     * Set published date.
+     *
+     * @param publishedDate the published date
+     */
+    public void setPublishedDate(String publishedDate){
 		this.publishedDate = publishedDate;
 	}
 
-	public String getPublishedDate(){
+    /**
+     * Get published date string.
+     *
+     * @return the string
+     */
+    public String getPublishedDate(){
 		return publishedDate;
 	}
 
-	public void setCategories(List<String> categories){
+    /**
+     * Set categories.
+     *
+     * @param categories the categories
+     */
+    public void setCategories(List<String> categories){
 		this.categories = categories;
 	}
 
-	public List<String> getCategories(){
+    /**
+     * Get categories list.
+     *
+     * @return the list
+     */
+    public List<String> getCategories(){
 		return categories;
 	}
 
-	public void setMaturityRating(String maturityRating){
+    /**
+     * Set maturity rating.
+     *
+     * @param maturityRating the maturity rating
+     */
+    public void setMaturityRating(String maturityRating){
 		this.maturityRating = maturityRating;
 	}
 
-	public String getMaturityRating(){
+    /**
+     * Get maturity rating string.
+     *
+     * @return the string
+     */
+    public String getMaturityRating(){
 		return maturityRating;
 	}
 
-	public void setAllowAnonLogging(boolean allowAnonLogging){
+    /**
+     * Set allow anon logging.
+     *
+     * @param allowAnonLogging the allow anon logging
+     */
+    public void setAllowAnonLogging(boolean allowAnonLogging){
 		this.allowAnonLogging = allowAnonLogging;
 	}
 
-	public boolean isAllowAnonLogging(){
+    /**
+     * Is allow anon logging boolean.
+     *
+     * @return the boolean
+     */
+    public boolean isAllowAnonLogging(){
 		return allowAnonLogging;
 	}
 
-	public void setContentVersion(String contentVersion){
+    /**
+     * Set content version.
+     *
+     * @param contentVersion the content version
+     */
+    public void setContentVersion(String contentVersion){
 		this.contentVersion = contentVersion;
 	}
 
-	public String getContentVersion(){
+    /**
+     * Get content version string.
+     *
+     * @return the string
+     */
+    public String getContentVersion(){
 		return contentVersion;
 	}
 
-	public void setAuthors(List<String> authors){
+    /**
+     * Set authors.
+     *
+     * @param authors the authors
+     */
+    public void setAuthors(List<String> authors){
 		this.authors = authors;
 	}
 
-	public List<String> getAuthors(){
+    /**
+     * Get authors list.
+     *
+     * @return the list
+     */
+    public List<String> getAuthors(){
 		return authors;
 	}
 
-	public void setInfoLink(String infoLink){
+    /**
+     * Set info link.
+     *
+     * @param infoLink the info link
+     */
+    public void setInfoLink(String infoLink){
 		this.infoLink = infoLink;
 	}
 
-	public String getInfoLink(){
+    /**
+     * Get info link string.
+     *
+     * @return the string
+     */
+    public String getInfoLink(){
 		return infoLink;
 	}
 
-	public void setSubtitle(String subtitle){
+    /**
+     * Set subtitle.
+     *
+     * @param subtitle the subtitle
+     */
+    public void setSubtitle(String subtitle){
 		this.subtitle = subtitle;
 	}
 
-	public String getSubtitle(){
+    /**
+     * Get subtitle string.
+     *
+     * @return the string
+     */
+    public String getSubtitle(){
 		return subtitle;
 	}
 
-	public void setAverageRating(double averageRating){
+    /**
+     * Set average rating.
+     *
+     * @param averageRating the average rating
+     */
+    public void setAverageRating(double averageRating){
 		this.averageRating = averageRating;
 	}
 
-	public double getAverageRating(){
+    /**
+     * Get average rating double.
+     *
+     * @return the double
+     */
+    public double getAverageRating(){
 		return averageRating;
 	}
 
-	public void setRatingsCount(int ratingsCount){
+    /**
+     * Set ratings count.
+     *
+     * @param ratingsCount the ratings count
+     */
+    public void setRatingsCount(int ratingsCount){
 		this.ratingsCount = ratingsCount;
 	}
 
-	public int getRatingsCount(){
+    /**
+     * Get ratings count int.
+     *
+     * @return the int
+     */
+    public int getRatingsCount(){
 		return ratingsCount;
 	}
 
-	public String getLeadAuthor() {
+    /**
+     * Gets lead author.
+     *
+     * @return the lead author
+     */
+    public String getLeadAuthor() {
 		return this.authors.get(0);
 	}
 

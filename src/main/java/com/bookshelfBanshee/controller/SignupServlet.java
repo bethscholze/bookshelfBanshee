@@ -18,6 +18,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+/**
+ * The type Signup servlet.
+ */
 @WebServlet(
         name = "Signup",
         urlPatterns = {"/Signup"}

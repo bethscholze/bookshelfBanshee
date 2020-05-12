@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * The type Sort books servlet.
+ */
 @WebServlet(
         name = "SortBooks",
         urlPatterns = {"/sortBooks"}

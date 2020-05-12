@@ -19,6 +19,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * The type Delete book servlet.
+ */
 @WebServlet(
         name = "DeleteBook",
         urlPatterns = {"/deleteBook"}

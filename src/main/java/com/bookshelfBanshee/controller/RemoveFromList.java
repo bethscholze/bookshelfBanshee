@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * The type Remove from list.
+ */
 @WebServlet(
         name = "RemoveFromList",
         urlPatterns = {"/removeFromList"}

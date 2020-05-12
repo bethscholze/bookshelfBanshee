@@ -35,14 +35,31 @@ public class UserBookData implements Serializable {
 //    @JsonBackReference
     private User user;
 
+    /**
+     * Instantiates a new User book data.
+     */
     public UserBookData() {
     }
 
+    /**
+     * Instantiates a new User book data.
+     *
+     * @param user the user
+     * @param book the book
+     */
     public UserBookData(User user, Book book) {
         this.book = book;
         this.user = user;
     }
 
+    /**
+     * Instantiates a new User book data.
+     *
+     * @param user      the user
+     * @param book      the book
+     * @param dataLabel the data label
+     * @param dataValue the data value
+     */
     public UserBookData(User user, Book book, String dataLabel, String dataValue) {
         this.dataLabel = dataLabel;
         this.dataValue = dataValue;

@@ -19,6 +19,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+/**
+ * The type Add to list.
+ */
 @WebServlet(
         name = "AddToList",
         urlPatterns = {"/addToList"}

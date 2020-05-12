@@ -17,6 +17,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * The type View book details servlet.
+ */
 @WebServlet(
         name = "BookDetails",
         urlPatterns = {"/BookDetails"}

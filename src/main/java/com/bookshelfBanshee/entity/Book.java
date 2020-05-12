@@ -42,7 +42,6 @@ public class Book implements Serializable {
      *
      * @param isbn10 the isbn 10
      * @param isbn13 the isbn 13
-
      */
     public Book(String isbn10, String isbn13) {
         this.isbn10 = isbn10;
@@ -103,10 +102,20 @@ public class Book implements Serializable {
         this.isbn13 = isbn13;
     }
 
+    /**
+     * Gets user lists.
+     *
+     * @return the user lists
+     */
     public Set<UserList> getUserLists() {
         return userLists;
     }
 
+    /**
+     * Sets user lists.
+     *
+     * @param userLists the user lists
+     */
     public void setUserLists(Set<UserList> userLists) {
         this.userLists = userLists;
     }
