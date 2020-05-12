@@ -27,7 +27,8 @@ public class DeleteListServlet extends HttpServlet {
         GenericDao<UserList> bookListDao = new GenericDao<>(UserList.class);
         bookListDao.delete(currentList);
 
-
+        userLists.remove(currentList);
+        session.setAttribute("userLists", userLists);
         session.setAttribute("keysOfBooksOnList", null);
         session.setAttribute("currentList", null);
         session.setAttribute("keysOfBooksNotOnList", null);

@@ -1,6 +1,7 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
+import com.bookshelfBanshee.entity.MappedBook;
 import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.entity.UserBookData;
 import com.bookshelfBanshee.persistence.GenericDao;
@@ -18,10 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @WebServlet(
         name = "AddBook",
@@ -65,9 +63,7 @@ public class AddBookServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
-        List<VolumeInfo> googleBooksData = (List<VolumeInfo>)session.getAttribute("userGoogleBooks");
         List<VolumeInfo> bookResults = (List<VolumeInfo>)session.getAttribute("bookResults");
-        Set<UserBookData> userBookData = (Set<UserBookData>)session.getAttribute("userBookData");
         User user = (User) session.getAttribute("user");
 
         int id = Integer.parseInt(req.getParameter("bookToAdd"));
@@ -75,20 +71,19 @@ public class AddBookServlet extends HttpServlet {
         VolumeInfo bookToAdd = bookResults.get(id);
 
         //check if the book is in the db already, return a new book or the book from the db
+        Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
         Book book = bookManager.checkForExistingBook(bookToAdd);
 
-        //check if user has book
-        if (!bookManager.userHasBook(userBookData, book)){
+        if(!mappedBooks.containsKey(book.getId())){
             UserBookData newUserBookData = new UserBookData(user, book);
             GenericDao<UserBookData> userBookDao = new GenericDao<>(UserBookData.class);
             userBookDao.insert(newUserBookData);
-            userBookData.add(newUserBookData);
-            googleBooksData.add(bookToAdd);
+            Set<UserBookData> data = new HashSet<>();
+            data.add(newUserBookData);
+            MappedBook newBook = new MappedBook(book.getId(), data, bookToAdd);
+            mappedBooks.put(book.getId(), newBook);
         }
-        //todo add the new book info to the mappedBooks map
-
-        session.setAttribute("userBookData", userBookData);
-        session.setAttribute("userGoogleBooks", googleBooksData);
+        session.setAttribute("userMappedBooks", mappedBooks);
         session.setAttribute("bookResults", null);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
