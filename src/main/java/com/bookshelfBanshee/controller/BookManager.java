@@ -146,17 +146,6 @@ public class BookManager {
         return newBook;
 
     }
-//
-//    public boolean userHasBook(Set<UserBookData> userBookData, Book book){
-//
-//        //check if the book was already in the users books
-//        for (UserBookData bookData: userBookData){
-//            if(bookData.getBook().equals(book)){
-//             return true;
-//            }
-//        }
-//        return false;
-//    }
 
     /**
      * Delete user book data.
