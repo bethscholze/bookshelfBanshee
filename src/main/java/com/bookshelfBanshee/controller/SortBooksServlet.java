@@ -2,6 +2,8 @@ package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.MappedBook;
 import com.googlebooksapi.entity.VolumeInfo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,17 +22,13 @@ import java.util.stream.Collectors;
 )
 public class SortBooksServlet extends HttpServlet {
 
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //todo I think this will have to recall the api since it matters which books have been loaded from it...
         HttpSession session = req.getSession(false);
         Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
-//        List<MappedBook> listMappedBooks = (ArrayList)mappedBooks.values();
-//        List<VolumeInfo> sortedListBooks = new ArrayList<>();
-//        for (MappedBook book : listMappedBooks) {
-//            sortedListBooks.add(book.getGoogleData());
-//        }
 
         Map<Integer, VolumeInfo> mapToSort = new TreeMap<>();
         for (Map.Entry<Integer, MappedBook> entry : mappedBooks.entrySet()) {
@@ -44,39 +42,52 @@ public class SortBooksServlet extends HttpServlet {
         switch(sortBy) {
             case "titleAsc":
                 sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getTitle))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-                        (e1, e2) -> e1, TreeMap::new));
-//                sortedListBooks.sort(Comparator.comparing(VolumeInfo::getTitle));
+                        (e1, e2) -> e1, LinkedHashMap::new));
                 break;
             case "titleDesc":
                 sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getTitle).reversed())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-                        (e1, e2) -> e1, TreeMap::new));
-//                sortedListBooks.sort(Comparator.comparing(VolumeInfo::getTitle).reversed());
+                        (e1, e2) -> e1, LinkedHashMap ::new));
                 break;
-//            case "authorAsc":
-//                sortedListBooks.sort(Comparator.comparing(VolumeInfo::getLeadAuthor));
-//                break;
-//            case "authorDesc":
-//                sortedListBooks.sort(Comparator.comparing(VolumeInfo::getLeadAuthor).reversed());
-//                break;
-//            case "pubDateAsc":
-//                sortedListBooks.sort(Comparator.comparing(VolumeInfo::getPublishedDate));
-//                break;
-//            case "pubDateDesc":
-//                sortedListBooks.sort(Comparator.comparing(VolumeInfo::getPublishedDate).reversed());
-//                break;
-//            case "pageCountAsc":
-//                sortedListBooks.sort(Comparator.comparing(VolumeInfo::getPageCount));
-//                break;
-//            case "pageCountDesc":
-//                sortedListBooks.sort(Comparator.comparing(VolumeInfo::getPageCount).reversed());
-//                break;
+            case "authorAsc":
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getLeadAuthor))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap ::new));
+                break;
+            case "authorDesc":
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getLeadAuthor).reversed())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap ::new));
+                break;
+            case "pubDateAsc":
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getPublishedDate))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
+                break;
+            case "pubDateDesc":
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getPublishedDate).reversed())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
+                break;
+            case "pageCountAsc":
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getPageCount))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
+                break;
+            case "pageCountDesc":
+                sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getPageCount).reversed())).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1, e2) -> e1, LinkedHashMap::new));
+                break;
             default:
                 sortedMap = mapToSort.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.comparing(VolumeInfo::getTitle))).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (e1, e2) -> e1, TreeMap::new));
                 break;
         }
 
-        session.setAttribute("sortedBooks", sortedMap);
+        Map<Integer, MappedBook> mappedBooksOrdered = new LinkedHashMap <>();
+        for (Map.Entry<Integer, VolumeInfo> entry : sortedMap.entrySet()) {
+            MappedBook book = mappedBooks.get(entry.getKey());
+            mappedBooksOrdered.put(entry.getKey(), book);
+        }
+
+        logger.debug(mappedBooks);
+        logger.debug(mappedBooksOrdered);
+
+        session.setAttribute("userMappedBooks", mappedBooksOrdered);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);
