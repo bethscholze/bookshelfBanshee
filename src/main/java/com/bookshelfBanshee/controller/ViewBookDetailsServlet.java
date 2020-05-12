@@ -43,18 +43,11 @@ public class ViewBookDetailsServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
         MappedBook currentMappedBook = mappedBooks.get(id);
-//        VolumeInfo currentBookGoogle = mappedBooks.get(id).getGoogleData();
-//        Set<UserBookData> currentBookData = mappedBooks.get(id).getUsersBookData();
+
+        //todo add a delete book data button for each userBookdata
 
         session.setAttribute("currentMappedBook", currentMappedBook);
-//
-//        session.setAttribute("currentBookGoogle", currentBookGoogle);
-////        session.setAttribute("currentBookDb", currentBook);
-//        session.setAttribute("currentBookData", currentBookData);
-//        logger.info(currentBookGoogle.toString());
-////        logger.info(currentBook.toString());
-//        logger.info(currentBookData.toString());
-////
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/bookDetails.jsp");
         dispatcher.forward(req, resp);
     }

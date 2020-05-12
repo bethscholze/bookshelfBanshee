@@ -39,14 +39,7 @@ public class DeleteBookServlet extends HttpServlet {
 
         Set<UserBookData> userBookData = mappedBooks.get(id).getUsersBookData();
         bookManager.deleteUserBookData(userBookData);
-
-//        session.setAttribute("userLists", userLists);
-
-        session.setAttribute("currentBookGoogle", null);
-        session.setAttribute("currentBookDb", null);
-        session.setAttribute("currentBookData", null);
-//        session.setAttribute("userBookData", userBookData);
-//        session.setAttribute("userGoogleBooks", googleBooksData);
+        mappedBooks.remove(id);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/books.jsp");
         dispatcher.forward(req, resp);

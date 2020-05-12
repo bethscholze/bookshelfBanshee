@@ -18,7 +18,7 @@ public class MappedBook {
         this.googleData = googleData;
     }
 
-    public MappedBook(int bookId, Set<UserBookData> userBookData, VolumeInfo googleData){
+    public MappedBook(int bookId, Set<UserBookData> usersBookData, VolumeInfo googleData){
         this.bookId = bookId;
         this.usersBookData = usersBookData;
         this.googleData = googleData;
