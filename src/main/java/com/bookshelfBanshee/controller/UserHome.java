@@ -1,8 +1,6 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.*;
-import com.googlebooksapi.entity.IndustryIdentifiersItem;
-import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,7 +25,7 @@ import java.util.*;
 public class UserHome extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp){
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
 
         //username and password passed in post
@@ -68,13 +66,7 @@ public class UserHome extends HttpServlet {
         }
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/home.jsp");
-        try {
-            dispatcher.forward(req, resp);
-        } catch (ServletException servletException) {
-            logger.error(servletException);
-        } catch (IOException ioException) {
-            logger.error(ioException);
-        }
+        dispatcher.forward(req, resp);
     }
 
 }

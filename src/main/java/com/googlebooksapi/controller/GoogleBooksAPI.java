@@ -12,6 +12,7 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +69,9 @@ public class GoogleBooksAPI {
             volumeInfo = item.getVolumeInfo();
             logger.info("The VolumeInfo Item: {}", volumeInfo);
         } catch (JsonProcessingException e) {
-            logger.error("couldnt create object from given json data");
+            logger.error("Couldnt create object from given json data. The ");
+        } catch (NullPointerException nullException){
+            logger.error("The api did not return a value for this isbn.");
         }
 
         return volumeInfo;
