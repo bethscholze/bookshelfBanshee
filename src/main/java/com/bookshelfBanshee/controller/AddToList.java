@@ -1,11 +1,8 @@
 package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.Book;
-import com.bookshelfBanshee.entity.MappedBook;
 import com.bookshelfBanshee.entity.UserList;
-import com.bookshelfBanshee.entity.User;
 import com.bookshelfBanshee.persistence.GenericDao;
-import com.googlebooksapi.entity.VolumeInfo;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -16,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**

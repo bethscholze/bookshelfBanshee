@@ -50,10 +50,14 @@ public class GoogleBooksAPI {
     public VolumeInfo getBook(String queryParam, String searchTerm) {
         String response = createClient(queryParam, searchTerm);
 
-        // there is a bug in the google books api, where sometimes it returns no data for an isbn # depending on whether isbn is lowercase or capital.
-        final int MIN_VOLUMEINFO_LENGTH = 50;
-        if(response.length() < MIN_VOLUMEINFO_LENGTH) {
-            queryParam.toUpperCase();
+        /*
+        there is a bug in the google books api, where sometimes it returns no data for an isbn #
+        depending on whether "isbn" is lowercase or uppercase. Everyone said that this is why they used the goodReads
+        api instead
+         */
+        final int MIN_VOLUME_INFO_LENGTH = 50;
+        if(response.length() < MIN_VOLUME_INFO_LENGTH) {
+            queryParam = queryParam.toUpperCase();
             response = createClient(queryParam, searchTerm);
         }
         ObjectMapper mapper = new ObjectMapper();
