@@ -16,9 +16,6 @@ import java.util.Set;
  */
 public class ListManager {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    //this class will be created after a user signs in
-    //it will need to create a listFactory to create all the list objects for a user
-    //this will also have to create the listDao?
 
     /**
      * Gets books on list.
@@ -36,7 +33,6 @@ public class ListManager {
         logger.debug("Keys of books on list: {}", keysOfBooksOnList);
 
         return keysOfBooksOnList;
-
 
     }
 

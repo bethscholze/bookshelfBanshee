@@ -31,10 +31,7 @@ public class ViewListDetails extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        //this will have a get that will load the selected list(the first list by default)
-        // and a post
-        //the post will be for editing adding and deleting lists
-        // this page will have to have the bookManager passes as well so you can add books
+
         HttpSession session = req.getSession(false);
         ServletContext servletContext = getServletContext();
         ListManager listManager = (ListManager)servletContext.getAttribute("listManager");

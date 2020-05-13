@@ -33,7 +33,6 @@ public class RemoveFromList extends HttpServlet {
         HttpSession session = req.getSession(false);
         UserList currentList = (UserList)session.getAttribute("currentList");
         Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
-        //below here
         Set<Integer> keysOfBooksOnList = (Set<Integer>)session.getAttribute("keysOfBooksOnList");
         int id = Integer.parseInt(req.getParameter("id"));
 

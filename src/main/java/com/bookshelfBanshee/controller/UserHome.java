@@ -27,13 +27,6 @@ public class UserHome extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 
-
-        //username and password passed in post
-        //set these in a new user object
-        //pass this new user object into the userdao to insert it into the database
-        //return a success to the screen if the username and password is found in the user table.
-        //redirect to the users home page.
-
         HttpSession session = req.getSession();
         ServletContext servletContext = getServletContext();
         BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
