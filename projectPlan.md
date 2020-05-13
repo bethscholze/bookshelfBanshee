@@ -48,7 +48,7 @@
 - [x] code review
 
 ### Week 9
-- [ ] incorporate feedback
+- [x] incorporate feedback
 - [ ] add password reset/reminder functionality
 
 ### Week 10
@@ -58,16 +58,16 @@
 - [x] team project stuff
  
 ### Week 12
-- [ ] review project and create todos
+- [x] review project and create todos
 
 ### Week 13
-- [ ] code quality check
-- [ ] prepare for code reviews
+- [x] code quality check
+- [x] prepare for code reviews
 
 ### Week 14
-- [ ] create final presentation
+- [x] create final presentation
 
 ### Week 15
-- [ ] final presentation
-- [ ] finalize documentation
+- [x] final presentation
+- [x] finalize documentation
 
