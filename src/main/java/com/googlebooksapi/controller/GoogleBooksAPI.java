@@ -1,5 +1,6 @@
 package com.googlebooksapi.controller;
 
+import com.bookshelfBanshee.utilities.PropertiesLoader;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.googlebooksapi.entity.BookResponse;
@@ -12,15 +13,16 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * The type Google books api.
  */
-public class GoogleBooksAPI {
+public class GoogleBooksAPI implements PropertiesLoader{
     private final Logger logger = LogManager.getLogger(this.getClass());
+    private Properties properties = loadProperties("/bookshelfBanshee.properties");;
 
     /**
      * Create client string.
@@ -31,9 +33,9 @@ public class GoogleBooksAPI {
      */
     public String createClient(String queryParam, String searchTerm) {
         Client client = ClientBuilder.newClient();
-        //https://www.googleapis.com/books/v1/volumes?q=isbn:9781250313188
-        logger.info("https://www.googleapis.com/books/v1/volumes?q={}:{}", queryParam, searchTerm);
-        WebTarget target = client.target("https://www.googleapis.com/books/v1/volumes?q=" + queryParam + ":" + searchTerm + "&country=US");
+
+        logger.info(properties.getProperty("urlForApi") + "{}:{}", queryParam, searchTerm);
+        WebTarget target = client.target( properties.getProperty("urlForApi")+ queryParam + ":" + searchTerm + "&country=US");
         logger.info("url for request: {}", target);
         String response = target.request(MediaType.APPLICATION_JSON).get(String.class);
         logger.info("The response from the api: {}", response);
