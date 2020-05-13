@@ -22,9 +22,11 @@ Technologies
 - mySQL - database
 - google books api - used to gather data for books
 - bootstrap 4 - css framework for front end styling
+- jQuery-validator -for front end form validation
+
+To implement later
 - google charts js library? -eventually for data visualization
 - elasticsearch?? -not used yet
-- jQuery-validator -for front end form validation
 
 
 Link to video of running program
