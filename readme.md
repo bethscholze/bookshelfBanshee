@@ -10,7 +10,8 @@ good way to sort your lists, analyze your book data, and inventory where you wil
 hope to change that with Bookshelf Banshee, a website that allows you to 
 inventory your books and create and sort reading lists based on data you enter.
 
-
+User Stories
+https://github.com/bethscholze/bookshelfBanshee/blob/master/DesignDocuments/userStories.md
 
 ## List of Technologies
 
@@ -21,9 +22,11 @@ Technologies
 - mySQL - database
 - google books api - used to gather data for books
 - bootstrap 4 - css framework for front end styling
+- jQuery-validator -for front end form validation
+
+To implement later
 - google charts js library? -eventually for data visualization
 - elasticsearch?? -not used yet
-- jQuery-validator -for front end form validation
 
 
 Link to video of running program

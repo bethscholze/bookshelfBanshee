@@ -35,6 +35,38 @@
             <web-resource-name>UserHome</web-resource-name>
             <url-pattern>/UserHome</url-pattern>
         </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>BookDetails</web-resource-name>
+            <url-pattern>/BookDetails</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>AddBook</web-resource-name>
+            <url-pattern>/addBook</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>AddToList</web-resource-name>
+            <url-pattern>/addToList</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>DeleteBook</web-resource-name>
+            <url-pattern>/deleteBook</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>DeleteList</web-resource-name>
+            <url-pattern>/deleteList</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>RemoveFromList</web-resource-name>
+            <url-pattern>/removeFromList</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>SortBooks</web-resource-name>
+            <url-pattern>/sortBooks</url-pattern>
+        </web-resource-collection>
+        <web-resource-collection>
+            <web-resource-name>viewList</web-resource-name>
+            <url-pattern>/viewList</url-pattern>
+        </web-resource-collection>
         <auth-constraint>
             <role-name>user</role-name>
         </auth-constraint>

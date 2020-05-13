@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 class UserBookDataDaoTest {
-// TODO fix this class I just copy and pasted, The tests aren't testing the right thing i think
     GenericDao userBookDataDao;
     GenericDao userDao;
     GenericDao userBookDao;

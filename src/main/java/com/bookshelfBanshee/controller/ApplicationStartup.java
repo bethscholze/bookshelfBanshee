@@ -15,16 +15,11 @@ import java.util.*;
         urlPatterns = {"/project4-startup"},
         loadOnStartup = 1
 )
-/**
- * A servlet to load properties.
- *  @author Beth Scholze
- *  @version 4
- */
 public class ApplicationStartup extends HttpServlet implements PropertiesLoader {
     private Properties properties;
 
     public void init() {
-        //todo move urls for api to properties folder
+        //todo in future, utilize this property loader when I add more functionality to the project
         properties = loadProperties("/bookshelfBanshee.properties");
         BookManager bookManager = new BookManager();
         ListManager listManager = new ListManager();

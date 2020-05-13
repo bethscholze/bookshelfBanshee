@@ -2,7 +2,6 @@ package com.bookshelfBanshee.controller;
 
 import com.bookshelfBanshee.entity.*;
 import com.bookshelfBanshee.persistence.GenericDao;
-import com.googlebooksapi.entity.VolumeInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -41,7 +40,6 @@ public class ViewBookDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext servletContext = getServletContext();
-        BookManager bookManager = (BookManager)servletContext.getAttribute("bookManager");
         HttpSession session = req.getSession(false);
         int id = Integer.parseInt(req.getParameter("id"));
         Map<Integer, MappedBook> mappedBooks = (Map<Integer, MappedBook>)session.getAttribute("userMappedBooks");
