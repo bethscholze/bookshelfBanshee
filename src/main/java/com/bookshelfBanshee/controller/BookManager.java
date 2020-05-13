@@ -15,23 +15,17 @@ import java.util.*;
 
 /**
  * The type Book manager.
+ * Contains methods to process a users books.
  */
 public class BookManager {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    // Holds the data returned form the google books api for all of a users books,
-    // This needs to be refactored to only call the first 200 of a users books then
-    //use pagination to call the next 200 books.
+    //todo This needs to be refactored to only call the first 200 of a users books then
+    // use pagination to call the next 200 books.
 
     private GoogleBooksAPI api = new GoogleBooksAPI();
     private GenericDao<User> userDao = new GenericDao(User.class);
     private GenericDao<Book> bookDao= new GenericDao<>(Book.class);
     private GenericDao<UserBookData> userBookDataDao = new GenericDao<>(UserBookData.class);
-    //this class will be created after a user signs in
-    // It will hold all the book data returned from the api, I need to maintain this data in the session
-    // so if I need to check if a book has already been added to the session of userBooks. ie make sure I
-    // append when i query for more data. if(book !in userbook call api)
-
-    //I think pass a param in based on the page you are on ...
 
     /**
      * Gets google api book data.
@@ -70,7 +64,7 @@ public class BookManager {
      * @return the list
      */
     public List<VolumeInfo> searchGoogleAPIBook(String searchType, String searchTerm) {
-        // the maxResults value is by default 10 books, which I think works for my program
+        // the maxResults value is by default 10 books, which I think works for my program, but can be changed if needed
         return  api.searchBooks(searchType, searchTerm);
     }
 
@@ -81,7 +75,7 @@ public class BookManager {
      * @return the user
      */
     public User getUser(String username) {
-        return (User)userDao.getByPropertyEqual("username", username).get(0);
+        return userDao.getByPropertyEqual("username", username).get(0);
     }
 
     /**
