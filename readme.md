@@ -32,3 +32,6 @@ To implement later
 Link to video of running program
 https://drive.google.com/file/d/1mz5Gv-RRnKvnWymZx127J-BX9-e8ubA2/view?usp=sharing
 
+Link to expanded list functionality video
+https://drive.google.com/open?id=1FCwx-YjRYkIpHVAoKhhviWua1mtzNPU2
+
