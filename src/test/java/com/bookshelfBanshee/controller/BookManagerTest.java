@@ -11,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.concurrent.TimeUnit;
 
 import java.util.*;
 
@@ -93,8 +92,6 @@ class BookManagerTest {
         Set<UserBookData> currentBookData = bookManager.getBookDetails(currentBook, allBookData);
         logger.debug("This is the book I am deleting: {}", currentBookData);
         bookManager.deleteUserBookData(currentBookData);
-        TimeUnit.SECONDS.sleep(10);
-        //logger.debug("This is all of the users book data at the end: {}", newBookData);
         int allBooksSize = userBookDataDao.getAll().size();
 
         assertEquals(allBooksSizeOld - 1, allBooksSize);
