@@ -27,6 +27,7 @@ Technologies
 To implement later
 - google charts js library? -eventually for data visualization
 - elasticsearch?? -not used yet
+- bcrypt(the easiest way to do this is using swing) or another password hash(so I don't have to add swing)
 
 
 Link to video of running program
